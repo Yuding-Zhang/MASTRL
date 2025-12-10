@@ -2,7 +2,7 @@ import time
 import numpy as np
 from functools import reduce
 import torch
-from onpolicy.runner.separated.base_runner import Runner
+from mastrl.runner.separated.base_runner import Runner
 import wandb
 
 def _t2n(x):

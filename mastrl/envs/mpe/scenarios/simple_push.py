@@ -1,6 +1,6 @@
 import numpy as np
-from onpolicy.envs.mpe.core import World, Agent, Landmark
-from onpolicy.envs.mpe.scenario import BaseScenario
+from mastrl.envs.mpe.core import World, Agent, Landmark
+from mastrl.envs.mpe.scenario import BaseScenario
 import random
 
 #

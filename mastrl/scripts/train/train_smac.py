@@ -7,8 +7,8 @@ import setproctitle
 import numpy as np
 from pathlib import Path
 import torch
-from onpolicy.config import get_config
-from onpolicy.envs.env_wrappers import ShareSubprocVecEnv, ShareDummyVecEnv
+from mastrl.config import get_config
+from mastrl.envs.env_wrappers import ShareSubprocVecEnv, ShareDummyVecEnv
 
 """Train script for SMAC."""
 
@@ -51,16 +51,16 @@ def make_train_env(all_args):
     def get_env_fn(rank):
         def init_env():
             if all_args.env_name == "StarCraft2":
-                from onpolicy.envs.starcraft2.StarCraft2_Env import StarCraft2Env
+                from mastrl.envs.starcraft2.StarCraft2_Env import StarCraft2Env
                 env = StarCraft2Env(all_args)
             elif all_args.env_name == "StarCraft2v2":
-                from onpolicy.envs.starcraft2.SMACv2_modified import SMACv2
+                from mastrl.envs.starcraft2.SMACv2_modified import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
             elif all_args.env_name == "SMAC":
-                from onpolicy.envs.starcraft2.SMAC import SMAC
+                from mastrl.envs.starcraft2.SMAC import SMAC
                 env = SMAC(map_name=all_args.map_name)
             elif all_args.env_name == "SMACv2":
-                from onpolicy.envs.starcraft2.SMACv2 import SMACv2
+                from mastrl.envs.starcraft2.SMACv2 import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
             else:
                 print("Can not support the " + all_args.env_name + "environment.")
@@ -80,16 +80,16 @@ def make_eval_env(all_args):
     def get_env_fn(rank):
         def init_env():
             if all_args.env_name == "StarCraft2":
-                from onpolicy.envs.starcraft2.StarCraft2_Env import StarCraft2Env
+                from mastrl.envs.starcraft2.StarCraft2_Env import StarCraft2Env
                 env = StarCraft2Env(all_args)
             elif all_args.env_name == "StarCraft2v2":
-                from onpolicy.envs.starcraft2.SMACv2_modified import SMACv2
+                from mastrl.envs.starcraft2.SMACv2_modified import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
             elif all_args.env_name == "SMAC":
-                from onpolicy.envs.starcraft2.SMAC import SMAC
+                from mastrl.envs.starcraft2.SMAC import SMAC
                 env = SMAC(map_name=all_args.map_name)
             elif all_args.env_name == "SMACv2":
-                from onpolicy.envs.starcraft2.SMACv2 import SMACv2
+                from mastrl.envs.starcraft2.SMACv2 import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
             else:
                 print("Can not support the " + all_args.env_name + "environment.")
@@ -215,7 +215,7 @@ def main(args):
         from smac.env.starcraft2.maps import get_map_params
         num_agents = get_map_params(all_args.map_name)["n_agents"]
     elif all_args.env_name == 'StarCraft2':
-        from onpolicy.envs.starcraft2.smac_maps import get_map_params
+        from mastrl.envs.starcraft2.smac_maps import get_map_params
         num_agents = get_map_params(all_args.map_name)["n_agents"]
     elif all_args.env_name == "SMACv2" or all_args.env_name == 'StarCraft2v2':
         from smacv2.env.starcraft2.maps import get_map_params
@@ -232,12 +232,12 @@ def main(args):
 
     # run experiments
     if all_args.share_policy:
-        from onpolicy.runner.shared.smac_runner import SMACRunner as Runner
+        from mastrl.runner.shared.smac_runner import SMACRunner as Runner
     else:
-        from onpolicy.runner.separated.smac_runner import SMACRunner as Runner
+        from mastrl.runner.separated.smac_runner import SMACRunner as Runner
 
     if all_args.algorithm_name == "happo" or all_args.algorithm_name == "hatrpo":
-        from onpolicy.runner.separated.smac_runner import SMACRunner as Runner
+        from mastrl.runner.separated.smac_runner import SMACRunner as Runner
 
     runner = Runner(config)
     runner.run()

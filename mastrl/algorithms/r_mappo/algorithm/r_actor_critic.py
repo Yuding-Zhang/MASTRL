@@ -1,12 +1,12 @@
 import torch
 import torch.nn as nn
-from onpolicy.algorithms.utils.util import init, check
-from onpolicy.algorithms.utils.cnn import CNNBase
-from onpolicy.algorithms.utils.mlp import MLPBase
-from onpolicy.algorithms.utils.rnn import RNNLayer
-from onpolicy.algorithms.utils.act import ACTLayer
-from onpolicy.algorithms.utils.popart import PopArt
-from onpolicy.utils.util import get_shape_from_obs_space
+from mastrl.algorithms.utils.util import init, check
+from mastrl.algorithms.utils.cnn import CNNBase
+from mastrl.algorithms.utils.mlp import MLPBase
+from mastrl.algorithms.utils.rnn import RNNLayer
+from mastrl.algorithms.utils.act import ACTLayer
+from mastrl.algorithms.utils.popart import PopArt
+from mastrl.utils.util import get_shape_from_obs_space
 
 
 class R_Actor(nn.Module):

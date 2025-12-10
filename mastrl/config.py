@@ -154,7 +154,7 @@ def get_config():
             by default None. set the path to pretrained model.
     """
     parser = argparse.ArgumentParser(
-        description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
+        description='mastrl', formatter_class=argparse.RawDescriptionHelpFormatter)
 
     # prepare parameters
     parser.add_argument("--algorithm_name", type=str,

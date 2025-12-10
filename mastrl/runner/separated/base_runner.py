@@ -7,8 +7,8 @@ from itertools import chain
 import torch
 from tensorboardX import SummaryWriter
 
-from onpolicy.utils.separated_buffer import SeparatedReplayBuffer
-from onpolicy.utils.util import update_linear_schedule
+from mastrl.utils.separated_buffer import SeparatedReplayBuffer
+from mastrl.utils.util import update_linear_schedule
 
 def _t2n(x):
     return x.detach().cpu().numpy()
@@ -68,14 +68,14 @@ class Runner(object):
 
 
         if self.all_args.algorithm_name == "happo":
-            from onpolicy.algorithms.happo.happo_trainer import HAPPO as TrainAlgo
-            from onpolicy.algorithms.happo.policy import HAPPO_Policy as Policy
+            from mastrl.algorithms.happo.happo_trainer import HAPPO as TrainAlgo
+            from mastrl.algorithms.happo.policy import HAPPO_Policy as Policy
         elif self.all_args.algorithm_name == "hatrpo":
-            from onpolicy.algorithms.hatrpo.hatrpo_trainer import HATRPO as TrainAlgo
-            from onpolicy.algorithms.hatrpo.policy import HATRPO_Policy as Policy
+            from mastrl.algorithms.hatrpo.hatrpo_trainer import HATRPO as TrainAlgo
+            from mastrl.algorithms.hatrpo.policy import HATRPO_Policy as Policy
         else:
-            from onpolicy.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-            from onpolicy.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+            from mastrl.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+            from mastrl.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
 
 
         print("share_observation_space: ", self.envs.share_observation_space)

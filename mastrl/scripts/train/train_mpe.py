@@ -7,9 +7,9 @@ import setproctitle
 import numpy as np
 from pathlib import Path
 import torch
-from onpolicy.config import get_config
-from onpolicy.envs.mpe.MPE_env import MPEEnv
-from onpolicy.envs.env_wrappers import SubprocVecEnv, DummyVecEnv
+from mastrl.config import get_config
+from mastrl.envs.mpe.MPE_env import MPEEnv
+from mastrl.envs.env_wrappers import SubprocVecEnv, DummyVecEnv
 
 """Train script for MPEs."""
 
@@ -151,9 +151,9 @@ def main(args):
 
     # run experiments
     if all_args.share_policy:
-        from onpolicy.runner.shared.mpe_runner import MPERunner as Runner
+        from mastrl.runner.shared.mpe_runner import MPERunner as Runner
     else:
-        from onpolicy.runner.separated.mpe_runner import MPERunner as Runner
+        from mastrl.runner.separated.mpe_runner import MPERunner as Runner
 
     runner = Runner(config)
     runner.run()

@@ -4,11 +4,11 @@ from torch.nn import functional as F
 import math
 import numpy as np
 from torch.distributions import Categorical
-from onpolicy.algorithms.utils.util import check, init
-from onpolicy.algorithms.utils.transformer_act import discrete_autoregreesive_act
-from onpolicy.algorithms.utils.transformer_act import discrete_parallel_act
-from onpolicy.algorithms.utils.transformer_act import continuous_autoregreesive_act
-from onpolicy.algorithms.utils.transformer_act import continuous_parallel_act
+from mastrl.algorithms.utils.util import check, init
+from mastrl.algorithms.utils.transformer_act import discrete_autoregreesive_act
+from mastrl.algorithms.utils.transformer_act import discrete_parallel_act
+from mastrl.algorithms.utils.transformer_act import continuous_autoregreesive_act
+from mastrl.algorithms.utils.transformer_act import continuous_parallel_act
 
 def init_(m, gain=0.01, activate=False):
     if activate:

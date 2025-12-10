@@ -11,9 +11,9 @@ import setproctitle
 import torch
 
 # code repository sub-packages
-from onpolicy.config import get_config
-from onpolicy.envs.football.Football_Env import FootballEnv
-from onpolicy.envs.env_wrappers import SubprocVecEnv, DummyVecEnv
+from mastrl.config import get_config
+from mastrl.envs.football.Football_Env import FootballEnv
+from mastrl.envs.env_wrappers import SubprocVecEnv, DummyVecEnv
 
 
 def make_train_env(all_args):
@@ -145,9 +145,9 @@ def main(args):
 
     # run experiments
     if all_args.share_policy:
-        from onpolicy.runner.shared.football_runner import FootballRunner as Runner
+        from mastrl.runner.shared.football_runner import FootballRunner as Runner
     else:
-        from onpolicy.runner.separated.football_runner import FootballRunner as Runner
+        from mastrl.runner.separated.football_runner import FootballRunner as Runner
 
     runner = Runner(config)
     runner.render()

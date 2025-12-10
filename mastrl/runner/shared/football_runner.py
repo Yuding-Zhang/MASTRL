@@ -8,8 +8,8 @@ import numpy as np
 import torch
 import wandb
 
-from onpolicy.utils.util import update_linear_schedule
-from onpolicy.runner.shared.base_runner import Runner
+from mastrl.utils.util import update_linear_schedule
+from mastrl.runner.shared.base_runner import Runner
 
 
 def _t2n(x):

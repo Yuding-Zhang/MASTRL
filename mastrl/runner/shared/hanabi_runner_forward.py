@@ -6,8 +6,8 @@ import numpy as np
 from itertools import chain
 import torch
 
-from onpolicy.utils.util import update_linear_schedule
-from onpolicy.runner.shared.base_runner import Runner
+from mastrl.utils.util import update_linear_schedule
+from mastrl.runner.shared.base_runner import Runner
 
 def _t2n(x):
     return x.detach().cpu().numpy()

@@ -3,7 +3,7 @@ import os
 import numpy as np
 import torch
 from tensorboardX import SummaryWriter
-from onpolicy.utils.shared_buffer import SharedReplayBuffer
+from mastrl.utils.shared_buffer import SharedReplayBuffer
 
 def _t2n(x):
     """Convert torch tensor to a numpy array."""
@@ -64,11 +64,11 @@ class Runner(object):
                 os.makedirs(self.save_dir)
 
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-            from onpolicy.algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
-            from onpolicy.algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
+            from mastrl.algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
+            from mastrl.algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
         else:
-            from onpolicy.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-            from onpolicy.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+            from mastrl.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+            from mastrl.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
 
         share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else self.envs.observation_space[0]
 

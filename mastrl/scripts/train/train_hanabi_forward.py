@@ -7,9 +7,9 @@ import setproctitle
 import numpy as np
 from pathlib import Path
 import torch
-from onpolicy.config import get_config
-from onpolicy.envs.hanabi.Hanabi_Env import HanabiEnv
-from onpolicy.envs.env_wrappers import ChooseSubprocVecEnv, ChooseDummyVecEnv
+from mastrl.config import get_config
+from mastrl.envs.hanabi.Hanabi_Env import HanabiEnv
+from mastrl.envs.env_wrappers import ChooseSubprocVecEnv, ChooseDummyVecEnv
 
 """Train script for Hanabi."""
 
@@ -157,9 +157,9 @@ def main(args):
 
     # run experiments
     if all_args.share_policy:
-        from onpolicy.runner.shared.hanabi_runner_forward import HanabiRunner as Runner
+        from mastrl.runner.shared.hanabi_runner_forward import HanabiRunner as Runner
     else:
-        from onpolicy.runner.separated.hanabi_runner_forward import HanabiRunner as Runner
+        from mastrl.runner.separated.hanabi_runner_forward import HanabiRunner as Runner
 
     runner = Runner(config)
     runner.run()
