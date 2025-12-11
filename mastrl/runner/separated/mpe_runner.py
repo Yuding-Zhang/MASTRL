@@ -80,7 +80,22 @@ class MPERunner(Runner):
                 self.eval(total_num_steps)
 
     def warmup(self):
+        """
+        warmup 的 Docstring
+        
+        obs 的结构:
+        obs 是一个三维数组或嵌套列表，形状为 [n_rollout_threads, num_agents, obs_dim]。
+        每个智能体的观测维度 obs_dim 必须一致。
+        
+        share_obs 的结构:
+        如果 use_centralized_V 为 True，share_obs 的形状为 [n_rollout_threads, num_agents * obs_dim]。
+        如果 use_centralized_V 为 False，share_obs 的形状为 [n_rollout_threads, obs_dim]。
+        
+        缓冲区存储:
+        self.buffer[agent_id].share_obs[0] 和 self.buffer[agent_id].obs[0] 的形状分别为 [n_rollout_threads, num_agents * obs_dim] 和 [n_rollout_threads, obs_dim]。
+        """
         # reset env
+        
         obs = self.envs.reset()
 
         share_obs = []

@@ -125,7 +125,7 @@ class ShareVecEnv(ABC):
 
     @property
     def unwrapped(self):
-        if isinstance(self, VecEnvWrapper):
+        if isinstance(self, VecEnvWrapper): # type: ignore
             return self.venv.unwrapped
         else:
             return self
@@ -206,13 +206,13 @@ class GuardSubprocVecEnv(ShareVecEnv):
         results = [remote.recv() for remote in self.remotes]
         self.waiting = False
         obs, rews, dones, infos = zip(*results)
-        return np.stack(obs), np.stack(rews), np.stack(dones), infos
+        return np.array(obs, dtype=object), np.stack(rews), np.stack(dones), infos
 
     def reset(self):
         for remote in self.remotes:
             remote.send(('reset', None))
         obs = [remote.recv() for remote in self.remotes]
-        return np.stack(obs)
+        return np.array(obs, dtype=object)
 
     def reset_task(self):
         for remote in self.remotes:
@@ -263,15 +263,18 @@ class SubprocVecEnv(ShareVecEnv):
         results = [remote.recv() for remote in self.remotes]
         self.waiting = False
         obs, rews, dones, infos = zip(*results)
-        return np.stack(obs), np.stack(rews), np.stack(dones), infos
+        return np.array(obs, dtype=object), np.stack(rews), np.stack(dones), infos
 
     def reset(self):
         for remote in self.remotes:
             remote.send(('reset', None))
         obs = [remote.recv() for remote in self.remotes]
-        return np.stack(obs)
-
-
+        # 在mpe_runner.py的87到89行处会展平元素，此处直接返回？
+        # flattened_obs = [np.concatenate(o) for o in obs]
+        # return np.stack(flattened_obs)
+        # 将所有np.stack()操作改为np.array(obs, dtype=object)操作,因为多智能体的obs可能不同维度
+        return np.array(obs, dtype=object)
+        
     def reset_task(self):
         for remote in self.remotes:
             remote.send(('reset_task', None))
@@ -369,14 +372,14 @@ class ShareSubprocVecEnv(ShareVecEnv):
         results = [remote.recv() for remote in self.remotes]
         self.waiting = False
         obs, share_obs, rews, dones, infos, available_actions = zip(*results)
-        return np.stack(obs), np.stack(share_obs), np.stack(rews), np.stack(dones), infos, np.stack(available_actions)
+        return np.array(obs, dtype=object), np.stack(share_obs), np.stack(rews), np.stack(dones), infos, np.stack(available_actions)
 
     def reset(self):
         for remote in self.remotes:
             remote.send(('reset', None))
         results = [remote.recv() for remote in self.remotes]
         obs, share_obs, available_actions = zip(*results)
-        return np.stack(obs), np.stack(share_obs), np.stack(available_actions)
+        return np.array(obs, dtype=object), np.stack(share_obs), np.stack(available_actions)
 
     def reset_task(self):
         for remote in self.remotes:
@@ -457,13 +460,13 @@ class ChooseSimpleSubprocVecEnv(ShareVecEnv):
         results = [remote.recv() for remote in self.remotes]
         self.waiting = False
         obs, rews, dones, infos = zip(*results)
-        return np.stack(obs), np.stack(rews), np.stack(dones), infos
+        return np.array(obs, dtype=object), np.stack(rews), np.stack(dones), infos
 
     def reset(self, reset_choose):
         for remote, choose in zip(self.remotes, reset_choose):
             remote.send(('reset', choose))
         obs = [remote.recv() for remote in self.remotes]
-        return np.stack(obs)
+        return np.array(obs, dtype=object)
 
     def render(self, mode="rgb_array"):
         for remote in self.remotes:
@@ -548,14 +551,14 @@ class ChooseSubprocVecEnv(ShareVecEnv):
         results = [remote.recv() for remote in self.remotes]
         self.waiting = False
         obs, share_obs, rews, dones, infos, available_actions = zip(*results)
-        return np.stack(obs), np.stack(share_obs), np.stack(rews), np.stack(dones), infos, np.stack(available_actions)
+        return np.array(obs, dtype=object), np.stack(share_obs), np.stack(rews), np.stack(dones), infos, np.stack(available_actions)
 
     def reset(self, reset_choose):
         for remote, choose in zip(self.remotes, reset_choose):
             remote.send(('reset', choose))
         results = [remote.recv() for remote in self.remotes]
         obs, share_obs, available_actions = zip(*results)
-        return np.stack(obs), np.stack(share_obs), np.stack(available_actions)
+        return np.array(obs, dtype=object), np.stack(share_obs), np.stack(available_actions)
 
     def reset_task(self):
         for remote in self.remotes:
@@ -631,13 +634,13 @@ class ChooseGuardSubprocVecEnv(ShareVecEnv):
         results = [remote.recv() for remote in self.remotes]
         self.waiting = False
         obs, rews, dones, infos = zip(*results)
-        return np.stack(obs), np.stack(rews), np.stack(dones), infos
+        return np.array(obs, dtype=object), np.stack(rews), np.stack(dones), infos
 
     def reset(self, reset_choose):
         for remote, choose in zip(self.remotes, reset_choose):
             remote.send(('reset', choose))
         obs = [remote.recv() for remote in self.remotes]
-        return np.stack(obs)
+        return np.array(obs, dtype=object)
 
     def reset_task(self):
         for remote in self.remotes:

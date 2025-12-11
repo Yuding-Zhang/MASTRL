@@ -172,3 +172,25 @@ def main(args):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+    # args = [
+    #     "--env_name", "MPE",
+    #     "--scenario_name", "simple_speaker_listener",
+    #     "--num_landmarks", "3",
+    #     "--num_agents", "2",
+    #     "--algorithm_name", "rmappo",
+    #     "--experiment_name", "check",
+    #     "--seed", "1",
+    #     "--n_training_threads", "1",
+    #     "--n_rollout_threads", "128",
+    #     "--num_mini_batch", "1",
+    #     "--episode_length", "25",
+    #     "--num_env_steps", "2000000",
+    #     "--ppo_epoch", "15",
+    #     "--gain", "0.01",
+    #     "--lr", "7e-4",
+    #     "--critic_lr", "7e-4",
+    #     "--wandb_name", "yuding-zh-uestc",
+    #     "--user_name", "yuding-zh-uestc",
+    #     "--share_policy"
+    # ]
+    # main(args)
