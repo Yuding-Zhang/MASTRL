@@ -1,0 +1,755 @@
+obs_space:  [Box(-inf, inf, (21,), float32), Box(-inf, inf, (21,), float32)]
+share_obs_space:  [Box(-inf, inf, (42,), float32), Box(-inf, inf, (42,), float32)]
+act_space:  [MultiDiscrete2, MultiDiscrete2]
+
+ Scenario simple_reference Algo ippo Exp check updates 0/937 episodes, total num timesteps 3200/3000000, FPS 7249.
+
+average episode rewards is -68.8352644443512
+
+ Scenario simple_reference Algo ippo Exp check updates 5/937 episodes, total num timesteps 19200/3000000, FPS 10721.
+
+average episode rewards is -35.89143455028534
+
+ Scenario simple_reference Algo ippo Exp check updates 10/937 episodes, total num timesteps 35200/3000000, FPS 11109.
+
+average episode rewards is -25.140321254730225
+
+ Scenario simple_reference Algo ippo Exp check updates 15/937 episodes, total num timesteps 51200/3000000, FPS 11396.
+
+average episode rewards is -24.491038918495178
+
+ Scenario simple_reference Algo ippo Exp check updates 20/937 episodes, total num timesteps 67200/3000000, FPS 11611.
+
+average episode rewards is -24.131016433238983
+
+ Scenario simple_reference Algo ippo Exp check updates 25/937 episodes, total num timesteps 83200/3000000, FPS 11666.
+
+average episode rewards is -23.821668326854706
+
+ Scenario simple_reference Algo ippo Exp check updates 30/937 episodes, total num timesteps 99200/3000000, FPS 11735.
+
+average episode rewards is -24.447765946388245
+
+ Scenario simple_reference Algo ippo Exp check updates 35/937 episodes, total num timesteps 115200/3000000, FPS 11800.
+
+average episode rewards is -23.49189817905426
+
+ Scenario simple_reference Algo ippo Exp check updates 40/937 episodes, total num timesteps 131200/3000000, FPS 11856.
+
+average episode rewards is -22.097423672676086
+
+ Scenario simple_reference Algo ippo Exp check updates 45/937 episodes, total num timesteps 147200/3000000, FPS 11849.
+
+average episode rewards is -22.555458545684814
+
+ Scenario simple_reference Algo ippo Exp check updates 50/937 episodes, total num timesteps 163200/3000000, FPS 11894.
+
+average episode rewards is -21.493366360664368
+
+ Scenario simple_reference Algo ippo Exp check updates 55/937 episodes, total num timesteps 179200/3000000, FPS 11965.
+
+average episode rewards is -23.420314490795135
+
+ Scenario simple_reference Algo ippo Exp check updates 60/937 episodes, total num timesteps 195200/3000000, FPS 11985.
+
+average episode rewards is -22.311723232269287
+
+ Scenario simple_reference Algo ippo Exp check updates 65/937 episodes, total num timesteps 211200/3000000, FPS 12003.
+
+average episode rewards is -19.748620688915253
+
+ Scenario simple_reference Algo ippo Exp check updates 70/937 episodes, total num timesteps 227200/3000000, FPS 12006.
+
+average episode rewards is -21.76409512758255
+
+ Scenario simple_reference Algo ippo Exp check updates 75/937 episodes, total num timesteps 243200/3000000, FPS 12000.
+
+average episode rewards is -21.751374006271362
+
+ Scenario simple_reference Algo ippo Exp check updates 80/937 episodes, total num timesteps 259200/3000000, FPS 12007.
+
+average episode rewards is -19.590412080287933
+
+ Scenario simple_reference Algo ippo Exp check updates 85/937 episodes, total num timesteps 275200/3000000, FPS 11976.
+
+average episode rewards is -23.754003643989563
+
+ Scenario simple_reference Algo ippo Exp check updates 90/937 episodes, total num timesteps 291200/3000000, FPS 11985.
+
+average episode rewards is -20.97383439540863
+
+ Scenario simple_reference Algo ippo Exp check updates 95/937 episodes, total num timesteps 307200/3000000, FPS 11988.
+
+average episode rewards is -19.994811713695526
+
+ Scenario simple_reference Algo ippo Exp check updates 100/937 episodes, total num timesteps 323200/3000000, FPS 11999.
+
+average episode rewards is -20.639345049858093
+
+ Scenario simple_reference Algo ippo Exp check updates 105/937 episodes, total num timesteps 339200/3000000, FPS 11948.
+
+average episode rewards is -20.91357111930847
+
+ Scenario simple_reference Algo ippo Exp check updates 110/937 episodes, total num timesteps 355200/3000000, FPS 11940.
+
+average episode rewards is -19.495342671871185
+
+ Scenario simple_reference Algo ippo Exp check updates 115/937 episodes, total num timesteps 371200/3000000, FPS 11931.
+
+average episode rewards is -19.176894426345825
+
+ Scenario simple_reference Algo ippo Exp check updates 120/937 episodes, total num timesteps 387200/3000000, FPS 11897.
+
+average episode rewards is -19.66284215450287
+
+ Scenario simple_reference Algo ippo Exp check updates 125/937 episodes, total num timesteps 403200/3000000, FPS 11888.
+
+average episode rewards is -20.21493911743164
+
+ Scenario simple_reference Algo ippo Exp check updates 130/937 episodes, total num timesteps 419200/3000000, FPS 11895.
+
+average episode rewards is -18.150344491004944
+
+ Scenario simple_reference Algo ippo Exp check updates 135/937 episodes, total num timesteps 435200/3000000, FPS 11915.
+
+average episode rewards is -18.181094527244568
+
+ Scenario simple_reference Algo ippo Exp check updates 140/937 episodes, total num timesteps 451200/3000000, FPS 11914.
+
+average episode rewards is -19.387294352054596
+
+ Scenario simple_reference Algo ippo Exp check updates 145/937 episodes, total num timesteps 467200/3000000, FPS 11926.
+
+average episode rewards is -17.219680547714233
+
+ Scenario simple_reference Algo ippo Exp check updates 150/937 episodes, total num timesteps 483200/3000000, FPS 11931.
+
+average episode rewards is -16.630341112613678
+
+ Scenario simple_reference Algo ippo Exp check updates 155/937 episodes, total num timesteps 499200/3000000, FPS 11915.
+
+average episode rewards is -16.91073179244995
+
+ Scenario simple_reference Algo ippo Exp check updates 160/937 episodes, total num timesteps 515200/3000000, FPS 11903.
+
+average episode rewards is -16.5414035320282
+
+ Scenario simple_reference Algo ippo Exp check updates 165/937 episodes, total num timesteps 531200/3000000, FPS 11924.
+
+average episode rewards is -17.1783447265625
+
+ Scenario simple_reference Algo ippo Exp check updates 170/937 episodes, total num timesteps 547200/3000000, FPS 11918.
+
+average episode rewards is -15.495571494102478
+
+ Scenario simple_reference Algo ippo Exp check updates 175/937 episodes, total num timesteps 563200/3000000, FPS 11935.
+
+average episode rewards is -14.919833838939667
+
+ Scenario simple_reference Algo ippo Exp check updates 180/937 episodes, total num timesteps 579200/3000000, FPS 11937.
+
+average episode rewards is -14.31383341550827
+
+ Scenario simple_reference Algo ippo Exp check updates 185/937 episodes, total num timesteps 595200/3000000, FPS 11958.
+
+average episode rewards is -16.277149319648743
+
+ Scenario simple_reference Algo ippo Exp check updates 190/937 episodes, total num timesteps 611200/3000000, FPS 11967.
+
+average episode rewards is -14.699822664260864
+
+ Scenario simple_reference Algo ippo Exp check updates 195/937 episodes, total num timesteps 627200/3000000, FPS 11961.
+
+average episode rewards is -13.761325180530548
+
+ Scenario simple_reference Algo ippo Exp check updates 200/937 episodes, total num timesteps 643200/3000000, FPS 11971.
+
+average episode rewards is -14.51445072889328
+
+ Scenario simple_reference Algo ippo Exp check updates 205/937 episodes, total num timesteps 659200/3000000, FPS 11973.
+
+average episode rewards is -14.592182636260986
+
+ Scenario simple_reference Algo ippo Exp check updates 210/937 episodes, total num timesteps 675200/3000000, FPS 11979.
+
+average episode rewards is -14.459186792373657
+
+ Scenario simple_reference Algo ippo Exp check updates 215/937 episodes, total num timesteps 691200/3000000, FPS 11981.
+
+average episode rewards is -13.586583733558655
+
+ Scenario simple_reference Algo ippo Exp check updates 220/937 episodes, total num timesteps 707200/3000000, FPS 11993.
+
+average episode rewards is -14.647790789604187
+
+ Scenario simple_reference Algo ippo Exp check updates 225/937 episodes, total num timesteps 723200/3000000, FPS 12000.
+
+average episode rewards is -13.577266037464142
+
+ Scenario simple_reference Algo ippo Exp check updates 230/937 episodes, total num timesteps 739200/3000000, FPS 11991.
+
+average episode rewards is -13.05309683084488
+
+ Scenario simple_reference Algo ippo Exp check updates 235/937 episodes, total num timesteps 755200/3000000, FPS 11994.
+
+average episode rewards is -12.758782505989075
+
+ Scenario simple_reference Algo ippo Exp check updates 240/937 episodes, total num timesteps 771200/3000000, FPS 12002.
+
+average episode rewards is -13.220047950744629
+
+ Scenario simple_reference Algo ippo Exp check updates 245/937 episodes, total num timesteps 787200/3000000, FPS 12013.
+
+average episode rewards is -12.406738102436066
+
+ Scenario simple_reference Algo ippo Exp check updates 250/937 episodes, total num timesteps 803200/3000000, FPS 12005.
+
+average episode rewards is -12.672315537929535
+
+ Scenario simple_reference Algo ippo Exp check updates 255/937 episodes, total num timesteps 819200/3000000, FPS 12012.
+
+average episode rewards is -11.81793287396431
+
+ Scenario simple_reference Algo ippo Exp check updates 260/937 episodes, total num timesteps 835200/3000000, FPS 12018.
+
+average episode rewards is -13.668975234031677
+
+ Scenario simple_reference Algo ippo Exp check updates 265/937 episodes, total num timesteps 851200/3000000, FPS 12021.
+
+average episode rewards is -11.518315970897675
+
+ Scenario simple_reference Algo ippo Exp check updates 270/937 episodes, total num timesteps 867200/3000000, FPS 12015.
+
+average episode rewards is -12.455084919929504
+
+ Scenario simple_reference Algo ippo Exp check updates 275/937 episodes, total num timesteps 883200/3000000, FPS 12021.
+
+average episode rewards is -12.7957284450531
+
+ Scenario simple_reference Algo ippo Exp check updates 280/937 episodes, total num timesteps 899200/3000000, FPS 12033.
+
+average episode rewards is -13.288365304470062
+
+ Scenario simple_reference Algo ippo Exp check updates 285/937 episodes, total num timesteps 915200/3000000, FPS 12039.
+
+average episode rewards is -12.401704490184784
+
+ Scenario simple_reference Algo ippo Exp check updates 290/937 episodes, total num timesteps 931200/3000000, FPS 12029.
+
+average episode rewards is -13.109086453914642
+
+ Scenario simple_reference Algo ippo Exp check updates 295/937 episodes, total num timesteps 947200/3000000, FPS 12032.
+
+average episode rewards is -10.476987063884735
+
+ Scenario simple_reference Algo ippo Exp check updates 300/937 episodes, total num timesteps 963200/3000000, FPS 12035.
+
+average episode rewards is -12.62764185667038
+
+ Scenario simple_reference Algo ippo Exp check updates 305/937 episodes, total num timesteps 979200/3000000, FPS 12045.
+
+average episode rewards is -12.892836332321167
+
+ Scenario simple_reference Algo ippo Exp check updates 310/937 episodes, total num timesteps 995200/3000000, FPS 12037.
+
+average episode rewards is -11.468158662319183
+
+ Scenario simple_reference Algo ippo Exp check updates 315/937 episodes, total num timesteps 1011200/3000000, FPS 12039.
+
+average episode rewards is -12.170303612947464
+
+ Scenario simple_reference Algo ippo Exp check updates 320/937 episodes, total num timesteps 1027200/3000000, FPS 12043.
+
+average episode rewards is -11.783529072999954
+
+ Scenario simple_reference Algo ippo Exp check updates 325/937 episodes, total num timesteps 1043200/3000000, FPS 12051.
+
+average episode rewards is -11.764872819185257
+
+ Scenario simple_reference Algo ippo Exp check updates 330/937 episodes, total num timesteps 1059200/3000000, FPS 12046.
+
+average episode rewards is -11.89832091331482
+
+ Scenario simple_reference Algo ippo Exp check updates 335/937 episodes, total num timesteps 1075200/3000000, FPS 12054.
+
+average episode rewards is -13.651871681213379
+
+ Scenario simple_reference Algo ippo Exp check updates 340/937 episodes, total num timesteps 1091200/3000000, FPS 12047.
+
+average episode rewards is -11.615823954343796
+
+ Scenario simple_reference Algo ippo Exp check updates 345/937 episodes, total num timesteps 1107200/3000000, FPS 12036.
+
+average episode rewards is -13.695412874221802
+
+ Scenario simple_reference Algo ippo Exp check updates 350/937 episodes, total num timesteps 1123200/3000000, FPS 12032.
+
+average episode rewards is -12.925820052623749
+
+ Scenario simple_reference Algo ippo Exp check updates 355/937 episodes, total num timesteps 1139200/3000000, FPS 12034.
+
+average episode rewards is -10.714871436357498
+
+ Scenario simple_reference Algo ippo Exp check updates 360/937 episodes, total num timesteps 1155200/3000000, FPS 12036.
+
+average episode rewards is -11.628778278827667
+
+ Scenario simple_reference Algo ippo Exp check updates 365/937 episodes, total num timesteps 1171200/3000000, FPS 12033.
+
+average episode rewards is -11.30770742893219
+
+ Scenario simple_reference Algo ippo Exp check updates 370/937 episodes, total num timesteps 1187200/3000000, FPS 12020.
+
+average episode rewards is -12.349683791399002
+
+ Scenario simple_reference Algo ippo Exp check updates 375/937 episodes, total num timesteps 1203200/3000000, FPS 12022.
+
+average episode rewards is -10.85207685828209
+
+ Scenario simple_reference Algo ippo Exp check updates 380/937 episodes, total num timesteps 1219200/3000000, FPS 12028.
+
+average episode rewards is -11.500252038240433
+
+ Scenario simple_reference Algo ippo Exp check updates 385/937 episodes, total num timesteps 1235200/3000000, FPS 12021.
+
+average episode rewards is -11.58316358923912
+
+ Scenario simple_reference Algo ippo Exp check updates 390/937 episodes, total num timesteps 1251200/3000000, FPS 12030.
+
+average episode rewards is -12.020406872034073
+
+ Scenario simple_reference Algo ippo Exp check updates 395/937 episodes, total num timesteps 1267200/3000000, FPS 12036.
+
+average episode rewards is -12.343727052211761
+
+ Scenario simple_reference Algo ippo Exp check updates 400/937 episodes, total num timesteps 1283200/3000000, FPS 12033.
+
+average episode rewards is -12.78613656759262
+
+ Scenario simple_reference Algo ippo Exp check updates 405/937 episodes, total num timesteps 1299200/3000000, FPS 12024.
+
+average episode rewards is -11.091049015522003
+
+ Scenario simple_reference Algo ippo Exp check updates 410/937 episodes, total num timesteps 1315200/3000000, FPS 12022.
+
+average episode rewards is -12.03453242778778
+
+ Scenario simple_reference Algo ippo Exp check updates 415/937 episodes, total num timesteps 1331200/3000000, FPS 12027.
+
+average episode rewards is -10.452909767627716
+
+ Scenario simple_reference Algo ippo Exp check updates 420/937 episodes, total num timesteps 1347200/3000000, FPS 12022.
+
+average episode rewards is -10.210777074098587
+
+ Scenario simple_reference Algo ippo Exp check updates 425/937 episodes, total num timesteps 1363200/3000000, FPS 12014.
+
+average episode rewards is -12.195359915494919
+
+ Scenario simple_reference Algo ippo Exp check updates 430/937 episodes, total num timesteps 1379200/3000000, FPS 12016.
+
+average episode rewards is -12.841035425662994
+
+ Scenario simple_reference Algo ippo Exp check updates 435/937 episodes, total num timesteps 1395200/3000000, FPS 12019.
+
+average episode rewards is -11.18924543261528
+
+ Scenario simple_reference Algo ippo Exp check updates 440/937 episodes, total num timesteps 1411200/3000000, FPS 12024.
+
+average episode rewards is -11.185526102781296
+
+ Scenario simple_reference Algo ippo Exp check updates 445/937 episodes, total num timesteps 1427200/3000000, FPS 12022.
+
+average episode rewards is -11.201725155115128
+
+ Scenario simple_reference Algo ippo Exp check updates 450/937 episodes, total num timesteps 1443200/3000000, FPS 12019.
+
+average episode rewards is -10.620645433664322
+
+ Scenario simple_reference Algo ippo Exp check updates 455/937 episodes, total num timesteps 1459200/3000000, FPS 12025.
+
+average episode rewards is -10.960333049297333
+
+ Scenario simple_reference Algo ippo Exp check updates 460/937 episodes, total num timesteps 1475200/3000000, FPS 12027.
+
+average episode rewards is -11.623074859380722
+
+ Scenario simple_reference Algo ippo Exp check updates 465/937 episodes, total num timesteps 1491200/3000000, FPS 12028.
+
+average episode rewards is -11.122283339500427
+
+ Scenario simple_reference Algo ippo Exp check updates 470/937 episodes, total num timesteps 1507200/3000000, FPS 12024.
+
+average episode rewards is -11.460147053003311
+
+ Scenario simple_reference Algo ippo Exp check updates 475/937 episodes, total num timesteps 1523200/3000000, FPS 12031.
+
+average episode rewards is -12.533105909824371
+
+ Scenario simple_reference Algo ippo Exp check updates 480/937 episodes, total num timesteps 1539200/3000000, FPS 12036.
+
+average episode rewards is -11.94879338145256
+
+ Scenario simple_reference Algo ippo Exp check updates 485/937 episodes, total num timesteps 1555200/3000000, FPS 12039.
+
+average episode rewards is -11.593630164861679
+
+ Scenario simple_reference Algo ippo Exp check updates 490/937 episodes, total num timesteps 1571200/3000000, FPS 12038.
+
+average episode rewards is -11.27251461148262
+
+ Scenario simple_reference Algo ippo Exp check updates 495/937 episodes, total num timesteps 1587200/3000000, FPS 12041.
+
+average episode rewards is -12.33518049120903
+
+ Scenario simple_reference Algo ippo Exp check updates 500/937 episodes, total num timesteps 1603200/3000000, FPS 12036.
+
+average episode rewards is -10.860910266637802
+
+ Scenario simple_reference Algo ippo Exp check updates 505/937 episodes, total num timesteps 1619200/3000000, FPS 12036.
+
+average episode rewards is -12.579010426998138
+
+ Scenario simple_reference Algo ippo Exp check updates 510/937 episodes, total num timesteps 1635200/3000000, FPS 12039.
+
+average episode rewards is -11.774837225675583
+
+ Scenario simple_reference Algo ippo Exp check updates 515/937 episodes, total num timesteps 1651200/3000000, FPS 12042.
+
+average episode rewards is -11.691814661026001
+
+ Scenario simple_reference Algo ippo Exp check updates 520/937 episodes, total num timesteps 1667200/3000000, FPS 12044.
+
+average episode rewards is -11.778094619512558
+
+ Scenario simple_reference Algo ippo Exp check updates 525/937 episodes, total num timesteps 1683200/3000000, FPS 12041.
+
+average episode rewards is -11.510532349348068
+
+ Scenario simple_reference Algo ippo Exp check updates 530/937 episodes, total num timesteps 1699200/3000000, FPS 12035.
+
+average episode rewards is -14.082901179790497
+
+ Scenario simple_reference Algo ippo Exp check updates 535/937 episodes, total num timesteps 1715200/3000000, FPS 12035.
+
+average episode rewards is -12.200698256492615
+
+ Scenario simple_reference Algo ippo Exp check updates 540/937 episodes, total num timesteps 1731200/3000000, FPS 12037.
+
+average episode rewards is -11.508676409721375
+
+ Scenario simple_reference Algo ippo Exp check updates 545/937 episodes, total num timesteps 1747200/3000000, FPS 12038.
+
+average episode rewards is -12.003900855779648
+
+ Scenario simple_reference Algo ippo Exp check updates 550/937 episodes, total num timesteps 1763200/3000000, FPS 12042.
+
+average episode rewards is -12.88537085056305
+
+ Scenario simple_reference Algo ippo Exp check updates 555/937 episodes, total num timesteps 1779200/3000000, FPS 12041.
+
+average episode rewards is -12.002995610237122
+
+ Scenario simple_reference Algo ippo Exp check updates 560/937 episodes, total num timesteps 1795200/3000000, FPS 12036.
+
+average episode rewards is -12.463966012001038
+
+ Scenario simple_reference Algo ippo Exp check updates 565/937 episodes, total num timesteps 1811200/3000000, FPS 12035.
+
+average episode rewards is -12.386148422956467
+
+ Scenario simple_reference Algo ippo Exp check updates 570/937 episodes, total num timesteps 1827200/3000000, FPS 12031.
+
+average episode rewards is -11.358066648244858
+
+ Scenario simple_reference Algo ippo Exp check updates 575/937 episodes, total num timesteps 1843200/3000000, FPS 12033.
+
+average episode rewards is -11.651472747325897
+
+ Scenario simple_reference Algo ippo Exp check updates 580/937 episodes, total num timesteps 1859200/3000000, FPS 12038.
+
+average episode rewards is -12.321912497282028
+
+ Scenario simple_reference Algo ippo Exp check updates 585/937 episodes, total num timesteps 1875200/3000000, FPS 12043.
+
+average episode rewards is -12.18787357211113
+
+ Scenario simple_reference Algo ippo Exp check updates 590/937 episodes, total num timesteps 1891200/3000000, FPS 12047.
+
+average episode rewards is -11.542103439569473
+
+ Scenario simple_reference Algo ippo Exp check updates 595/937 episodes, total num timesteps 1907200/3000000, FPS 12048.
+
+average episode rewards is -11.69481948018074
+
+ Scenario simple_reference Algo ippo Exp check updates 600/937 episodes, total num timesteps 1923200/3000000, FPS 12047.
+
+average episode rewards is -11.684508621692657
+
+ Scenario simple_reference Algo ippo Exp check updates 605/937 episodes, total num timesteps 1939200/3000000, FPS 12051.
+
+average episode rewards is -12.361283600330353
+
+ Scenario simple_reference Algo ippo Exp check updates 610/937 episodes, total num timesteps 1955200/3000000, FPS 12051.
+
+average episode rewards is -11.298905313014984
+
+ Scenario simple_reference Algo ippo Exp check updates 615/937 episodes, total num timesteps 1971200/3000000, FPS 12053.
+
+average episode rewards is -11.047861725091934
+
+ Scenario simple_reference Algo ippo Exp check updates 620/937 episodes, total num timesteps 1987200/3000000, FPS 12055.
+
+average episode rewards is -12.507793307304382
+
+ Scenario simple_reference Algo ippo Exp check updates 625/937 episodes, total num timesteps 2003200/3000000, FPS 12055.
+
+average episode rewards is -11.547044664621353
+
+ Scenario simple_reference Algo ippo Exp check updates 630/937 episodes, total num timesteps 2019200/3000000, FPS 12051.
+
+average episode rewards is -12.016834318637848
+
+ Scenario simple_reference Algo ippo Exp check updates 635/937 episodes, total num timesteps 2035200/3000000, FPS 12055.
+
+average episode rewards is -11.795201152563095
+
+ Scenario simple_reference Algo ippo Exp check updates 640/937 episodes, total num timesteps 2051200/3000000, FPS 12059.
+
+average episode rewards is -11.583635956048965
+
+ Scenario simple_reference Algo ippo Exp check updates 645/937 episodes, total num timesteps 2067200/3000000, FPS 12064.
+
+average episode rewards is -11.90110519528389
+
+ Scenario simple_reference Algo ippo Exp check updates 650/937 episodes, total num timesteps 2083200/3000000, FPS 12061.
+
+average episode rewards is -12.541717290878296
+
+ Scenario simple_reference Algo ippo Exp check updates 655/937 episodes, total num timesteps 2099200/3000000, FPS 12063.
+
+average episode rewards is -11.632424592971802
+
+ Scenario simple_reference Algo ippo Exp check updates 660/937 episodes, total num timesteps 2115200/3000000, FPS 12067.
+
+average episode rewards is -11.582861840724945
+
+ Scenario simple_reference Algo ippo Exp check updates 665/937 episodes, total num timesteps 2131200/3000000, FPS 12067.
+
+average episode rewards is -11.646433174610138
+
+ Scenario simple_reference Algo ippo Exp check updates 670/937 episodes, total num timesteps 2147200/3000000, FPS 12066.
+
+average episode rewards is -12.110695242881775
+
+ Scenario simple_reference Algo ippo Exp check updates 675/937 episodes, total num timesteps 2163200/3000000, FPS 12068.
+
+average episode rewards is -10.780373215675354
+
+ Scenario simple_reference Algo ippo Exp check updates 680/937 episodes, total num timesteps 2179200/3000000, FPS 12065.
+
+average episode rewards is -13.008584082126617
+
+ Scenario simple_reference Algo ippo Exp check updates 685/937 episodes, total num timesteps 2195200/3000000, FPS 12066.
+
+average episode rewards is -11.18159368634224
+
+ Scenario simple_reference Algo ippo Exp check updates 690/937 episodes, total num timesteps 2211200/3000000, FPS 12069.
+
+average episode rewards is -11.730320006608963
+
+ Scenario simple_reference Algo ippo Exp check updates 695/937 episodes, total num timesteps 2227200/3000000, FPS 12074.
+
+average episode rewards is -10.94580963253975
+
+ Scenario simple_reference Algo ippo Exp check updates 700/937 episodes, total num timesteps 2243200/3000000, FPS 12079.
+
+average episode rewards is -12.85264939069748
+
+ Scenario simple_reference Algo ippo Exp check updates 705/937 episodes, total num timesteps 2259200/3000000, FPS 12079.
+
+average episode rewards is -12.122058868408203
+
+ Scenario simple_reference Algo ippo Exp check updates 710/937 episodes, total num timesteps 2275200/3000000, FPS 12081.
+
+average episode rewards is -12.307961285114288
+
+ Scenario simple_reference Algo ippo Exp check updates 715/937 episodes, total num timesteps 2291200/3000000, FPS 12080.
+
+average episode rewards is -11.543934047222137
+
+ Scenario simple_reference Algo ippo Exp check updates 720/937 episodes, total num timesteps 2307200/3000000, FPS 12079.
+
+average episode rewards is -12.959246337413788
+
+ Scenario simple_reference Algo ippo Exp check updates 725/937 episodes, total num timesteps 2323200/3000000, FPS 12075.
+
+average episode rewards is -12.163015455007553
+
+ Scenario simple_reference Algo ippo Exp check updates 730/937 episodes, total num timesteps 2339200/3000000, FPS 12074.
+
+average episode rewards is -11.305566877126694
+
+ Scenario simple_reference Algo ippo Exp check updates 735/937 episodes, total num timesteps 2355200/3000000, FPS 12075.
+
+average episode rewards is -12.081930786371231
+
+ Scenario simple_reference Algo ippo Exp check updates 740/937 episodes, total num timesteps 2371200/3000000, FPS 12080.
+
+average episode rewards is -11.041372269392014
+
+ Scenario simple_reference Algo ippo Exp check updates 745/937 episodes, total num timesteps 2387200/3000000, FPS 12078.
+
+average episode rewards is -10.93464195728302
+
+ Scenario simple_reference Algo ippo Exp check updates 750/937 episodes, total num timesteps 2403200/3000000, FPS 12080.
+
+average episode rewards is -10.516542196273804
+
+ Scenario simple_reference Algo ippo Exp check updates 755/937 episodes, total num timesteps 2419200/3000000, FPS 12081.
+
+average episode rewards is -11.955635249614716
+
+ Scenario simple_reference Algo ippo Exp check updates 760/937 episodes, total num timesteps 2435200/3000000, FPS 12082.
+
+average episode rewards is -12.33251541852951
+
+ Scenario simple_reference Algo ippo Exp check updates 765/937 episodes, total num timesteps 2451200/3000000, FPS 12079.
+
+average episode rewards is -12.19346970319748
+
+ Scenario simple_reference Algo ippo Exp check updates 770/937 episodes, total num timesteps 2467200/3000000, FPS 12077.
+
+average episode rewards is -11.280649155378342
+
+ Scenario simple_reference Algo ippo Exp check updates 775/937 episodes, total num timesteps 2483200/3000000, FPS 12078.
+
+average episode rewards is -11.210836470127106
+
+ Scenario simple_reference Algo ippo Exp check updates 780/937 episodes, total num timesteps 2499200/3000000, FPS 12076.
+
+average episode rewards is -11.326034367084503
+
+ Scenario simple_reference Algo ippo Exp check updates 785/937 episodes, total num timesteps 2515200/3000000, FPS 12079.
+
+average episode rewards is -12.202568352222443
+
+ Scenario simple_reference Algo ippo Exp check updates 790/937 episodes, total num timesteps 2531200/3000000, FPS 12081.
+
+average episode rewards is -11.664377897977829
+
+ Scenario simple_reference Algo ippo Exp check updates 795/937 episodes, total num timesteps 2547200/3000000, FPS 12081.
+
+average episode rewards is -11.225444078445435
+
+ Scenario simple_reference Algo ippo Exp check updates 800/937 episodes, total num timesteps 2563200/3000000, FPS 12082.
+
+average episode rewards is -10.336259752511978
+
+ Scenario simple_reference Algo ippo Exp check updates 805/937 episodes, total num timesteps 2579200/3000000, FPS 12078.
+
+average episode rewards is -10.76168417930603
+
+ Scenario simple_reference Algo ippo Exp check updates 810/937 episodes, total num timesteps 2595200/3000000, FPS 12075.
+
+average episode rewards is -10.992931574583054
+
+ Scenario simple_reference Algo ippo Exp check updates 815/937 episodes, total num timesteps 2611200/3000000, FPS 12075.
+
+average episode rewards is -11.347771435976028
+
+ Scenario simple_reference Algo ippo Exp check updates 820/937 episodes, total num timesteps 2627200/3000000, FPS 12074.
+
+average episode rewards is -11.104954034090042
+
+ Scenario simple_reference Algo ippo Exp check updates 825/937 episodes, total num timesteps 2643200/3000000, FPS 12073.
+
+average episode rewards is -11.512794345617294
+
+ Scenario simple_reference Algo ippo Exp check updates 830/937 episodes, total num timesteps 2659200/3000000, FPS 12073.
+
+average episode rewards is -11.97039783000946
+
+ Scenario simple_reference Algo ippo Exp check updates 835/937 episodes, total num timesteps 2675200/3000000, FPS 12073.
+
+average episode rewards is -10.686452686786652
+
+ Scenario simple_reference Algo ippo Exp check updates 840/937 episodes, total num timesteps 2691200/3000000, FPS 12074.
+
+average episode rewards is -10.551974922418594
+
+ Scenario simple_reference Algo ippo Exp check updates 845/937 episodes, total num timesteps 2707200/3000000, FPS 12071.
+
+average episode rewards is -10.760989785194397
+
+ Scenario simple_reference Algo ippo Exp check updates 850/937 episodes, total num timesteps 2723200/3000000, FPS 12074.
+
+average episode rewards is -10.494071245193481
+
+ Scenario simple_reference Algo ippo Exp check updates 855/937 episodes, total num timesteps 2739200/3000000, FPS 12074.
+
+average episode rewards is -12.20467984676361
+
+ Scenario simple_reference Algo ippo Exp check updates 860/937 episodes, total num timesteps 2755200/3000000, FPS 12073.
+
+average episode rewards is -10.596595704555511
+
+ Scenario simple_reference Algo ippo Exp check updates 865/937 episodes, total num timesteps 2771200/3000000, FPS 12076.
+
+average episode rewards is -11.802789568901062
+
+ Scenario simple_reference Algo ippo Exp check updates 870/937 episodes, total num timesteps 2787200/3000000, FPS 12075.
+
+average episode rewards is -11.063843965530396
+
+ Scenario simple_reference Algo ippo Exp check updates 875/937 episodes, total num timesteps 2803200/3000000, FPS 12073.
+
+average episode rewards is -10.936744511127472
+
+ Scenario simple_reference Algo ippo Exp check updates 880/937 episodes, total num timesteps 2819200/3000000, FPS 12075.
+
+average episode rewards is -11.06618344783783
+
+ Scenario simple_reference Algo ippo Exp check updates 885/937 episodes, total num timesteps 2835200/3000000, FPS 12074.
+
+average episode rewards is -12.131289392709732
+
+ Scenario simple_reference Algo ippo Exp check updates 890/937 episodes, total num timesteps 2851200/3000000, FPS 12077.
+
+average episode rewards is -11.571106314659119
+
+ Scenario simple_reference Algo ippo Exp check updates 895/937 episodes, total num timesteps 2867200/3000000, FPS 12079.
+
+average episode rewards is -11.59946620464325
+
+ Scenario simple_reference Algo ippo Exp check updates 900/937 episodes, total num timesteps 2883200/3000000, FPS 12072.
+
+average episode rewards is -11.589403450489044
+
+ Scenario simple_reference Algo ippo Exp check updates 905/937 episodes, total num timesteps 2899200/3000000, FPS 12073.
+
+average episode rewards is -12.70117312669754
+
+ Scenario simple_reference Algo ippo Exp check updates 910/937 episodes, total num timesteps 2915200/3000000, FPS 12074.
+
+average episode rewards is -12.068084627389908
+
+ Scenario simple_reference Algo ippo Exp check updates 915/937 episodes, total num timesteps 2931200/3000000, FPS 12073.
+
+average episode rewards is -11.148708313703537
+
+ Scenario simple_reference Algo ippo Exp check updates 920/937 episodes, total num timesteps 2947200/3000000, FPS 12077.
+
+average episode rewards is -11.358825862407684
+
+ Scenario simple_reference Algo ippo Exp check updates 925/937 episodes, total num timesteps 2963200/3000000, FPS 12075.
+
+average episode rewards is -12.81319409608841
+
+ Scenario simple_reference Algo ippo Exp check updates 930/937 episodes, total num timesteps 2979200/3000000, FPS 12073.
+
+average episode rewards is -11.399544775485992
+
+ Scenario simple_reference Algo ippo Exp check updates 935/937 episodes, total num timesteps 2995200/3000000, FPS 12074.
+
+average episode rewards is -11.144093424081802

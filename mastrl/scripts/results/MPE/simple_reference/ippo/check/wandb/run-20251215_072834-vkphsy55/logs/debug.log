@@ -1,0 +1,29 @@
+2025-12-15 07:28:34,082 INFO    MainThread:3201309 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_setup.py:_flush():67] Configure stats pid to 3201309
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_setup.py:_flush():67] Loading settings from /home/workspace/zyd/.config/wandb/settings
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_setup.py:_flush():67] Loading settings from /home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train_mpe_scripts/wandb/settings
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/MPE/simple_reference/ippo/check/wandb/run-20251215_072834-vkphsy55/logs/debug.log
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/MPE/simple_reference/ippo/check/wandb/run-20251215_072834-vkphsy55/logs/debug-internal.log
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_init.py:init():761] calling init triggers
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'algorithm_name': 'ippo', 'experiment_name': 'check', 'seed': 1, 'cuda': True, 'cuda_deterministic': True, 'n_training_threads': 1, 'n_rollout_threads': 128, 'n_eval_rollout_threads': 1, 'n_render_rollout_threads': 1, 'num_env_steps': 3000000, 'user_name': 'yuding-zh-uestc', 'use_wandb': True, 'env_name': 'MPE', 'use_obs_instead_of_state': False, 'episode_length': 25, 'share_policy': True, 'use_centralized_V': False, 'stacked_frames': 1, 'use_stacked_frames': False, 'hidden_size': 64, 'layer_N': 1, 'use_ReLU': True, 'use_popart': False, 'use_valuenorm': True, 'use_feature_normalization': True, 'use_orthogonal': True, 'gain': 0.01, 'use_naive_recurrent_policy': False, 'use_recurrent_policy': True, 'recurrent_N': 1, 'data_chunk_length': 10, 'lr': 0.0007, 'critic_lr': 0.0007, 'opti_eps': 1e-05, 'weight_decay': 0, 'kl_threshold': 0.01, 'ls_step': 10, 'accept_ratio': 0.5, 'ppo_epoch': 15, 'use_clipped_value_loss': True, 'clip_param': 0.2, 'num_mini_batch': 1, 'entropy_coef': 0.01, 'value_loss_coef': 1, 'use_max_grad_norm': True, 'max_grad_norm': 10.0, 'use_gae': True, 'gamma': 0.99, 'gae_lambda': 0.95, 'use_proper_time_limits': False, 'use_huber_loss': True, 'use_value_active_masks': True, 'use_policy_active_masks': True, 'huber_delta': 10.0, 'use_linear_lr_decay': False, 'save_interval': 1, 'log_interval': 5, 'use_eval': False, 'eval_interval': 25, 'eval_episodes': 32, 'save_gifs': False, 'use_render': False, 'render_episodes': 5, 'ifi': 0.1, 'model_dir': None, 'encode_state': False, 'n_block': 1, 'n_embd': 64, 'n_head': 1, 'dec_actor': False, 'share_actor': False, 'train_maps': None, 'eval_maps': None, 'scenario_name': 'simple_reference', 'num_landmarks': 3, 'num_agents': 2, '_wandb': {}}
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_init.py:init():784] starting backend
+2025-12-15 07:28:34,083 INFO    MainThread:3201309 [wandb_init.py:init():788] sending inform_init request
+2025-12-15 07:28:34,097 INFO    MainThread:3201309 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-12-15 07:28:34,097 INFO    MainThread:3201309 [wandb_init.py:init():798] backend started and connected
+2025-12-15 07:28:34,098 INFO    MainThread:3201309 [wandb_init.py:init():891] updated telemetry
+2025-12-15 07:28:34,106 INFO    MainThread:3201309 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-12-15 07:28:34,895 INFO    MainThread:3201309 [wandb_init.py:init():990] starting run threads in backend
+2025-12-15 07:28:34,937 INFO    MainThread:3201309 [wandb_run.py:_console_start():2375] atexit reg
+2025-12-15 07:28:34,938 INFO    MainThread:3201309 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-12-15 07:28:34,938 INFO    MainThread:3201309 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-12-15 07:28:34,938 INFO    MainThread:3201309 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-12-15 07:28:34,939 INFO    MainThread:3201309 [wandb_init.py:init():1032] run started, returning control to user process
+2025-12-15 07:32:48,824 INFO    MainThread:3201309 [wandb_run.py:_finish():2112] finishing run yuding-zh-uestc/MPE/vkphsy55
+2025-12-15 07:32:48,824 INFO    MainThread:3201309 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2025-12-15 07:32:48,824 INFO    MainThread:3201309 [wandb_run.py:_restore():2322] restore
+2025-12-15 07:32:48,824 INFO    MainThread:3201309 [wandb_run.py:_restore():2328] restore done
+2025-12-15 07:32:51,900 INFO    MainThread:3201309 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-12-15 07:32:51,902 INFO    MainThread:3201309 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-12-15 07:32:51,902 INFO    MainThread:3201309 [wandb_run.py:_footer_sync_info():3917] logging synced files

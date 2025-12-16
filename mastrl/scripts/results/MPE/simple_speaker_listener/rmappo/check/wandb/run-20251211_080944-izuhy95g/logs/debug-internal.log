@@ -1,0 +1,16 @@
+{"time":"2025-12-11T08:09:44.06373039Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/MPE/simple_speaker_listener/rmappo/check/wandb/run-20251211_080944-izuhy95g/logs/debug-core.log"}
+{"time":"2025-12-11T08:09:44.166020593Z","level":"INFO","msg":"created new stream","id":"izuhy95g"}
+{"time":"2025-12-11T08:09:44.166041334Z","level":"INFO","msg":"stream: started","id":"izuhy95g"}
+{"time":"2025-12-11T08:09:44.166121361Z","level":"INFO","msg":"writer: Do: started","stream_id":"izuhy95g"}
+{"time":"2025-12-11T08:09:44.166185129Z","level":"INFO","msg":"handler: started","stream_id":"izuhy95g"}
+{"time":"2025-12-11T08:09:44.166211234Z","level":"INFO","msg":"sender: started","stream_id":"izuhy95g"}
+{"time":"2025-12-11T08:09:44.75883378Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-12-11T08:45:40.234633589Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-12-11T08:45:40.234978949Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-12-11T08:45:41.195677348Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.153847691},{"desc":"uploading wandb-summary.json","runtime_seconds":0.153843931}],"total_operations":2}}
+{"time":"2025-12-11T08:45:42.303023488Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-11T08:45:42.988733154Z","level":"INFO","msg":"stream: closing","id":"izuhy95g"}
+{"time":"2025-12-11T08:45:42.988739263Z","level":"INFO","msg":"handler: closed","stream_id":"izuhy95g"}
+{"time":"2025-12-11T08:45:42.988742259Z","level":"INFO","msg":"writer: Close: closed","stream_id":"izuhy95g"}
+{"time":"2025-12-11T08:45:42.988765324Z","level":"INFO","msg":"sender: closed","stream_id":"izuhy95g"}
+{"time":"2025-12-11T08:45:42.988767418Z","level":"INFO","msg":"stream: closed","id":"izuhy95g"}
