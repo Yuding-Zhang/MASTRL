@@ -1,7 +1,0 @@
-{"time":"2026-02-02T12:32:39.176207131Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/MPE/simple_reference/sthvmappo/debug/wandb/run-20260202_123239-2bg7sjjk/logs/debug-core.log"}
-{"time":"2026-02-02T12:32:39.279564473Z","level":"INFO","msg":"created new stream","id":"2bg7sjjk"}
-{"time":"2026-02-02T12:32:39.27960478Z","level":"INFO","msg":"stream: started","id":"2bg7sjjk"}
-{"time":"2026-02-02T12:32:39.279790295Z","level":"INFO","msg":"writer: Do: started","stream_id":"2bg7sjjk"}
-{"time":"2026-02-02T12:32:39.279834192Z","level":"INFO","msg":"handler: started","stream_id":"2bg7sjjk"}
-{"time":"2026-02-02T12:32:39.279969213Z","level":"INFO","msg":"sender: started","stream_id":"2bg7sjjk"}
-{"time":"2026-02-02T12:32:39.901800598Z","level":"INFO","msg":"Starting system monitor"}

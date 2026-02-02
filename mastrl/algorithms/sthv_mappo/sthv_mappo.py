@@ -1,3 +1,4 @@
+import copy
 import numpy as np
 import torch
 import torch.nn as nn
@@ -31,6 +32,7 @@ class STHV_MAPPO():
         self.entropy_coef = args.entropy_coef
         self.max_grad_norm = args.max_grad_norm
         self.huber_delta = args.huber_delta
+        self.gamma = args.gamma
 
         self._use_recurrent_policy = args.use_recurrent_policy
         self._use_naive_recurrent = args.use_naive_recurrent_policy
@@ -50,6 +52,7 @@ class STHV_MAPPO():
         self.hyperedge_k = int(getattr(args, "hyperedge_k", 3))
         self.max_group_size = int(getattr(args, "max_group_size", 6))
         self.hvd_loss_coef = float(getattr(args, "hvd_loss_coef", 1.0))
+        self.hvd_target_tau = float(getattr(args, "hvd_target_tau", 0.005))
                 
         assert (self._use_popart and self._use_valuenorm) == False, ("popart and valuenorm cannot both be True")
         if self._use_popart:
@@ -58,6 +61,22 @@ class STHV_MAPPO():
             self.value_normalizer = ValueNorm(1, device=self.device)
         else:
             self.value_normalizer = None
+
+        self.target_actor = copy.deepcopy(self.policy.actor)
+        self.target_hvd_critic = copy.deepcopy(self.policy.hvd_critic)
+        self._freeze_target(self.target_actor)
+        self._freeze_target(self.target_hvd_critic)
+
+    def _freeze_target(self, module):
+        module.eval()
+        for p in module.parameters():
+            p.requires_grad = False
+
+    def _soft_update(self, target, source, tau):
+        with torch.no_grad():
+            for target_param, param in zip(target.parameters(), source.parameters()):
+                target_param.data.mul_(1.0 - tau)
+                target_param.data.add_(tau * param.data)
 
     def cal_value_loss(self, values, value_preds_batch, return_batch, active_masks_batch):
         """
@@ -98,8 +117,22 @@ class STHV_MAPPO():
 
     def _actions_to_onehot(self, actions_batch):
         # actions_batch can be discrete indices shaped [B,1] or [B] for each agent
+        actions_batch = check(actions_batch).to(**self.tpdv)
         act_space = self.policy.act_space
-        if hasattr(act_space, "n"):
+        space_name = act_space.__class__.__name__
+        if space_name == "MultiDiscrete":
+            actions = actions_batch.long()
+            if actions.dim() == 1:
+                actions = actions.view(-1, 1)
+            nvec = (act_space.high - act_space.low + 1).astype(np.int64)
+            onehots = []
+            for i, n_i in enumerate(nvec):
+                a_i = actions[:, i] - int(act_space.low[i])
+                oh_i = torch.zeros(actions.size(0), int(n_i), device=actions.device)
+                oh_i.scatter_(1, a_i.unsqueeze(1), 1.0)
+                onehots.append(oh_i)
+            return torch.cat(onehots, dim=-1)
+        if space_name == "Discrete" or hasattr(act_space, "n"):
             n = int(act_space.n)
             a = actions_batch.long().view(-1)
             oh = torch.zeros(a.size(0), n, device=a.device)
@@ -188,8 +221,7 @@ class STHV_MAPPO():
 
             # HVD current Q uses STORED z_t (rollout embedding)
             z_old = check(z_batch).to(**self.tpdv)
-            a_oh = self._actions_to_onehot(actions_batch)
-            Q_tot, Q_i = self._discover_and_q(z_old, a_oh, n_agents, self.policy.hvd_critic)
+            Q_tot, Q_i = self._compute_hvd_q(z_old, actions_batch, n_agents)
 
             V_i = values.view(-1, n_agents, 1).squeeze(-1)
             A_i = w * (Q_i.detach() - V_i.detach())
@@ -206,8 +238,7 @@ class STHV_MAPPO():
 
                 with torch.no_grad():
                     actions_next, _, _, z_next, _ = self.target_actor(next_obs_t, next_rnn_t, next_masks_t, None, deterministic=False)
-                    a_next_oh = self._actions_to_onehot(actions_next)
-                    Q_tot_next, _ = self._discover_and_q(z_next, a_next_oh, n_agents, self.target_hvd_critic)
+                    Q_tot_next, _ = self._compute_hvd_q(z_next, actions_next, n_agents)
 
                     mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
                     y = r_tot + self.gamma * mask_next * Q_tot_next
@@ -291,11 +322,19 @@ class STHV_MAPPO():
         return train_info
 
     def prep_training(self):
+        if hasattr(self.policy.actor, "rnn"):
+            self.policy.actor.rnn.flatten_parameters()
+        if hasattr(self.target_actor, "rnn"):
+            self.target_actor.rnn.flatten_parameters()
         self.policy.actor.train()
         self.policy.critic.train()
         self.policy.hvd_critic.train()
 
     def prep_rollout(self):
+        if hasattr(self.policy.actor, "rnn"):
+            self.policy.actor.rnn.flatten_parameters()
+        if hasattr(self.target_actor, "rnn"):
+            self.target_actor.rnn.flatten_parameters()
         self.policy.actor.eval()
         self.policy.critic.eval()
         self.policy.hvd_critic.eval()

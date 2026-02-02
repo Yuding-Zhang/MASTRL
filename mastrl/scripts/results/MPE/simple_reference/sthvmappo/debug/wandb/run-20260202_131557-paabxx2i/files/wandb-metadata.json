@@ -1,12 +1,12 @@
 {
   "os": "Linux-6.8.0-85-generic-x86_64-with-glibc2.17",
   "python": "CPython 3.8.20",
-  "startedAt": "2026-02-02T11:43:57.731393Z",
+  "startedAt": "2026-02-02T13:15:57.688700Z",
   "program": "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py",
   "codePath": "mastrl/scripts/train/train_mpe.py",
   "git": {
     "remote": "https://github.com/Yuding-Zhang/MASTRL.git",
-    "commit": "4e188ab7711c1ab427cd3bce1cbfa2ed35d590bf"
+    "commit": "856842ae0dc672220dd0d6e25498763805063936"
   },
   "email": "steven_yuding@163.com",
   "root": "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/MPE/simple_reference/sthvmappo/debug",
@@ -20,7 +20,7 @@
   "disk": {
     "/": {
       "total": "980126228480",
-      "used": "909882437632"
+      "used": "909938573312"
     }
   },
   "memory": {
