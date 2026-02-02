@@ -51,10 +51,12 @@ class STHV_MAPPOPolicy:
 
     def get_actions(self, cent_obs, obs, rnn_states_actor, rnn_states_critic, masks, available_actions=None, deterministic=False):
         # actor: (actions, logp, rnn, z, credit_logits)
-        actions, action_log_probs, rnn_states_actor, z, credit_logits = self.actor(obs, rnn_states_actor, masks, available_actions, deterministic)
+        actions, action_log_probs, rnn_states_actor, z, credit_logits = self.actor(
+            obs, rnn_states_actor, masks, available_actions, deterministic
+        )
         # baseline critic
         values, rnn_states_critic = self.critic(cent_obs, rnn_states_critic, masks)
-        return values, actions, action_log_probs, rnn_states_actor, rnn_states_critic, credit_logits
+        return values, actions, action_log_probs, rnn_states_actor, rnn_states_critic, z, credit_logits
 
     def get_values(self, cent_obs, rnn_states_critic, masks):
         values, _ = self.critic(cent_obs, rnn_states_critic, masks)

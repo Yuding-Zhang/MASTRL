@@ -80,6 +80,7 @@ def main(args):
         print("u are choosing to use sthvmappo, we set use_hgvd and use_stca to be True")
         all_args.use_hgvd = True
         all_args.use_stca = True
+        all_args.share_policy = True  # sthvmappo must use shared policy
     else:
         raise NotImplementedError
 
@@ -175,7 +176,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    # main(sys.argv[1:])
     args = [
         "--env_name", "MPE",
         "--scenario_name", "simple_reference",

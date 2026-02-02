@@ -32,7 +32,6 @@ rmappo algorithm
 
 sthvmappo algorithm
 - [ ] sthvmappo in mpe
-    - [ ] simple_speaker_listener
     - [ ] simple_reference
     - [ ] simple_spread
 - [ ] sthvmappo in football
