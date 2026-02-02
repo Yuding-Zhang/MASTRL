@@ -101,17 +101,25 @@ class MPERunner(Runner):
     @torch.no_grad()
     def collect(self, step):
         self.trainer.prep_rollout()
-        value, action, action_log_prob, rnn_states, rnn_states_critic \
-            = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
-                            np.concatenate(self.buffer.obs[step]),
-                            np.concatenate(self.buffer.rnn_states[step]),
-                            np.concatenate(self.buffer.rnn_states_critic[step]),
-                            np.concatenate(self.buffer.masks[step]))
-        # [self.envs, agents, dim]
-        values = np.array(np.split(_t2n(value), self.n_rollout_threads))
         if self.algorithm_name == "sthvmappo":
+            value, action, action_log_prob, rnn_states, rnn_states_critic, z, credit_logits \
+                = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
+                                np.concatenate(self.buffer.obs[step]),
+                                np.concatenate(self.buffer.rnn_states[step]),
+                                np.concatenate(self.buffer.rnn_states_critic[step]),
+                                np.concatenate(self.buffer.masks[step]))
             zs = np.array(np.split(_t2n(z), self.n_rollout_threads))
             credit_logits = np.array(np.split(_t2n(credit_logits), self.n_rollout_threads))
+        
+        else:
+            value, action, action_log_prob, rnn_states, rnn_states_critic \
+                = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
+                                np.concatenate(self.buffer.obs[step]),
+                                np.concatenate(self.buffer.rnn_states[step]),
+                                np.concatenate(self.buffer.rnn_states_critic[step]),
+                                np.concatenate(self.buffer.masks[step]))
+        # [self.envs, agents, dim]
+        values = np.array(np.split(_t2n(value), self.n_rollout_threads))
         actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
         action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
         rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
