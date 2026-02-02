@@ -66,6 +66,9 @@ class Runner(object):
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
             from mastrl.algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
             from mastrl.algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
+        elif self.algorithm_name == "sthvmappo":
+            from mastrl.algorithms.sthv_mappo.sthv_mappo import STHV_MAPPO as TrainAlgo
+            from mastrl.algorithms.sthv_mappo.algorithm.sthvMAPPOPolicy import STHV_MAPPOPolicy as Policy    
         else:
             from mastrl.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
             from mastrl.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy

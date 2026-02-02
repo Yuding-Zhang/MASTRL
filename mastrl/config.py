@@ -158,7 +158,7 @@ def get_config():
 
     # prepare parameters
     parser.add_argument("--algorithm_name", type=str,
-                        default='mappo', choices=["rmappo", "mappo", "happo", "hatrpo", "mat", "mat_dec","ippo"])
+                        default='mappo', choices=["sthvmappo","rmappo", "mappo", "happo", "hatrpo", "mat", "mat_dec","ippo"])
 
     parser.add_argument("--experiment_name", type=str, default="check", help="an identifier to distinguish different experiment.")
     parser.add_argument("--seed", type=int, default=1, help="Random seed for numpy/torch")
@@ -303,5 +303,53 @@ def get_config():
     # add for online multi-task
     parser.add_argument("--train_maps", type=str, nargs='+', default=None)
     parser.add_argument("--eval_maps", type=str, nargs='+', default=None)
-    
+
+    # ===============================
+    # Spatio-Temporal MARL Extensions
+    # ===============================
+    # 后续改为ban掉适合消融实验
+    parser.add_argument("--use_hgvd", action="store_true", default=False,
+                        help="Enable Hypergraph-based Group Value Decomposition (HGVD).")
+
+    parser.add_argument("--use_stca", action="store_true", default=False,
+                        help="Enable Spatio-Temporal Credit Assignment (STCA).")
+
+
+    # ---- HGVD: Hypergraph Value Decomposition ----
+
+    parser.add_argument("--hgvd_max_groups", type=int, default=0,
+                        help="Maximum number of hypergraph groups. "
+                            "0 means equal to number of agents.")
+
+    parser.add_argument("--hgvd_temperature", type=float, default=1.0,
+                        help="Soft assignment temperature for hypergraph grouping.")
+
+    parser.add_argument("--hgvd_eps", type=float, default=1e-6,
+                        help="Numerical stability epsilon for HGVD normalization.")
+
+    parser.add_argument("--hgvd_detach_assignment", action="store_true", default=True,
+                        help="Detach group assignment matrix during backprop to stabilize critic.")
+
+
+    # ---- STCA: Spatio-Temporal Credit Assignment ----
+
+    parser.add_argument("--stca_detach_credit", action="store_true", default=True,
+                        help="Detach credit assignment weights from policy gradient "
+                            "to avoid destabilizing actor updates.")
+
+    parser.add_argument("--stca_use_temporal_smooth", action="store_true", default=False,
+                        help="Apply temporal smoothness regularization on credit assignment.")
+
+    parser.add_argument("--stca_temporal_smooth_coef", type=float, default=0.1,
+                        help="Coefficient for temporal smoothness regularization in STCA.")
+
+    parser.add_argument("--stca_sparse_coef", type=float, default=0.0,
+                        help="L1/entropy regularization coefficient for sparse credit assignment.")
+
+    # ---- Credit-Value Consistency ----
+
+    parser.add_argument("--enforce_credit_conservation", action="store_true", default=True,
+                        help="Enforce credit conservation: sum of agent credits "
+                            "equals global/group advantage.")
+
     return parser

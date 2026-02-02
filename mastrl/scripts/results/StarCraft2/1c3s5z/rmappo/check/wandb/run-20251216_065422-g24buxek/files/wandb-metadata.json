@@ -1,0 +1,73 @@
+{
+  "os": "Linux-6.8.0-85-generic-x86_64-with-glibc2.17",
+  "python": "CPython 3.8.20",
+  "startedAt": "2025-12-16T06:54:22.984217Z",
+  "args": [
+    "--env_name",
+    "StarCraft2",
+    "--algorithm_name",
+    "rmappo",
+    "--experiment_name",
+    "check",
+    "--map_name",
+    "1c3s5z",
+    "--seed",
+    "1",
+    "--n_training_threads",
+    "1",
+    "--n_rollout_threads",
+    "8",
+    "--num_mini_batch",
+    "1",
+    "--episode_length",
+    "400",
+    "--num_env_steps",
+    "10000000",
+    "--ppo_epoch",
+    "15",
+    "--use_value_active_masks",
+    "--use_eval",
+    "--eval_episodes",
+    "32",
+    "--wandb_name",
+    "yuding-zh-uestc",
+    "--user_name",
+    "yuding-zh-uestc"
+  ],
+  "program": "../train/train_smac.py",
+  "codePath": "mastrl/scripts/train/train_smac.py",
+  "git": {
+    "remote": "https://github.com/Yuding-Zhang/MASTRL.git",
+    "commit": "7b02ab683a17847ed9fb362e0eec9d75b535590a"
+  },
+  "email": "steven_yuding@163.com",
+  "root": "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/1c3s5z/rmappo/check",
+  "host": "deeplearning4090",
+  "executable": "/home/workspace/zyd/miniconda3/envs/marl/bin/python",
+  "cpu_count": 24,
+  "cpu_count_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "980126228480",
+      "used": "782773608448"
+    }
+  },
+  "memory": {
+    "total": "134770753536"
+  },
+  "cpu": {
+    "count": 24,
+    "countLogical": 32
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "51527024640",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.6"
+}

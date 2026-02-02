@@ -1,0 +1,17 @@
+{"time":"2026-01-05T03:23:50.680657464Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/2c_vs_64zg/rmappo/check/wandb/run-20260105_032350-pa4ggtmw/logs/debug-core.log"}
+{"time":"2026-01-05T03:23:50.784188446Z","level":"INFO","msg":"created new stream","id":"pa4ggtmw"}
+{"time":"2026-01-05T03:23:50.784230421Z","level":"INFO","msg":"stream: started","id":"pa4ggtmw"}
+{"time":"2026-01-05T03:23:50.784266984Z","level":"INFO","msg":"writer: Do: started","stream_id":"pa4ggtmw"}
+{"time":"2026-01-05T03:23:50.78443349Z","level":"INFO","msg":"sender: started","stream_id":"pa4ggtmw"}
+{"time":"2026-01-05T03:23:50.784504775Z","level":"INFO","msg":"handler: started","stream_id":"pa4ggtmw"}
+{"time":"2026-01-05T03:23:51.387606114Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-01-05T06:01:32.225385546Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/yuding-zh-uestc/StarCraft2/pa4ggtmw/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: read udp 127.0.0.1:39150->127.0.0.53:53: i/o timeout"}
+{"time":"2026-01-05T09:57:56.579042262Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-01-05T09:57:56.580430923Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-01-05T09:57:57.544612397Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.305527522,"progress":"502B/502B"},{"desc":"uploading output.log","runtime_seconds":0.305504973,"progress":"64.0KB/95.4KB"}],"total_operations":2}}
+{"time":"2026-01-05T09:57:58.548309637Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-01-05T09:57:59.075942118Z","level":"INFO","msg":"stream: closing","id":"pa4ggtmw"}
+{"time":"2026-01-05T09:57:59.075964572Z","level":"INFO","msg":"handler: closed","stream_id":"pa4ggtmw"}
+{"time":"2026-01-05T09:57:59.075975833Z","level":"INFO","msg":"writer: Close: closed","stream_id":"pa4ggtmw"}
+{"time":"2026-01-05T09:57:59.075992471Z","level":"INFO","msg":"sender: closed","stream_id":"pa4ggtmw"}
+{"time":"2026-01-05T09:57:59.076059954Z","level":"INFO","msg":"stream: closed","id":"pa4ggtmw"}
