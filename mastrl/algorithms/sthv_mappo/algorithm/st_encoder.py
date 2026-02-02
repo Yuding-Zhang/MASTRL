@@ -1,3 +1,5 @@
+from typing import Optional
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -15,7 +17,7 @@ class SpatialSelfAttention(nn.Module):
         )
         self.ln2 = nn.LayerNorm(d_model)
 
-    def forward(self, x: torch.Tensor, key_padding_mask: torch.Tensor | None = None):
+    def forward(self, x: torch.Tensor, key_padding_mask: Optional[torch.Tensor] = None):
         # x: [B, N, D]
         h, _ = self.mha(x, x, x, key_padding_mask=key_padding_mask, need_weights=False)
         x = self.ln1(x + h)
@@ -35,7 +37,7 @@ class TemporalSelfAttention(nn.Module):
         )
         self.ln2 = nn.LayerNorm(d_model)
 
-    def forward(self, x: torch.Tensor, causal: bool = True, key_padding_mask: torch.Tensor | None = None):
+    def forward(self, x: torch.Tensor, causal: bool = True, key_padding_mask: Optional[torch.Tensor] = None):
         # x: [B, T, D]
         attn_mask = None
         if causal:
@@ -63,7 +65,7 @@ class STEncoder(nn.Module):
         self.fuse = nn.Sequential(nn.Linear(d_model, d_model), nn.ReLU())
         self.credit_head = nn.Linear(d_model, 1)
 
-    def forward(self, x: torch.Tensor, agent_key_padding_mask: torch.Tensor | None = None):
+    def forward(self, x: torch.Tensor, agent_key_padding_mask: Optional[torch.Tensor] = None):
         """Forward.
 
         If self.use_temporal == False:
