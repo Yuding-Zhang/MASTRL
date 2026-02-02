@@ -312,43 +312,41 @@ def get_config():
 
     parser.add_argument("--use_stca", action="store_true", default=False,
                         help="Enable Spatio-Temporal Credit Assignment (STCA).")
+    
+    parser.add_argument("--credit_temperature", type=float, default=1.0,
+                        help="Softmax temperature for credit assignment weights in STCA.")
+    
+    parser.add_argument("--credit_detach", action="store_false", default=True,
+                        help="Detach credit assignment weights from critic loss backpropagation.")
 
 
     # ---- HGVD: Hypergraph Value Decomposition ----
 
-    parser.add_argument("--hgvd_max_groups", type=int, default=0,
-                        help="Maximum number of hypergraph groups. "
-                            "0 means equal to number of agents.")
+    parser.add_argument("--hyperedge_k", type=int, default=3,
+                        help="Number of neighbors (k) for kNN hyperedge construction in HGVD.")
 
-    parser.add_argument("--hgvd_temperature", type=float, default=1.0,
-                        help="Soft assignment temperature for hypergraph grouping.")
+    parser.add_argument("--max_group_size", type=int, default=6,
+                        help="Maximum group size for hypergraph grouping.")
 
-    parser.add_argument("--hgvd_eps", type=float, default=1e-6,
-                        help="Numerical stability epsilon for HGVD normalization.")
+    parser.add_argument("--hvd_loss_coef", type=float, default=1.0,
+                        help="Coefficient for the HGVD loss term.")
 
-    parser.add_argument("--hgvd_detach_assignment", action="store_true", default=True,
-                        help="Detach group assignment matrix during backprop to stabilize critic.")
+    parser.add_argument("--hvd_hidden_size", type=int, default=128,
+                        help="Hidden layer size for the HGVD critic network.")
 
 
     # ---- STCA: Spatio-Temporal Credit Assignment ----
 
-    parser.add_argument("--stca_detach_credit", action="store_true", default=True,
-                        help="Detach credit assignment weights from policy gradient "
-                            "to avoid destabilizing actor updates.")
+    parser.add_argument("--st_use_temporal", action="store_true", default=False,
+                        help="Use temporal credit assignment in STCA.")
 
-    parser.add_argument("--stca_use_temporal_smooth", action="store_true", default=False,
-                        help="Apply temporal smoothness regularization on credit assignment.")
+    parser.add_argument("--st_n_heads_s", type=int, default=4,
+                        help="Number of attention heads for spatial credit assignment in STCA.")
+    
+    parser.add_argument("--st_n_heads_t", type=int, default=4,
+                        help="Number of attention heads for temporal credit assignment in STCA.")
 
-    parser.add_argument("--stca_temporal_smooth_coef", type=float, default=0.1,
-                        help="Coefficient for temporal smoothness regularization in STCA.")
-
-    parser.add_argument("--stca_sparse_coef", type=float, default=0.0,
-                        help="L1/entropy regularization coefficient for sparse credit assignment.")
-
-    # ---- Credit-Value Consistency ----
-
-    parser.add_argument("--enforce_credit_conservation", action="store_true", default=True,
-                        help="Enforce credit conservation: sum of agent credits "
-                            "equals global/group advantage.")
+    parser.add_argument("--st_dropout", type=float, default=0.0,
+                        help="Dropout rate for the attention mechanisms in STCA.")
 
     return parser

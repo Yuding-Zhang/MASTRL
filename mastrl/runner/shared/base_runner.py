@@ -84,6 +84,7 @@ class Runner(object):
             self.policy = Policy(self.all_args, self.envs.observation_space[0], share_observation_space, self.envs.action_space[0], self.num_agents, device = self.device)
         else:
             self.policy = Policy(self.all_args, self.envs.observation_space[0], share_observation_space, self.envs.action_space[0], device = self.device)
+            self.policy.num_agents = self.num_agents
 
         if self.model_dir is not None:
             self.restore(self.model_dir)

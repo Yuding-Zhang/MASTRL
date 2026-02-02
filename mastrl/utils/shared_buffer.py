@@ -78,6 +78,15 @@ class SharedReplayBuffer(object):
             (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
         self.action_log_probs = np.zeros(
             (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
+
+        # --- STCA/HVD additions (old-policy aligned) ---
+        # credit logits per agent at each timestep (for STCA softmax weights)
+        self.credit_logits = np.zeros(
+            (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
+        # agent embedding z_i^t at each timestep (for HVD Q(s_t,a_t) using rollout embeddings)
+        self.z = np.zeros(
+            (self.episode_length, self.n_rollout_threads, num_agents, self.hidden_size), dtype=np.float32)
+
         self.rewards = np.zeros(
             (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
 
@@ -88,7 +97,8 @@ class SharedReplayBuffer(object):
         self.step = 0
 
     def insert(self, share_obs, obs, rnn_states_actor, rnn_states_critic, actions, action_log_probs,
-               value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None):
+               value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None,
+               z=None, credit_logits=None):
         """
         Insert data into the buffer.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -110,6 +120,12 @@ class SharedReplayBuffer(object):
         self.rnn_states_critic[self.step + 1] = rnn_states_critic.copy()
         self.actions[self.step] = actions.copy()
         self.action_log_probs[self.step] = action_log_probs.copy()
+
+        if z is not None:
+            self.z[self.step] = z.copy()
+        if credit_logits is not None:
+            self.credit_logits[self.step] = credit_logits.copy()
+
         self.value_preds[self.step] = value_preds.copy()
         self.rewards[self.step] = rewards.copy()
         self.masks[self.step + 1] = masks.copy()
@@ -123,7 +139,8 @@ class SharedReplayBuffer(object):
         self.step = (self.step + 1) % self.episode_length
 
     def chooseinsert(self, share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs,
-                     value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None):
+                     value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None,
+                     z=None, credit_logits=None):
         """
         Insert data into the buffer. This insert function is used specifically for Hanabi, which is turn based.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -145,6 +162,12 @@ class SharedReplayBuffer(object):
         self.rnn_states_critic[self.step + 1] = rnn_states_critic.copy()
         self.actions[self.step] = actions.copy()
         self.action_log_probs[self.step] = action_log_probs.copy()
+
+        if z is not None:
+            self.z[self.step] = z.copy()
+        if credit_logits is not None:
+            self.credit_logits[self.step] = credit_logits.copy()
+
         self.value_preds[self.step] = value_preds.copy()
         self.rewards[self.step] = rewards.copy()
         self.masks[self.step + 1] = masks.copy()
@@ -309,6 +332,16 @@ class SharedReplayBuffer(object):
         active_masks = active_masks[rows, cols]
         action_log_probs = self.action_log_probs.reshape(-1, *self.action_log_probs.shape[2:])
         action_log_probs = action_log_probs[rows, cols]
+        credit_logits = self.credit_logits.reshape(-1, *self.credit_logits.shape[2:])
+        credit_logits = credit_logits[rows, cols]
+        z = self.z.reshape(-1, *self.z.shape[2:])
+        z = z[rows, cols]
+        next_obs = self.obs[1:].reshape(-1, *self.obs.shape[2:])
+        next_obs = next_obs[rows, cols]
+        next_rnn_states = self.rnn_states[1:].reshape(-1, *self.rnn_states.shape[2:])
+        next_rnn_states = next_rnn_states[rows, cols]
+        next_masks = self.masks[1:].reshape(-1, *self.masks.shape[2:])
+        next_masks = next_masks[rows, cols]
         advantages = advantages.reshape(-1, *advantages.shape[2:])
         advantages = advantages[rows, cols]
 
@@ -328,14 +361,19 @@ class SharedReplayBuffer(object):
             masks_batch = masks[indices].reshape(-1, *masks.shape[2:])
             active_masks_batch = active_masks[indices].reshape(-1, *active_masks.shape[2:])
             old_action_log_probs_batch = action_log_probs[indices].reshape(-1, *action_log_probs.shape[2:])
+            old_credit_logits_batch = credit_logits[indices].reshape(-1, *credit_logits.shape[2:])
+            z_batch = z[indices].reshape(-1, *z.shape[2:])
+            next_obs_batch = next_obs[indices].reshape(-1, *next_obs.shape[2:])
+            next_rnn_states_batch = next_rnn_states[indices].reshape(-1, *next_rnn_states.shape[2:])
+            next_masks_batch = next_masks[indices].reshape(-1, *next_masks.shape[2:])
             if advantages is None:
                 adv_targ = None
             else:
                 adv_targ = advantages[indices].reshape(-1, *advantages.shape[2:])
 
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-                  adv_targ, available_actions_batch
+                  value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
+                  adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
 
     def feed_forward_generator(self, advantages, num_mini_batch=None, mini_batch_size=None):
         """
@@ -396,7 +434,7 @@ class SharedReplayBuffer(object):
                 adv_targ = advantages[indices]
 
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                  value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
                   adv_targ, available_actions_batch
 
     def naive_recurrent_generator(self, advantages, num_mini_batch):
@@ -426,6 +464,11 @@ class SharedReplayBuffer(object):
         masks = self.masks.reshape(-1, batch_size, 1)
         active_masks = self.active_masks.reshape(-1, batch_size, 1)
         action_log_probs = self.action_log_probs.reshape(-1, batch_size, self.action_log_probs.shape[-1])
+        credit_logits = self.credit_logits.reshape(-1, batch_size, 1)
+        z = self.z.reshape(-1, batch_size, self.hidden_size)
+        next_obs = self.obs[1:].reshape(-1, batch_size, *self.obs.shape[3:])
+        next_rnn_states = self.rnn_states[1:].reshape(-1, batch_size, *self.rnn_states.shape[3:])
+        next_masks = self.masks[1:].reshape(-1, batch_size, 1)
         advantages = advantages.reshape(-1, batch_size, 1)
 
         for start_ind in range(0, batch_size, num_envs_per_batch):
@@ -437,9 +480,15 @@ class SharedReplayBuffer(object):
             available_actions_batch = []
             value_preds_batch = []
             return_batch = []
+            rewards_batch = []
             masks_batch = []
             active_masks_batch = []
             old_action_log_probs_batch = []
+            old_credit_logits_batch = []
+            z_batch = []
+            next_obs_batch = []
+            next_rnn_states_batch = []
+            next_masks_batch = []
             adv_targ = []
 
             for offset in range(num_envs_per_batch):
@@ -456,6 +505,11 @@ class SharedReplayBuffer(object):
                 masks_batch.append(masks[:-1, ind])
                 active_masks_batch.append(active_masks[:-1, ind])
                 old_action_log_probs_batch.append(action_log_probs[:, ind])
+                old_credit_logits_batch.append(credit_logits[:, ind])
+                z_batch.append(z[:, ind])
+                next_obs_batch.append(next_obs[:, ind])
+                next_rnn_states_batch.append(next_rnn_states[0:1, ind])
+                next_masks_batch.append(next_masks[:-1, ind])
                 adv_targ.append(advantages[:, ind])
 
             # [N[T, dim]]
@@ -468,9 +522,15 @@ class SharedReplayBuffer(object):
                 available_actions_batch = np.stack(available_actions_batch, 1)
             value_preds_batch = np.stack(value_preds_batch, 1)
             return_batch = np.stack(return_batch, 1)
+            rewards_batch = np.stack(rewards_batch, 1)
             masks_batch = np.stack(masks_batch, 1)
             active_masks_batch = np.stack(active_masks_batch, 1)
             old_action_log_probs_batch = np.stack(old_action_log_probs_batch, 1)
+            old_credit_logits_batch = np.stack(old_credit_logits_batch, 1)
+            z_batch = np.stack(z_batch, 1)
+            next_obs_batch = np.stack(next_obs_batch, 1)
+            next_rnn_states_batch = np.stack(next_rnn_states_batch, 1)
+            next_masks_batch = np.stack(next_masks_batch, 1)
             adv_targ = np.stack(adv_targ, 1)
 
             # States is just a (N, dim) from_numpy [N[1,dim]]
@@ -493,7 +553,7 @@ class SharedReplayBuffer(object):
             adv_targ = _flatten(T, N, adv_targ)
 
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                  value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
                   adv_targ, available_actions_batch
 
     def recurrent_generator(self, advantages, num_mini_batch, data_chunk_length):
@@ -520,9 +580,19 @@ class SharedReplayBuffer(object):
 
         actions = _cast(self.actions)
         action_log_probs = _cast(self.action_log_probs)
+        credit_logits = _cast(self.credit_logits)
+        z = _cast(self.z)
+        # next-step tensors aligned with obs[:-1]
+        if len(self.obs.shape) > 4:
+            next_obs = self.obs[1:].transpose(1, 2, 0, 3, 4, 5).reshape(-1, *self.obs.shape[3:])
+        else:
+            next_obs = _cast(self.obs[1:])
+        next_rnn_states = self.rnn_states[1:].transpose(1, 2, 0, 3, 4).reshape(-1, *self.rnn_states.shape[3:])
+        next_masks = _cast(self.masks[1:])
         advantages = _cast(advantages)
         value_preds = _cast(self.value_preds[:-1])
         returns = _cast(self.returns[:-1])
+        rewards = _cast(self.rewards)
         masks = _cast(self.masks[:-1])
         active_masks = _cast(self.active_masks[:-1])
         # rnn_states = _cast(self.rnn_states[:-1])
@@ -544,9 +614,15 @@ class SharedReplayBuffer(object):
             available_actions_batch = []
             value_preds_batch = []
             return_batch = []
+            rewards_batch = []
             masks_batch = []
             active_masks_batch = []
             old_action_log_probs_batch = []
+            old_credit_logits_batch = []
+            z_batch = []
+            next_obs_batch = []
+            next_rnn_states_batch = []
+            next_masks_batch = []
             adv_targ = []
 
             for index in indices:
@@ -560,9 +636,15 @@ class SharedReplayBuffer(object):
                     available_actions_batch.append(available_actions[ind:ind + data_chunk_length])
                 value_preds_batch.append(value_preds[ind:ind + data_chunk_length])
                 return_batch.append(returns[ind:ind + data_chunk_length])
+                rewards_batch.append(rewards[ind:ind + data_chunk_length])
                 masks_batch.append(masks[ind:ind + data_chunk_length])
                 active_masks_batch.append(active_masks[ind:ind + data_chunk_length])
                 old_action_log_probs_batch.append(action_log_probs[ind:ind + data_chunk_length])
+                old_credit_logits_batch.append(credit_logits[ind:ind + data_chunk_length])
+                z_batch.append(z[ind:ind + data_chunk_length])
+                next_obs_batch.append(next_obs[ind:ind + data_chunk_length])
+                next_rnn_states_batch.append(next_rnn_states[ind:ind + data_chunk_length])
+                next_masks_batch.append(next_masks[ind:ind + data_chunk_length])
                 adv_targ.append(advantages[ind:ind + data_chunk_length])
                 # size [T+1 N M Dim]-->[T N M Dim]-->[N M T Dim]-->[N*M*T,Dim]-->[1,Dim]
                 rnn_states_batch.append(rnn_states[ind])
@@ -579,9 +661,15 @@ class SharedReplayBuffer(object):
                 available_actions_batch = np.stack(available_actions_batch, axis=1)
             value_preds_batch = np.stack(value_preds_batch, axis=1)
             return_batch = np.stack(return_batch, axis=1)
+            rewards_batch = np.stack(rewards_batch, axis=1)
             masks_batch = np.stack(masks_batch, axis=1)
             active_masks_batch = np.stack(active_masks_batch, axis=1)
             old_action_log_probs_batch = np.stack(old_action_log_probs_batch, axis=1)
+            old_credit_logits_batch = np.stack(old_credit_logits_batch, axis=1)
+            z_batch = np.stack(z_batch, axis=1)
+            next_obs_batch = np.stack(next_obs_batch, axis=1)
+            next_rnn_states_batch = np.stack(next_rnn_states_batch, axis=1)
+            next_masks_batch = np.stack(next_masks_batch, axis=1)
             adv_targ = np.stack(adv_targ, axis=1)
 
             # States is just a (N, -1) from_numpy
@@ -604,5 +692,5 @@ class SharedReplayBuffer(object):
             adv_targ = _flatten(L, N, adv_targ)
 
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                  value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
                   adv_targ, available_actions_batch

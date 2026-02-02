@@ -103,6 +103,9 @@ class MPERunner(Runner):
                             np.concatenate(self.buffer.masks[step]))
         # [self.envs, agents, dim]
         values = np.array(np.split(_t2n(value), self.n_rollout_threads))
+        if self.algorithm_name == "sthvmappo":
+            zs = np.array(np.split(_t2n(z), self.n_rollout_threads))
+            credit_logits = np.array(np.split(_t2n(credit_logits), self.n_rollout_threads))
         actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
         action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
         rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
@@ -120,10 +123,15 @@ class MPERunner(Runner):
         else:
             raise NotImplementedError
 
+        if self.algorithm_name == "sthvmappo":
+            return values, actions, action_log_probs, rnn_states, rnn_states_critic, zs, credit_logits, actions_env
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env
 
     def insert(self, data):
-        obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
+        if self.algorithm_name == "sthvmappo":
+            obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, zs, credit_logits = data
+        else:
+            obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
 
         rnn_states[dones == True] = np.zeros(((dones == True).sum(), self.recurrent_N, self.hidden_size), dtype=np.float32)
         rnn_states_critic[dones == True] = np.zeros(((dones == True).sum(), *self.buffer.rnn_states_critic.shape[3:]), dtype=np.float32)
@@ -136,7 +144,10 @@ class MPERunner(Runner):
         else:
             share_obs = obs
 
-        self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs, values, rewards, masks)
+        if self.algorithm_name == "sthvmappo":
+            self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs, values, rewards, masks, z=zs, credit_logits=credit_logits)
+        else:
+            self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs, values, rewards, masks)
 
     @torch.no_grad()
     def eval(self, total_num_steps):

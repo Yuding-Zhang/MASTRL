@@ -6,6 +6,8 @@ from mastrl.utils.util import get_gard_norm, huber_loss, mse_loss
 from mastrl.utils.valuenorm import ValueNorm
 from mastrl.algorithms.utils.util import check
 
+from mastrl.algorithms.sthv_mappo.algorithm.hyperedge import discover_hyperedges_knn
+
 class STHV_MAPPO():
     """Trainer: MAPPO + (STCA advantage shaping) + (HVD critic loss).
 
@@ -136,11 +138,30 @@ class STHV_MAPPO():
         return Q_tot, Q_i
     
     def ppo_update(self, sample, update_actor=True):
-        # sample tuple shape follows original buffer generators
-        if len(sample) == 12:
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch = sample
+        """One PPO minibatch update (V3).
+
+        Expected sample tuple (feed-forward generator):
+            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
+            value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,
+            adv_targ, available_actions_batch,
+            old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
+
+        Older tuples are supported for baseline compatibility.
+        """
+        if len(sample) >= 18:
+            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
+            value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
+            adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch = sample[:18]
         else:
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch, _ = sample
+            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
+            value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
+            adv_targ, available_actions_batch = sample[:12]
+            rewards_batch = None
+            old_credit_logits_batch = None
+            z_batch = None
+            next_obs_batch = None
+            next_rnn_states_batch = None
+            next_masks_batch = None
 
         old_action_log_probs_batch = check(old_action_log_probs_batch).to(**self.tpdv)
         adv_targ = check(adv_targ).to(**self.tpdv)
@@ -148,45 +169,52 @@ class STHV_MAPPO():
         return_batch = check(return_batch).to(**self.tpdv)
         active_masks_batch = check(active_masks_batch).to(**self.tpdv)
 
-        # evaluate actions + get z and credit logits
-        values, action_log_probs, dist_entropy, z, credit_logits = self.policy.evaluate_actions(
+        values, action_log_probs, dist_entropy, z_new, credit_logits_new = self.policy.evaluate_actions(
             share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
             masks_batch, available_actions_batch, active_masks_batch
         )
 
-        # --- STCA advantage shaping (replace adv_targ) ---
-        if self.use_stca and self.use_hvd:
-            # infer number of agents from obs batch shape; in this codebase obs_batch is flattened [B*N, obs_dim]
-            # We infer n_agents from available_actions_batch if present or from active_masks (has shape [B*N,1])
-            # A robust way is to take args.num_agents, but args isn't accessible here; we infer from buffer's shapes.
-            # Heuristic: share_obs_batch and obs_batch are flattened by feed_forward_generator; it also returns rnn_states shaped [B*N, ...]
-            # We therefore require args.num_agents provided as policy attribute; if absent, fallback to 1.
-            n_agents = int(getattr(self.policy, "num_agents", 1))
-            if n_agents <= 1:
-                # can't do inter-agent hypergraph if unknown; fall back to original adv_targ
-                shaped_adv = adv_targ
-                hvd_loss = torch.zeros([], device=values.device)
-            else:
-                Q_tot, Q_i = self._compute_hvd_q(z, actions_batch, n_agents)
-                # baseline V_i: values is [B*N,1] -> [B,N]
-                V_i = values.view(-1, n_agents, 1).squeeze(-1)
-                # credit weights: credit_logits [B*N,1] -> [B,N]
-                c = credit_logits.view(-1, n_agents, 1).squeeze(-1) / max(self.credit_temperature, 1e-6)
-                w = torch.softmax(c, dim=-1)
-                if self.credit_detach:
-                    w = w.detach()
-                # advantage per agent
-                A_i = w * (Q_i.detach() - V_i.detach())
-                shaped_adv = A_i.reshape(-1, 1)  # [B*N,1]
-                # HVD critic TD target: use return_batch (already returns-to-go for each agent) as a proxy for global
-                # Minimal: match Q_tot to mean return across agents (keeps scale stable).
-                ret = return_batch.view(-1, n_agents, 1).mean(dim=1)  # [B,1]
-                hvd_loss = (Q_tot - ret).pow(2).mean()
-        else:
-            shaped_adv = adv_targ
-            hvd_loss = torch.zeros([], device=values.device)
+        n_agents = int(getattr(self.policy, "num_agents", 1))
+        shaped_adv = adv_targ
+        hvd_loss = torch.zeros([], device=values.device)
 
-        # PPO actor update
+        if self.use_stca and self.use_hvd and (old_credit_logits_batch is not None) and (z_batch is not None) and n_agents > 1:
+            # STCA weights from OLD credit logits
+            c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)
+            c_old = c_old / max(self.credit_temperature, 1e-6)
+            w = torch.softmax(c_old, dim=-1)
+            if self.credit_detach:
+                w = w.detach()
+
+            # HVD current Q uses STORED z_t (rollout embedding)
+            z_old = check(z_batch).to(**self.tpdv)
+            a_oh = self._actions_to_onehot(actions_batch)
+            Q_tot, Q_i = self._discover_and_q(z_old, a_oh, n_agents, self.policy.hvd_critic)
+
+            V_i = values.view(-1, n_agents, 1).squeeze(-1)
+            A_i = w * (Q_i.detach() - V_i.detach())
+            shaped_adv = A_i.reshape(-1, 1)
+
+            # TRUE TD target: y = r_tot + gamma * mask_{t+1} * Q_tot_target(s_{t+1}, a_{t+1})
+            if (rewards_batch is not None) and (next_obs_batch is not None) and (next_rnn_states_batch is not None) and (next_masks_batch is not None):
+                rewards_t = check(rewards_batch).to(**self.tpdv)  # [B*N,1]
+                r_tot = rewards_t.view(-1, n_agents, 1).mean(dim=1)  # [B,1]
+
+                next_obs_t = check(next_obs_batch).to(**self.tpdv)
+                next_rnn_t = check(next_rnn_states_batch).to(**self.tpdv)
+                next_masks_t = check(next_masks_batch).to(**self.tpdv)
+
+                with torch.no_grad():
+                    actions_next, _, _, z_next, _ = self.target_actor(next_obs_t, next_rnn_t, next_masks_t, None, deterministic=False)
+                    a_next_oh = self._actions_to_onehot(actions_next)
+                    Q_tot_next, _ = self._discover_and_q(z_next, a_next_oh, n_agents, self.target_hvd_critic)
+
+                    mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
+                    y = r_tot + self.gamma * mask_next * Q_tot_next
+
+                hvd_loss = (Q_tot - y).pow(2).mean()
+
+        # PPO update
         imp_weights = torch.exp(action_log_probs - old_action_log_probs_batch)
         surr1 = imp_weights * shaped_adv
         surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * shaped_adv
@@ -196,11 +224,9 @@ class STHV_MAPPO():
         else:
             policy_action_loss = -torch.sum(torch.min(surr1, surr2), dim=-1, keepdim=True).mean()
 
-        policy_loss = policy_action_loss
-
         self.policy.actor_optimizer.zero_grad()
         if update_actor:
-            (policy_loss - dist_entropy * self.entropy_coef).backward()
+            (policy_action_loss - dist_entropy * self.entropy_coef).backward()
 
         if self._use_max_grad_norm:
             actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
@@ -208,7 +234,6 @@ class STHV_MAPPO():
             actor_grad_norm = get_gard_norm(self.policy.actor.parameters())
         self.policy.actor_optimizer.step()
 
-        # baseline critic update
         value_loss = self.cal_value_loss(values, value_preds_batch, return_batch, active_masks_batch)
         self.policy.critic_optimizer.zero_grad()
         (value_loss * self.value_loss_coef).backward()
@@ -218,12 +243,14 @@ class STHV_MAPPO():
             critic_grad_norm = get_gard_norm(self.policy.critic.parameters())
         self.policy.critic_optimizer.step()
 
-        # HVD critic update
         self.policy.hvd_critic_optimizer.zero_grad()
         (hvd_loss * self.hvd_loss_coef).backward()
         self.policy.hvd_critic_optimizer.step()
 
-        return value_loss, critic_grad_norm, policy_loss, dist_entropy, actor_grad_norm, imp_weights, hvd_loss
+        self._soft_update(self.target_hvd_critic, self.policy.hvd_critic, self.hvd_target_tau)
+        self._soft_update(self.target_actor, self.policy.actor, self.hvd_target_tau)
+
+        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hvd_loss
 
     def train(self, buffer, update_actor=True):
         # compute standard advantages (baseline) to preserve normalization pipeline
