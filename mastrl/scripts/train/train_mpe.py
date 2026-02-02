@@ -77,8 +77,9 @@ def main(args):
         print("u are choosing to use ippo, we set use_centralized_V to be False")
         all_args.use_centralized_V = False
     elif all_args.algorithm_name == "sthvmappo":
-        print("u are choosing to use sthvmappo, we set use_hgvd to be True")
+        print("u are choosing to use sthvmappo, we set use_hgvd and use_stca to be True")
         all_args.use_hgvd = True
+        all_args.use_stca = True
     else:
         raise NotImplementedError
 
@@ -174,10 +175,10 @@ def main(args):
 
 
 if __name__ == "__main__":
-    # main(sys.argv[1:])
+    main(sys.argv[1:])
     args = [
         "--env_name", "MPE",
-        "--scenario_name", "simple_speaker_listener",
+        "--scenario_name", "simple_reference",
         "--num_landmarks", "3",
         "--num_agents", "2",
         "--algorithm_name", "sthvmappo",

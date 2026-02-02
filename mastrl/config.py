@@ -188,8 +188,8 @@ def get_config():
                         default=200, help="Max length for any episode")
 
     # network parameters
-    parser.add_argument("--share_policy", action='store_false',
-                        default=True, help='Whether agent share the same policy')
+    parser.add_argument("--share_policy", action='store_true',
+                        default=False, help='Whether agent share the same policy')
     parser.add_argument("--use_centralized_V", action='store_false',
                         default=True, help="Whether to use centralized V function")
     parser.add_argument("--stacked_frames", type=int, default=1,
