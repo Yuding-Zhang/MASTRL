@@ -322,19 +322,11 @@ class STHV_MAPPO():
         return train_info
 
     def prep_training(self):
-        if hasattr(self.policy.actor, "rnn"):
-            self.policy.actor.rnn.flatten_parameters()
-        if hasattr(self.target_actor, "rnn"):
-            self.target_actor.rnn.flatten_parameters()
         self.policy.actor.train()
         self.policy.critic.train()
         self.policy.hvd_critic.train()
 
     def prep_rollout(self):
-        if hasattr(self.policy.actor, "rnn"):
-            self.policy.actor.rnn.flatten_parameters()
-        if hasattr(self.target_actor, "rnn"):
-            self.target_actor.rnn.flatten_parameters()
         self.policy.actor.eval()
         self.policy.critic.eval()
         self.policy.hvd_critic.eval()
