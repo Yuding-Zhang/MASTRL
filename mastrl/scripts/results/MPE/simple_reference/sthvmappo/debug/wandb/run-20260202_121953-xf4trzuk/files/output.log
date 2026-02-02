@@ -1,0 +1,3 @@
+obs_space:  [Box(-inf, inf, (21,), float32), Box(-inf, inf, (21,), float32)]
+share_obs_space:  [Box(-inf, inf, (42,), float32), Box(-inf, inf, (42,), float32)]
+act_space:  [MultiDiscrete2, MultiDiscrete2]

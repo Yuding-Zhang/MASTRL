@@ -1,0 +1,19 @@
+obs_space:  [Box(-inf, inf, (21,), float32), Box(-inf, inf, (21,), float32)]
+share_obs_space:  [Box(-inf, inf, (42,), float32), Box(-inf, inf, (42,), float32)]
+act_space:  [MultiDiscrete2, MultiDiscrete2]
+Traceback (most recent call last):
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 203, in <module>
+    main(args)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 164, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/mpe_runner.py", line 46, in run
+    train_infos = self.train()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/base_runner.py", line 143, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 279, in train
+    value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hvd_loss = self.ppo_update(sample, update_actor)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 191, in ppo_update
+    a_oh = self._actions_to_onehot(actions_batch)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 104, in _actions_to_onehot
+    a = actions_batch.long().view(-1)
+AttributeError: 'numpy.ndarray' object has no attribute 'long'

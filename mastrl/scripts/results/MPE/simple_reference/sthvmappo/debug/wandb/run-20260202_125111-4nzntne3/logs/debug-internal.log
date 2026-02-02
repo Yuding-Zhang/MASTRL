@@ -1,0 +1,15 @@
+{"time":"2026-02-02T12:51:11.36978096Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/MPE/simple_reference/sthvmappo/debug/wandb/run-20260202_125111-4nzntne3/logs/debug-core.log"}
+{"time":"2026-02-02T12:51:11.473454453Z","level":"INFO","msg":"created new stream","id":"4nzntne3"}
+{"time":"2026-02-02T12:51:11.47353904Z","level":"INFO","msg":"stream: started","id":"4nzntne3"}
+{"time":"2026-02-02T12:51:11.473616761Z","level":"INFO","msg":"writer: Do: started","stream_id":"4nzntne3"}
+{"time":"2026-02-02T12:51:11.473734034Z","level":"INFO","msg":"handler: started","stream_id":"4nzntne3"}
+{"time":"2026-02-02T12:51:11.47398556Z","level":"INFO","msg":"sender: started","stream_id":"4nzntne3"}
+{"time":"2026-02-02T12:51:12.263192362Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-02T12:51:17.821680687Z","level":"INFO","msg":"stream: closing","id":"4nzntne3"}
+{"time":"2026-02-02T12:51:17.821711386Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-02T12:51:17.822704917Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-02T12:51:18.926785777Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-02T12:51:19.515844745Z","level":"INFO","msg":"handler: closed","stream_id":"4nzntne3"}
+{"time":"2026-02-02T12:51:19.515906288Z","level":"INFO","msg":"sender: closed","stream_id":"4nzntne3"}
+{"time":"2026-02-02T12:51:19.51589787Z","level":"INFO","msg":"writer: Close: closed","stream_id":"4nzntne3"}
+{"time":"2026-02-02T12:51:19.51603244Z","level":"INFO","msg":"stream: closed","id":"4nzntne3"}
