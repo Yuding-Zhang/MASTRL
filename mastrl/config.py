@@ -307,7 +307,6 @@ def get_config():
     # ===============================
     # Spatio-Temporal MARL Extensions
     # ===============================
-    # 后续改为ban掉适合消融实验
     parser.add_argument("--use_hgvd", action="store_true", default=False,
                         help="Enable Hypergraph-based Group Value Decomposition (HGVD).")
 

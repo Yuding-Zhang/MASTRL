@@ -3,7 +3,7 @@ env="MPE"
 scenario="simple_reference"
 num_landmarks=3
 num_agents=2
-algo="rmappo" #"mappo" "ippo"
+algo="rmappo" #"mappo" "ippo" "sthvmappo"
 exp="check"
 seed_max=1
 

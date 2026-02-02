@@ -1,31 +1,26 @@
 import numpy as np
 import torch
 import torch.nn as nn
+
 from mastrl.utils.util import get_gard_norm, huber_loss, mse_loss
 from mastrl.utils.valuenorm import ValueNorm
 from mastrl.algorithms.utils.util import check
 
 class STHV_MAPPO():
-    """
-    Trainer class for MAPPO to update policies.
-    :param args: (argparse.Namespace) arguments containing relevant model, policy, and env information.
-    :param policy: (R_MAPPO_Policy) policy to update.
-    :param device: (torch.device) specifies the device to run on (cpu/gpu).
-    Trainer class for MAPPO to update policies.
-    Extended with:
-      - HGVD (Hypergraph Value Decomposition) in critic (handled inside critic)
-      - STCA (Spatio-Temporal Credit Assignment): redistribute advantages using HGVD group assignment.
-    """
-    def __init__(self,
-                 args,
-                 policy,
-                 device=torch.device("cpu")):
+    """Trainer: MAPPO + (STCA advantage shaping) + (HVD critic loss).
 
+    Key design choice for *minimal integration*:
+      - We DO NOT change runner/buffer fields.
+      - We keep baseline critic and returns/GAE pipeline identical to R_MAPPO.
+      - We compute STCA advantages inside ppo_update using actor-produced credit_logits and
+        HVD-computed Q_i (built from embeddings + actions + discovered hyperedges).
+    """
+    def __init__(self, args, policy, device=torch.device("cpu")):
         self.device = device
         self.tpdv = dict(dtype=torch.float32, device=device)
         self.policy = policy
 
-        # PPO hyper-params
+        # PPO hyperparams (same as R_MAPPO)
         self.clip_param = args.clip_param
         self.ppo_epoch = args.ppo_epoch
         self.num_mini_batch = args.num_mini_batch
@@ -35,7 +30,6 @@ class STHV_MAPPO():
         self.max_grad_norm = args.max_grad_norm
         self.huber_delta = args.huber_delta
 
-        # switches
         self._use_recurrent_policy = args.use_recurrent_policy
         self._use_naive_recurrent = args.use_naive_recurrent_policy
         self._use_max_grad_norm = args.use_max_grad_norm
@@ -46,12 +40,16 @@ class STHV_MAPPO():
         self._use_value_active_masks = args.use_value_active_masks
         self._use_policy_active_masks = args.use_policy_active_masks
 
-        # STCA switches
-        self._use_stca = args.use_stca
-        self._stca_detach = args.stca_detach_credit
-        
-        assert (self._use_popart and self._use_valuenorm) == False, ("self._use_popart and self._use_valuenorm can not be set True simultaneously")
-        
+        # STCA/HVD hyperparams
+        self.use_stca = getattr(args, "use_stca", True)
+        self.credit_temperature = float(getattr(args, "credit_temperature", 1.0))
+        self.credit_detach = bool(getattr(args, "credit_detach", True))
+        self.use_hvd = getattr(args, "use_hvd", True)
+        self.hyperedge_k = int(getattr(args, "hyperedge_k", 3))
+        self.max_group_size = int(getattr(args, "max_group_size", 6))
+        self.hvd_loss_coef = float(getattr(args, "hvd_loss_coef", 1.0))
+                
+        assert (self._use_popart and self._use_valuenorm) == False, ("popart and valuenorm cannot both be True")
         if self._use_popart:
             self.value_normalizer = self.policy.critic.v_out
         elif self._use_valuenorm:
@@ -69,8 +67,7 @@ class STHV_MAPPO():
 
         :return value_loss: (torch.Tensor) value function loss.
         """
-        value_pred_clipped = value_preds_batch + (values - value_preds_batch).clamp(-self.clip_param,
-                                                                                        self.clip_param)
+        value_pred_clipped = value_preds_batch + (values - value_preds_batch).clamp(-self.clip_param, self.clip_param)
         if self._use_popart or self._use_valuenorm:
             self.value_normalizer.update(return_batch)
             error_clipped = self.value_normalizer.normalize(return_batch) - value_pred_clipped
@@ -92,79 +89,58 @@ class STHV_MAPPO():
             value_loss = value_loss_original
 
         if self._use_value_active_masks:
-            value_loss = (value_loss * active_masks_batch).sum() / (active_masks_batch.sum() + 1e-6)
+            value_loss = (value_loss * active_masks_batch).sum() / active_masks_batch.sum()
         else:
             value_loss = value_loss.mean()
-
         return value_loss
 
+    def _actions_to_onehot(self, actions_batch):
+        # actions_batch can be discrete indices shaped [B,1] or [B] for each agent
+        act_space = self.policy.act_space
+        if hasattr(act_space, "n"):
+            n = int(act_space.n)
+            a = actions_batch.long().view(-1)
+            oh = torch.zeros(a.size(0), n, device=a.device)
+            oh.scatter_(1, a.unsqueeze(1), 1.0)
+            return oh
+        # continuous or already vector
+        return actions_batch.float()
+    
 
-    @torch.no_grad()
-    def _compute_stca_advantages(self, buffer, advantages_np: np.ndarray) -> np.ndarray:
+    def _compute_hvd_q(self, z_batch, actions_batch, n_agents):
+        """Compute Q_tot and Q_i per sample.
+
+        z_batch: [B*N, D] flattened over agents
+        actions_batch: [B*N, ...] flattened over agents
+        Returns:
+            Q_tot: [B,1]
+            Q_i:   [B,N]
         """
-        STCA: redistribute agent advantages using HGVD soft group assignment from the current critic.
+        B = z_batch.size(0) // n_agents
+        D = z_batch.size(1)
+        z = z_batch.view(B, n_agents, D)
+        # actions -> one-hot or vector
+        a_flat = self._actions_to_onehot(actions_batch)
+        A = a_flat.size(-1)
+        a = a_flat.view(B, n_agents, A)
 
-        advantages_np: [T, n_threads, n_agents, 1]
-        returns: same shape, will return redistributed advantage of same shape.
-        """
-        # If critic is not HGVD-enabled, fallback to original advantages.
-        critic = self.policy.critic
-        if not getattr(critic, "_use_hgvd", False):
-            return advantages_np
-
-        T, n_threads, n_agents, _ = advantages_np.shape
-        # Flatten batch as in training: B_env = T * n_threads, BN = B_env * n_agents
-        share_obs = buffer.share_obs[:-1].reshape(T * n_threads * n_agents, -1)
-        rnn_states_critic = buffer.rnn_states_critic[:-1].reshape(T * n_threads * n_agents,
-                                                                  buffer.rnn_states_critic.shape[-2],
-                                                                  buffer.rnn_states_critic.shape[-1])
-        masks = buffer.masks[:-1].reshape(T * n_threads * n_agents, -1)
-
-        share_obs_t = check(share_obs).to(**self.tpdv)
-        rnn_states_critic_t = check(rnn_states_critic).to(**self.tpdv)
-        masks_t = check(masks).to(**self.tpdv)
-
-        # Get group assignment S: [B_env, N, G] and denom: [B_env, 1, G]
-        _, _, group_info = critic(share_obs_t, rnn_states_critic_t, masks_t, return_group_info=True)
-        S = group_info["S"]  # [B_env, N, G]
-        denom = group_info["denom"]  # [B_env,1,G]
-        if self._stca_detach:
-            S = S.detach()
-            denom = denom.detach()
-
-        # advantages: [B_env, N, 1]
-        A = torch.as_tensor(advantages_np.reshape(T * n_threads, n_agents, 1), device=self.device, dtype=torch.float32)
-
-        # group advantage: A_g = sum_i S_i,g * A_i  -> [B_env, G, 1]
-        A_g = torch.einsum("bng,bn1->bg1", S, A)
-
-        # redistribute to agents: A'_i = sum_g S_i,g * A_g / sum_j S_j,g
-        denom_g = denom.transpose(1, 2).clamp_min(1e-6)  # [B_env,G,1]
-        A_redist = torch.einsum("bng,bg1->bn1", S, A_g / denom_g)
-
-        return A_redist.cpu().numpy().reshape(T, n_threads, n_agents, 1)
-
+        Q_tot_list = []
+        Q_i_list = []
+        for b in range(B):
+            hyperedges = discover_hyperedges_knn(z[b], k=self.hyperedge_k, max_group_size=self.max_group_size)
+            q_tot, q_i = self.policy.hvd_critic(z[b], a[b], hyperedges)
+            Q_tot_list.append(q_tot)
+            Q_i_list.append(q_i.unsqueeze(0))
+        Q_tot = torch.stack(Q_tot_list, dim=0)  # [B,1]
+        Q_i = torch.cat(Q_i_list, dim=0)        # [B,N]
+        return Q_tot, Q_i
+    
     def ppo_update(self, sample, update_actor=True):
-        """
-        Update actor and critic networks.
-        :param sample: (Tuple) contains data batch with which to update networks.
-        :update_actor: (bool) whether to update actor network.
-
-        :return value_loss: (torch.Tensor) value function loss.
-        :return critic_grad_norm: (torch.Tensor) gradient norm from critic up9date.
-        ;return policy_loss: (torch.Tensor) actor(policy) loss value.
-        :return dist_entropy: (torch.Tensor) action entropies.
-        :return actor_grad_norm: (torch.Tensor) gradient norm from actor update.
-        :return imp_weights: (torch.Tensor) importance sampling weights.
-        """
+        # sample tuple shape follows original buffer generators
         if len(sample) == 12:
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-            value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-            adv_targ, available_actions_batch = sample
+            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch = sample
         else:
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-            value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-            adv_targ, available_actions_batch, _ = sample
+            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch, _ = sample
 
         old_action_log_probs_batch = check(old_action_log_probs_batch).to(**self.tpdv)
         adv_targ = check(adv_targ).to(**self.tpdv)
@@ -172,32 +148,57 @@ class STHV_MAPPO():
         return_batch = check(return_batch).to(**self.tpdv)
         active_masks_batch = check(active_masks_batch).to(**self.tpdv)
 
-        # Reshape to do in a single forward pass for all steps
-        values, action_log_probs, dist_entropy = self.policy.evaluate_actions(share_obs_batch,
-                                                                              obs_batch, 
-                                                                              rnn_states_batch, 
-                                                                              rnn_states_critic_batch, 
-                                                                              actions_batch, 
-                                                                              masks_batch, 
-                                                                              available_actions_batch,
-                                                                              active_masks_batch)
-        # actor update
-        imp_weights = torch.exp(action_log_probs - old_action_log_probs_batch)
+        # evaluate actions + get z and credit logits
+        values, action_log_probs, dist_entropy, z, credit_logits = self.policy.evaluate_actions(
+            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
+            masks_batch, available_actions_batch, active_masks_batch
+        )
 
-        surr1 = imp_weights * adv_targ
-        surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * adv_targ
+        # --- STCA advantage shaping (replace adv_targ) ---
+        if self.use_stca and self.use_hvd:
+            # infer number of agents from obs batch shape; in this codebase obs_batch is flattened [B*N, obs_dim]
+            # We infer n_agents from available_actions_batch if present or from active_masks (has shape [B*N,1])
+            # A robust way is to take args.num_agents, but args isn't accessible here; we infer from buffer's shapes.
+            # Heuristic: share_obs_batch and obs_batch are flattened by feed_forward_generator; it also returns rnn_states shaped [B*N, ...]
+            # We therefore require args.num_agents provided as policy attribute; if absent, fallback to 1.
+            n_agents = int(getattr(self.policy, "num_agents", 1))
+            if n_agents <= 1:
+                # can't do inter-agent hypergraph if unknown; fall back to original adv_targ
+                shaped_adv = adv_targ
+                hvd_loss = torch.zeros([], device=values.device)
+            else:
+                Q_tot, Q_i = self._compute_hvd_q(z, actions_batch, n_agents)
+                # baseline V_i: values is [B*N,1] -> [B,N]
+                V_i = values.view(-1, n_agents, 1).squeeze(-1)
+                # credit weights: credit_logits [B*N,1] -> [B,N]
+                c = credit_logits.view(-1, n_agents, 1).squeeze(-1) / max(self.credit_temperature, 1e-6)
+                w = torch.softmax(c, dim=-1)
+                if self.credit_detach:
+                    w = w.detach()
+                # advantage per agent
+                A_i = w * (Q_i.detach() - V_i.detach())
+                shaped_adv = A_i.reshape(-1, 1)  # [B*N,1]
+                # HVD critic TD target: use return_batch (already returns-to-go for each agent) as a proxy for global
+                # Minimal: match Q_tot to mean return across agents (keeps scale stable).
+                ret = return_batch.view(-1, n_agents, 1).mean(dim=1)  # [B,1]
+                hvd_loss = (Q_tot - ret).pow(2).mean()
+        else:
+            shaped_adv = adv_targ
+            hvd_loss = torch.zeros([], device=values.device)
+
+        # PPO actor update
+        imp_weights = torch.exp(action_log_probs - old_action_log_probs_batch)
+        surr1 = imp_weights * shaped_adv
+        surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * shaped_adv
 
         if self._use_policy_active_masks:
-            policy_action_loss = (-torch.sum(torch.min(surr1, surr2),
-                                             dim=-1,
-                                             keepdim=True) * active_masks_batch).sum() / active_masks_batch.sum()
+            policy_action_loss = (-torch.sum(torch.min(surr1, surr2), dim=-1, keepdim=True) * active_masks_batch).sum() / active_masks_batch.sum()
         else:
             policy_action_loss = -torch.sum(torch.min(surr1, surr2), dim=-1, keepdim=True).mean()
 
         policy_loss = policy_action_loss
 
         self.policy.actor_optimizer.zero_grad()
-
         if update_actor:
             (policy_loss - dist_entropy * self.entropy_coef).backward()
 
@@ -205,58 +206,39 @@ class STHV_MAPPO():
             actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
         else:
             actor_grad_norm = get_gard_norm(self.policy.actor.parameters())
-
         self.policy.actor_optimizer.step()
 
-        # critic update
+        # baseline critic update
         value_loss = self.cal_value_loss(values, value_preds_batch, return_batch, active_masks_batch)
-
         self.policy.critic_optimizer.zero_grad()
-
         (value_loss * self.value_loss_coef).backward()
-
         if self._use_max_grad_norm:
             critic_grad_norm = nn.utils.clip_grad_norm_(self.policy.critic.parameters(), self.max_grad_norm)
         else:
             critic_grad_norm = get_gard_norm(self.policy.critic.parameters())
-
         self.policy.critic_optimizer.step()
 
-        return value_loss, critic_grad_norm, policy_loss, dist_entropy, actor_grad_norm, imp_weights
+        # HVD critic update
+        self.policy.hvd_critic_optimizer.zero_grad()
+        (hvd_loss * self.hvd_loss_coef).backward()
+        self.policy.hvd_critic_optimizer.step()
+
+        return value_loss, critic_grad_norm, policy_loss, dist_entropy, actor_grad_norm, imp_weights, hvd_loss
 
     def train(self, buffer, update_actor=True):
-        """
-        Perform a training update using minibatch GD.
-        :param buffer: (SharedReplayBuffer) buffer containing training data.
-        :param update_actor: (bool) whether to update actor network.
-
-        :return train_info: (dict) contains information regarding training update (e.g. loss, grad norms, etc).
-        """
-        # compute raw advantages
+        # compute standard advantages (baseline) to preserve normalization pipeline
         if self._use_popart or self._use_valuenorm:
             advantages = buffer.returns[:-1] - self.value_normalizer.denormalize(buffer.value_preds[:-1])
         else:
             advantages = buffer.returns[:-1] - buffer.value_preds[:-1]
 
-        # STCA redistribution (algorithmic credit assignment)
-        if self._use_stca:
-            advantages = self._compute_stca_advantages(buffer, advantages)
-
-        # normalize advantages (mask dead agents)
         advantages_copy = advantages.copy()
         advantages_copy[buffer.active_masks[:-1] == 0.0] = np.nan
-        mean_advantages = np.nanmean(advantages_copy)
-        std_advantages = np.nanstd(advantages_copy)
-        advantages = (advantages - mean_advantages) / (std_advantages + 1e-5)
+        mean_adv = np.nanmean(advantages_copy)
+        std_adv = np.nanstd(advantages_copy)
+        advantages = (advantages - mean_adv) / (std_adv + 1e-5)
 
-        train_info = {
-            "value_loss": 0.0,
-            "policy_loss": 0.0,
-            "dist_entropy": 0.0,
-            "actor_grad_norm": 0.0,
-            "critic_grad_norm": 0.0,
-            "ratio": 0.0,
-        }
+        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hvd_loss']}
 
         for _ in range(self.ppo_epoch):
             if self._use_recurrent_policy:
@@ -267,25 +249,26 @@ class STHV_MAPPO():
                 data_generator = buffer.feed_forward_generator(advantages, self.num_mini_batch)
 
             for sample in data_generator:
-                value_loss, critic_grad_norm, policy_loss, dist_entropy, actor_grad_norm, imp_weights =                     self.ppo_update(sample, update_actor)
-
-                train_info["value_loss"] += float(value_loss.item())
-                train_info["policy_loss"] += float(policy_loss.item())
-                train_info["dist_entropy"] += float(dist_entropy.item())
-                train_info["actor_grad_norm"] += float(actor_grad_norm)
-                train_info["critic_grad_norm"] += float(critic_grad_norm)
-                train_info["ratio"] += float(imp_weights.mean().item())
+                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hvd_loss = self.ppo_update(sample, update_actor)
+                train_info['value_loss'] += value_loss.item()
+                train_info['policy_loss'] += policy_loss.item()
+                train_info['dist_entropy'] += dist_entropy.item()
+                train_info['actor_grad_norm'] += float(actor_gn)
+                train_info['critic_grad_norm'] += float(critic_gn)
+                train_info['ratio'] += imp_w.mean().item()
+                train_info['hvd_loss'] += hvd_loss.item()
 
         num_updates = self.ppo_epoch * self.num_mini_batch
         for k in train_info.keys():
-            train_info[k] /= max(num_updates, 1)
-
+            train_info[k] /= num_updates
         return train_info
 
     def prep_training(self):
         self.policy.actor.train()
         self.policy.critic.train()
+        self.policy.hvd_critic.train()
 
     def prep_rollout(self):
         self.policy.actor.eval()
         self.policy.critic.eval()
+        self.policy.hvd_critic.eval()

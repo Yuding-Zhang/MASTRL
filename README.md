@@ -29,3 +29,12 @@ rmappo algorithm
 - [ ] rmappo in football
 - [ ] rmappo in smac2
 - [ ] rmappo in hanabi
+
+sthvmappo algorithm
+- [ ] sthvmappo in mpe
+    - [ ] simple_speaker_listener
+    - [ ] simple_reference
+    - [ ] simple_spread
+- [ ] sthvmappo in football
+- [ ] sthvmappo in smac2
+- [ ] sthvmappo in hanabi
