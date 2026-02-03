@@ -15,5 +15,5 @@ do
     --scenario_name ${scenario} --num_agents ${num_agents} --num_landmarks ${num_landmarks} --seed ${seed} \
     --n_training_threads 1 --n_rollout_threads 128 --num_mini_batch 1 --episode_length 25 --num_env_steps 3000000 \
     --ppo_epoch 15 --gain 0.01 --lr 7e-4 --critic_lr 7e-4 --wandb_name "yuding-zh-uestc" --user_name "yuding-zh-uestc" --share_policy \
-    --use_hgvd --use_stca
+    --use_hgvd 
 done
