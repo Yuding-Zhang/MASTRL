@@ -99,8 +99,7 @@ class SharedReplayBuffer(object):
         self.step = 0
 
     def insert(self, share_obs, obs, rnn_states_actor, rnn_states_critic, actions, action_log_probs,
-               value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None,
-               z=None, credit_logits=None):
+               value_preds, rewards, masks,z,credit_logits, bad_masks=None, active_masks=None, available_actions=None):
         """
         Insert data into the buffer.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -115,6 +114,8 @@ class SharedReplayBuffer(object):
         :param bad_masks: (np.ndarray) action space for agents.
         :param active_masks: (np.ndarray) denotes whether an agent is active or dead in the env.
         :param available_actions: (np.ndarray) actions available to each agent. If None, all actions are available.
+        :param z: (np.ndarray) actor embedding z_t
+        :param credit_logits: (np.ndarray) credit logits for STCA
         """
         self.share_obs[self.step + 1] = share_obs.copy()
         self.obs[self.step + 1] = obs.copy()
@@ -460,7 +461,7 @@ class SharedReplayBuffer(object):
                         adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
                 
             else:
-                
+
                 yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
                     value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
                         adv_targ, available_actions_batch

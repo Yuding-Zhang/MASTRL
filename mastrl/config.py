@@ -340,6 +340,9 @@ def get_config():
 
     parser.add_argument("--hvd_loss_coef", type=float, default=1.0,
                         help="Coefficient for the HGVD loss term.")
+    
+    parser.add_argument("--hvd_target_tau", type=float, default=0.005,
+                        help="Target network update rate for the HGVD critic network.")
 
     parser.add_argument("--hvd_hidden_size", type=int, default=128,
                         help="Hidden layer size for the HGVD critic network.")

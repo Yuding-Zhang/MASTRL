@@ -48,7 +48,7 @@ class STHV_MAPPO():
         self.use_stca = args.use_stca
         self.credit_temperature = args.credit_temperature
         self.credit_detach = args.credit_detach
-        self.use_hvd = args.use_hvd
+        self.use_hgvd = args.use_hgvd
         self.hyperedge_k = args.hyperedge_k
         self.max_group_size = args.max_group_size
         self.hvd_loss_coef = args.hvd_loss_coef
@@ -259,7 +259,7 @@ class STHV_MAPPO():
         # ---------------------------
         # HVD: critic TD loss (independent of STCA)
         # ---------------------------
-        if self.use_hvd and (z_batch is not None) and (rewards_batch is not None) and (next_obs_batch is not None) and (next_rnn_states_batch is not None) and (next_masks_batch is not None) and n_agents > 1:
+        if self.use_hgvd and (z_batch is not None) and (rewards_batch is not None) and (next_obs_batch is not None) and (next_rnn_states_batch is not None) and (next_masks_batch is not None) and n_agents > 1:
             z_old = check(z_batch).to(**self.tpdv)
             Q_tot, Q_i = self._compute_hvd_q(z_old, actions_batch, n_agents)
 
@@ -290,7 +290,7 @@ class STHV_MAPPO():
                 credit_loss = (p * (p.clamp(min=1e-8).log() - q.clamp(min=1e-8).log())).sum(dim=-1).mean()
 
         # warmup: delay HVD loss to avoid destabilizing early PPO updates
-        if self.use_hvd and (self.hvd_warmup_updates > 0) and (self._update_step < self.hvd_warmup_updates):
+        if self.use_hgvd and (self.hvd_warmup_updates > 0) and (self._update_step < self.hvd_warmup_updates):
             hvd_loss = None
         
         # PPO update
@@ -327,12 +327,12 @@ class STHV_MAPPO():
             critic_grad_norm = get_gard_norm(self.policy.critic.parameters())
         self.policy.critic_optimizer.step()
 
-        if self.use_hvd and (hvd_loss is not None):
+        if self.use_hgvd and (hvd_loss is not None):
             self.policy.hvd_critic_optimizer.zero_grad()
             (hvd_loss * self.hvd_loss_coef).backward()
             self.policy.hvd_critic_optimizer.step()
 
-        if self.use_hvd:
+        if self.use_hgvd:
             self._soft_update(self.target_hvd_critic, self.policy.hvd_critic, self.hvd_target_tau)
         
         # actor target for TD target / credit target
