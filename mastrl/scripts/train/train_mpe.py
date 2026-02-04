@@ -77,10 +77,16 @@ def main(args):
         print("u are choosing to use ippo, we set use_centralized_V to be False")
         all_args.use_centralized_V = False
     elif all_args.algorithm_name == "sthvmappo":
-        print("u are choosing to use sthvmappo, we set use_hgvd and use_stca to be True")
-        all_args.use_hgvd = True
-        all_args.use_stca = True
-        all_args.share_policy = True  # sthvmappo must use shared policy
+        if not all_args.share_policy:
+            raise ValueError("The sthvmappo must use shared policy. Please check the config.py.")
+        if all_args.use_stca and all_args.use_hgvd:
+            print("u are choosing to use sthvmappo, we set use_hgvd and use_stca to be True")
+        elif all_args.use_hgvd:
+            print("u are choosing to use sthvmappo, we set use_hgvd to be True")
+        elif all_args.use_stca:
+            print("u are choosing to use sthvmappo, we set use_stca to be True")
+        else:
+            print("The sthvmappo do not use hgvd or stca.")
     else:
         raise NotImplementedError
 
@@ -176,28 +182,27 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    # args = [
-    #     "--env_name", "MPE",
-    #     "--scenario_name", "simple_reference",
-    #     "--num_landmarks", "3",
-    #     "--num_agents", "2",
-    #     "--algorithm_name", "sthvmappo",
-    #     "--experiment_name", "debug",
-    #     "--seed", "1",
-    #     "--n_training_threads", "1",
-    #     "--n_rollout_threads", "128",
-    #     "--num_mini_batch", "1",
-    #     "--episode_length", "25",
-    #     "--num_env_steps", "2000000",
-    #     "--ppo_epoch", "15",
-    #     "--gain", "0.01",
-    #     "--lr", "7e-4",
-    #     "--critic_lr", "7e-4",
-    #     "--wandb_name", "yuding-zh-uestc",
-    #     "--user_name", "yuding-zh-uestc",
-    #     "--use_hgvd",
-    #     "--use_stca",
-    #     "--share_policy"
-    # ]
-    # main(args)
+    # main(sys.argv[1:])
+    args = [
+        "--env_name", "MPE",
+        "--scenario_name", "simple_reference",
+        "--num_landmarks", "3",
+        "--num_agents", "2",
+        "--algorithm_name", "sthvmappo",
+        "--experiment_name", "debug",
+        "--seed", "1",
+        "--n_training_threads", "1",
+        "--n_rollout_threads", "128",
+        "--num_mini_batch", "1",
+        "--episode_length", "25",
+        "--num_env_steps", "2000000",
+        "--ppo_epoch", "15",
+        "--gain", "0.01",
+        "--lr", "7e-4",
+        "--critic_lr", "7e-4",
+        "--wandb_name", "yuding-zh-uestc",
+        "--user_name", "yuding-zh-uestc",
+        "--use_hgvd",
+        "--share_policy"
+    ]
+    main(args)
