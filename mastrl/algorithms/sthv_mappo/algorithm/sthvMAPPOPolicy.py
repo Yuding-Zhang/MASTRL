@@ -33,6 +33,7 @@ class STHV_MAPPOPolicy:
         self.obs_space = obs_space
         self.share_obs_space = cent_obs_space
         self.act_space = act_space
+        self.num_agents = args.num_agents
 
         self.actor = STHV_Actor(args, self.obs_space, self.act_space, self.device)
         self.critic = Baseline_R_Critic(args, self.share_obs_space, self.device)

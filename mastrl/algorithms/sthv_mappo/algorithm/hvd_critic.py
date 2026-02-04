@@ -46,10 +46,17 @@ class HypergraphCritic(nn.Module):
             q_edges.append(q_e)
 
         q_edges_t = torch.stack(q_edges, dim=0)  # [E,1]
-        Q_tot = q_edges_t.sum(dim=0)             # [1]
 
+        # IMPORTANT: use MEAN over hyperedges to keep Q_tot scale stable when E varies.
+        # (Sum can explode when the number of discovered hyperedges changes across timesteps.)
+        Q_tot = q_edges_t.mean(dim=0)            # [1]
+
+        # Per-agent Q_i: average edge-contributions for edges that contain agent i.
         Q_i = torch.zeros(N, device=device)
+        cnt = torch.zeros(N, device=device)
         for ei, e in enumerate(hyperedges):
             for i in e:
                 Q_i[i] += q_edges_t[ei, 0]
+                cnt[i] += 1.0
+        Q_i = Q_i / cnt.clamp(min=1.0)
         return Q_tot, Q_i

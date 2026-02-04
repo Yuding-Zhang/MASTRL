@@ -319,6 +319,16 @@ def get_config():
     parser.add_argument("--credit_detach", action="store_false", default=True,
                         help="Detach credit assignment weights from critic loss backpropagation.")
 
+    parser.add_argument("--credit_loss_coef", type=float, default=0.0,
+                        help="Coefficient for the credit assignment loss term in STCA.")
+    parser.add_argument("--credit_target_tau", type=float, default=1.0,
+                        help="Target network update rate for credit assignment in STCA.")
+    parser.add_argument("--w_clip", type=float, default=3.0,
+                        help="Clipping value for credit assignment weights in STCA.")
+    parser.add_argument("--w_entropy_coef", type=float, default=0.0,
+                        help="Entropy coefficient for credit assignment weights in STCA.")
+    parser.add_argument("--adv_w_norm", action="store_false", default=True,
+                        help="Normalize advantages when computing credit assignment weights in STCA.")
 
     # ---- HGVD: Hypergraph Value Decomposition ----
 
@@ -333,6 +343,9 @@ def get_config():
 
     parser.add_argument("--hvd_hidden_size", type=int, default=128,
                         help="Hidden layer size for the HGVD critic network.")
+    
+    parser.add_argument("--hvd_warmup_updates", type=int, default=0  ,
+                        help="Number of warmup updates for HGVD before starting to update the hypergraph.")
 
 
     # ---- STCA: Spatio-Temporal Credit Assignment ----

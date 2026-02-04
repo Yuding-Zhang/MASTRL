@@ -203,6 +203,7 @@ if __name__ == "__main__":
         "--wandb_name", "yuding-zh-uestc",
         "--user_name", "yuding-zh-uestc",
         "--use_hgvd",
+        "--use_stca",
         "--share_policy"
     ]
     main(args)

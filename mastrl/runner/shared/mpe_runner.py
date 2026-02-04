@@ -25,18 +25,12 @@ class MPERunner(Runner):
 
             for step in range(self.episode_length):
                 # Sample actions
-                if self.algorithm_name == "sthvmappo":
-                    values, actions, action_log_probs, rnn_states, rnn_states_critic, zs, credit_logits, actions_env = self.collect(step)
-                else:
-                    values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
-                    
+                values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env, z, credit_logits = self.collect(step)
+            
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
-                if self.algorithm_name == "sthvmappo":
-                    data = obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, zs, credit_logits
-                else:
-                    data = obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic
+                data = obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits
 
                 # insert data into buffer
                 self.insert(data)
@@ -101,29 +95,25 @@ class MPERunner(Runner):
     @torch.no_grad()
     def collect(self, step):
         self.trainer.prep_rollout()
-        if self.algorithm_name == "sthvmappo":
-            value, action, action_log_prob, rnn_states, rnn_states_critic, z, credit_logits \
-                = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
+        out = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
                                 np.concatenate(self.buffer.obs[step]),
                                 np.concatenate(self.buffer.rnn_states[step]),
                                 np.concatenate(self.buffer.rnn_states_critic[step]),
                                 np.concatenate(self.buffer.masks[step]))
-            zs = np.array(np.split(_t2n(z), self.n_rollout_threads))
-            credit_logits = np.array(np.split(_t2n(credit_logits), self.n_rollout_threads))
         
+        if isinstance(out, tuple) and len(out) == 7:
+            value, action, action_log_prob, rnn_states, rnn_states_critic, z, credit_logits = out
         else:
-            value, action, action_log_prob, rnn_states, rnn_states_critic \
-                = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
-                                np.concatenate(self.buffer.obs[step]),
-                                np.concatenate(self.buffer.rnn_states[step]),
-                                np.concatenate(self.buffer.rnn_states_critic[step]),
-                                np.concatenate(self.buffer.masks[step]))
+            value, action, action_log_prob, rnn_states, rnn_states_critic = out
+            z, credit_logits = None, None
+        
         # [self.envs, agents, dim]
         values = np.array(np.split(_t2n(value), self.n_rollout_threads))
         actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
         action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
         rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
         rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
+        
         # rearrange action
         if self.envs.action_space[0].__class__.__name__ == 'MultiDiscrete':
             for i in range(self.envs.action_space[0].shape):
@@ -137,15 +127,10 @@ class MPERunner(Runner):
         else:
             raise NotImplementedError
 
-        if self.algorithm_name == "sthvmappo":
-            return values, actions, action_log_probs, rnn_states, rnn_states_critic, zs, credit_logits, actions_env
-        return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env
+        return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env, z, credit_logits
 
     def insert(self, data):
-        if self.algorithm_name == "sthvmappo":
-            obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, zs, credit_logits = data
-        else:
-            obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
+        obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits = data
 
         rnn_states[dones == True] = np.zeros(((dones == True).sum(), self.recurrent_N, self.hidden_size), dtype=np.float32)
         rnn_states_critic[dones == True] = np.zeros(((dones == True).sum(), *self.buffer.rnn_states_critic.shape[3:]), dtype=np.float32)
@@ -158,10 +143,7 @@ class MPERunner(Runner):
         else:
             share_obs = obs
 
-        if self.algorithm_name == "sthvmappo":
-            self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs, values, rewards, masks, z=zs, credit_logits=credit_logits)
-        else:
-            self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs, values, rewards, masks)
+        self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs, values, rewards, masks, z, credit_logits)
 
     @torch.no_grad()
     def eval(self, total_num_steps):
