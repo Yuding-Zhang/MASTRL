@@ -113,6 +113,10 @@ class MPERunner(Runner):
         action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
         rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
         rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
+        if z is not None:
+            z = np.array(np.split(_t2n(z), self.n_rollout_threads))
+        if credit_logits is not None:
+            credit_logits = np.array(np.split(_t2n(credit_logits), self.n_rollout_threads))
         
         # rearrange action
         if self.envs.action_space[0].__class__.__name__ == 'MultiDiscrete':
