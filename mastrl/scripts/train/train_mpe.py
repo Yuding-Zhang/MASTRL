@@ -202,8 +202,8 @@ if __name__ == "__main__":
         "--critic_lr", "7e-4",
         "--wandb_name", "yuding-zh-uestc",
         "--user_name", "yuding-zh-uestc",
-        "--use_hgvd",
         "--use_stca",
+        "--use_hgvd",
         "--share_policy"
     ]
     main(args)

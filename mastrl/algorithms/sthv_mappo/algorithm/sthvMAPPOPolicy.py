@@ -1,6 +1,6 @@
 import torch
 from mastrl.algorithms.sthv_mappo.algorithm.sthv_actor_critic import STHV_Actor, Baseline_R_Critic
-from mastrl.algorithms.sthv_mappo.algorithm.hvd_critic import HypergraphCritic
+from mastrl.algorithms.sthv_mappo.algorithm.hgvd_critic import HypergraphCritic
 from mastrl.utils.util import update_linear_schedule
 
 
@@ -19,14 +19,14 @@ class STHV_MAPPOPolicy:
     """Policy wrapper with:
       - Actor: STHV_Actor (returns credit logits and embeddings)
       - Baseline critic: V(s) for returns/GAE/value loss
-      - HVD critic: HypergraphCritic for Q_tot/Q_i (used in actor advantage shaping + additional critic loss)
+      - hgvd critic: HypergraphCritic for Q_tot/Q_i (used in actor advantage shaping + additional critic loss)
     """
 
     def __init__(self, args, obs_space, cent_obs_space, act_space, device=torch.device("cpu")):
         self.device = device
         self.lr = args.lr
         self.critic_lr = args.critic_lr
-        self.hvd_critic_lr = getattr(args, "hvd_critic_lr", args.critic_lr)
+        self.hgvd_critic_lr = args.hgvd_critic_lr
         self.opti_eps = args.opti_eps
         self.weight_decay = args.weight_decay
 
@@ -39,16 +39,16 @@ class STHV_MAPPOPolicy:
         self.critic = Baseline_R_Critic(args, self.share_obs_space, self.device)
 
         act_dim = _infer_act_dim(act_space)
-        self.hvd_critic = HypergraphCritic(embed_dim=args.hidden_size, act_dim=act_dim, hidden_dim=getattr(args, "hvd_hidden_dim", 128)).to(device)
+        self.hgvd_critic = HypergraphCritic(embed_dim=args.hidden_size, act_dim=act_dim, hidden_dim=getattr(args, "hgvd_hidden_dim", 128)).to(device)
 
         self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=self.lr, eps=self.opti_eps, weight_decay=self.weight_decay)
         self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=self.critic_lr, eps=self.opti_eps, weight_decay=self.weight_decay)
-        self.hvd_critic_optimizer = torch.optim.Adam(self.hvd_critic.parameters(), lr=self.hvd_critic_lr, eps=self.opti_eps, weight_decay=self.weight_decay)
+        self.hgvd_critic_optimizer = torch.optim.Adam(self.hgvd_critic.parameters(), lr=self.hgvd_critic_lr, eps=self.opti_eps, weight_decay=self.weight_decay)
 
     def lr_decay(self, episode, episodes):
         update_linear_schedule(self.actor_optimizer, episode, episodes, self.lr)
         update_linear_schedule(self.critic_optimizer, episode, episodes, self.critic_lr)
-        update_linear_schedule(self.hvd_critic_optimizer, episode, episodes, self.hvd_critic_lr)
+        update_linear_schedule(self.hgvd_critic_optimizer, episode, episodes, self.hgvd_critic_lr)
 
     def get_actions(self, cent_obs, obs, rnn_states_actor, rnn_states_critic, masks, available_actions=None, deterministic=False):
         # actor: (actions, logp, rnn, z, credit_logits)

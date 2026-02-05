@@ -78,20 +78,18 @@ class SharedReplayBuffer(object):
             (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
         self.action_log_probs = np.zeros(
             (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
-        
-        # --- STHV-MAPPO extras (for STCA/HVD) ---
-        # We store actor embedding z_t and credit logits at each timestep so trainer can compute:
-        #  - STCA weights w from stored credit_logits
-        #  - HVD Q(s_t,a_t) from stored z_t
-        self.use_sthvmappo = args.use_hgvd or args.algorithm_name == "sthvmappo"
-        if self.use_sthvmappo:
-            self.credit_logits = np.zeros(
-                (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
-            self.z = np.zeros(
-                (self.episode_length, self.n_rollout_threads, num_agents, args.hidden_size), dtype=np.float32)
-        
+
+        # --- STCA/HGVD additions (old-policy aligned) ---
+        # credit logits per agent at each timestep (for STCA softmax weights)
+        self.credit_logits = np.zeros(
+            (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
+        # agent embedding z_i^t at each timestep (for HGVD Q(s_t,a_t) using rollout embeddings)
+        self.z = np.zeros(
+            (self.episode_length, self.n_rollout_threads, num_agents, self.hidden_size), dtype=np.float32)
+
         self.rewards = np.zeros(
             (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
+
         self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
         self.bad_masks = np.ones_like(self.masks)
         self.active_masks = np.ones_like(self.masks)
@@ -99,7 +97,8 @@ class SharedReplayBuffer(object):
         self.step = 0
 
     def insert(self, share_obs, obs, rnn_states_actor, rnn_states_critic, actions, action_log_probs,
-               value_preds, rewards, masks,z,credit_logits, bad_masks=None, active_masks=None, available_actions=None):
+               value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None,
+               z=None, credit_logits=None):
         """
         Insert data into the buffer.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -114,8 +113,6 @@ class SharedReplayBuffer(object):
         :param bad_masks: (np.ndarray) action space for agents.
         :param active_masks: (np.ndarray) denotes whether an agent is active or dead in the env.
         :param available_actions: (np.ndarray) actions available to each agent. If None, all actions are available.
-        :param z: (np.ndarray) actor embedding z_t
-        :param credit_logits: (np.ndarray) credit logits for STCA
         """
         self.share_obs[self.step + 1] = share_obs.copy()
         self.obs[self.step + 1] = obs.copy()
@@ -124,11 +121,11 @@ class SharedReplayBuffer(object):
         self.actions[self.step] = actions.copy()
         self.action_log_probs[self.step] = action_log_probs.copy()
 
-        if self.use_sthvmappo:
-            if z is None or credit_logits is None:
-                raise ValueError("STHV buffer requires z and credit_logits when use_sthvmappo=True.")
+        if z is not None:
             self.z[self.step] = z.copy()
+        if credit_logits is not None:
             self.credit_logits[self.step] = credit_logits.copy()
+
         self.value_preds[self.step] = value_preds.copy()
         self.rewards[self.step] = rewards.copy()
         self.masks[self.step + 1] = masks.copy()
@@ -142,7 +139,8 @@ class SharedReplayBuffer(object):
         self.step = (self.step + 1) % self.episode_length
 
     def chooseinsert(self, share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs,
-                     value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None):
+                     value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None,
+                     z=None, credit_logits=None):
         """
         Insert data into the buffer. This insert function is used specifically for Hanabi, which is turn based.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -164,6 +162,12 @@ class SharedReplayBuffer(object):
         self.rnn_states_critic[self.step + 1] = rnn_states_critic.copy()
         self.actions[self.step] = actions.copy()
         self.action_log_probs[self.step] = action_log_probs.copy()
+
+        if z is not None:
+            self.z[self.step] = z.copy()
+        if credit_logits is not None:
+            self.credit_logits[self.step] = credit_logits.copy()
+
         self.value_preds[self.step] = value_preds.copy()
         self.rewards[self.step] = rewards.copy()
         self.masks[self.step + 1] = masks.copy()
@@ -288,6 +292,7 @@ class SharedReplayBuffer(object):
         :param mini_batch_size: (int) number of samples in each minibatch.
         """
         episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
+        use_sthvmappo = self.use_sthvmappo
         batch_size = n_rollout_threads * episode_length
 
         if mini_batch_size is None:
@@ -322,24 +327,31 @@ class SharedReplayBuffer(object):
         value_preds = value_preds[rows, cols]
         returns = self.returns[:-1].reshape(-1, *self.returns.shape[2:])
         returns = returns[rows, cols]
-        if self.use_sthvmappo:
-            rewards = self.rewards.reshape(-1, *self.rewards.shape[2:])[rows, cols]
-            credit_logits = self.credit_logits.reshape(-1, *self.credit_logits.shape[2:])[rows, cols]
-            z = self.z.reshape(-1, *self.z.shape[2:])[rows, cols]
-            next_obs = self.obs[1:].reshape(-1, *self.obs.shape[2:])[rows, cols]
-            next_rnn_states = self.rnn_states[1:].reshape(-1, *self.rnn_states.shape[2:])[rows, cols]
-            next_masks = self.masks[1:].reshape(-1, *self.masks.shape[2:])[rows, cols]
+        if use_sthvmappo:
+            rewards = self.rewards.reshape(-1, *self.rewards.shape[2:])
+            rewards = rewards[rows, cols]
         masks = self.masks[:-1].reshape(-1, *self.masks.shape[2:])
         masks = masks[rows, cols]
         active_masks = self.active_masks[:-1].reshape(-1, *self.active_masks.shape[2:])
         active_masks = active_masks[rows, cols]
         action_log_probs = self.action_log_probs.reshape(-1, *self.action_log_probs.shape[2:])
         action_log_probs = action_log_probs[rows, cols]
+        if use_sthvmappo:
+            credit_logits = self.credit_logits.reshape(-1, *self.credit_logits.shape[2:])
+            credit_logits = credit_logits[rows, cols]
+            z = self.z.reshape(-1, *self.z.shape[2:])
+            z = z[rows, cols]
+            next_obs = self.obs[1:].reshape(-1, *self.obs.shape[2:])
+            next_obs = next_obs[rows, cols]
+            next_rnn_states = self.rnn_states[1:].reshape(-1, *self.rnn_states.shape[2:])
+            next_rnn_states = next_rnn_states[rows, cols]
+            next_masks = self.masks[1:].reshape(-1, *self.masks.shape[2:])
+            next_masks = next_masks[rows, cols]
         advantages = advantages.reshape(-1, *advantages.shape[2:])
         advantages = advantages[rows, cols]
 
         for indices in sampler:
-            # [L,T,N,Dim]-->[L*T,N,Dim]-->[index,N,Dim]-->[index*N, Dim]
+              # [L,T,N,Dim]-->[L*T,N,Dim]-->[index,N,Dim]-->[index*N, Dim]
             share_obs_batch = share_obs[indices].reshape(-1, *share_obs.shape[2:])
             obs_batch = obs[indices].reshape(-1, *obs.shape[2:])
             rnn_states_batch = rnn_states[indices].reshape(-1, *rnn_states.shape[2:])
@@ -359,29 +371,20 @@ class SharedReplayBuffer(object):
             else:
                 adv_targ = advantages[indices].reshape(-1, *advantages.shape[2:])
 
-            if self.use_sthvmappo:
-                rewards_batch = rewards[indices]
-
-                old_credit_logits_batch = credit_logits[indices]
-
-                z_batch = z[indices]
-
-                next_obs_batch = next_obs[indices]
-
-                next_rnn_states_batch = next_rnn_states[indices]
-
-                next_masks_batch = next_masks[indices]
-
+            if use_sthvmappo:
+                rewards_batch = rewards[indices].reshape(-1, *rewards.shape[2:])
+                old_credit_logits_batch = credit_logits[indices].reshape(-1, *credit_logits.shape[2:])
+                z_batch = z[indices].reshape(-1, *z.shape[2:])
+                next_obs_batch = next_obs[indices].reshape(-1, *next_obs.shape[2:])
+                next_rnn_states_batch = next_rnn_states[indices].reshape(-1, *next_rnn_states.shape[2:])
+                next_masks_batch = next_masks[indices].reshape(-1, *next_masks.shape[2:])
                 yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-                    value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-                        adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
-
-
+                      value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
+                      adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
             else:
-
                 yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-                    value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-                        adv_targ, available_actions_batch
+                      value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
+                      adv_targ, available_actions_batch
 
     def feed_forward_generator(self, advantages, num_mini_batch=None, mini_batch_size=None):
         """
@@ -391,6 +394,7 @@ class SharedReplayBuffer(object):
         :param mini_batch_size: (int) number of samples in each minibatch.
         """
         episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
+        use_sthvmappo = self.use_sthvmappo
         batch_size = n_rollout_threads * episode_length * num_agents
 
         if mini_batch_size is None:
@@ -415,16 +419,17 @@ class SharedReplayBuffer(object):
             available_actions = self.available_actions[:-1].reshape(-1, self.available_actions.shape[-1])
         value_preds = self.value_preds[:-1].reshape(-1, 1)
         returns = self.returns[:-1].reshape(-1, 1)
-        if self.use_sthvmappo:
+        if use_sthvmappo:
             rewards = self.rewards.reshape(-1, 1)
-            credit_logits = self.credit_logits.reshape(-1, 1)
+        masks = self.masks[:-1].reshape(-1, 1)
+        active_masks = self.active_masks[:-1].reshape(-1, 1)
+        action_log_probs = self.action_log_probs.reshape(-1, self.action_log_probs.shape[-1])
+        if use_sthvmappo:
+            credit_logits = self.credit_logits.reshape(-1, self.credit_logits.shape[-1])
             z = self.z.reshape(-1, self.z.shape[-1])
             next_obs = self.obs[1:].reshape(-1, *self.obs.shape[3:])
             next_rnn_states = self.rnn_states[1:].reshape(-1, *self.rnn_states.shape[3:])
             next_masks = self.masks[1:].reshape(-1, 1)
-        masks = self.masks[:-1].reshape(-1, 1)
-        active_masks = self.active_masks[:-1].reshape(-1, 1)
-        action_log_probs = self.action_log_probs.reshape(-1, self.action_log_probs.shape[-1])
         advantages = advantages.reshape(-1, 1)
 
         for indices in sampler:
@@ -448,23 +453,20 @@ class SharedReplayBuffer(object):
             else:
                 adv_targ = advantages[indices]
 
-            if self.use_sthvmappo:
+            if use_sthvmappo:
                 rewards_batch = rewards[indices]
                 old_credit_logits_batch = credit_logits[indices]
                 z_batch = z[indices]
                 next_obs_batch = next_obs[indices]
                 next_rnn_states_batch = next_rnn_states[indices]
                 next_masks_batch = next_masks[indices]
-
                 yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                    value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                        adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
-                
+                      value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                      adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
             else:
-
                 yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                    value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                        adv_targ, available_actions_batch
+                      value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                      adv_targ, available_actions_batch
 
     def naive_recurrent_generator(self, advantages, num_mini_batch):
         """
@@ -473,6 +475,7 @@ class SharedReplayBuffer(object):
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         """
         episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
+        use_sthvmappo = self.use_sthvmappo
         batch_size = n_rollout_threads * num_agents
         assert n_rollout_threads * num_agents >= num_mini_batch, (
             "PPO requires the number of processes ({})* number of agents ({}) "
@@ -490,9 +493,17 @@ class SharedReplayBuffer(object):
             available_actions = self.available_actions.reshape(-1, batch_size, self.available_actions.shape[-1])
         value_preds = self.value_preds.reshape(-1, batch_size, 1)
         returns = self.returns.reshape(-1, batch_size, 1)
+        if use_sthvmappo:
+            rewards = self.rewards.reshape(-1, batch_size, 1)
         masks = self.masks.reshape(-1, batch_size, 1)
         active_masks = self.active_masks.reshape(-1, batch_size, 1)
         action_log_probs = self.action_log_probs.reshape(-1, batch_size, self.action_log_probs.shape[-1])
+        if use_sthvmappo:
+            credit_logits = self.credit_logits.reshape(-1, batch_size, 1)
+            z = self.z.reshape(-1, batch_size, self.hidden_size)
+            next_obs = self.obs[1:].reshape(-1, batch_size, *self.obs.shape[3:])
+            next_rnn_states = self.rnn_states[1:].reshape(-1, batch_size, *self.rnn_states.shape[3:])
+            next_masks = self.masks[1:].reshape(-1, batch_size, 1)
         advantages = advantages.reshape(-1, batch_size, 1)
 
         for start_ind in range(0, batch_size, num_envs_per_batch):
@@ -504,9 +515,15 @@ class SharedReplayBuffer(object):
             available_actions_batch = []
             value_preds_batch = []
             return_batch = []
+            rewards_batch = []
             masks_batch = []
             active_masks_batch = []
             old_action_log_probs_batch = []
+            old_credit_logits_batch = []
+            z_batch = []
+            next_obs_batch = []
+            next_rnn_states_batch = []
+            next_masks_batch = []
             adv_targ = []
 
             for offset in range(num_envs_per_batch):
@@ -520,9 +537,17 @@ class SharedReplayBuffer(object):
                     available_actions_batch.append(available_actions[:-1, ind])
                 value_preds_batch.append(value_preds[:-1, ind])
                 return_batch.append(returns[:-1, ind])
+                if use_sthvmappo:
+                    rewards_batch.append(rewards[:-1, ind])
                 masks_batch.append(masks[:-1, ind])
                 active_masks_batch.append(active_masks[:-1, ind])
                 old_action_log_probs_batch.append(action_log_probs[:, ind])
+                if use_sthvmappo:
+                    old_credit_logits_batch.append(credit_logits[:, ind])
+                    z_batch.append(z[:, ind])
+                    next_obs_batch.append(next_obs[:, ind])
+                    next_rnn_states_batch.append(next_rnn_states[0:1, ind])
+                    next_masks_batch.append(next_masks[:-1, ind])
                 adv_targ.append(advantages[:, ind])
 
             # [N[T, dim]]
@@ -535,9 +560,17 @@ class SharedReplayBuffer(object):
                 available_actions_batch = np.stack(available_actions_batch, 1)
             value_preds_batch = np.stack(value_preds_batch, 1)
             return_batch = np.stack(return_batch, 1)
+            if use_sthvmappo:
+                rewards_batch = np.stack(rewards_batch, 1)
             masks_batch = np.stack(masks_batch, 1)
             active_masks_batch = np.stack(active_masks_batch, 1)
             old_action_log_probs_batch = np.stack(old_action_log_probs_batch, 1)
+            if use_sthvmappo:
+                old_credit_logits_batch = np.stack(old_credit_logits_batch, 1)
+                z_batch = np.stack(z_batch, 1)
+                next_obs_batch = np.stack(next_obs_batch, 1)
+                next_rnn_states_batch = np.stack(next_rnn_states_batch, 1)
+                next_masks_batch = np.stack(next_masks_batch, 1)
             adv_targ = np.stack(adv_targ, 1)
 
             # States is just a (N, dim) from_numpy [N[1,dim]]
@@ -559,9 +592,20 @@ class SharedReplayBuffer(object):
             old_action_log_probs_batch = _flatten(T, N, old_action_log_probs_batch)
             adv_targ = _flatten(T, N, adv_targ)
 
-            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                  adv_targ, available_actions_batch
+            if use_sthvmappo:
+                rewards_batch = _flatten(T, N, rewards_batch)
+                old_credit_logits_batch = _flatten(T, N, old_credit_logits_batch)
+                z_batch = _flatten(T, N, z_batch)
+                next_obs_batch = _flatten(T, N, next_obs_batch)
+                next_rnn_states_batch = _flatten(T, N, next_rnn_states_batch)
+                next_masks_batch = _flatten(T, N, next_masks_batch)
+                yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
+                      value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                      adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
+            else:
+                yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
+                      value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                      adv_targ, available_actions_batch
 
     def recurrent_generator(self, advantages, num_mini_batch, data_chunk_length):
         """
@@ -571,6 +615,7 @@ class SharedReplayBuffer(object):
         :param data_chunk_length: (int) length of sequence chunks with which to train RNN.
         """
         episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
+        use_sthvmappo = self.use_sthvmappo
         batch_size = n_rollout_threads * episode_length * num_agents
         data_chunks = batch_size // data_chunk_length  # [C=r*T*M/L]
         mini_batch_size = data_chunks // num_mini_batch
@@ -587,9 +632,22 @@ class SharedReplayBuffer(object):
 
         actions = _cast(self.actions)
         action_log_probs = _cast(self.action_log_probs)
+        if use_sthvmappo:
+            credit_logits = _cast(self.credit_logits)
+            z = _cast(self.z)
+        # next-step tensors aligned with obs[:-1]
+        if use_sthvmappo:
+            if len(self.obs.shape) > 4:
+                next_obs = self.obs[1:].transpose(1, 2, 0, 3, 4, 5).reshape(-1, *self.obs.shape[3:])
+            else:
+                next_obs = _cast(self.obs[1:])
+            next_rnn_states = self.rnn_states[1:].transpose(1, 2, 0, 3, 4).reshape(-1, *self.rnn_states.shape[3:])
+            next_masks = _cast(self.masks[1:])
         advantages = _cast(advantages)
         value_preds = _cast(self.value_preds[:-1])
         returns = _cast(self.returns[:-1])
+        if use_sthvmappo:
+            rewards = _cast(self.rewards)
         masks = _cast(self.masks[:-1])
         active_masks = _cast(self.active_masks[:-1])
         # rnn_states = _cast(self.rnn_states[:-1])
@@ -611,9 +669,15 @@ class SharedReplayBuffer(object):
             available_actions_batch = []
             value_preds_batch = []
             return_batch = []
+            rewards_batch = []
             masks_batch = []
             active_masks_batch = []
             old_action_log_probs_batch = []
+            old_credit_logits_batch = []
+            z_batch = []
+            next_obs_batch = []
+            next_rnn_states_batch = []
+            next_masks_batch = []
             adv_targ = []
 
             for index in indices:
@@ -627,9 +691,17 @@ class SharedReplayBuffer(object):
                     available_actions_batch.append(available_actions[ind:ind + data_chunk_length])
                 value_preds_batch.append(value_preds[ind:ind + data_chunk_length])
                 return_batch.append(returns[ind:ind + data_chunk_length])
+                if use_sthvmappo:
+                    rewards_batch.append(rewards[ind:ind + data_chunk_length])
                 masks_batch.append(masks[ind:ind + data_chunk_length])
                 active_masks_batch.append(active_masks[ind:ind + data_chunk_length])
                 old_action_log_probs_batch.append(action_log_probs[ind:ind + data_chunk_length])
+                if use_sthvmappo:
+                    old_credit_logits_batch.append(credit_logits[ind:ind + data_chunk_length])
+                    z_batch.append(z[ind:ind + data_chunk_length])
+                    next_obs_batch.append(next_obs[ind:ind + data_chunk_length])
+                    next_rnn_states_batch.append(next_rnn_states[ind:ind + data_chunk_length])
+                    next_masks_batch.append(next_masks[ind:ind + data_chunk_length])
                 adv_targ.append(advantages[ind:ind + data_chunk_length])
                 # size [T+1 N M Dim]-->[T N M Dim]-->[N M T Dim]-->[N*M*T,Dim]-->[1,Dim]
                 rnn_states_batch.append(rnn_states[ind])
@@ -646,9 +718,17 @@ class SharedReplayBuffer(object):
                 available_actions_batch = np.stack(available_actions_batch, axis=1)
             value_preds_batch = np.stack(value_preds_batch, axis=1)
             return_batch = np.stack(return_batch, axis=1)
+            if use_sthvmappo:
+                rewards_batch = np.stack(rewards_batch, axis=1)
             masks_batch = np.stack(masks_batch, axis=1)
             active_masks_batch = np.stack(active_masks_batch, axis=1)
             old_action_log_probs_batch = np.stack(old_action_log_probs_batch, axis=1)
+            if use_sthvmappo:
+                old_credit_logits_batch = np.stack(old_credit_logits_batch, axis=1)
+                z_batch = np.stack(z_batch, axis=1)
+                next_obs_batch = np.stack(next_obs_batch, axis=1)
+                next_rnn_states_batch = np.stack(next_rnn_states_batch, axis=1)
+                next_masks_batch = np.stack(next_masks_batch, axis=1)
             adv_targ = np.stack(adv_targ, axis=1)
 
             # States is just a (N, -1) from_numpy
@@ -670,6 +750,17 @@ class SharedReplayBuffer(object):
             old_action_log_probs_batch = _flatten(L, N, old_action_log_probs_batch)
             adv_targ = _flatten(L, N, adv_targ)
 
-            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                  adv_targ, available_actions_batch
+            if use_sthvmappo:
+                rewards_batch = _flatten(L, N, rewards_batch)
+                old_credit_logits_batch = _flatten(L, N, old_credit_logits_batch)
+                z_batch = _flatten(L, N, z_batch)
+                next_obs_batch = _flatten(L, N, next_obs_batch)
+                next_rnn_states_batch = _flatten(L, N, next_rnn_states_batch)
+                next_masks_batch = _flatten(L, N, next_masks_batch)
+                yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
+                      value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                      adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
+            else:
+                yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
+                      value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
+                      adv_targ, available_actions_batch

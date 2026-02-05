@@ -338,16 +338,16 @@ def get_config():
     parser.add_argument("--max_group_size", type=int, default=6,
                         help="Maximum group size for hypergraph grouping.")
 
-    parser.add_argument("--hvd_loss_coef", type=float, default=1.0,
+    parser.add_argument("--hgvd_loss_coef", type=float, default=1.0,
                         help="Coefficient for the HGVD loss term.")
     
-    parser.add_argument("--hvd_target_tau", type=float, default=0.005,
+    parser.add_argument("--hgvd_target_tau", type=float, default=0.005,
                         help="Target network update rate for the HGVD critic network.")
 
-    parser.add_argument("--hvd_hidden_size", type=int, default=128,
+    parser.add_argument("--hgvd_hidden_size", type=int, default=128,
                         help="Hidden layer size for the HGVD critic network.")
     
-    parser.add_argument("--hvd_warmup_updates", type=int, default=0  ,
+    parser.add_argument("--hgvd_warmup_updates", type=int, default=0  ,
                         help="Number of warmup updates for HGVD before starting to update the hypergraph.")
 
 
