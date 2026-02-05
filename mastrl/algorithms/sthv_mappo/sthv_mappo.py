@@ -2,6 +2,7 @@ import copy
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 from mastrl.utils.util import get_gard_norm, huber_loss, mse_loss
 from mastrl.utils.valuenorm import ValueNorm
@@ -53,7 +54,17 @@ class STHV_MAPPO():
         self.max_group_size = args.max_group_size
         self.hgvd_loss_coef = args.hgvd_loss_coef
         self.hgvd_target_tau = args.hgvd_target_tau
-                
+
+        # Diagnostics & stabilizers
+        self.credit_loss_coef = getattr(args, "credit_loss_coef", 0.0)
+        self.credit_target_tau = getattr(args, "credit_target_tau", 1.0)
+        self.w_clip = getattr(args, "w_clip", 0.0)
+        self.w_entropy_coef = getattr(args, "w_entropy_coef", 0.0)
+        self.adv_w_norm = getattr(args, "adv_w_norm", True)
+
+        self.hgvd_warmup_updates = getattr(args, "hgvd_warmup_updates", 0)
+        self._update_step = 0
+        
         assert (self._use_popart and self._use_valuenorm) == False, ("popart and valuenorm cannot both be True")
         if self._use_popart:
             self.value_normalizer = self.policy.critic.v_out
@@ -209,7 +220,11 @@ class STHV_MAPPO():
 
         n_agents = int(getattr(self.policy, "num_agents", 1))
         shaped_adv = adv_targ
-        hgvd_loss = torch.zeros([], device=values.device)
+        hgvd_loss = None
+        credit_kl = None
+        w_entropy = None
+        w_max = None
+        hgvd_td_error = None
 
         # ---------------------------
         # STCA (standalone): advantage shaping from stored (old) credit logits
@@ -220,11 +235,31 @@ class STHV_MAPPO():
             c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)
             c_old = c_old / max(self.credit_temperature, 1e-6)
             w = torch.softmax(c_old, dim=-1)
+            # Clip w to avoid dictatorship: w_i in [1/(w_clip*N), w_clip/N], then renormalize.
+            if self.w_clip and float(self.w_clip) > 1.0:
+                wc = float(self.w_clip)
+                w_min = 1.0 / (wc * n_agents)
+                w_max_cap = wc / n_agents
+                w = torch.clamp(w, w_min, w_max_cap)
+                w = w / (w.sum(dim=-1, keepdim=True) + 1e-8)
+
+            # Diagnostics: entropy and max prob (computed on w before optional detach)
+            w_entropy = (-(w * (w + 1e-8).log()).sum(dim=-1)).mean()
+            w_max = w.max(dim=-1).values.mean()
+
             if getattr(self, "credit_detach", False):
                 w = w.detach()
 
             adv_i = adv_targ.view(-1, n_agents, 1).squeeze(-1)  # [B,N]
-            shaped_adv = (adv_i * w).reshape(-1, 1)
+            adv_mod = adv_i * w
+
+            # Normalize adv_mod to keep scale stable after reweighting.
+            if self.adv_w_norm:
+                mean_mod = adv_mod.mean(dim=-1, keepdim=True)
+                std_mod = adv_mod.std(dim=-1, keepdim=True, unbiased=False)
+                adv_mod = (adv_mod - mean_mod) / (std_mod + 1e-5)
+
+            shaped_adv = adv_mod.reshape(-1, 1)
 
         # ---------------------------
         # HGVD (standalone): TD loss for hypergraph critic using stored z_t and bootstrapped Q_tot
@@ -247,7 +282,28 @@ class STHV_MAPPO():
                 mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
                 y = r_tot + self.gamma * mask_next * Q_tot_next
 
-            hgvd_loss = (Q_tot - y).pow(2).mean()
+            td_err = (Q_tot - y)
+            hgvd_td_error = td_err.abs().mean()
+            hgvd_loss = (td_err.pow(2)).mean()
+
+            # Credit head supervision (optional): encourage credit logits to match HGVD-derived contribution distribution.
+            if self.use_stca and self.credit_loss_coef and credit_logits_new is not None:
+                # current logits -> distribution
+                c_new = credit_logits_new.view(-1, n_agents, 1).squeeze(-1) / max(self.credit_temperature, 1e-6)
+                log_p = F.log_softmax(c_new, dim=-1)
+                p = torch.softmax(c_new, dim=-1)
+                # target distribution from |Q_i - V_i|
+                # reuse Q_i by recomputing once (cheap compared to TD) using z_old and actions_batch
+                _, Q_i = self._compute_hgvd_q(z_old, actions_batch, n_agents)
+                V_i = values.view(-1, n_agents, 1).squeeze(-1)
+                contrib = (Q_i.detach() - V_i.detach()).abs()
+                p_tgt = torch.softmax(contrib / max(self.credit_target_tau, 1e-6), dim=-1)
+                credit_kl = F.kl_div(log_p, p_tgt, reduction='batchmean')
+
+                # Optional entropy regularization on current credit distribution (prevents overly peaky credit head)
+                if self.w_entropy_coef and float(self.w_entropy_coef) > 0.0:
+                    ent = (-(p * (p + 1e-8).log()).sum(dim=-1)).mean()
+                    credit_kl = credit_kl - float(self.w_entropy_coef) * ent
 
 
         # PPO update
@@ -262,7 +318,7 @@ class STHV_MAPPO():
 
         self.policy.actor_optimizer.zero_grad()
         if update_actor:
-            (policy_action_loss - dist_entropy * self.entropy_coef).backward()
+            (policy_action_loss - dist_entropy * self.entropy_coef + (self.credit_loss_coef * credit_kl if credit_kl is not None else 0.0)).backward()
 
         if self._use_max_grad_norm:
             actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
@@ -278,18 +334,37 @@ class STHV_MAPPO():
         else:
             critic_grad_norm = get_gard_norm(self.policy.critic.parameters())
         self.policy.critic_optimizer.step()
-        # HGVD update is optional. If HGVD is disabled or hgvd_loss is a constant (no grad), skip.
-        if self.use_hgvd and isinstance(hgvd_loss, torch.Tensor) and hgvd_loss.requires_grad:
+        # HGVD update (optional + warmup). If HGVD is disabled or loss is None/constant, skip.
+        hgvd_coef_now = float(self.hgvd_loss_coef)
+        if int(self.hgvd_warmup_updates) > 0:
+            # linear warmup from 0 -> hgvd_loss_coef over hgvd_warmup_updates minibatch updates
+            hgvd_coef_now = float(self.hgvd_loss_coef) * min(1.0, float(self._update_step) / float(self.hgvd_warmup_updates))
+
+        if self.use_hgvd and hgvd_loss is not None and isinstance(hgvd_loss, torch.Tensor) and hgvd_loss.requires_grad and hgvd_coef_now > 0.0:
             self.policy.hgvd_critic_optimizer.zero_grad()
-            (hgvd_loss * self.hgvd_loss_coef).backward()
+            (hgvd_loss * hgvd_coef_now).backward()
             self.policy.hgvd_critic_optimizer.step()
 
             self._soft_update(self.target_hgvd_critic, self.policy.hgvd_critic, self.hgvd_target_tau)
             self._soft_update(self.target_actor, self.policy.actor, self.hgvd_target_tau)
         else:
+            # ensure scalar for logging
             hgvd_loss = torch.zeros([], device=values.device)
 
-        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hgvd_loss
+        # Count minibatch updates for warmup scheduling
+        self._update_step += 1
+
+        # Diagnostics: convert None -> 0 tensors for logging
+        if w_entropy is None:
+            w_entropy = torch.zeros([], device=values.device)
+        if w_max is None:
+            w_max = torch.zeros([], device=values.device)
+        if hgvd_td_error is None:
+            hgvd_td_error = torch.zeros([], device=values.device)
+        if credit_kl is None:
+            credit_kl = torch.zeros([], device=values.device)
+
+        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hgvd_loss, w_entropy, w_max, hgvd_td_error, credit_kl
 
     def train(self, buffer, update_actor=True):
         # compute standard advantages (baseline) to preserve normalization pipeline
@@ -304,7 +379,8 @@ class STHV_MAPPO():
         std_adv = np.nanstd(advantages_copy)
         advantages = (advantages - mean_adv) / (std_adv + 1e-5)
 
-        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hgvd_loss']}
+        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hgvd_loss','w_entropy','w_max','hgvd_td_error','credit_kl']}
+
 
         for _ in range(self.ppo_epoch):
             if self._use_recurrent_policy:
@@ -315,7 +391,7 @@ class STHV_MAPPO():
                 data_generator = buffer.feed_forward_generator(advantages, self.num_mini_batch)
 
             for sample in data_generator:
-                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss = self.ppo_update(sample, update_actor)
+                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss, w_entropy, w_max, hgvd_td_error, credit_kl = self.ppo_update(sample, update_actor)
                 train_info['value_loss'] += value_loss.item()
                 train_info['policy_loss'] += policy_loss.item()
                 train_info['dist_entropy'] += dist_entropy.item()
@@ -323,6 +399,10 @@ class STHV_MAPPO():
                 train_info['critic_grad_norm'] += float(critic_gn)
                 train_info['ratio'] += imp_w.mean().item()
                 train_info['hgvd_loss'] += hgvd_loss.item()
+                train_info['w_entropy'] += w_entropy.item()
+                train_info['w_max'] += w_max.item()
+                train_info['hgvd_td_error'] += hgvd_td_error.item()
+                train_info['credit_kl'] += credit_kl.item()
 
         num_updates = self.ppo_epoch * self.num_mini_batch
         for k in train_info.keys():
