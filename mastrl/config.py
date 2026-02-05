@@ -319,10 +319,11 @@ def get_config():
     parser.add_argument("--credit_detach", action="store_false", default=True,
                         help="Detach credit assignment weights from critic loss backpropagation.")
 
-    parser.add_argument("--credit_loss_coef", type=float, default=0.0,
+    parser.add_argument("--credit_loss_coef", type=float, default=0.05,
                         help="Coefficient for the credit assignment loss term in STCA.")
     parser.add_argument("--credit_target_tau", type=float, default=1.0,
                         help="Target network update rate for credit assignment in STCA.")
+    
     parser.add_argument("--w_clip", type=float, default=3.0,
                         help="Clipping value for credit assignment weights in STCA.")
     parser.add_argument("--w_entropy_coef", type=float, default=0.0,
@@ -335,10 +336,10 @@ def get_config():
     parser.add_argument("--hyperedge_k", type=int, default=3,
                         help="Number of neighbors (k) for kNN hyperedge construction in HGVD.")
 
-    parser.add_argument("--max_group_size", type=int, default=6,
+    parser.add_argument("--max_group_size", type=int, default=4,
                         help="Maximum group size for hypergraph grouping.")
 
-    parser.add_argument("--hgvd_loss_coef", type=float, default=1.0,
+    parser.add_argument("--hgvd_loss_coef", type=float, default=0.10,
                         help="Coefficient for the HGVD loss term.")
     
     parser.add_argument("--hgvd_target_tau", type=float, default=0.005,
@@ -347,7 +348,7 @@ def get_config():
     parser.add_argument("--hgvd_hidden_size", type=int, default=128,
                         help="Hidden layer size for the HGVD critic network.")
     
-    parser.add_argument("--hgvd_warmup_updates", type=int, default=0  ,
+    parser.add_argument("--hgvd_warmup_updates", type=int, default=5000  ,
                         help="Number of warmup updates for HGVD before starting to update the hypergraph.")
 
 
