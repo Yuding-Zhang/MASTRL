@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 215, in <module>
+    main(args)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 150, in main
+    envs = make_train_env(all_args)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 31, in make_train_env
+    return SubprocVecEnv([get_env_fn(i) for i in range(all_args.n_rollout_threads)])
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/envs/env_wrappers.py", line 253, in __init__
+    observation_space, share_observation_space, action_space = self.remotes[0].recv()
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer

@@ -1,0 +1,55 @@
+obs_space:  [Box(-inf, inf, (18,), float32), Box(-inf, inf, (18,), float32), Box(-inf, inf, (18,), float32)]
+share_obs_space:  [Box(-inf, inf, (54,), float32), Box(-inf, inf, (54,), float32), Box(-inf, inf, (54,), float32)]
+act_space:  [Discrete(5), Discrete(5), Discrete(5)]
+/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/rnn.py:1139: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:1424.)
+  result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 0/625 episodes, total num timesteps 3200/2000000, FPS 64.
+
+average episode rewards is -224.53079223632812
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 5/625 episodes, total num timesteps 19200/2000000, FPS 65.
+
+average episode rewards is -202.24945545196533
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 10/625 episodes, total num timesteps 35200/2000000, FPS 65.
+
+average episode rewards is -184.45760011672974
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 15/625 episodes, total num timesteps 51200/2000000, FPS 65.
+
+average episode rewards is -178.936505317688
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 20/625 episodes, total num timesteps 67200/2000000, FPS 65.
+
+average episode rewards is -180.96601963043213
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 25/625 episodes, total num timesteps 83200/2000000, FPS 65.
+
+average episode rewards is -176.8394947052002
+
+ Scenario simple_spread Algo sthvmappo Exp debug updates 30/625 episodes, total num timesteps 99200/2000000, FPS 64.
+
+average episode rewards is -177.1904706954956
+Traceback (most recent call last):
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 209, in <module>
+    "--hgvd_loss_coef", "0.03",
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_mpe.py", line 170, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/mpe_runner.py", line 40, in run
+    train_infos = self.train()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/base_runner.py", line 143, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 394, in train
+    value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss, w_entropy, w_max, hgvd_td_error, credit_kl = self.ppo_update(sample, update_actor)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 270, in ppo_update
+    Q_tot, _ = self._compute_hgvd_q(z_old, actions_batch, n_agents)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 177, in _compute_hgvd_q
+    q_tot, q_i = self.policy.hgvd_critic(z[b], a[b], hyperedges)
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/algorithm/hgvd_critic.py", line 55, in forward
+    Q_i = torch.zeros(N, device=device)
+KeyboardInterrupt

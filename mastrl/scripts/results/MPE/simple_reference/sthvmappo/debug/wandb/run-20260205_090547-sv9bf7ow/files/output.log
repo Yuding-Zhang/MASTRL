@@ -1,0 +1,505 @@
+obs_space:  [Box(-inf, inf, (21,), float32), Box(-inf, inf, (21,), float32)]
+share_obs_space:  [Box(-inf, inf, (42,), float32), Box(-inf, inf, (42,), float32)]
+act_space:  [MultiDiscrete2, MultiDiscrete2]
+/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/rnn.py:1139: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:1424.)
+  result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 0/625 episodes, total num timesteps 3200/2000000, FPS 76.
+
+average episode rewards is -68.80660057067871
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 5/625 episodes, total num timesteps 19200/2000000, FPS 77.
+
+average episode rewards is -43.883705139160156
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 10/625 episodes, total num timesteps 35200/2000000, FPS 77.
+
+average episode rewards is -31.116420030593872
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 15/625 episodes, total num timesteps 51200/2000000, FPS 77.
+
+average episode rewards is -27.071595191955566
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 20/625 episodes, total num timesteps 67200/2000000, FPS 77.
+
+average episode rewards is -26.157450675964355
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 25/625 episodes, total num timesteps 83200/2000000, FPS 77.
+
+average episode rewards is -26.963576674461365
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 30/625 episodes, total num timesteps 99200/2000000, FPS 77.
+
+average episode rewards is -26.254376769065857
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 35/625 episodes, total num timesteps 115200/2000000, FPS 77.
+
+average episode rewards is -24.397359788417816
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 40/625 episodes, total num timesteps 131200/2000000, FPS 77.
+
+average episode rewards is -23.397302627563477
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 45/625 episodes, total num timesteps 147200/2000000, FPS 77.
+
+average episode rewards is -23.425869643688202
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 50/625 episodes, total num timesteps 163200/2000000, FPS 77.
+
+average episode rewards is -22.88660854101181
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 55/625 episodes, total num timesteps 179200/2000000, FPS 77.
+
+average episode rewards is -23.848286271095276
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 60/625 episodes, total num timesteps 195200/2000000, FPS 77.
+
+average episode rewards is -22.371986508369446
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 65/625 episodes, total num timesteps 211200/2000000, FPS 77.
+
+average episode rewards is -19.834955036640167
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 70/625 episodes, total num timesteps 227200/2000000, FPS 77.
+
+average episode rewards is -21.660514175891876
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 75/625 episodes, total num timesteps 243200/2000000, FPS 77.
+
+average episode rewards is -22.448383271694183
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 80/625 episodes, total num timesteps 259200/2000000, FPS 77.
+
+average episode rewards is -19.9961319565773
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 85/625 episodes, total num timesteps 275200/2000000, FPS 77.
+
+average episode rewards is -22.85406142473221
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 90/625 episodes, total num timesteps 291200/2000000, FPS 77.
+
+average episode rewards is -22.030192613601685
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 95/625 episodes, total num timesteps 307200/2000000, FPS 77.
+
+average episode rewards is -21.699583530426025
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 100/625 episodes, total num timesteps 323200/2000000, FPS 77.
+
+average episode rewards is -22.711704671382904
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 105/625 episodes, total num timesteps 339200/2000000, FPS 77.
+
+average episode rewards is -21.08321338891983
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 110/625 episodes, total num timesteps 355200/2000000, FPS 77.
+
+average episode rewards is -20.4251229763031
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 115/625 episodes, total num timesteps 371200/2000000, FPS 77.
+
+average episode rewards is -20.714500546455383
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 120/625 episodes, total num timesteps 387200/2000000, FPS 77.
+
+average episode rewards is -21.28385305404663
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 125/625 episodes, total num timesteps 403200/2000000, FPS 77.
+
+average episode rewards is -21.449825167655945
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 130/625 episodes, total num timesteps 419200/2000000, FPS 77.
+
+average episode rewards is -18.84884238243103
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 135/625 episodes, total num timesteps 435200/2000000, FPS 77.
+
+average episode rewards is -20.798534154891968
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 140/625 episodes, total num timesteps 451200/2000000, FPS 77.
+
+average episode rewards is -21.768417954444885
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 145/625 episodes, total num timesteps 467200/2000000, FPS 77.
+
+average episode rewards is -19.258007407188416
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 150/625 episodes, total num timesteps 483200/2000000, FPS 77.
+
+average episode rewards is -19.32355910539627
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 155/625 episodes, total num timesteps 499200/2000000, FPS 77.
+
+average episode rewards is -19.569313526153564
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 160/625 episodes, total num timesteps 515200/2000000, FPS 77.
+
+average episode rewards is -20.323288440704346
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 165/625 episodes, total num timesteps 531200/2000000, FPS 77.
+
+average episode rewards is -19.307349622249603
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 170/625 episodes, total num timesteps 547200/2000000, FPS 77.
+
+average episode rewards is -19.120986759662628
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 175/625 episodes, total num timesteps 563200/2000000, FPS 77.
+
+average episode rewards is -17.453552782535553
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 180/625 episodes, total num timesteps 579200/2000000, FPS 77.
+
+average episode rewards is -17.66424924135208
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 185/625 episodes, total num timesteps 595200/2000000, FPS 77.
+
+average episode rewards is -21.010246872901917
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 190/625 episodes, total num timesteps 611200/2000000, FPS 77.
+
+average episode rewards is -18.56686919927597
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 195/625 episodes, total num timesteps 627200/2000000, FPS 77.
+
+average episode rewards is -17.649325728416443
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 200/625 episodes, total num timesteps 643200/2000000, FPS 77.
+
+average episode rewards is -17.957007884979248
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 205/625 episodes, total num timesteps 659200/2000000, FPS 77.
+
+average episode rewards is -19.380496442317963
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 210/625 episodes, total num timesteps 675200/2000000, FPS 77.
+
+average episode rewards is -18.394188582897186
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 215/625 episodes, total num timesteps 691200/2000000, FPS 77.
+
+average episode rewards is -17.7575945854187
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 220/625 episodes, total num timesteps 707200/2000000, FPS 77.
+
+average episode rewards is -18.59041601419449
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 225/625 episodes, total num timesteps 723200/2000000, FPS 77.
+
+average episode rewards is -18.348979949951172
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 230/625 episodes, total num timesteps 739200/2000000, FPS 77.
+
+average episode rewards is -17.74201989173889
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 235/625 episodes, total num timesteps 755200/2000000, FPS 77.
+
+average episode rewards is -17.16648042201996
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 240/625 episodes, total num timesteps 771200/2000000, FPS 77.
+
+average episode rewards is -18.121199309825897
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 245/625 episodes, total num timesteps 787200/2000000, FPS 77.
+
+average episode rewards is -17.142193019390106
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 250/625 episodes, total num timesteps 803200/2000000, FPS 77.
+
+average episode rewards is -17.267954349517822
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 255/625 episodes, total num timesteps 819200/2000000, FPS 77.
+
+average episode rewards is -15.907053649425507
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 260/625 episodes, total num timesteps 835200/2000000, FPS 77.
+
+average episode rewards is -18.648262321949005
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 265/625 episodes, total num timesteps 851200/2000000, FPS 77.
+
+average episode rewards is -15.898318588733673
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 270/625 episodes, total num timesteps 867200/2000000, FPS 77.
+
+average episode rewards is -16.32736325263977
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 275/625 episodes, total num timesteps 883200/2000000, FPS 77.
+
+average episode rewards is -17.17032641172409
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 280/625 episodes, total num timesteps 899200/2000000, FPS 77.
+
+average episode rewards is -16.194982826709747
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 285/625 episodes, total num timesteps 915200/2000000, FPS 77.
+
+average episode rewards is -16.455139219760895
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 290/625 episodes, total num timesteps 931200/2000000, FPS 77.
+
+average episode rewards is -17.381039261817932
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 295/625 episodes, total num timesteps 947200/2000000, FPS 77.
+
+average episode rewards is -14.166684448719025
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 300/625 episodes, total num timesteps 963200/2000000, FPS 77.
+
+average episode rewards is -16.96302592754364
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 305/625 episodes, total num timesteps 979200/2000000, FPS 77.
+
+average episode rewards is -17.511026561260223
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 310/625 episodes, total num timesteps 995200/2000000, FPS 77.
+
+average episode rewards is -15.594501793384552
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 315/625 episodes, total num timesteps 1011200/2000000, FPS 77.
+
+average episode rewards is -16.017694771289825
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 320/625 episodes, total num timesteps 1027200/2000000, FPS 77.
+
+average episode rewards is -15.720485150814056
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 325/625 episodes, total num timesteps 1043200/2000000, FPS 77.
+
+average episode rewards is -16.125120222568512
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 330/625 episodes, total num timesteps 1059200/2000000, FPS 77.
+
+average episode rewards is -16.453996300697327
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 335/625 episodes, total num timesteps 1075200/2000000, FPS 77.
+
+average episode rewards is -17.84830093383789
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 340/625 episodes, total num timesteps 1091200/2000000, FPS 77.
+
+average episode rewards is -17.136207222938538
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 345/625 episodes, total num timesteps 1107200/2000000, FPS 77.
+
+average episode rewards is -17.001205682754517
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 350/625 episodes, total num timesteps 1123200/2000000, FPS 77.
+
+average episode rewards is -16.3081094622612
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 355/625 episodes, total num timesteps 1139200/2000000, FPS 77.
+
+average episode rewards is -14.298045635223389
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 360/625 episodes, total num timesteps 1155200/2000000, FPS 77.
+
+average episode rewards is -16.513127088546753
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 365/625 episodes, total num timesteps 1171200/2000000, FPS 77.
+
+average episode rewards is -15.22495299577713
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 370/625 episodes, total num timesteps 1187200/2000000, FPS 77.
+
+average episode rewards is -15.707282721996307
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 375/625 episodes, total num timesteps 1203200/2000000, FPS 77.
+
+average episode rewards is -14.49953019618988
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 380/625 episodes, total num timesteps 1219200/2000000, FPS 77.
+
+average episode rewards is -14.824926853179932
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 385/625 episodes, total num timesteps 1235200/2000000, FPS 77.
+
+average episode rewards is -15.319041907787323
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 390/625 episodes, total num timesteps 1251200/2000000, FPS 77.
+
+average episode rewards is -15.367364883422852
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 395/625 episodes, total num timesteps 1267200/2000000, FPS 77.
+
+average episode rewards is -14.875374734401703
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 400/625 episodes, total num timesteps 1283200/2000000, FPS 77.
+
+average episode rewards is -15.69727212190628
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 405/625 episodes, total num timesteps 1299200/2000000, FPS 77.
+
+average episode rewards is -13.908463716506958
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 410/625 episodes, total num timesteps 1315200/2000000, FPS 77.
+
+average episode rewards is -14.155441522598267
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 415/625 episodes, total num timesteps 1331200/2000000, FPS 77.
+
+average episode rewards is -13.573326170444489
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 420/625 episodes, total num timesteps 1347200/2000000, FPS 77.
+
+average episode rewards is -12.597794830799103
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 425/625 episodes, total num timesteps 1363200/2000000, FPS 77.
+
+average episode rewards is -15.496137738227844
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 430/625 episodes, total num timesteps 1379200/2000000, FPS 77.
+
+average episode rewards is -15.633203089237213
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 435/625 episodes, total num timesteps 1395200/2000000, FPS 77.
+
+average episode rewards is -13.835632801055908
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 440/625 episodes, total num timesteps 1411200/2000000, FPS 77.
+
+average episode rewards is -14.424414932727814
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 445/625 episodes, total num timesteps 1427200/2000000, FPS 77.
+
+average episode rewards is -13.83848786354065
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 450/625 episodes, total num timesteps 1443200/2000000, FPS 77.
+
+average episode rewards is -13.178114593029022
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 455/625 episodes, total num timesteps 1459200/2000000, FPS 77.
+
+average episode rewards is -13.759918510913849
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 460/625 episodes, total num timesteps 1475200/2000000, FPS 77.
+
+average episode rewards is -14.047542214393616
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 465/625 episodes, total num timesteps 1491200/2000000, FPS 77.
+
+average episode rewards is -13.99933248758316
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 470/625 episodes, total num timesteps 1507200/2000000, FPS 77.
+
+average episode rewards is -14.017568528652191
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 475/625 episodes, total num timesteps 1523200/2000000, FPS 77.
+
+average episode rewards is -15.032200515270233
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 480/625 episodes, total num timesteps 1539200/2000000, FPS 77.
+
+average episode rewards is -14.743991196155548
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 485/625 episodes, total num timesteps 1555200/2000000, FPS 77.
+
+average episode rewards is -13.911856710910797
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 490/625 episodes, total num timesteps 1571200/2000000, FPS 77.
+
+average episode rewards is -13.43797743320465
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 495/625 episodes, total num timesteps 1587200/2000000, FPS 77.
+
+average episode rewards is -13.767679035663605
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 500/625 episodes, total num timesteps 1603200/2000000, FPS 77.
+
+average episode rewards is -12.857207655906677
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 505/625 episodes, total num timesteps 1619200/2000000, FPS 77.
+
+average episode rewards is -14.40735012292862
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 510/625 episodes, total num timesteps 1635200/2000000, FPS 77.
+
+average episode rewards is -13.723500072956085
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 515/625 episodes, total num timesteps 1651200/2000000, FPS 77.
+
+average episode rewards is -12.843747437000275
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 520/625 episodes, total num timesteps 1667200/2000000, FPS 77.
+
+average episode rewards is -14.162878692150116
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 525/625 episodes, total num timesteps 1683200/2000000, FPS 77.
+
+average episode rewards is -13.144487142562866
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 530/625 episodes, total num timesteps 1699200/2000000, FPS 77.
+
+average episode rewards is -15.165671706199646
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 535/625 episodes, total num timesteps 1715200/2000000, FPS 77.
+
+average episode rewards is -13.751745223999023
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 540/625 episodes, total num timesteps 1731200/2000000, FPS 77.
+
+average episode rewards is -13.187375664710999
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 545/625 episodes, total num timesteps 1747200/2000000, FPS 77.
+
+average episode rewards is -12.992264330387115
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 550/625 episodes, total num timesteps 1763200/2000000, FPS 77.
+
+average episode rewards is -14.900720119476318
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 555/625 episodes, total num timesteps 1779200/2000000, FPS 77.
+
+average episode rewards is -13.410939276218414
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 560/625 episodes, total num timesteps 1795200/2000000, FPS 77.
+
+average episode rewards is -13.099157810211182
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 565/625 episodes, total num timesteps 1811200/2000000, FPS 77.
+
+average episode rewards is -13.367277383804321
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 570/625 episodes, total num timesteps 1827200/2000000, FPS 77.
+
+average episode rewards is -12.593139708042145
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 575/625 episodes, total num timesteps 1843200/2000000, FPS 77.
+
+average episode rewards is -12.4118871986866
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 580/625 episodes, total num timesteps 1859200/2000000, FPS 77.
+
+average episode rewards is -12.84184455871582
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 585/625 episodes, total num timesteps 1875200/2000000, FPS 77.
+
+average episode rewards is -12.342017143964767
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 590/625 episodes, total num timesteps 1891200/2000000, FPS 77.
+
+average episode rewards is -11.761314421892166
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 595/625 episodes, total num timesteps 1907200/2000000, FPS 77.
+
+average episode rewards is -11.714716255664825
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 600/625 episodes, total num timesteps 1923200/2000000, FPS 77.
+
+average episode rewards is -12.524497509002686
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 605/625 episodes, total num timesteps 1939200/2000000, FPS 77.
+
+average episode rewards is -12.297632545232773
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 610/625 episodes, total num timesteps 1955200/2000000, FPS 77.
+
+average episode rewards is -11.748811602592468
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 615/625 episodes, total num timesteps 1971200/2000000, FPS 77.
+
+average episode rewards is -11.15950122475624
+
+ Scenario simple_reference Algo sthvmappo Exp debug updates 620/625 episodes, total num timesteps 1987200/2000000, FPS 77.
+
+average episode rewards is -13.143140077590942

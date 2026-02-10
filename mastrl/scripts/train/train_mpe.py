@@ -204,6 +204,12 @@ if __name__ == "__main__":
         "--user_name", "yuding-zh-uestc",
         "--use_stca",
         "--use_hgvd",
-        "--share_policy"
+        "--share_policy",
+        "--hgvd_warmup_updates", "15000",
+        "--hgvd_loss_coef", "0.03",
+        "--credit_loss_coef", "0.005",
+        "--credit_temperature", "0.7",
+        "--credit_target_tau", "0.5"
+
     ]
     main(args)
