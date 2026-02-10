@@ -207,7 +207,7 @@ if __name__ == "__main__":
         "--share_policy",
         "--hgvd_warmup_updates", "15000",
         "--hgvd_loss_coef", "0.03",
-        "--credit_loss_coef", "0.005",
+        "--credit_loss_coef", "0.01",
         "--credit_temperature", "0.7",
         "--credit_target_tau", "0.5"
 
