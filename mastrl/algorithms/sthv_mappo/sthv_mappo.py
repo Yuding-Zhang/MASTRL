@@ -7,7 +7,6 @@ from mastrl.utils.util import get_gard_norm, huber_loss, mse_loss
 from mastrl.utils.valuenorm import ValueNorm
 from mastrl.algorithms.utils.util import check
 
-from mastrl.algorithms.sthv_mappo.algorithm.hyperedge import discover_hyperedges_knn
 
 class STHV_MAPPO():
     """Trainer: MAPPO + (STCA advantage shaping) + (hgvd critic loss).
@@ -49,10 +48,14 @@ class STHV_MAPPO():
         self.credit_temperature = float(getattr(args, "credit_temperature", 1.0))
         self.credit_detach = bool(getattr(args, "credit_detach", True))
         self.use_hgvd = getattr(args, "use_hgvd", True)
-        self.hyperedge_k = int(getattr(args, "hyperedge_k", 3))
+        self.hyperedge_k = int(getattr(args, "hyperedge_k", 3))  # reuse as fixed k neighbors
         self.max_group_size = int(getattr(args, "max_group_size", 6))
         self.hgvd_loss_coef = float(getattr(args, "hgvd_loss_coef", 1.0))
         self.hgvd_target_tau = float(getattr(args, "hgvd_target_tau", 0.005))
+        self.hgvd_update_interval = int(getattr(args, "hgvd_update_interval", 4))
+        self.hgvd_warmup_updates = int(getattr(args, "hgvd_warmup_updates", 0))
+        self.hgvd_hops = int(getattr(args, "hgvd_hops", 2))
+        self._update_step = 0
                 
         assert (self._use_popart and self._use_valuenorm) == False, ("popart and valuenorm cannot both be True")
         if self._use_popart:
@@ -66,6 +69,19 @@ class STHV_MAPPO():
         self.target_hgvd_critic = copy.deepcopy(self.policy.hgvd_critic)
         self._freeze_target(self.target_actor)
         self._freeze_target(self.target_hgvd_critic)
+
+        # fixed sparse neighbor indices [N,k]
+        self.nei_idx = self._build_fixed_neighbors(self.policy.num_agents, self.hyperedge_k).to(device)
+
+    def _build_fixed_neighbors(self, n_agents: int, k: int):
+        """Build a fixed directed ring/top-k style neighbor list (O(1), once)."""
+        k = max(1, min(k, max(1, n_agents - 1)))
+        nei = torch.zeros((n_agents, k), dtype=torch.long)
+        for i in range(n_agents):
+            # simple ring: i-1, i+1, i+2, ...
+            neighbors = [((i + offset) % n_agents) for offset in range(1, k + 1)]
+            nei[i] = torch.tensor(neighbors, dtype=torch.long)
+        return nei
 
     def _freeze_target(self, module):
         module.eval()
@@ -142,33 +158,22 @@ class STHV_MAPPO():
         return actions_batch.float()
     
 
-    def _compute_hgvd_q(self, z_batch, actions_batch, n_agents, critic=None, return_adj=False):
-        """Compute Q_tot and Q_i per sample.
+    def _compute_hgvd_q(self, z_batch, actions_batch, n_agents, critic=None):
+        """Compute Q_tot and Q_i with fixed sparse graph.
 
         z_batch: [B*N, D] flattened over agents
         actions_batch: [B*N, ...] flattened over agents
-        Returns:
-            Q_tot: [B,1]
-            Q_i:   [B,N]
         """
         B = z_batch.size(0) // n_agents
         D = z_batch.size(1)
-        z = z_batch.view(B, n_agents, D)
-        # actions -> one-hot or vector
-        a_flat = self._actions_to_onehot(actions_batch)
+        z = z_batch.view(B, n_agents, D)                 # [B,N,D]
+        a_flat = self._actions_to_onehot(actions_batch)  # [B*N, A]
         A = a_flat.size(-1)
-        a = a_flat.view(B, n_agents, A)
+        a = a_flat.view(B, n_agents, A)                  # [B,N,A]
 
-        Q_tot_list = []
-        Q_i_list = []
-        for b in range(B):
-            hyperedges = discover_hyperedges_knn(z[b], k=self.hyperedge_k, max_group_size=self.max_group_size)
-            critic_mod = critic if critic is not None else self.policy.hgvd_critic
-            q_tot, q_i = critic_mod(z[b], a[b], hyperedges)
-            Q_tot_list.append(q_tot)
-            Q_i_list.append(q_i.unsqueeze(0))
-        Q_tot = torch.stack(Q_tot_list, dim=0)  # [B,1]
-        Q_i = torch.cat(Q_i_list, dim=0)        # [B,N]
+        nei_idx = self.nei_idx.to(z.device)              # [N,k]
+        critic_mod = critic if critic is not None else self.policy.hgvd_critic
+        Q_tot, Q_i = critic_mod(z, a, nei_idx)           # [B,1], [B,N]
         return Q_tot, Q_i
     
     def ppo_update(self, sample, update_actor=True):
@@ -203,6 +208,8 @@ class STHV_MAPPO():
         return_batch = check(return_batch).to(**self.tpdv)
         active_masks_batch = check(active_masks_batch).to(**self.tpdv)
 
+        self._update_step += 1
+
         values, action_log_probs, dist_entropy, z_new, credit_logits_new = self.policy.evaluate_actions(
             share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
             masks_batch, available_actions_batch, active_masks_batch
@@ -217,7 +224,13 @@ class STHV_MAPPO():
         z_batch = z_new.detach() if z_new is not None else None
         old_credit_logits_batch = credit_logits_new.detach() if credit_logits_new is not None else None
 
-        if self.use_stca and self.use_hgvd and (old_credit_logits_batch is not None) and (z_batch is not None) and n_agents > 1:
+        do_hgvd = (
+            self.use_hgvd
+            and (self._update_step >= self.hgvd_warmup_updates)
+            and (self.hgvd_update_interval <= 1 or (self._update_step % self.hgvd_update_interval == 0))
+        )
+
+        if self.use_stca and do_hgvd and (old_credit_logits_batch is not None) and (z_batch is not None) and n_agents > 1:
             # STCA weights from OLD credit logits
             c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)
             c_old = c_old / max(self.credit_temperature, 1e-6)
@@ -287,11 +300,14 @@ class STHV_MAPPO():
             critic_grad_norm = get_gard_norm(self.policy.critic.parameters())
         self.policy.critic_optimizer.step()
 
-        self.policy.hgvd_critic_optimizer.zero_grad()
-        (hgvd_loss * self.hgvd_loss_coef).backward()
-        self.policy.hgvd_critic_optimizer.step()
+        if do_hgvd and hgvd_loss.requires_grad:
+            self.policy.hgvd_critic_optimizer.zero_grad()
+            (hgvd_loss * self.hgvd_loss_coef).backward()
+            if self._use_max_grad_norm:
+                nn.utils.clip_grad_norm_(self.policy.hgvd_critic.parameters(), self.max_grad_norm)
+            self.policy.hgvd_critic_optimizer.step()
+            self._soft_update(self.target_hgvd_critic, self.policy.hgvd_critic, self.hgvd_target_tau)
 
-        self._soft_update(self.target_hgvd_critic, self.policy.hgvd_critic, self.hgvd_target_tau)
         self._soft_update(self.target_actor, self.policy.actor, self.hgvd_target_tau)
 
         return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hgvd_loss

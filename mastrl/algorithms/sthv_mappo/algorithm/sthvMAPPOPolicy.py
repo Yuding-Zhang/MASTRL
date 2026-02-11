@@ -39,7 +39,14 @@ class STHV_MAPPOPolicy:
         self.critic = Baseline_R_Critic(args, self.share_obs_space, self.device)
 
         act_dim = _infer_act_dim(act_space)
-        self.hgvd_critic = HypergraphCritic(embed_dim=args.hidden_size, act_dim=act_dim, hidden_dim=getattr(args, "hgvd_hidden_dim", 128)).to(device)
+        self.hgvd_critic = HypergraphCritic(
+            embed_dim=args.hidden_size,
+            act_dim=act_dim,
+            hidden_dim=getattr(args, "hgvd_hidden_dim", 128),
+            msg_hops=getattr(args, "hgvd_hops", 2),
+            k=getattr(args, "hyperedge_k", 3),
+            symmetric_graph=bool(getattr(args, "hgvd_symmetric", True))
+        ).to(device)
 
         self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=self.lr, eps=self.opti_eps, weight_decay=self.weight_decay)
         self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=self.critic_lr, eps=self.opti_eps, weight_decay=self.weight_decay)
