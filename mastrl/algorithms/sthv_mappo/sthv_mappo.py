@@ -212,9 +212,10 @@ class STHV_MAPPO():
         shaped_adv = adv_targ
         hgvd_loss = torch.zeros([], device=values.device)
 
-        # Use freshly-computed aux outputs (rollout may skip them)
-        z_batch = z_new
-        old_credit_logits_batch = credit_logits_new
+        # Use freshly-computed aux outputs (rollout may skip them). Detach to avoid
+        # double-backward through actor graph when optimizing hgvd separately.
+        z_batch = z_new.detach() if z_new is not None else None
+        old_credit_logits_batch = credit_logits_new.detach() if credit_logits_new is not None else None
 
         if self.use_stca and self.use_hgvd and (old_credit_logits_batch is not None) and (z_batch is not None) and n_agents > 1:
             # STCA weights from OLD credit logits
