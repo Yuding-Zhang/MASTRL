@@ -1,7 +1,8 @@
 #!/bin/sh
 env="StarCraft2"
 map="8m_vs_9m"
-algo="rmappo"
+algo="sthvmappo"
+num_agents=8
 exp="check"
 seed_max=1
 
@@ -11,5 +12,7 @@ do
     echo "seed is ${seed}:"
     CUDA_VISIBLE_DEVICES=0 python ../train/train_smac.py --env_name ${env} --algorithm_name ${algo} --experiment_name ${exp} \
     --map_name ${map} --seed ${seed} --n_training_threads 1 --n_rollout_threads 8 --num_mini_batch 1 --episode_length 400 \
-    --num_env_steps 10000000 --ppo_epoch 15 --clip_param 0.05 --use_value_active_masks --use_eval --eval_episodes 32
+    --num_env_steps 10000000 --ppo_epoch 15 --clip_param 0.05 --use_value_active_masks --use_eval --eval_episodes 32 \
+    --wandb_name "yuding-zh-uestc" --user_name "yuding-zh-uestc" \
+    --share_policy --use_hgvd --use_stca --hgvd_warmup_updates 15000 --hgvd_loss_coef 0.03 --credit_loss_coef 0.01 --credit_target_tau 0.5 # sthvmappo specific parameters
 done

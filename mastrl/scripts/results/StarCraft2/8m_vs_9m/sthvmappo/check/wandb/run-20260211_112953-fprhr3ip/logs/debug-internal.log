@@ -1,0 +1,15 @@
+{"time":"2026-02-11T11:29:53.296228264Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/sthvmappo/check/wandb/run-20260211_112953-fprhr3ip/logs/debug-core.log"}
+{"time":"2026-02-11T11:29:53.398436898Z","level":"INFO","msg":"created new stream","id":"fprhr3ip"}
+{"time":"2026-02-11T11:29:53.398450119Z","level":"INFO","msg":"stream: started","id":"fprhr3ip"}
+{"time":"2026-02-11T11:29:53.398466636Z","level":"INFO","msg":"writer: Do: started","stream_id":"fprhr3ip"}
+{"time":"2026-02-11T11:29:53.39846934Z","level":"INFO","msg":"sender: started","stream_id":"fprhr3ip"}
+{"time":"2026-02-11T11:29:53.398485459Z","level":"INFO","msg":"handler: started","stream_id":"fprhr3ip"}
+{"time":"2026-02-11T11:29:54.150068571Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-11T12:40:28.580423707Z","level":"INFO","msg":"stream: closing","id":"fprhr3ip"}
+{"time":"2026-02-11T12:40:28.580440042Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-11T12:40:28.580906791Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-11T12:40:29.647131339Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-11T12:40:30.130371205Z","level":"INFO","msg":"handler: closed","stream_id":"fprhr3ip"}
+{"time":"2026-02-11T12:40:30.130404143Z","level":"INFO","msg":"writer: Close: closed","stream_id":"fprhr3ip"}
+{"time":"2026-02-11T12:40:30.130410627Z","level":"INFO","msg":"sender: closed","stream_id":"fprhr3ip"}
+{"time":"2026-02-11T12:40:30.13044358Z","level":"INFO","msg":"stream: closed","id":"fprhr3ip"}

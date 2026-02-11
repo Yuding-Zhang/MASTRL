@@ -1,0 +1,17 @@
+{"time":"2026-02-11T11:17:56.740487415Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/rmappo/check/wandb/run-20260211_111756-1x3pzow1/logs/debug-core.log"}
+{"time":"2026-02-11T11:17:56.842221956Z","level":"INFO","msg":"created new stream","id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:56.842242884Z","level":"INFO","msg":"stream: started","id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:56.842319405Z","level":"INFO","msg":"writer: Do: started","stream_id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:56.842367672Z","level":"INFO","msg":"handler: started","stream_id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:56.842389583Z","level":"INFO","msg":"sender: started","stream_id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:57.233778429Z","level":"ERROR","msg":"HTTP error","status":403,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2026-02-11T11:17:57.233885116Z","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: returned error 403: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"permission denied\",\"path\":[\"upsertBucket\"],\"extensions\":{\"code\":\"PERMISSION_ERROR\"}}]}"}
+{"time":"2026-02-11T11:17:58.235783871Z","level":"INFO","msg":"stream: closing","id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:58.23583889Z","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2026-02-11T11:17:58.538357452Z","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2026-02-11T11:17:58.538399074Z","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404: {\"data\":{\"createRunFiles\":null},\"errors\":[{\"message\":\"run StarCraft2/1x3pzow1 not found during createRunFiles\",\"path\":[\"createRunFiles\"]}]}"}
+{"time":"2026-02-11T11:17:58.538580543Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-11T11:17:58.538590945Z","level":"INFO","msg":"handler: closed","stream_id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:58.538596514Z","level":"INFO","msg":"writer: Close: closed","stream_id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:58.538616525Z","level":"INFO","msg":"sender: closed","stream_id":"1x3pzow1"}
+{"time":"2026-02-11T11:17:58.53861844Z","level":"INFO","msg":"stream: closed","id":"1x3pzow1"}

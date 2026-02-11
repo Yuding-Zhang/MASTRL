@@ -1,0 +1,265 @@
+obs_space:  [Box(-inf, inf, (18,), float32), Box(-inf, inf, (18,), float32), Box(-inf, inf, (18,), float32)]
+share_obs_space:  [Box(-inf, inf, (54,), float32), Box(-inf, inf, (54,), float32), Box(-inf, inf, (54,), float32)]
+act_space:  [Discrete(5), Discrete(5), Discrete(5)]
+/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/rnn.py:1139: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:1424.)
+  result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 0/6250 episodes, total num timesteps 3200/20000000, FPS 36.
+
+average episode rewards is -223.91064167022705
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 5/6250 episodes, total num timesteps 19200/20000000, FPS 36.
+
+average episode rewards is -198.11968803405762
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 10/6250 episodes, total num timesteps 35200/20000000, FPS 36.
+
+average episode rewards is -201.79345607757568
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 15/6250 episodes, total num timesteps 51200/20000000, FPS 36.
+
+average episode rewards is -182.27591514587402
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 20/6250 episodes, total num timesteps 67200/20000000, FPS 36.
+
+average episode rewards is -185.6472134590149
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 25/6250 episodes, total num timesteps 83200/20000000, FPS 36.
+
+average episode rewards is -175.38858652114868
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 30/6250 episodes, total num timesteps 99200/20000000, FPS 36.
+
+average episode rewards is -176.7528533935547
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 35/6250 episodes, total num timesteps 115200/20000000, FPS 36.
+
+average episode rewards is -175.23610591888428
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 40/6250 episodes, total num timesteps 131200/20000000, FPS 36.
+
+average episode rewards is -173.71593713760376
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 45/6250 episodes, total num timesteps 147200/20000000, FPS 36.
+
+average episode rewards is -173.19148778915405
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 50/6250 episodes, total num timesteps 163200/20000000, FPS 36.
+
+average episode rewards is -169.4028377532959
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 55/6250 episodes, total num timesteps 179200/20000000, FPS 36.
+
+average episode rewards is -168.77127885818481
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 60/6250 episodes, total num timesteps 195200/20000000, FPS 36.
+
+average episode rewards is -170.92000246047974
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 65/6250 episodes, total num timesteps 211200/20000000, FPS 36.
+
+average episode rewards is -166.70794486999512
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 70/6250 episodes, total num timesteps 227200/20000000, FPS 36.
+
+average episode rewards is -167.82405376434326
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 75/6250 episodes, total num timesteps 243200/20000000, FPS 36.
+
+average episode rewards is -165.05316495895386
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 80/6250 episodes, total num timesteps 259200/20000000, FPS 36.
+
+average episode rewards is -167.79170036315918
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 85/6250 episodes, total num timesteps 275200/20000000, FPS 36.
+
+average episode rewards is -162.37914562225342
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 90/6250 episodes, total num timesteps 291200/20000000, FPS 36.
+
+average episode rewards is -163.2291078567505
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 95/6250 episodes, total num timesteps 307200/20000000, FPS 36.
+
+average episode rewards is -165.56626558303833
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 100/6250 episodes, total num timesteps 323200/20000000, FPS 36.
+
+average episode rewards is -159.63950157165527
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 105/6250 episodes, total num timesteps 339200/20000000, FPS 36.
+
+average episode rewards is -156.98920488357544
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 110/6250 episodes, total num timesteps 355200/20000000, FPS 36.
+
+average episode rewards is -160.31886339187622
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 115/6250 episodes, total num timesteps 371200/20000000, FPS 36.
+
+average episode rewards is -161.91118955612183
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 120/6250 episodes, total num timesteps 387200/20000000, FPS 36.
+
+average episode rewards is -159.93268489837646
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 125/6250 episodes, total num timesteps 403200/20000000, FPS 36.
+
+average episode rewards is -159.33706760406494
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 130/6250 episodes, total num timesteps 419200/20000000, FPS 36.
+
+average episode rewards is -159.0152144432068
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 135/6250 episodes, total num timesteps 435200/20000000, FPS 36.
+
+average episode rewards is -154.66891527175903
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 140/6250 episodes, total num timesteps 451200/20000000, FPS 36.
+
+average episode rewards is -160.0263476371765
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 145/6250 episodes, total num timesteps 467200/20000000, FPS 36.
+
+average episode rewards is -155.84903955459595
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 150/6250 episodes, total num timesteps 483200/20000000, FPS 36.
+
+average episode rewards is -156.98002576828003
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 155/6250 episodes, total num timesteps 499200/20000000, FPS 36.
+
+average episode rewards is -157.2898507118225
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 160/6250 episodes, total num timesteps 515200/20000000, FPS 36.
+
+average episode rewards is -155.55074214935303
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 165/6250 episodes, total num timesteps 531200/20000000, FPS 36.
+
+average episode rewards is -154.90232706069946
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 170/6250 episodes, total num timesteps 547200/20000000, FPS 36.
+
+average episode rewards is -156.84075355529785
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 175/6250 episodes, total num timesteps 563200/20000000, FPS 36.
+
+average episode rewards is -154.3709635734558
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 180/6250 episodes, total num timesteps 579200/20000000, FPS 36.
+
+average episode rewards is -149.5360255241394
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 185/6250 episodes, total num timesteps 595200/20000000, FPS 36.
+
+average episode rewards is -152.12881565093994
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 190/6250 episodes, total num timesteps 611200/20000000, FPS 36.
+
+average episode rewards is -151.79730653762817
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 195/6250 episodes, total num timesteps 627200/20000000, FPS 36.
+
+average episode rewards is -153.2839298248291
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 200/6250 episodes, total num timesteps 643200/20000000, FPS 36.
+
+average episode rewards is -149.6248960494995
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 205/6250 episodes, total num timesteps 659200/20000000, FPS 36.
+
+average episode rewards is -155.39158582687378
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 210/6250 episodes, total num timesteps 675200/20000000, FPS 36.
+
+average episode rewards is -151.89669132232666
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 215/6250 episodes, total num timesteps 691200/20000000, FPS 36.
+
+average episode rewards is -145.82233428955078
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 220/6250 episodes, total num timesteps 707200/20000000, FPS 36.
+
+average episode rewards is -152.22643613815308
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 225/6250 episodes, total num timesteps 723200/20000000, FPS 36.
+
+average episode rewards is -146.9929337501526
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 230/6250 episodes, total num timesteps 739200/20000000, FPS 36.
+
+average episode rewards is -149.2584228515625
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 235/6250 episodes, total num timesteps 755200/20000000, FPS 36.
+
+average episode rewards is -148.96717071533203
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 240/6250 episodes, total num timesteps 771200/20000000, FPS 36.
+
+average episode rewards is -149.7198462486267
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 245/6250 episodes, total num timesteps 787200/20000000, FPS 36.
+
+average episode rewards is -152.52344608306885
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 250/6250 episodes, total num timesteps 803200/20000000, FPS 36.
+
+average episode rewards is -148.30143451690674
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 255/6250 episodes, total num timesteps 819200/20000000, FPS 36.
+
+average episode rewards is -150.7089138031006
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 260/6250 episodes, total num timesteps 835200/20000000, FPS 36.
+
+average episode rewards is -153.55838537216187
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 265/6250 episodes, total num timesteps 851200/20000000, FPS 36.
+
+average episode rewards is -151.3825535774231
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 270/6250 episodes, total num timesteps 867200/20000000, FPS 36.
+
+average episode rewards is -147.5398063659668
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 275/6250 episodes, total num timesteps 883200/20000000, FPS 36.
+
+average episode rewards is -146.73064947128296
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 280/6250 episodes, total num timesteps 899200/20000000, FPS 36.
+
+average episode rewards is -147.57819175720215
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 285/6250 episodes, total num timesteps 915200/20000000, FPS 36.
+
+average episode rewards is -148.67076873779297
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 290/6250 episodes, total num timesteps 931200/20000000, FPS 36.
+
+average episode rewards is -149.199378490448
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 295/6250 episodes, total num timesteps 947200/20000000, FPS 36.
+
+average episode rewards is -148.72393608093262
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 300/6250 episodes, total num timesteps 963200/20000000, FPS 35.
+
+average episode rewards is -147.10873365402222
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 305/6250 episodes, total num timesteps 979200/20000000, FPS 35.
+
+average episode rewards is -145.70149183273315
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 310/6250 episodes, total num timesteps 995200/20000000, FPS 35.
+
+average episode rewards is -140.48426151275635
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 315/6250 episodes, total num timesteps 1011200/20000000, FPS 34.
+
+average episode rewards is -143.68116855621338
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 320/6250 episodes, total num timesteps 1027200/20000000, FPS 34.
+
+average episode rewards is -145.4121708869934

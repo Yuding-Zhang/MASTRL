@@ -1,0 +1,7 @@
+{"time":"2026-02-11T11:19:06.303410032Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/rmappo/check/wandb/run-20260211_111906-ngptel0i/logs/debug-core.log"}
+{"time":"2026-02-11T11:19:06.404882575Z","level":"INFO","msg":"created new stream","id":"ngptel0i"}
+{"time":"2026-02-11T11:19:06.404902483Z","level":"INFO","msg":"stream: started","id":"ngptel0i"}
+{"time":"2026-02-11T11:19:06.404999015Z","level":"INFO","msg":"writer: Do: started","stream_id":"ngptel0i"}
+{"time":"2026-02-11T11:19:06.405047375Z","level":"INFO","msg":"handler: started","stream_id":"ngptel0i"}
+{"time":"2026-02-11T11:19:06.405076166Z","level":"INFO","msg":"sender: started","stream_id":"ngptel0i"}
+{"time":"2026-02-11T11:19:07.05079538Z","level":"INFO","msg":"Starting system monitor"}

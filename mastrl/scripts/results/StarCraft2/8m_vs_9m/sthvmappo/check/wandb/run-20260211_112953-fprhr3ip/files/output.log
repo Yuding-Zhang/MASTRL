@@ -1,0 +1,34 @@
+obs_space:  [[217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]]]
+share_obs_space:  [[267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/rnn.py:1139: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:1424.)
+  result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
+
+ Map 8m_vs_9m Algo sthvmappo Exp check updates 0/3125 episodes, total num timesteps 3200/10000000, FPS 5.
+
+incre win rate is 0.0.
+eval win rate is 0.0.
+/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/rnn.py:1139: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:1424.)
+  result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
+
+ Map 8m_vs_9m Algo sthvmappo Exp check updates 5/3125 episodes, total num timesteps 19200/10000000, FPS 5.
+
+incre win rate is 0.0.
+Traceback (most recent call last):
+  File "../train/train_smac.py", line 271, in <module>
+    main(sys.argv[1:])
+  File "../train/train_smac.py", line 256, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/smac_runner.py", line 45, in run
+    train_infos = self.train()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/base_runner.py", line 143, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 318, in train
+    value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss = self.ppo_update(sample, update_actor)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 249, in ppo_update
+    Q_tot_next, _ = self._compute_hgvd_q(z_next, actions_next, n_agents, critic=self.target_hgvd_critic)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 165, in _compute_hgvd_q
+    hyperedges = discover_hyperedges_knn(z[b], k=self.hyperedge_k, max_group_size=self.max_group_size)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/algorithm/hyperedge.py", line 27, in discover_hyperedges_knn
+    adj[i, knn[i]] = True
+KeyboardInterrupt
