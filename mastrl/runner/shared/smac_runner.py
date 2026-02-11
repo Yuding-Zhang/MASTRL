@@ -28,14 +28,14 @@ class SMACRunner(Runner):
 
             for step in range(self.episode_length):
                 # Sample actions
-                values, actions, action_log_probs, rnn_states, rnn_states_critic = self.collect(step)
+                values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits = self.collect(step)
                     
                 # Obser reward and next obs
                 obs, share_obs, rewards, dones, infos, available_actions = self.envs.step(actions)
 
                 data = obs, share_obs, rewards, dones, infos, available_actions, \
                        values, actions, action_log_probs, \
-                       rnn_states, rnn_states_critic 
+                       rnn_states, rnn_states_critic, z, credit_logits
                 
                 # insert data into buffer
                 self.insert(data)
@@ -110,13 +110,19 @@ class SMACRunner(Runner):
     @torch.no_grad()
     def collect(self, step):
         self.trainer.prep_rollout()
-        value, action, action_log_prob, rnn_state, rnn_state_critic \
-            = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
+        out = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
                                             np.concatenate(self.buffer.obs[step]),
                                             np.concatenate(self.buffer.rnn_states[step]),
                                             np.concatenate(self.buffer.rnn_states_critic[step]),
                                             np.concatenate(self.buffer.masks[step]),
                                             np.concatenate(self.buffer.available_actions[step]))
+        
+        if isinstance(out, tuple) and len(out) == 7:
+            value, action, action_log_prob, rnn_states, rnn_states_critic, z, credit_logits = out
+        else:
+            value, action, action_log_prob, rnn_states, rnn_states_critic = out
+            z, credit_logits = None, None
+    
         # [self.envs, agents, dim]
         values = np.array(np.split(_t2n(value), self.n_rollout_threads))
         actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
@@ -124,11 +130,17 @@ class SMACRunner(Runner):
         rnn_states = np.array(np.split(_t2n(rnn_state), self.n_rollout_threads))
         rnn_states_critic = np.array(np.split(_t2n(rnn_state_critic), self.n_rollout_threads))
 
-        return values, actions, action_log_probs, rnn_states, rnn_states_critic
+        if z is not None:
+            z = np.array(np.split(_t2n(z), self.n_rollout_threads))
+        if credit_logits is not None:
+            credit_logits = np.array(np.split(_t2n(credit_logits), self.n_rollout_threads))
+
+        return values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits
+
 
     def insert(self, data):
         obs, share_obs, rewards, dones, infos, available_actions, \
-        values, actions, action_log_probs, rnn_states, rnn_states_critic = data
+        values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits = data
 
         dones_env = np.all(dones, axis=1)
 
@@ -148,7 +160,7 @@ class SMACRunner(Runner):
             share_obs = obs
 
         self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic,
-                           actions, action_log_probs, values, rewards, masks, bad_masks, active_masks, available_actions)
+                           actions, action_log_probs, values, rewards, masks,z, credit_logits bad_masks, active_masks, available_actions)
 
     def log_train(self, train_infos, total_num_steps):
         train_infos["average_step_rewards"] = np.mean(self.buffer.rewards)
