@@ -230,30 +230,28 @@ class STHV_MAPPO():
             and (self.hgvd_update_interval <= 1 or (self._update_step % self.hgvd_update_interval == 0))
         )
 
-        if self.use_stca and do_hgvd and (old_credit_logits_batch is not None) and (z_batch is not None) and n_agents > 1:
-            # STCA weights from OLD credit logits
+        # STCA: advantage shaping from credit logits, independent of HGVD schedule
+        if self.use_stca and (old_credit_logits_batch is not None) and n_agents > 1:
             c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)
             c_old = c_old / max(self.credit_temperature, 1e-6)
             w = torch.softmax(c_old, dim=-1)
             if self.credit_detach:
                 w = w.detach()
 
-            # hgvd current Q uses STORED z_t (rollout embedding)
-            z_old = check(z_batch).to(**self.tpdv)
-            Q_tot, Q_i = self._compute_hgvd_q(z_old, actions_batch, n_agents)
-
-            # More stable STCA shaping: reweight PPO advantages (same semantics/scale)
             adv_i = adv_targ.view(-1, n_agents)  # [B,N]
             shaped = adv_i * w  # [B,N]
 
-            # normalize shaped advantages to keep global scale comparable to baseline advantages
             adv_std = adv_i.std(unbiased=False).clamp_min(1e-6)
             shaped_std = shaped.std(unbiased=False).clamp_min(1e-6)
             shaped = shaped * (adv_std / shaped_std)
 
             shaped_adv = shaped.reshape(-1, 1)
 
-            # TRUE TD target: y = r_tot + gamma * mask_{t+1} * Q_tot_target(s_{t+1}, a_{t+1})
+        # HGVD TD loss: only when enabled by schedule
+        if do_hgvd and (z_batch is not None) and n_agents > 1:
+            z_old = check(z_batch).to(**self.tpdv)
+            Q_tot, Q_i = self._compute_hgvd_q(z_old, actions_batch, n_agents)
+
             if (rewards_batch is not None) and (next_obs_batch is not None) and (next_rnn_states_batch is not None) and (next_masks_batch is not None):
                 rewards_t = check(rewards_batch).to(**self.tpdv)  # [B*N,1]
                 r_tot = rewards_t.view(-1, n_agents, 1).mean(dim=1)  # [B,1]
