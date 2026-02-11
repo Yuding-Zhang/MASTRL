@@ -127,8 +127,8 @@ class SMACRunner(Runner):
         values = np.array(np.split(_t2n(value), self.n_rollout_threads))
         actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
         action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
-        rnn_states = np.array(np.split(_t2n(rnn_state), self.n_rollout_threads))
-        rnn_states_critic = np.array(np.split(_t2n(rnn_state_critic), self.n_rollout_threads))
+        rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
+        rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
 
         if z is not None:
             z = np.array(np.split(_t2n(z), self.n_rollout_threads))
