@@ -160,7 +160,7 @@ class SMACRunner(Runner):
             share_obs = obs
 
         self.buffer.insert(share_obs, obs, rnn_states, rnn_states_critic,
-                           actions, action_log_probs, values, rewards, masks,z, credit_logits bad_masks, active_masks, available_actions)
+                           actions, action_log_probs, values, rewards, masks,z, credit_logits, bad_masks, active_masks, available_actions)
 
     def log_train(self, train_infos, total_num_steps):
         train_infos["average_step_rewards"] = np.mean(self.buffer.rewards)
