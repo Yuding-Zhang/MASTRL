@@ -268,4 +268,33 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    # main(sys.argv[1:])
+    args = [
+        "--env_name", "StarCraft2",
+        "--map_name", "8m_vs_9m",
+        "--algorithm_name", "sthvmappo",
+        "--num_agents", "8",
+        "--experiment_name", "debug",
+        "--seed", "1",
+        "--n_training_threads", "1",
+        "--n_rollout_threads", "8",
+        "--num_mini_batch", "1",
+        "--episode_length", "400",
+        "--num_env_steps", "10000000",
+        "--ppo_epoch", "15",
+        "--clip_param", "0.05",
+        "--use_value_active_masks",
+        "--use_eval", 
+        "--eval_episodes", "32",
+        "--wandb_name", "yuding-zh-uestc",
+        "--user_name", "yuding-zh-uestc",
+        "--use_stca",
+        "--use_hgvd",
+        "--share_policy",
+        "--hgvd_warmup_updates", "15000",
+        "--hgvd_loss_coef", "0.03",
+        "--credit_loss_coef", "0.01",
+        "--credit_temperature", "0.7",
+        "--credit_target_tau", "0.5"
+    ]
+    main(args)
