@@ -40,6 +40,7 @@ class SharedReplayBuffer(object):
         self._use_valuenorm = args.use_valuenorm
         self._use_proper_time_limits = args.use_proper_time_limits
         self.algo = args.algorithm_name
+        self.use_sthvmappo = (args.algorithm_name == "sthvmappo")
         self.num_agents = num_agents
 
         obs_shape = get_shape_from_obs_space(obs_space)

@@ -212,6 +212,10 @@ class STHV_MAPPO():
         shaped_adv = adv_targ
         hgvd_loss = torch.zeros([], device=values.device)
 
+        # Use freshly-computed aux outputs (rollout may skip them)
+        z_batch = z_new
+        old_credit_logits_batch = credit_logits_new
+
         if self.use_stca and self.use_hgvd and (old_credit_logits_batch is not None) and (z_batch is not None) and n_agents > 1:
             # STCA weights from OLD credit logits
             c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)

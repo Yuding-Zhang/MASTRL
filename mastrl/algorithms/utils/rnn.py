@@ -9,6 +9,7 @@ class RNNLayer(nn.Module):
         super(RNNLayer, self).__init__()
         self._recurrent_N = recurrent_N
         self._use_orthogonal = use_orthogonal
+        self._flattened = False
 
         self.rnn = nn.GRU(inputs_dim, outputs_dim, num_layers=self._recurrent_N)
         for name, param in self.rnn.named_parameters():
@@ -21,7 +22,16 @@ class RNNLayer(nn.Module):
                     nn.init.xavier_uniform_(param)
         self.norm = nn.LayerNorm(outputs_dim)
 
+    def _maybe_flatten(self):
+        # Flatten once to avoid per-forward weight repacking when parameters
+        # are not a single contiguous chunk (e.g., after load_state_dict or
+        # sharing across processes).
+        if (not self._flattened) or (not self.rnn.all_weights[0][0].is_contiguous()):
+            self.rnn.flatten_parameters()
+            self._flattened = True
+
     def forward(self, x, hxs, masks):
+        self._maybe_flatten()
         if x.size(0) == hxs.size(0):
             x, hxs = self.rnn(x.unsqueeze(0),
                               (hxs * masks.repeat(1, self._recurrent_N).unsqueeze(-1)).transpose(0, 1).contiguous())
