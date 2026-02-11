@@ -313,7 +313,7 @@ def get_config():
     parser.add_argument("--use_stca", action="store_true", default=False,
                         help="Enable Spatio-Temporal Credit Assignment (STCA).")
     
-    parser.add_argument("--credit_temperature", type=float, default=1.0,
+    parser.add_argument("--credit_temperature", type=float, default=0.7,
                         help="Softmax temperature for credit assignment weights in STCA.")
     
     parser.add_argument("--credit_detach", action="store_false", default=True,
@@ -321,15 +321,8 @@ def get_config():
 
     parser.add_argument("--credit_loss_coef", type=float, default=0.05,
                         help="Coefficient for the credit assignment loss term in STCA.")
-    parser.add_argument("--credit_target_tau", type=float, default=1.0,
+    parser.add_argument("--credit_target_tau", type=float, default=0.5,
                         help="Target network update rate for credit assignment in STCA.")
-    
-    parser.add_argument("--w_clip", type=float, default=3.0,
-                        help="Clipping value for credit assignment weights in STCA.")
-    parser.add_argument("--w_entropy_coef", type=float, default=0.0,
-                        help="Entropy coefficient for credit assignment weights in STCA.")
-    parser.add_argument("--adv_w_norm", action="store_false", default=True,
-                        help="Normalize advantages when computing credit assignment weights in STCA.")
 
     # ---- HGVD: Hypergraph Value Decomposition ----
 

@@ -182,34 +182,34 @@ def main(args):
 
 
 if __name__ == "__main__":
-    # main(sys.argv[1:])
-    args = [
-        "--env_name", "MPE",
-        "--scenario_name", "simple_reference",
-        "--num_landmarks", "3",
-        "--num_agents", "2",
-        "--algorithm_name", "sthvmappo",
-        "--experiment_name", "debug",
-        "--seed", "1",
-        "--n_training_threads", "1",
-        "--n_rollout_threads", "128",
-        "--num_mini_batch", "1",
-        "--episode_length", "25",
-        "--num_env_steps", "2000000",
-        "--ppo_epoch", "15",
-        "--gain", "0.01",
-        "--lr", "7e-4",
-        "--critic_lr", "7e-4",
-        "--wandb_name", "yuding-zh-uestc",
-        "--user_name", "yuding-zh-uestc",
-        "--use_stca",
-        "--use_hgvd",
-        "--share_policy",
-        "--hgvd_warmup_updates", "15000",
-        "--hgvd_loss_coef", "0.03",
-        "--credit_loss_coef", "0.01",
-        "--credit_temperature", "0.7",
-        "--credit_target_tau", "0.5"
+    main(sys.argv[1:])
+    # args = [
+    #     "--env_name", "MPE",
+    #     "--scenario_name", "simple_reference",
+    #     "--num_landmarks", "3",
+    #     "--num_agents", "2",
+    #     "--algorithm_name", "sthvmappo",
+    #     "--experiment_name", "debug",
+    #     "--seed", "1",
+    #     "--n_training_threads", "1",
+    #     "--n_rollout_threads", "128",
+    #     "--num_mini_batch", "1",
+    #     "--episode_length", "25",
+    #     "--num_env_steps", "2000000",
+    #     "--ppo_epoch", "15",
+    #     "--gain", "0.01",
+    #     "--lr", "7e-4",
+    #     "--critic_lr", "7e-4",
+    #     "--wandb_name", "yuding-zh-uestc",
+    #     "--user_name", "yuding-zh-uestc",
+    #     "--use_stca",
+    #     "--use_hgvd",
+    #     "--share_policy",
+    #     "--hgvd_warmup_updates", "15000",
+    #     "--hgvd_loss_coef", "0.03",
+    #     "--credit_loss_coef", "0.01",
+    #     "--credit_temperature", "0.7",
+    #     "--credit_target_tau", "0.5"
 
-    ]
-    main(args)
+    # ]
+    # main(args)
