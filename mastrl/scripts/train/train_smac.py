@@ -119,8 +119,7 @@ def parse_args(args, parser):
     parser.add_argument("--use_state_agent", action='store_false', default=True)
     parser.add_argument("--use_mustalive", action='store_false', default=True)
     parser.add_argument("--add_center_xy", action='store_false', default=True)
-    parser.add_argument('--num_agents', type=int,
-                        default=2, help="number of players")
+    parser.add_argument('--num_agents', type=int, default=2, help="number of players")
 
     all_args = parser.parse_known_args(args)[0]
 
@@ -273,7 +272,6 @@ if __name__ == "__main__":
         "--env_name", "StarCraft2",
         "--map_name", "8m_vs_9m",
         "--algorithm_name", "sthvmappo",
-        "--num_agents", "8",
         "--experiment_name", "debug",
         "--seed", "1",
         "--n_training_threads", "1",

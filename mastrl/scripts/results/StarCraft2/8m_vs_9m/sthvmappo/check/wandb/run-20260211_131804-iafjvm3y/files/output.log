@@ -1,0 +1,23 @@
+obs_space:  [[217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]]]
+share_obs_space:  [[267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+Traceback (most recent call last):
+  File "../train/train_smac.py", line 271, in <module>
+    main(sys.argv[1:])
+  File "../train/train_smac.py", line 256, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/smac_runner.py", line 45, in run
+    train_infos = self.train()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/base_runner.py", line 143, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 322, in train
+    value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss = self.ppo_update(sample, update_actor)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 290, in ppo_update
+    (hgvd_loss * self.hgvd_loss_coef).backward()
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/graph.py", line 769, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.

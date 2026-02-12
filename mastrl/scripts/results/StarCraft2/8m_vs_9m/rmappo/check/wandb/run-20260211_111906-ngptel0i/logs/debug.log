@@ -20,3 +20,10 @@ config: {'algorithm_name': 'rmappo', 'experiment_name': 'check', 'seed': 1, 'cud
 2026-02-11 11:19:07,074 INFO    MainThread:1306818 [wandb_run.py:_redirect():2292] Wrapping output streams.
 2026-02-11 11:19:07,074 INFO    MainThread:1306818 [wandb_run.py:_redirect():2315] Redirects installed.
 2026-02-11 11:19:07,075 INFO    MainThread:1306818 [wandb_init.py:init():1032] run started, returning control to user process
+2026-02-11 16:11:47,783 INFO    MainThread:1306818 [wandb_run.py:_finish():2112] finishing run yuding-zh-uestc/StarCraft2/ngptel0i
+2026-02-11 16:11:47,783 INFO    MainThread:1306818 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2026-02-11 16:11:47,783 INFO    MainThread:1306818 [wandb_run.py:_restore():2322] restore
+2026-02-11 16:11:47,783 INFO    MainThread:1306818 [wandb_run.py:_restore():2328] restore done
+2026-02-11 16:11:54,891 INFO    MainThread:1306818 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2026-02-11 16:11:54,891 INFO    MainThread:1306818 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2026-02-11 16:11:54,891 INFO    MainThread:1306818 [wandb_run.py:_footer_sync_info():3917] logging synced files

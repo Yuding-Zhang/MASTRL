@@ -5,3 +5,14 @@
 {"time":"2026-02-11T04:19:49.05913283Z","level":"INFO","msg":"sender: started","stream_id":"selt5cq4"}
 {"time":"2026-02-11T04:19:49.059167777Z","level":"INFO","msg":"handler: started","stream_id":"selt5cq4"}
 {"time":"2026-02-11T04:19:49.648516895Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-11T20:13:20.312363826Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2026-02-12T00:19:20.456556252Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2026-02-12T06:53:32.497045758Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-12T06:53:32.497334018Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-12T06:53:33.458076036Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.33549436,"progress":"32.1KB/32.1KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.335488393,"progress":"487B/487B"},{"desc":"uploading config.yaml","runtime_seconds":0.000615515,"progress":"3.3KB/3.3KB"}],"total_operations":3}}
+{"time":"2026-02-12T06:53:34.402703004Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-12T06:53:34.866620174Z","level":"INFO","msg":"stream: closing","id":"selt5cq4"}
+{"time":"2026-02-12T06:53:34.866625533Z","level":"INFO","msg":"handler: closed","stream_id":"selt5cq4"}
+{"time":"2026-02-12T06:53:34.866628523Z","level":"INFO","msg":"writer: Close: closed","stream_id":"selt5cq4"}
+{"time":"2026-02-12T06:53:34.866648702Z","level":"INFO","msg":"sender: closed","stream_id":"selt5cq4"}
+{"time":"2026-02-12T06:53:34.866664822Z","level":"INFO","msg":"stream: closed","id":"selt5cq4"}

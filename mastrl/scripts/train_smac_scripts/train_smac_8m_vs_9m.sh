@@ -2,7 +2,6 @@
 env="StarCraft2"
 map="8m_vs_9m"
 algo="sthvmappo"
-num_agents=8
 exp="check"
 seed_max=1
 

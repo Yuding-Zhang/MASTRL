@@ -740,3 +740,1889 @@ incre win rate is 0.7132867132867133.
  Map 8m_vs_9m Algo rmappo Exp check updates 875/3125 episodes, total num timesteps 2803200/10000000, FPS 568.
 
 incre win rate is 0.7170474516695958.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 880/3125 episodes, total num timesteps 2819200/10000000, FPS 568.
+
+incre win rate is 0.6808510638297872.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 885/3125 episodes, total num timesteps 2835200/10000000, FPS 569.
+
+incre win rate is 0.7197898423817863.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 890/3125 episodes, total num timesteps 2851200/10000000, FPS 569.
+
+incre win rate is 0.7079646017699115.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 895/3125 episodes, total num timesteps 2867200/10000000, FPS 570.
+
+incre win rate is 0.7075306479859895.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 900/3125 episodes, total num timesteps 2883200/10000000, FPS 570.
+
+incre win rate is 0.6883802816901409.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 905/3125 episodes, total num timesteps 2899200/10000000, FPS 570.
+
+incre win rate is 0.7075306479859895.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 910/3125 episodes, total num timesteps 2915200/10000000, FPS 570.
+
+incre win rate is 0.6854130052724078.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 915/3125 episodes, total num timesteps 2931200/10000000, FPS 571.
+
+incre win rate is 0.7013888888888888.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 920/3125 episodes, total num timesteps 2947200/10000000, FPS 571.
+
+incre win rate is 0.671304347826087.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 925/3125 episodes, total num timesteps 2963200/10000000, FPS 572.
+
+incre win rate is 0.6939130434782609.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 930/3125 episodes, total num timesteps 2979200/10000000, FPS 572.
+
+incre win rate is 0.7115384615384616.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 935/3125 episodes, total num timesteps 2995200/10000000, FPS 572.
+
+incre win rate is 0.7263157894736842.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 940/3125 episodes, total num timesteps 3011200/10000000, FPS 572.
+
+incre win rate is 0.6975524475524476.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 945/3125 episodes, total num timesteps 3027200/10000000, FPS 573.
+
+incre win rate is 0.666077738515901.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 950/3125 episodes, total num timesteps 3043200/10000000, FPS 573.
+
+incre win rate is 0.7027972027972028.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 955/3125 episodes, total num timesteps 3059200/10000000, FPS 573.
+
+incre win rate is 0.702276707530648.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 960/3125 episodes, total num timesteps 3075200/10000000, FPS 573.
+
+incre win rate is 0.7162872154115587.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 965/3125 episodes, total num timesteps 3091200/10000000, FPS 574.
+
+incre win rate is 0.6719858156028369.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 970/3125 episodes, total num timesteps 3107200/10000000, FPS 574.
+
+incre win rate is 0.6880570409982175.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 975/3125 episodes, total num timesteps 3123200/10000000, FPS 572.
+
+incre win rate is 0.7008849557522124.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 980/3125 episodes, total num timesteps 3139200/10000000, FPS 572.
+
+incre win rate is 0.6566371681415929.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 985/3125 episodes, total num timesteps 3155200/10000000, FPS 573.
+
+incre win rate is 0.7085514834205934.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 990/3125 episodes, total num timesteps 3171200/10000000, FPS 573.
+
+incre win rate is 0.7001763668430335.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 995/3125 episodes, total num timesteps 3187200/10000000, FPS 573.
+
+incre win rate is 0.6830122591943958.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1000/3125 episodes, total num timesteps 3203200/10000000, FPS 574.
+
+incre win rate is 0.7092819614711033.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1005/3125 episodes, total num timesteps 3219200/10000000, FPS 574.
+
+incre win rate is 0.6819787985865724.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1010/3125 episodes, total num timesteps 3235200/10000000, FPS 574.
+
+incre win rate is 0.6684397163120568.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1015/3125 episodes, total num timesteps 3251200/10000000, FPS 574.
+
+incre win rate is 0.6527050610820244.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1020/3125 episodes, total num timesteps 3267200/10000000, FPS 575.
+
+incre win rate is 0.701048951048951.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1025/3125 episodes, total num timesteps 3283200/10000000, FPS 575.
+
+incre win rate is 0.7197898423817863.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1030/3125 episodes, total num timesteps 3299200/10000000, FPS 575.
+
+incre win rate is 0.691768826619965.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1035/3125 episodes, total num timesteps 3315200/10000000, FPS 575.
+
+incre win rate is 0.6870629370629371.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1040/3125 episodes, total num timesteps 3331200/10000000, FPS 576.
+
+incre win rate is 0.6901408450704225.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1045/3125 episodes, total num timesteps 3347200/10000000, FPS 576.
+
+incre win rate is 0.6678445229681979.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1050/3125 episodes, total num timesteps 3363200/10000000, FPS 576.
+
+incre win rate is 0.6724436741767764.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1055/3125 episodes, total num timesteps 3379200/10000000, FPS 576.
+
+incre win rate is 0.6807017543859649.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1060/3125 episodes, total num timesteps 3395200/10000000, FPS 577.
+
+incre win rate is 0.6139130434782609.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1065/3125 episodes, total num timesteps 3411200/10000000, FPS 577.
+
+incre win rate is 0.6457242582897034.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1070/3125 episodes, total num timesteps 3427200/10000000, FPS 577.
+
+incre win rate is 0.6293706293706294.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1075/3125 episodes, total num timesteps 3443200/10000000, FPS 578.
+
+incre win rate is 0.7157712305025996.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1080/3125 episodes, total num timesteps 3459200/10000000, FPS 577.
+
+incre win rate is 0.6800699300699301.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1085/3125 episodes, total num timesteps 3475200/10000000, FPS 578.
+
+incre win rate is 0.6759098786828422.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1090/3125 episodes, total num timesteps 3491200/10000000, FPS 578.
+
+incre win rate is 0.6795774647887324.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1095/3125 episodes, total num timesteps 3507200/10000000, FPS 578.
+
+incre win rate is 0.6631944444444444.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1100/3125 episodes, total num timesteps 3523200/10000000, FPS 579.
+
+incre win rate is 0.680140597539543.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1105/3125 episodes, total num timesteps 3539200/10000000, FPS 579.
+
+incre win rate is 0.6643356643356644.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1110/3125 episodes, total num timesteps 3555200/10000000, FPS 579.
+
+incre win rate is 0.7047451669595782.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1115/3125 episodes, total num timesteps 3571200/10000000, FPS 579.
+
+incre win rate is 0.6725043782837128.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1120/3125 episodes, total num timesteps 3587200/10000000, FPS 579.
+
+incre win rate is 0.7145359019264448.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1125/3125 episodes, total num timesteps 3603200/10000000, FPS 580.
+
+incre win rate is 0.724561403508772.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1130/3125 episodes, total num timesteps 3619200/10000000, FPS 580.
+
+incre win rate is 0.7112676056338029.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1135/3125 episodes, total num timesteps 3635200/10000000, FPS 580.
+
+incre win rate is 0.7026086956521739.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1140/3125 episodes, total num timesteps 3651200/10000000, FPS 578.
+
+incre win rate is 0.7073170731707317.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1145/3125 episodes, total num timesteps 3667200/10000000, FPS 579.
+
+incre win rate is 0.6970227670753065.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1150/3125 episodes, total num timesteps 3683200/10000000, FPS 579.
+
+incre win rate is 0.6817391304347826.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1155/3125 episodes, total num timesteps 3699200/10000000, FPS 579.
+
+incre win rate is 0.6759581881533101.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1160/3125 episodes, total num timesteps 3715200/10000000, FPS 579.
+
+incre win rate is 0.6835664335664335.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1165/3125 episodes, total num timesteps 3731200/10000000, FPS 579.
+
+incre win rate is 0.7152777777777778.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1170/3125 episodes, total num timesteps 3747200/10000000, FPS 580.
+
+incre win rate is 0.6620450606585788.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1175/3125 episodes, total num timesteps 3763200/10000000, FPS 580.
+
+incre win rate is 0.6793760831889082.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1180/3125 episodes, total num timesteps 3779200/10000000, FPS 580.
+
+incre win rate is 0.6550522648083623.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1185/3125 episodes, total num timesteps 3795200/10000000, FPS 580.
+
+incre win rate is 0.6789473684210526.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1190/3125 episodes, total num timesteps 3811200/10000000, FPS 580.
+
+incre win rate is 0.6695804195804196.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1195/3125 episodes, total num timesteps 3827200/10000000, FPS 581.
+
+incre win rate is 0.6701570680628273.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1200/3125 episodes, total num timesteps 3843200/10000000, FPS 581.
+
+incre win rate is 0.6900175131348512.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1205/3125 episodes, total num timesteps 3859200/10000000, FPS 581.
+
+incre win rate is 0.6689895470383276.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1210/3125 episodes, total num timesteps 3875200/10000000, FPS 581.
+
+incre win rate is 0.6521739130434783.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1215/3125 episodes, total num timesteps 3891200/10000000, FPS 581.
+
+incre win rate is 0.6859649122807018.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1220/3125 episodes, total num timesteps 3907200/10000000, FPS 582.
+
+incre win rate is 0.6520979020979021.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1225/3125 episodes, total num timesteps 3923200/10000000, FPS 582.
+
+incre win rate is 0.6672566371681415.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1230/3125 episodes, total num timesteps 3939200/10000000, FPS 582.
+
+incre win rate is 0.6830985915492958.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1235/3125 episodes, total num timesteps 3955200/10000000, FPS 582.
+
+incre win rate is 0.6544502617801047.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1240/3125 episodes, total num timesteps 3971200/10000000, FPS 582.
+
+incre win rate is 0.6309314586994728.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1245/3125 episodes, total num timesteps 3987200/10000000, FPS 582.
+
+incre win rate is 0.7308377896613191.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1250/3125 episodes, total num timesteps 4003200/10000000, FPS 583.
+
+incre win rate is 0.7125220458553791.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1255/3125 episodes, total num timesteps 4019200/10000000, FPS 583.
+
+incre win rate is 0.7216312056737588.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1260/3125 episodes, total num timesteps 4035200/10000000, FPS 583.
+
+incre win rate is 0.7140319715808171.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1265/3125 episodes, total num timesteps 4051200/10000000, FPS 583.
+
+incre win rate is 0.7296819787985865.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1270/3125 episodes, total num timesteps 4067200/10000000, FPS 583.
+
+incre win rate is 0.7322695035460993.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1275/3125 episodes, total num timesteps 4083200/10000000, FPS 584.
+
+incre win rate is 0.7165492957746479.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1280/3125 episodes, total num timesteps 4099200/10000000, FPS 584.
+
+incre win rate is 0.7482394366197183.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1285/3125 episodes, total num timesteps 4115200/10000000, FPS 584.
+
+incre win rate is 0.7213403880070547.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1290/3125 episodes, total num timesteps 4131200/10000000, FPS 584.
+
+incre win rate is 0.7456140350877193.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1295/3125 episodes, total num timesteps 4147200/10000000, FPS 584.
+
+incre win rate is 0.7263157894736842.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1300/3125 episodes, total num timesteps 4163200/10000000, FPS 582.
+
+incre win rate is 0.7553956834532374.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1305/3125 episodes, total num timesteps 4179200/10000000, FPS 581.
+
+incre win rate is 0.7173144876325088.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1310/3125 episodes, total num timesteps 4195200/10000000, FPS 581.
+
+incre win rate is 0.7455516014234875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1315/3125 episodes, total num timesteps 4211200/10000000, FPS 581.
+
+incre win rate is 0.6854130052724078.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1320/3125 episodes, total num timesteps 4227200/10000000, FPS 582.
+
+incre win rate is 0.7421052631578947.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1325/3125 episodes, total num timesteps 4243200/10000000, FPS 582.
+
+incre win rate is 0.7336860670194003.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1330/3125 episodes, total num timesteps 4259200/10000000, FPS 582.
+
+incre win rate is 0.6982456140350877.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1335/3125 episodes, total num timesteps 4275200/10000000, FPS 582.
+
+incre win rate is 0.7074468085106383.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1340/3125 episodes, total num timesteps 4291200/10000000, FPS 582.
+
+incre win rate is 0.7309734513274336.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1345/3125 episodes, total num timesteps 4307200/10000000, FPS 582.
+
+incre win rate is 0.7296819787985865.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1350/3125 episodes, total num timesteps 4323200/10000000, FPS 582.
+
+incre win rate is 0.7402826855123675.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1355/3125 episodes, total num timesteps 4339200/10000000, FPS 582.
+
+incre win rate is 0.7279151943462897.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1360/3125 episodes, total num timesteps 4355200/10000000, FPS 582.
+
+incre win rate is 0.7059859154929577.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1365/3125 episodes, total num timesteps 4371200/10000000, FPS 582.
+
+incre win rate is 0.7102473498233216.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1370/3125 episodes, total num timesteps 4387200/10000000, FPS 582.
+
+incre win rate is 0.7348754448398577.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1375/3125 episodes, total num timesteps 4403200/10000000, FPS 582.
+
+incre win rate is 0.6287744227353463.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1380/3125 episodes, total num timesteps 4419200/10000000, FPS 582.
+
+incre win rate is 0.6577540106951871.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1385/3125 episodes, total num timesteps 4435200/10000000, FPS 582.
+
+incre win rate is 0.7053571428571429.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1390/3125 episodes, total num timesteps 4451200/10000000, FPS 582.
+
+incre win rate is 0.6843971631205674.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1395/3125 episodes, total num timesteps 4467200/10000000, FPS 582.
+
+incre win rate is 0.6843971631205674.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1400/3125 episodes, total num timesteps 4483200/10000000, FPS 582.
+
+incre win rate is 0.6484098939929329.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1405/3125 episodes, total num timesteps 4499200/10000000, FPS 581.
+
+incre win rate is 0.6906854130052724.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1410/3125 episodes, total num timesteps 4515200/10000000, FPS 581.
+
+incre win rate is 0.6584070796460177.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1415/3125 episodes, total num timesteps 4531200/10000000, FPS 582.
+
+incre win rate is 0.6276595744680851.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1420/3125 episodes, total num timesteps 4547200/10000000, FPS 582.
+
+incre win rate is 0.6287744227353463.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1425/3125 episodes, total num timesteps 4563200/10000000, FPS 582.
+
+incre win rate is 0.6630630630630631.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1430/3125 episodes, total num timesteps 4579200/10000000, FPS 581.
+
+incre win rate is 0.6684587813620072.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1435/3125 episodes, total num timesteps 4595200/10000000, FPS 581.
+
+incre win rate is 0.6833631484794276.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1440/3125 episodes, total num timesteps 4611200/10000000, FPS 581.
+
+incre win rate is 0.6785079928952042.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1445/3125 episodes, total num timesteps 4627200/10000000, FPS 582.
+
+incre win rate is 0.7235188509874326.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1450/3125 episodes, total num timesteps 4643200/10000000, FPS 582.
+
+incre win rate is 0.6725978647686833.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1455/3125 episodes, total num timesteps 4659200/10000000, FPS 581.
+
+incre win rate is 0.7316636851520573.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1460/3125 episodes, total num timesteps 4675200/10000000, FPS 581.
+
+incre win rate is 0.7039007092198581.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1465/3125 episodes, total num timesteps 4691200/10000000, FPS 579.
+
+incre win rate is 0.685251798561151.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1470/3125 episodes, total num timesteps 4707200/10000000, FPS 579.
+
+incre win rate is 0.7117117117117117.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1475/3125 episodes, total num timesteps 4723200/10000000, FPS 579.
+
+incre win rate is 0.679646017699115.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1480/3125 episodes, total num timesteps 4739200/10000000, FPS 579.
+
+incre win rate is 0.7089285714285715.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1485/3125 episodes, total num timesteps 4755200/10000000, FPS 579.
+
+incre win rate is 0.7078853046594982.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1490/3125 episodes, total num timesteps 4771200/10000000, FPS 579.
+
+incre win rate is 0.7066189624329159.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1495/3125 episodes, total num timesteps 4787200/10000000, FPS 579.
+
+incre win rate is 0.768270944741533.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1500/3125 episodes, total num timesteps 4803200/10000000, FPS 579.
+
+incre win rate is 0.7241992882562278.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1505/3125 episodes, total num timesteps 4819200/10000000, FPS 579.
+
+incre win rate is 0.6957295373665481.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1510/3125 episodes, total num timesteps 4835200/10000000, FPS 579.
+
+incre win rate is 0.7061946902654868.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1515/3125 episodes, total num timesteps 4851200/10000000, FPS 579.
+
+incre win rate is 0.7175843694493783.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1520/3125 episodes, total num timesteps 4867200/10000000, FPS 579.
+
+incre win rate is 0.7293497363796133.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1525/3125 episodes, total num timesteps 4883200/10000000, FPS 579.
+
+incre win rate is 0.7294938917975567.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1530/3125 episodes, total num timesteps 4899200/10000000, FPS 579.
+
+incre win rate is 0.7226148409893993.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1535/3125 episodes, total num timesteps 4915200/10000000, FPS 579.
+
+incre win rate is 0.7061946902654868.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1540/3125 episodes, total num timesteps 4931200/10000000, FPS 579.
+
+incre win rate is 0.7314487632508834.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1545/3125 episodes, total num timesteps 4947200/10000000, FPS 579.
+
+incre win rate is 0.727112676056338.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1550/3125 episodes, total num timesteps 4963200/10000000, FPS 579.
+
+incre win rate is 0.759581881533101.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1555/3125 episodes, total num timesteps 4979200/10000000, FPS 579.
+
+incre win rate is 0.7231040564373897.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1560/3125 episodes, total num timesteps 4995200/10000000, FPS 579.
+
+incre win rate is 0.7132867132867133.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1565/3125 episodes, total num timesteps 5011200/10000000, FPS 579.
+
+incre win rate is 0.7552816901408451.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1570/3125 episodes, total num timesteps 5027200/10000000, FPS 579.
+
+incre win rate is 0.7513227513227513.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1575/3125 episodes, total num timesteps 5043200/10000000, FPS 579.
+
+incre win rate is 0.7283950617283951.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1580/3125 episodes, total num timesteps 5059200/10000000, FPS 579.
+
+incre win rate is 0.7406749555950266.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1585/3125 episodes, total num timesteps 5075200/10000000, FPS 579.
+
+incre win rate is 0.7773851590106007.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1590/3125 episodes, total num timesteps 5091200/10000000, FPS 579.
+
+incre win rate is 0.7655417406749556.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1595/3125 episodes, total num timesteps 5107200/10000000, FPS 579.
+
+incre win rate is 0.7228070175438597.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1600/3125 episodes, total num timesteps 5123200/10000000, FPS 579.
+
+incre win rate is 0.7079646017699115.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1605/3125 episodes, total num timesteps 5139200/10000000, FPS 579.
+
+incre win rate is 0.7455830388692579.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1610/3125 episodes, total num timesteps 5155200/10000000, FPS 579.
+
+incre win rate is 0.6985815602836879.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1615/3125 episodes, total num timesteps 5171200/10000000, FPS 579.
+
+incre win rate is 0.7744227353463587.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1620/3125 episodes, total num timesteps 5187200/10000000, FPS 579.
+
+incre win rate is 0.7340425531914894.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1625/3125 episodes, total num timesteps 5203200/10000000, FPS 577.
+
+incre win rate is 0.7473498233215548.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1630/3125 episodes, total num timesteps 5219200/10000000, FPS 577.
+
+incre win rate is 0.6901408450704225.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1635/3125 episodes, total num timesteps 5235200/10000000, FPS 577.
+
+incre win rate is 0.7322695035460993.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1640/3125 episodes, total num timesteps 5251200/10000000, FPS 577.
+
+incre win rate is 0.7328646748681898.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1645/3125 episodes, total num timesteps 5267200/10000000, FPS 577.
+
+incre win rate is 0.7530647985989493.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1650/3125 episodes, total num timesteps 5283200/10000000, FPS 578.
+
+incre win rate is 0.7046263345195729.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1655/3125 episodes, total num timesteps 5299200/10000000, FPS 577.
+
+incre win rate is 0.7082601054481547.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1660/3125 episodes, total num timesteps 5315200/10000000, FPS 577.
+
+incre win rate is 0.7402826855123675.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1665/3125 episodes, total num timesteps 5331200/10000000, FPS 577.
+
+incre win rate is 0.7180851063829787.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1670/3125 episodes, total num timesteps 5347200/10000000, FPS 577.
+
+incre win rate is 0.7039007092198581.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1675/3125 episodes, total num timesteps 5363200/10000000, FPS 578.
+
+incre win rate is 0.7182608695652174.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1680/3125 episodes, total num timesteps 5379200/10000000, FPS 577.
+
+incre win rate is 0.7429577464788732.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1685/3125 episodes, total num timesteps 5395200/10000000, FPS 577.
+
+incre win rate is 0.7539267015706806.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1690/3125 episodes, total num timesteps 5411200/10000000, FPS 577.
+
+incre win rate is 0.7188612099644128.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1695/3125 episodes, total num timesteps 5427200/10000000, FPS 577.
+
+incre win rate is 0.7495652173913043.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1700/3125 episodes, total num timesteps 5443200/10000000, FPS 578.
+
+incre win rate is 0.7115384615384616.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1705/3125 episodes, total num timesteps 5459200/10000000, FPS 577.
+
+incre win rate is 0.6788830715532286.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1710/3125 episodes, total num timesteps 5475200/10000000, FPS 577.
+
+incre win rate is 0.7015706806282722.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1715/3125 episodes, total num timesteps 5491200/10000000, FPS 577.
+
+incre win rate is 0.7359154929577465.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1720/3125 episodes, total num timesteps 5507200/10000000, FPS 578.
+
+incre win rate is 0.7451669595782073.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1725/3125 episodes, total num timesteps 5523200/10000000, FPS 578.
+
+incre win rate is 0.7711267605633803.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1730/3125 episodes, total num timesteps 5539200/10000000, FPS 577.
+
+incre win rate is 0.7592267135325131.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1735/3125 episodes, total num timesteps 5555200/10000000, FPS 577.
+
+incre win rate is 0.7319223985890653.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1740/3125 episodes, total num timesteps 5571200/10000000, FPS 578.
+
+incre win rate is 0.7495559502664298.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1745/3125 episodes, total num timesteps 5587200/10000000, FPS 578.
+
+incre win rate is 0.7574692442882249.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1750/3125 episodes, total num timesteps 5603200/10000000, FPS 578.
+
+incre win rate is 0.7553571428571428.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1755/3125 episodes, total num timesteps 5619200/10000000, FPS 577.
+
+incre win rate is 0.7632508833922261.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1760/3125 episodes, total num timesteps 5635200/10000000, FPS 577.
+
+incre win rate is 0.7361853832442068.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1765/3125 episodes, total num timesteps 5651200/10000000, FPS 578.
+
+incre win rate is 0.7993019197207679.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1770/3125 episodes, total num timesteps 5667200/10000000, FPS 578.
+
+incre win rate is 0.7627416520210897.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1775/3125 episodes, total num timesteps 5683200/10000000, FPS 578.
+
+incre win rate is 0.7167832167832168.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1780/3125 episodes, total num timesteps 5699200/10000000, FPS 577.
+
+incre win rate is 0.6713286713286714.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1785/3125 episodes, total num timesteps 5715200/10000000, FPS 577.
+
+incre win rate is 0.6882661996497373.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1790/3125 episodes, total num timesteps 5731200/10000000, FPS 576.
+
+incre win rate is 0.7017543859649122.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1795/3125 episodes, total num timesteps 5747200/10000000, FPS 576.
+
+incre win rate is 0.7342657342657343.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1800/3125 episodes, total num timesteps 5763200/10000000, FPS 576.
+
+incre win rate is 0.7024647887323944.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1805/3125 episodes, total num timesteps 5779200/10000000, FPS 576.
+
+incre win rate is 0.738898756660746.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1810/3125 episodes, total num timesteps 5795200/10000000, FPS 576.
+
+incre win rate is 0.7.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1815/3125 episodes, total num timesteps 5811200/10000000, FPS 576.
+
+incre win rate is 0.7283950617283951.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1820/3125 episodes, total num timesteps 5827200/10000000, FPS 576.
+
+incre win rate is 0.7221238938053097.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1825/3125 episodes, total num timesteps 5843200/10000000, FPS 576.
+
+incre win rate is 0.734982332155477.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1830/3125 episodes, total num timesteps 5859200/10000000, FPS 576.
+
+incre win rate is 0.7094474153297683.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1835/3125 episodes, total num timesteps 5875200/10000000, FPS 576.
+
+incre win rate is 0.7283950617283951.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1840/3125 episodes, total num timesteps 5891200/10000000, FPS 576.
+
+incre win rate is 0.7163120567375887.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1845/3125 episodes, total num timesteps 5907200/10000000, FPS 576.
+
+incre win rate is 0.7451669595782073.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1850/3125 episodes, total num timesteps 5923200/10000000, FPS 576.
+
+incre win rate is 0.7402826855123675.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1855/3125 episodes, total num timesteps 5939200/10000000, FPS 576.
+
+incre win rate is 0.7557117750439367.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1860/3125 episodes, total num timesteps 5955200/10000000, FPS 576.
+
+incre win rate is 0.7508833922261484.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1865/3125 episodes, total num timesteps 5971200/10000000, FPS 576.
+
+incre win rate is 0.7606382978723404.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1870/3125 episodes, total num timesteps 5987200/10000000, FPS 576.
+
+incre win rate is 0.7464788732394366.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1875/3125 episodes, total num timesteps 6003200/10000000, FPS 576.
+
+incre win rate is 0.7333333333333333.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1880/3125 episodes, total num timesteps 6019200/10000000, FPS 576.
+
+incre win rate is 0.7385964912280701.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1885/3125 episodes, total num timesteps 6035200/10000000, FPS 576.
+
+incre win rate is 0.7415929203539823.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1890/3125 episodes, total num timesteps 6051200/10000000, FPS 576.
+
+incre win rate is 0.7109929078014184.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1895/3125 episodes, total num timesteps 6067200/10000000, FPS 576.
+
+incre win rate is 0.7155635062611807.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1900/3125 episodes, total num timesteps 6083200/10000000, FPS 576.
+
+incre win rate is 0.7301587301587301.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1905/3125 episodes, total num timesteps 6099200/10000000, FPS 576.
+
+incre win rate is 0.6894736842105263.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1910/3125 episodes, total num timesteps 6115200/10000000, FPS 576.
+
+incre win rate is 0.738819320214669.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1915/3125 episodes, total num timesteps 6131200/10000000, FPS 576.
+
+incre win rate is 0.6814946619217082.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1920/3125 episodes, total num timesteps 6147200/10000000, FPS 576.
+
+incre win rate is 0.714795008912656.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1925/3125 episodes, total num timesteps 6163200/10000000, FPS 576.
+
+incre win rate is 0.727433628318584.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1930/3125 episodes, total num timesteps 6179200/10000000, FPS 576.
+
+incre win rate is 0.6962699822380106.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1935/3125 episodes, total num timesteps 6195200/10000000, FPS 576.
+
+incre win rate is 0.7262969588550984.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1940/3125 episodes, total num timesteps 6211200/10000000, FPS 576.
+
+incre win rate is 0.725177304964539.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1945/3125 episodes, total num timesteps 6227200/10000000, FPS 576.
+
+incre win rate is 0.7087033747779752.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1950/3125 episodes, total num timesteps 6243200/10000000, FPS 574.
+
+incre win rate is 0.7160714285714286.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1955/3125 episodes, total num timesteps 6259200/10000000, FPS 574.
+
+incre win rate is 0.7163120567375887.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1960/3125 episodes, total num timesteps 6275200/10000000, FPS 574.
+
+incre win rate is 0.6966490299823633.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1965/3125 episodes, total num timesteps 6291200/10000000, FPS 574.
+
+incre win rate is 0.7327433628318584.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1970/3125 episodes, total num timesteps 6307200/10000000, FPS 574.
+
+incre win rate is 0.7592920353982301.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1975/3125 episodes, total num timesteps 6323200/10000000, FPS 575.
+
+incre win rate is 0.708185053380783.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1980/3125 episodes, total num timesteps 6339200/10000000, FPS 574.
+
+incre win rate is 0.7398945518453427.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1985/3125 episodes, total num timesteps 6355200/10000000, FPS 574.
+
+incre win rate is 0.7724867724867724.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1990/3125 episodes, total num timesteps 6371200/10000000, FPS 574.
+
+incre win rate is 0.7228070175438597.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 1995/3125 episodes, total num timesteps 6387200/10000000, FPS 575.
+
+incre win rate is 0.7358156028368794.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2000/3125 episodes, total num timesteps 6403200/10000000, FPS 575.
+
+incre win rate is 0.746031746031746.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2005/3125 episodes, total num timesteps 6419200/10000000, FPS 574.
+
+incre win rate is 0.7428571428571429.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2010/3125 episodes, total num timesteps 6435200/10000000, FPS 574.
+
+incre win rate is 0.7521815008726004.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2015/3125 episodes, total num timesteps 6451200/10000000, FPS 574.
+
+incre win rate is 0.7311072056239016.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2020/3125 episodes, total num timesteps 6467200/10000000, FPS 575.
+
+incre win rate is 0.7742504409171076.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2025/3125 episodes, total num timesteps 6483200/10000000, FPS 575.
+
+incre win rate is 0.7526501766784452.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2030/3125 episodes, total num timesteps 6499200/10000000, FPS 574.
+
+incre win rate is 0.7677304964539007.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2035/3125 episodes, total num timesteps 6515200/10000000, FPS 575.
+
+incre win rate is 0.7279151943462897.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2040/3125 episodes, total num timesteps 6531200/10000000, FPS 575.
+
+incre win rate is 0.7580071174377224.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2045/3125 episodes, total num timesteps 6547200/10000000, FPS 575.
+
+incre win rate is 0.7222222222222222.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2050/3125 episodes, total num timesteps 6563200/10000000, FPS 575.
+
+incre win rate is 0.7628318584070797.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2055/3125 episodes, total num timesteps 6579200/10000000, FPS 574.
+
+incre win rate is 0.7224199288256228.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2060/3125 episodes, total num timesteps 6595200/10000000, FPS 575.
+
+incre win rate is 0.7327433628318584.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2065/3125 episodes, total num timesteps 6611200/10000000, FPS 575.
+
+incre win rate is 0.7058823529411765.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2070/3125 episodes, total num timesteps 6627200/10000000, FPS 575.
+
+incre win rate is 0.7464285714285714.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2075/3125 episodes, total num timesteps 6643200/10000000, FPS 575.
+
+incre win rate is 0.7491103202846975.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2080/3125 episodes, total num timesteps 6659200/10000000, FPS 575.
+
+incre win rate is 0.7620751341681574.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2085/3125 episodes, total num timesteps 6675200/10000000, FPS 575.
+
+incre win rate is 0.7642857142857142.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2090/3125 episodes, total num timesteps 6691200/10000000, FPS 575.
+
+incre win rate is 0.7473309608540926.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2095/3125 episodes, total num timesteps 6707200/10000000, FPS 575.
+
+incre win rate is 0.7389770723104057.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2100/3125 episodes, total num timesteps 6723200/10000000, FPS 575.
+
+incre win rate is 0.7627416520210897.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2105/3125 episodes, total num timesteps 6739200/10000000, FPS 575.
+
+incre win rate is 0.6867256637168142.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2110/3125 episodes, total num timesteps 6755200/10000000, FPS 573.
+
+incre win rate is 0.714795008912656.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2115/3125 episodes, total num timesteps 6771200/10000000, FPS 573.
+
+incre win rate is 0.7531083481349912.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2120/3125 episodes, total num timesteps 6787200/10000000, FPS 573.
+
+incre win rate is 0.6943462897526502.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2125/3125 episodes, total num timesteps 6803200/10000000, FPS 573.
+
+incre win rate is 0.7609841827768014.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2130/3125 episodes, total num timesteps 6819200/10000000, FPS 573.
+
+incre win rate is 0.7803163444639719.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2135/3125 episodes, total num timesteps 6835200/10000000, FPS 573.
+
+incre win rate is 0.7897526501766784.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2140/3125 episodes, total num timesteps 6851200/10000000, FPS 573.
+
+incre win rate is 0.7579505300353356.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2145/3125 episodes, total num timesteps 6867200/10000000, FPS 573.
+
+incre win rate is 0.775438596491228.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2150/3125 episodes, total num timesteps 6883200/10000000, FPS 573.
+
+incre win rate is 0.7926186291739895.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2155/3125 episodes, total num timesteps 6899200/10000000, FPS 572.
+
+incre win rate is 0.7905759162303665.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2160/3125 episodes, total num timesteps 6915200/10000000, FPS 572.
+
+incre win rate is 0.7841105354058722.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2165/3125 episodes, total num timesteps 6931200/10000000, FPS 572.
+
+incre win rate is 0.7828371278458844.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2170/3125 episodes, total num timesteps 6947200/10000000, FPS 572.
+
+incre win rate is 0.7660311958405546.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2175/3125 episodes, total num timesteps 6963200/10000000, FPS 572.
+
+incre win rate is 0.8058419243986255.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2180/3125 episodes, total num timesteps 6979200/10000000, FPS 572.
+
+incre win rate is 0.7696335078534031.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2185/3125 episodes, total num timesteps 6995200/10000000, FPS 572.
+
+incre win rate is 0.7839721254355401.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2190/3125 episodes, total num timesteps 7011200/10000000, FPS 572.
+
+incre win rate is 0.7979274611398963.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2195/3125 episodes, total num timesteps 7027200/10000000, FPS 572.
+
+incre win rate is 0.7668393782383419.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2200/3125 episodes, total num timesteps 7043200/10000000, FPS 572.
+
+incre win rate is 0.7678883071553229.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2205/3125 episodes, total num timesteps 7059200/10000000, FPS 572.
+
+incre win rate is 0.7772020725388601.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2210/3125 episodes, total num timesteps 7075200/10000000, FPS 572.
+
+incre win rate is 0.765625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2215/3125 episodes, total num timesteps 7091200/10000000, FPS 572.
+
+incre win rate is 0.7737478411053541.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2220/3125 episodes, total num timesteps 7107200/10000000, FPS 572.
+
+incre win rate is 0.7512864493996569.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2225/3125 episodes, total num timesteps 7123200/10000000, FPS 572.
+
+incre win rate is 0.7754749568221071.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2230/3125 episodes, total num timesteps 7139200/10000000, FPS 572.
+
+incre win rate is 0.6993127147766323.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2235/3125 episodes, total num timesteps 7155200/10000000, FPS 572.
+
+incre win rate is 0.7105719237435009.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2240/3125 episodes, total num timesteps 7171200/10000000, FPS 572.
+
+incre win rate is 0.7629757785467128.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2245/3125 episodes, total num timesteps 7187200/10000000, FPS 572.
+
+incre win rate is 0.7517361111111112.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2250/3125 episodes, total num timesteps 7203200/10000000, FPS 572.
+
+incre win rate is 0.7551724137931034.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2255/3125 episodes, total num timesteps 7219200/10000000, FPS 571.
+
+incre win rate is 0.7364746945898778.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2260/3125 episodes, total num timesteps 7235200/10000000, FPS 571.
+
+incre win rate is 0.7513134851138353.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2265/3125 episodes, total num timesteps 7251200/10000000, FPS 571.
+
+incre win rate is 0.7482638888888888.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2270/3125 episodes, total num timesteps 7267200/10000000, FPS 571.
+
+incre win rate is 0.7439024390243902.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2275/3125 episodes, total num timesteps 7283200/10000000, FPS 570.
+
+incre win rate is 0.7389770723104057.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2280/3125 episodes, total num timesteps 7299200/10000000, FPS 570.
+
+incre win rate is 0.7926829268292683.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2285/3125 episodes, total num timesteps 7315200/10000000, FPS 570.
+
+incre win rate is 0.7538994800693241.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2290/3125 episodes, total num timesteps 7331200/10000000, FPS 570.
+
+incre win rate is 0.7741379310344828.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2295/3125 episodes, total num timesteps 7347200/10000000, FPS 570.
+
+incre win rate is 0.8103448275862069.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2300/3125 episodes, total num timesteps 7363200/10000000, FPS 570.
+
+incre win rate is 0.8083623693379791.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2305/3125 episodes, total num timesteps 7379200/10000000, FPS 570.
+
+incre win rate is 0.7665505226480837.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2310/3125 episodes, total num timesteps 7395200/10000000, FPS 570.
+
+incre win rate is 0.7557117750439367.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2315/3125 episodes, total num timesteps 7411200/10000000, FPS 570.
+
+incre win rate is 0.7712305025996534.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2320/3125 episodes, total num timesteps 7427200/10000000, FPS 570.
+
+incre win rate is 0.7768014059753954.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2325/3125 episodes, total num timesteps 7443200/10000000, FPS 570.
+
+incre win rate is 0.7508710801393729.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2330/3125 episodes, total num timesteps 7459200/10000000, FPS 569.
+
+incre win rate is 0.7534965034965035.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2335/3125 episodes, total num timesteps 7475200/10000000, FPS 569.
+
+incre win rate is 0.756993006993007.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2340/3125 episodes, total num timesteps 7491200/10000000, FPS 569.
+
+incre win rate is 0.7403508771929824.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2345/3125 episodes, total num timesteps 7507200/10000000, FPS 569.
+
+incre win rate is 0.7460595446584939.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2350/3125 episodes, total num timesteps 7523200/10000000, FPS 569.
+
+incre win rate is 0.7548845470692718.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2355/3125 episodes, total num timesteps 7539200/10000000, FPS 569.
+
+incre win rate is 0.7.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2360/3125 episodes, total num timesteps 7555200/10000000, FPS 569.
+
+incre win rate is 0.7132867132867133.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2365/3125 episodes, total num timesteps 7571200/10000000, FPS 569.
+
+incre win rate is 0.7003484320557491.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2370/3125 episodes, total num timesteps 7587200/10000000, FPS 569.
+
+incre win rate is 0.6906854130052724.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2375/3125 episodes, total num timesteps 7603200/10000000, FPS 569.
+
+incre win rate is 0.708041958041958.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2380/3125 episodes, total num timesteps 7619200/10000000, FPS 569.
+
+incre win rate is 0.6701940035273368.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2385/3125 episodes, total num timesteps 7635200/10000000, FPS 569.
+
+incre win rate is 0.7285464098073555.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2390/3125 episodes, total num timesteps 7651200/10000000, FPS 569.
+
+incre win rate is 0.7282415630550622.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2395/3125 episodes, total num timesteps 7667200/10000000, FPS 569.
+
+incre win rate is 0.7296819787985865.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2400/3125 episodes, total num timesteps 7683200/10000000, FPS 569.
+
+incre win rate is 0.7397504456327986.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2405/3125 episodes, total num timesteps 7699200/10000000, FPS 569.
+
+incre win rate is 0.7429078014184397.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2410/3125 episodes, total num timesteps 7715200/10000000, FPS 569.
+
+incre win rate is 0.7570921985815603.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2415/3125 episodes, total num timesteps 7731200/10000000, FPS 569.
+
+incre win rate is 0.7323943661971831.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2420/3125 episodes, total num timesteps 7747200/10000000, FPS 569.
+
+incre win rate is 0.7455830388692579.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2425/3125 episodes, total num timesteps 7763200/10000000, FPS 569.
+
+incre win rate is 0.7606382978723404.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2430/3125 episodes, total num timesteps 7779200/10000000, FPS 569.
+
+incre win rate is 0.7557522123893805.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2435/3125 episodes, total num timesteps 7795200/10000000, FPS 568.
+
+incre win rate is 0.75.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2440/3125 episodes, total num timesteps 7811200/10000000, FPS 568.
+
+incre win rate is 0.7130124777183601.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2445/3125 episodes, total num timesteps 7827200/10000000, FPS 568.
+
+incre win rate is 0.7262969588550984.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2450/3125 episodes, total num timesteps 7843200/10000000, FPS 568.
+
+incre win rate is 0.7464028776978417.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2455/3125 episodes, total num timesteps 7859200/10000000, FPS 567.
+
+incre win rate is 0.7432188065099458.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2460/3125 episodes, total num timesteps 7875200/10000000, FPS 567.
+
+incre win rate is 0.7450980392156863.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2465/3125 episodes, total num timesteps 7891200/10000000, FPS 567.
+
+incre win rate is 0.7361853832442068.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2470/3125 episodes, total num timesteps 7907200/10000000, FPS 567.
+
+incre win rate is 0.7823008849557522.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2475/3125 episodes, total num timesteps 7923200/10000000, FPS 567.
+
+incre win rate is 0.7330960854092526.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2480/3125 episodes, total num timesteps 7939200/10000000, FPS 567.
+
+incre win rate is 0.7429078014184397.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2485/3125 episodes, total num timesteps 7955200/10000000, FPS 567.
+
+incre win rate is 0.7145390070921985.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2490/3125 episodes, total num timesteps 7971200/10000000, FPS 567.
+
+incre win rate is 0.7629233511586453.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2495/3125 episodes, total num timesteps 7987200/10000000, FPS 567.
+
+incre win rate is 0.7825311942959001.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2500/3125 episodes, total num timesteps 8003200/10000000, FPS 567.
+
+incre win rate is 0.7803571428571429.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2505/3125 episodes, total num timesteps 8019200/10000000, FPS 567.
+
+incre win rate is 0.7756183745583038.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2510/3125 episodes, total num timesteps 8035200/10000000, FPS 567.
+
+incre win rate is 0.7309734513274336.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2515/3125 episodes, total num timesteps 8051200/10000000, FPS 567.
+
+incre win rate is 0.7708703374777975.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2520/3125 episodes, total num timesteps 8067200/10000000, FPS 567.
+
+incre win rate is 0.7924865831842576.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2525/3125 episodes, total num timesteps 8083200/10000000, FPS 567.
+
+incre win rate is 0.7708703374777975.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2530/3125 episodes, total num timesteps 8099200/10000000, FPS 567.
+
+incre win rate is 0.7432675044883303.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2535/3125 episodes, total num timesteps 8115200/10000000, FPS 567.
+
+incre win rate is 0.7593582887700535.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2540/3125 episodes, total num timesteps 8131200/10000000, FPS 567.
+
+incre win rate is 0.7633451957295374.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2545/3125 episodes, total num timesteps 8147200/10000000, FPS 567.
+
+incre win rate is 0.7619893428063943.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2550/3125 episodes, total num timesteps 8163200/10000000, FPS 567.
+
+incre win rate is 0.7718360071301248.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2555/3125 episodes, total num timesteps 8179200/10000000, FPS 567.
+
+incre win rate is 0.7589285714285714.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2560/3125 episodes, total num timesteps 8195200/10000000, FPS 567.
+
+incre win rate is 0.7820738137082601.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2565/3125 episodes, total num timesteps 8211200/10000000, FPS 567.
+
+incre win rate is 0.7375886524822695.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2570/3125 episodes, total num timesteps 8227200/10000000, FPS 567.
+
+incre win rate is 0.7574692442882249.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2575/3125 episodes, total num timesteps 8243200/10000000, FPS 567.
+
+incre win rate is 0.7946902654867256.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2580/3125 episodes, total num timesteps 8259200/10000000, FPS 567.
+
+incre win rate is 0.7707231040564374.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2585/3125 episodes, total num timesteps 8275200/10000000, FPS 567.
+
+incre win rate is 0.7535714285714286.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2590/3125 episodes, total num timesteps 8291200/10000000, FPS 567.
+
+incre win rate is 0.7548845470692718.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2595/3125 episodes, total num timesteps 8307200/10000000, FPS 567.
+
+incre win rate is 0.756140350877193.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2600/3125 episodes, total num timesteps 8323200/10000000, FPS 566.
+
+incre win rate is 0.7783687943262412.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2605/3125 episodes, total num timesteps 8339200/10000000, FPS 565.
+
+incre win rate is 0.7644991212653779.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2610/3125 episodes, total num timesteps 8355200/10000000, FPS 565.
+
+incre win rate is 0.7486631016042781.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2615/3125 episodes, total num timesteps 8371200/10000000, FPS 565.
+
+incre win rate is 0.7742504409171076.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2620/3125 episodes, total num timesteps 8387200/10000000, FPS 565.
+
+incre win rate is 0.7521968365553603.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2625/3125 episodes, total num timesteps 8403200/10000000, FPS 565.
+
+incre win rate is 0.708994708994709.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2630/3125 episodes, total num timesteps 8419200/10000000, FPS 565.
+
+incre win rate is 0.7300177619893428.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2635/3125 episodes, total num timesteps 8435200/10000000, FPS 565.
+
+incre win rate is 0.7429577464788732.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2640/3125 episodes, total num timesteps 8451200/10000000, FPS 565.
+
+incre win rate is 0.7557117750439367.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2645/3125 episodes, total num timesteps 8467200/10000000, FPS 565.
+
+incre win rate is 0.7079646017699115.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2650/3125 episodes, total num timesteps 8483200/10000000, FPS 565.
+
+incre win rate is 0.7180851063829787.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2655/3125 episodes, total num timesteps 8499200/10000000, FPS 565.
+
+incre win rate is 0.725177304964539.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2660/3125 episodes, total num timesteps 8515200/10000000, FPS 565.
+
+incre win rate is 0.773851590106007.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2665/3125 episodes, total num timesteps 8531200/10000000, FPS 565.
+
+incre win rate is 0.7535714285714286.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2670/3125 episodes, total num timesteps 8547200/10000000, FPS 565.
+
+incre win rate is 0.7850799289520426.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2675/3125 episodes, total num timesteps 8563200/10000000, FPS 565.
+
+incre win rate is 0.7655417406749556.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2680/3125 episodes, total num timesteps 8579200/10000000, FPS 565.
+
+incre win rate is 0.7486631016042781.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2685/3125 episodes, total num timesteps 8595200/10000000, FPS 565.
+
+incre win rate is 0.7228070175438597.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2690/3125 episodes, total num timesteps 8611200/10000000, FPS 565.
+
+incre win rate is 0.7424511545293073.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2695/3125 episodes, total num timesteps 8627200/10000000, FPS 565.
+
+incre win rate is 0.6985815602836879.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2700/3125 episodes, total num timesteps 8643200/10000000, FPS 565.
+
+incre win rate is 0.7140319715808171.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2705/3125 episodes, total num timesteps 8659200/10000000, FPS 565.
+
+incre win rate is 0.7464285714285714.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2710/3125 episodes, total num timesteps 8675200/10000000, FPS 565.
+
+incre win rate is 0.725177304964539.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2715/3125 episodes, total num timesteps 8691200/10000000, FPS 565.
+
+incre win rate is 0.7254901960784313.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2720/3125 episodes, total num timesteps 8707200/10000000, FPS 565.
+
+incre win rate is 0.7219251336898396.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2725/3125 episodes, total num timesteps 8723200/10000000, FPS 565.
+
+incre win rate is 0.7173524150268337.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2730/3125 episodes, total num timesteps 8739200/10000000, FPS 565.
+
+incre win rate is 0.6872791519434629.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2735/3125 episodes, total num timesteps 8755200/10000000, FPS 565.
+
+incre win rate is 0.6991150442477876.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2740/3125 episodes, total num timesteps 8771200/10000000, FPS 565.
+
+incre win rate is 0.696588868940754.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2745/3125 episodes, total num timesteps 8787200/10000000, FPS 565.
+
+incre win rate is 0.7269503546099291.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2750/3125 episodes, total num timesteps 8803200/10000000, FPS 565.
+
+incre win rate is 0.7178130511463845.
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2755/3125 episodes, total num timesteps 8819200/10000000, FPS 565.
+
+incre win rate is 0.7137809187279152.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2760/3125 episodes, total num timesteps 8835200/10000000, FPS 564.
+
+incre win rate is 0.6786355475763016.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2765/3125 episodes, total num timesteps 8851200/10000000, FPS 564.
+
+incre win rate is 0.750445632798574.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2770/3125 episodes, total num timesteps 8867200/10000000, FPS 564.
+
+incre win rate is 0.7423971377459749.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2775/3125 episodes, total num timesteps 8883200/10000000, FPS 564.
+
+incre win rate is 0.7119856887298748.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2780/3125 episodes, total num timesteps 8899200/10000000, FPS 564.
+
+incre win rate is 0.7438162544169611.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2785/3125 episodes, total num timesteps 8915200/10000000, FPS 564.
+
+incre win rate is 0.734982332155477.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2790/3125 episodes, total num timesteps 8931200/10000000, FPS 564.
+
+incre win rate is 0.7102473498233216.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2795/3125 episodes, total num timesteps 8947200/10000000, FPS 564.
+
+incre win rate is 0.7256637168141593.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2800/3125 episodes, total num timesteps 8963200/10000000, FPS 564.
+
+incre win rate is 0.7227191413237924.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2805/3125 episodes, total num timesteps 8979200/10000000, FPS 565.
+
+incre win rate is 0.7557522123893805.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2810/3125 episodes, total num timesteps 8995200/10000000, FPS 565.
+
+incre win rate is 0.7423971377459749.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2815/3125 episodes, total num timesteps 9011200/10000000, FPS 565.
+
+incre win rate is 0.732620320855615.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2820/3125 episodes, total num timesteps 9027200/10000000, FPS 565.
+
+incre win rate is 0.7580071174377224.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2825/3125 episodes, total num timesteps 9043200/10000000, FPS 565.
+
+incre win rate is 0.7313167259786477.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2830/3125 episodes, total num timesteps 9059200/10000000, FPS 565.
+
+incre win rate is 0.7611408199643493.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2835/3125 episodes, total num timesteps 9075200/10000000, FPS 565.
+
+incre win rate is 0.7175843694493783.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2840/3125 episodes, total num timesteps 9091200/10000000, FPS 565.
+
+incre win rate is 0.7341549295774648.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2845/3125 episodes, total num timesteps 9107200/10000000, FPS 565.
+
+incre win rate is 0.7557522123893805.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2850/3125 episodes, total num timesteps 9123200/10000000, FPS 566.
+
+incre win rate is 0.7283950617283951.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2855/3125 episodes, total num timesteps 9139200/10000000, FPS 566.
+
+incre win rate is 0.7486725663716814.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2860/3125 episodes, total num timesteps 9155200/10000000, FPS 566.
+
+incre win rate is 0.7367491166077739.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2865/3125 episodes, total num timesteps 9171200/10000000, FPS 566.
+
+incre win rate is 0.7175843694493783.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2870/3125 episodes, total num timesteps 9187200/10000000, FPS 566.
+
+incre win rate is 0.7379679144385026.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2875/3125 episodes, total num timesteps 9203200/10000000, FPS 566.
+
+incre win rate is 0.7592920353982301.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2880/3125 episodes, total num timesteps 9219200/10000000, FPS 566.
+
+incre win rate is 0.7380530973451327.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2885/3125 episodes, total num timesteps 9235200/10000000, FPS 566.
+
+incre win rate is 0.7120418848167539.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2890/3125 episodes, total num timesteps 9251200/10000000, FPS 566.
+
+incre win rate is 0.7707231040564374.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2895/3125 episodes, total num timesteps 9267200/10000000, FPS 567.
+
+incre win rate is 0.7491228070175439.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2900/3125 episodes, total num timesteps 9283200/10000000, FPS 567.
+
+incre win rate is 0.7084805653710248.
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2905/3125 episodes, total num timesteps 9299200/10000000, FPS 567.
+
+incre win rate is 0.6772486772486772.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2910/3125 episodes, total num timesteps 9315200/10000000, FPS 567.
+
+incre win rate is 0.7280701754385965.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2915/3125 episodes, total num timesteps 9331200/10000000, FPS 567.
+
+incre win rate is 0.7105263157894737.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2920/3125 episodes, total num timesteps 9347200/10000000, FPS 567.
+
+incre win rate is 0.7451669595782073.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2925/3125 episodes, total num timesteps 9363200/10000000, FPS 566.
+
+incre win rate is 0.7375.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2930/3125 episodes, total num timesteps 9379200/10000000, FPS 566.
+
+incre win rate is 0.7125.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2935/3125 episodes, total num timesteps 9395200/10000000, FPS 566.
+
+incre win rate is 0.7616487455197133.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2940/3125 episodes, total num timesteps 9411200/10000000, FPS 566.
+
+incre win rate is 0.7464539007092199.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2945/3125 episodes, total num timesteps 9427200/10000000, FPS 567.
+
+incre win rate is 0.7302158273381295.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2950/3125 episodes, total num timesteps 9443200/10000000, FPS 567.
+
+incre win rate is 0.7078853046594982.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2955/3125 episodes, total num timesteps 9459200/10000000, FPS 567.
+
+incre win rate is 0.7132616487455197.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2960/3125 episodes, total num timesteps 9475200/10000000, FPS 567.
+
+incre win rate is 0.7375.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2965/3125 episodes, total num timesteps 9491200/10000000, FPS 567.
+
+incre win rate is 0.7468805704099821.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2970/3125 episodes, total num timesteps 9507200/10000000, FPS 567.
+
+incre win rate is 0.7007168458781362.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2975/3125 episodes, total num timesteps 9523200/10000000, FPS 567.
+
+incre win rate is 0.7419354838709677.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2980/3125 episodes, total num timesteps 9539200/10000000, FPS 567.
+
+incre win rate is 0.7145421903052065.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2985/3125 episodes, total num timesteps 9555200/10000000, FPS 567.
+
+incre win rate is 0.7137745974955277.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2990/3125 episodes, total num timesteps 9571200/10000000, FPS 568.
+
+incre win rate is 0.7275985663082437.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 2995/3125 episodes, total num timesteps 9587200/10000000, FPS 568.
+
+incre win rate is 0.736936936936937.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3000/3125 episodes, total num timesteps 9603200/10000000, FPS 568.
+
+incre win rate is 0.7428057553956835.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3005/3125 episodes, total num timesteps 9619200/10000000, FPS 568.
+
+incre win rate is 0.7176258992805755.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3010/3125 episodes, total num timesteps 9635200/10000000, FPS 568.
+
+incre win rate is 0.7308377896613191.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3015/3125 episodes, total num timesteps 9651200/10000000, FPS 568.
+
+incre win rate is 0.7099644128113879.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3020/3125 episodes, total num timesteps 9667200/10000000, FPS 568.
+
+incre win rate is 0.7122557726465364.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3025/3125 episodes, total num timesteps 9683200/10000000, FPS 568.
+
+incre win rate is 0.7150537634408602.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3030/3125 episodes, total num timesteps 9699200/10000000, FPS 568.
+
+incre win rate is 0.7567084078711985.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3035/3125 episodes, total num timesteps 9715200/10000000, FPS 568.
+
+incre win rate is 0.7643884892086331.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3040/3125 episodes, total num timesteps 9731200/10000000, FPS 569.
+
+incre win rate is 0.778175313059034.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3045/3125 episodes, total num timesteps 9747200/10000000, FPS 569.
+
+incre win rate is 0.7446043165467626.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3050/3125 episodes, total num timesteps 9763200/10000000, FPS 569.
+
+incre win rate is 0.7495527728085868.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3055/3125 episodes, total num timesteps 9779200/10000000, FPS 569.
+
+incre win rate is 0.7396021699819169.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3060/3125 episodes, total num timesteps 9795200/10000000, FPS 569.
+
+incre win rate is 0.7353463587921847.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3065/3125 episodes, total num timesteps 9811200/10000000, FPS 569.
+
+incre win rate is 0.7437722419928826.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3070/3125 episodes, total num timesteps 9827200/10000000, FPS 569.
+
+incre win rate is 0.7540394973070018.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3075/3125 episodes, total num timesteps 9843200/10000000, FPS 569.
+
+incre win rate is 0.7277580071174378.
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3080/3125 episodes, total num timesteps 9859200/10000000, FPS 569.
+
+incre win rate is 0.7303571428571428.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3085/3125 episodes, total num timesteps 9875200/10000000, FPS 568.
+
+incre win rate is 0.7320143884892086.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3090/3125 episodes, total num timesteps 9891200/10000000, FPS 568.
+
+incre win rate is 0.7589928057553957.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3095/3125 episodes, total num timesteps 9907200/10000000, FPS 569.
+
+incre win rate is 0.7277580071174378.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3100/3125 episodes, total num timesteps 9923200/10000000, FPS 569.
+
+incre win rate is 0.7384341637010676.
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3105/3125 episodes, total num timesteps 9939200/10000000, FPS 569.
+
+incre win rate is 0.7441860465116279.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3110/3125 episodes, total num timesteps 9955200/10000000, FPS 569.
+
+incre win rate is 0.7371225577264654.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3115/3125 episodes, total num timesteps 9971200/10000000, FPS 569.
+
+incre win rate is 0.7491103202846975.
+
+ Map 8m_vs_9m Algo rmappo Exp check updates 3120/3125 episodes, total num timesteps 9987200/10000000, FPS 569.
+
+incre win rate is 0.7232142857142857.
