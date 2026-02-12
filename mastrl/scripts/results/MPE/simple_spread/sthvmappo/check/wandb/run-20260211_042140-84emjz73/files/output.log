@@ -1639,3 +1639,52 @@ average episode rewards is -118.6165452003479
  Scenario simple_spread Algo sthvmappo Exp check updates 2040/6250 episodes, total num timesteps 6531200/20000000, FPS 54.
 
 average episode rewards is -118.23512315750122
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2045/6250 episodes, total num timesteps 6547200/20000000, FPS 54.
+
+average episode rewards is -120.8651065826416
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2050/6250 episodes, total num timesteps 6563200/20000000, FPS 54.
+
+average episode rewards is -118.76460313796997
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2055/6250 episodes, total num timesteps 6579200/20000000, FPS 54.
+
+average episode rewards is -119.44606304168701
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2060/6250 episodes, total num timesteps 6595200/20000000, FPS 54.
+
+average episode rewards is -117.52746105194092
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2065/6250 episodes, total num timesteps 6611200/20000000, FPS 54.
+
+average episode rewards is -114.82993364334106
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2070/6250 episodes, total num timesteps 6627200/20000000, FPS 54.
+
+average episode rewards is -117.14135408401489
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2075/6250 episodes, total num timesteps 6643200/20000000, FPS 55.
+
+average episode rewards is -118.40924024581909
+
+ Scenario simple_spread Algo sthvmappo Exp check updates 2080/6250 episodes, total num timesteps 6659200/20000000, FPS 55.
+
+average episode rewards is -117.66387224197388
+Traceback (most recent call last):
+  File "../train/train_mpe.py", line 185, in <module>
+    main(sys.argv[1:])
+  File "../train/train_mpe.py", line 170, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/mpe_runner.py", line 40, in run
+    train_infos = self.train()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/base_runner.py", line 143, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 318, in train
+    advantages = buffer.returns[:-1] - buffer.value_preds[:-1]
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 249, in ppo_update
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 165, in _compute_hgvd_q
+    actions_batch: [B*N, ...] flattened over agents
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/algorithm/hyperedge.py", line 23, in discover_hyperedges_knn
+    knn = sim.topk(k, dim=-1).indices  # [N,k]
+KeyboardInterrupt
