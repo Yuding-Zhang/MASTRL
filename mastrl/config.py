@@ -343,6 +343,8 @@ def get_config():
     
     parser.add_argument("--hgvd_warmup_updates", type=int, default=5000  ,
                         help="Number of warmup updates for HGVD before starting to update the hypergraph.")
+    parser.add_argument("--hgvd_update_interval", type=int, default=4,
+                        help="Update interval for the HGVD critic network.")
 
     parser.add_argument("--hyperedge_tc_coef", type=float, default=0.0)
     parser.add_argument("--hyperedge_tc_detach_next", action="store_true", default=True)

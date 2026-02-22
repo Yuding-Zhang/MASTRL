@@ -49,7 +49,7 @@ class STHV_Actor(nn.Module):
         self.act = ACTLayer(action_space, self.hidden_size, self._use_orthogonal, self._gain, args)
         self.to(device)
 
-    def forward(self, obs, rnn_states, masks, available_actions=None, deterministic=False, need_aux: bool = True):
+    def forward(self, obs, rnn_states, masks, available_actions=None, deterministic=True, need_aux: bool = True):
         obs = check(obs).to(**self.tpdv)
         rnn_states = check(rnn_states).to(**self.tpdv)
         masks = check(masks).to(**self.tpdv)

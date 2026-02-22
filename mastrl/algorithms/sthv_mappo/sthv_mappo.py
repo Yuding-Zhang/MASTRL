@@ -256,10 +256,12 @@ class STHV_MAPPO():
                 next_masks_t = check(next_masks_batch).to(**self.tpdv)
 
                 with torch.no_grad():
-                    actions_next, _, _, z_next, _ = self.target_actor(next_obs_t, next_rnn_t, next_masks_t, None, deterministic=False)
+                    actions_next, _, _, z_next, _ = self.target_actor(next_obs_t, next_rnn_t, next_masks_t, available_actions_batch, deterministic=True)
                     Q_tot_next, _ = self._compute_hgvd_q(z_next, actions_next, n_agents, critic=self.target_hgvd_critic)
 
-                    mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
+                    # mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
+                    nm = next_masks_t.view(-1, n_agents, 1)
+                    mask_next = nm.min(dim=1).values
                     y = r_tot + self.gamma * mask_next * Q_tot_next
 
                 hgvd_loss = (Q_tot - y).pow(2).mean()
