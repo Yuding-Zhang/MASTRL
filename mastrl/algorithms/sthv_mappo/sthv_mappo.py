@@ -219,11 +219,6 @@ class STHV_MAPPO():
         shaped_adv = adv_targ
         hgvd_loss = torch.zeros([], device=values.device)
 
-        # Use freshly-computed aux outputs (rollout may skip them). Detach to avoid
-        # double-backward through actor graph when optimizing hgvd separately.
-        z_batch = z_new.detach() if z_new is not None else None
-        old_credit_logits_batch = credit_logits_new.detach() if credit_logits_new is not None else None
-
         do_hgvd = (
             self.use_hgvd
             and (self._update_step >= self.hgvd_warmup_updates)
@@ -282,12 +277,11 @@ class STHV_MAPPO():
         self.policy.actor_optimizer.zero_grad()
         if update_actor:
             (policy_action_loss - dist_entropy * self.entropy_coef).backward()
-
-        if self._use_max_grad_norm:
-            actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
-        else:
-            actor_grad_norm = get_gard_norm(self.policy.actor.parameters())
-        self.policy.actor_optimizer.step()
+            if self._use_max_grad_norm:
+                actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
+            else:
+                actor_grad_norm = get_gard_norm(self.policy.actor.parameters())
+            self.policy.actor_optimizer.step()
 
         value_loss = self.cal_value_loss(values, value_preds_batch, return_batch, active_masks_batch)
         self.policy.critic_optimizer.zero_grad()

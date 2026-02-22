@@ -115,8 +115,7 @@ class SMACRunner(Runner):
                                             np.concatenate(self.buffer.rnn_states[step]),
                                             np.concatenate(self.buffer.rnn_states_critic[step]),
                                             np.concatenate(self.buffer.masks[step]),
-                                            np.concatenate(self.buffer.available_actions[step]),
-                                            need_aux=False)
+                                            np.concatenate(self.buffer.available_actions[step]))
         
         if isinstance(out, tuple) and len(out) == 7:
             value, action, action_log_prob, rnn_states, rnn_states_critic, z, credit_logits = out

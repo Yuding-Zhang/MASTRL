@@ -58,17 +58,14 @@ class STHV_MAPPOPolicy:
         update_linear_schedule(self.hgvd_critic_optimizer, episode, episodes, self.hgvd_critic_lr)
 
     def get_actions(self, cent_obs, obs, rnn_states_actor, rnn_states_critic, masks,
-                    available_actions=None, deterministic=False, need_aux=False):
-        # actor: rollout can skip aux for speed
+                    available_actions=None, deterministic=False):
+        
         actions, action_log_probs, rnn_states_actor, z, credit_logits = self.actor(
-            obs, rnn_states_actor, masks, available_actions, deterministic, need_aux=need_aux
-        )
-        # baseline critic
+            obs, rnn_states_actor, masks, available_actions, deterministic)
+        
         values, rnn_states_critic = self.critic(cent_obs, rnn_states_critic, masks)
-        if need_aux:
-            return values, actions, action_log_probs, rnn_states_actor, rnn_states_critic, z, credit_logits
-        else:
-            return values, actions, action_log_probs, rnn_states_actor, rnn_states_critic
+        return values, actions, action_log_probs, rnn_states_actor, rnn_states_critic, z, credit_logits
+
 
     def get_values(self, cent_obs, rnn_states_critic, masks):
         values, _ = self.critic(cent_obs, rnn_states_critic, masks)

@@ -60,15 +60,10 @@ class STHV_Actor(nn.Module):
         if self._use_naive_recurrent_policy or self._use_recurrent_policy:
             feat, rnn_states = self.rnn(feat, rnn_states, masks)
 
-        if need_aux:
-            # Full ST encoder + credit head (used in training / eval)
-            z, credit_logits = self.st_encoder(feat.unsqueeze(1))  # [BN,1,D], [BN,1,1]
-            z = z.squeeze(1)
-            credit_logits = credit_logits.squeeze(1)
-        else:
-            # Rollout fast path: skip ST encoder to keep O(N) per step
-            z = feat
-            credit_logits = None
+        # Full ST encoder + credit head (used in training / eval)
+        z, credit_logits = self.st_encoder(feat.unsqueeze(1))  # [BN,1,D], [BN,1,1]
+        z = z.squeeze(1)
+        credit_logits = credit_logits.squeeze(1)
 
         actions, action_log_probs = self.act(z, available_actions, deterministic)
         return actions, action_log_probs, rnn_states, z, credit_logits

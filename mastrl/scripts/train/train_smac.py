@@ -289,7 +289,7 @@ if __name__ == "__main__":
         "--use_stca",
         "--use_hgvd",
         "--share_policy",
-        "--hgvd_warmup_updates", "15000",
+        "--hgvd_warmup_updates", "1",
         "--hgvd_loss_coef", "0.03",
         "--credit_loss_coef", "0.01",
         "--credit_temperature", "0.7",
