@@ -1,7 +1,7 @@
 #!/bin/sh
 env="StarCraft2"
 map="8m_vs_9m"
-algo="sthvmappo"
+algo="rmappo"
 exp="check"
 seed_max=1
 

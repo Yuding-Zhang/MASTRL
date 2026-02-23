@@ -1,0 +1,28 @@
+obs_space:  [[217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]]]
+share_obs_space:  [[267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 0/3125 episodes, total num timesteps 3200/10000000, FPS 741.
+
+episode win_rate: 0.0000, window win_rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 5/3125 episodes, total num timesteps 19200/10000000, FPS 603.
+
+episode win_rate: 0.0000, window win_rate: 0.0000
+Traceback (most recent call last):
+  File "../../train/train_smac.py", line 299, in <module>
+    main(args)
+  File "../../train/train_smac.py", line 255, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/smac_runner.py", line 34, in run
+    obs, share_obs, rewards, dones, infos, available_actions = self.envs.step(actions)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/envs/env_wrappers.py", line 107, in step
+    return self.step_wait()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/envs/env_wrappers.py", line 372, in step_wait
+    results = [remote.recv() for remote in self.remotes]
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/envs/env_wrappers.py", line 372, in <listcomp>
+    results = [remote.recv() for remote in self.remotes]
+  File "/home/workspace/zyd/miniconda3/envs/marl/lib/python3.8/multiprocessing/connection.py", line 251, in recv
+    return _ForkingPickler.loads(buf.getbuffer())
+KeyboardInterrupt

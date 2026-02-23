@@ -189,7 +189,7 @@ def main(args):
                          notes=socket.gethostname(),
                          name=str(all_args.algorithm_name) + "_" +
                               str(all_args.experiment_name) + "_" + 
-                              str(all_args.units) +
+                              str(all_args.map_name) +
                               "_seed" + str(all_args.seed),
                          group=all_args.map_name,
                          dir=str(run_dir),
@@ -276,11 +276,11 @@ if __name__ == "__main__":
         "--seed", "1",
         "--n_training_threads", "1",
         "--n_rollout_threads", "8",
-        "--num_mini_batch", "1",
+        "--num_mini_batch", "4",
         "--episode_length", "400",
         "--num_env_steps", "10000000",
-        "--ppo_epoch", "15",
-        "--clip_param", "0.05",
+        "--ppo_epoch", "10",
+        "--clip_param", "0.1",
         "--use_value_active_masks",
         "--use_eval", 
         "--eval_episodes", "32",
@@ -289,11 +289,14 @@ if __name__ == "__main__":
         "--use_stca",
         "--use_hgvd",
         "--share_policy",
-        "--hgvd_warmup_updates", "1",
-        "--hgvd_update_interval", "4",
-        "--hgvd_loss_coef", "0.03",
+        "--hgvd_warmup_updates", "8000",
+        "--hgvd_update_interval", "10",
+        "--stca_warmup_updates", "4000",
+        "--stca_update_interval", "5",
+        "--hgvd_loss_coef", "0.005",
         "--credit_loss_coef", "0.01",
         "--credit_temperature", "0.7",
-        "--credit_target_tau", "0.5"
+        "--credit_target_tau", "0.01",
+        "--st_use_temporal"
     ]
     main(args)

@@ -1,0 +1,11 @@
+{"time":"2026-02-23T04:52:18.572572626Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/rmappo/check/wandb/run-20260223_045218-t3pahei2/logs/debug-core.log"}
+{"time":"2026-02-23T04:52:18.674612199Z","level":"INFO","msg":"created new stream","id":"t3pahei2"}
+{"time":"2026-02-23T04:52:18.67462708Z","level":"INFO","msg":"stream: started","id":"t3pahei2"}
+{"time":"2026-02-23T04:52:18.674630624Z","level":"INFO","msg":"handler: started","stream_id":"t3pahei2"}
+{"time":"2026-02-23T04:52:18.674638299Z","level":"INFO","msg":"sender: started","stream_id":"t3pahei2"}
+{"time":"2026-02-23T04:52:18.674643258Z","level":"INFO","msg":"writer: Do: started","stream_id":"t3pahei2"}
+{"time":"2026-02-23T04:52:19.542196651Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-23T06:34:14.690308194Z","level":"INFO","msg":"stream: closing","id":"t3pahei2"}
+{"time":"2026-02-23T06:34:14.690324802Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-23T06:34:14.690819595Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-23T06:34:15.781702135Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

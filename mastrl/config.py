@@ -321,8 +321,18 @@ def get_config():
 
     parser.add_argument("--credit_loss_coef", type=float, default=0.05,
                         help="Coefficient for the credit assignment loss term in STCA.")
+
     parser.add_argument("--credit_target_tau", type=float, default=0.5,
                         help="Target network update rate for credit assignment in STCA.")
+    
+    parser.add_argument("--entropy_coef_final",type=float, default=0.0,
+                        help="Final coefficient for the entropy loss.")
+    
+    parser.add_argument("--entropy_anneal_updates", type=int, default=10000,
+                        help="Number of warmup steps for the entropy loss coefficient.")
+    
+    parser.add_argument("--use_kl_stop",action="store_true", default=False,
+                        help="Enable KL-divergence-based stopping criterion.")
 
     # ---- HGVD: Hypergraph Value Decomposition ----
 
@@ -363,5 +373,10 @@ def get_config():
 
     parser.add_argument("--st_dropout", type=float, default=0.0,
                         help="Dropout rate for the attention mechanisms in STCA.")
+    
+    parser.add_argument("--stca_warmup_updates", type=int, default=5000  ,
+                        help="Number of warmup updates for STCA before starting to update the hypergraph.")
+    parser.add_argument("--stca_update_interval", type=int, default=4,
+                        help="Update interval for the STCA critic network.")
 
     return parser

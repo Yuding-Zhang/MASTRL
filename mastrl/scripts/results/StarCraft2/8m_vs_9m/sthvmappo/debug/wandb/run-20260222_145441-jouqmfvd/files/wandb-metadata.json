@@ -1,0 +1,42 @@
+{
+  "os": "Linux-6.8.0-85-generic-x86_64-with-glibc2.17",
+  "python": "CPython 3.8.20",
+  "startedAt": "2026-02-22T14:54:41.365261Z",
+  "program": "train_smac.py",
+  "codePath": "mastrl/scripts/train/train_smac.py",
+  "git": {
+    "remote": "git@github.com:Yuding-Zhang/MASTRL.git",
+    "commit": "47e7ac1805ff0c464631cf5b8aad0c27e0aa7aa2"
+  },
+  "email": "steven_yuding@163.com",
+  "root": "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/sthvmappo/debug",
+  "host": "deeplearning4090",
+  "executable": "/home/workspace/zyd/miniconda3/envs/marl/bin/python",
+  "codePathLocal": "train_smac.py",
+  "cpu_count": 24,
+  "cpu_count_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "980126228480",
+      "used": "910409388032"
+    }
+  },
+  "memory": {
+    "total": "134770737152"
+  },
+  "cpu": {
+    "count": 24,
+    "countLogical": 32
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "51527024640",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.6"
+}

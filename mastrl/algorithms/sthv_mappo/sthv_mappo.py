@@ -28,10 +28,18 @@ class STHV_MAPPO():
         self.num_mini_batch = args.num_mini_batch
         self.data_chunk_length = args.data_chunk_length
         self.value_loss_coef = args.value_loss_coef
-        self.entropy_coef = args.entropy_coef
+        self.entropy_coef_init = float(args.entropy_coef)
+        self.entropy_coef_final = float(getattr(args, "entropy_coef_final", self.entropy_coef_init))
+        self.entropy_anneal_updates = int(getattr(args, "entropy_anneal_updates", 0))  # 0 表示不衰减
+        self.entropy_coef = self.entropy_coef_init
+
         self.max_grad_norm = args.max_grad_norm
         self.huber_delta = args.huber_delta
         self.gamma = args.gamma
+
+        self.use_kl_stop = bool(getattr(args, "use_kl_stop", False))
+        self.kl_threshold = float(getattr(args, "kl_threshold", 0.01))
+
 
         self._use_recurrent_policy = args.use_recurrent_policy
         self._use_naive_recurrent = args.use_naive_recurrent_policy
@@ -53,7 +61,9 @@ class STHV_MAPPO():
         self.hgvd_loss_coef = float(getattr(args, "hgvd_loss_coef", 1.0))
         self.hgvd_target_tau = float(getattr(args, "hgvd_target_tau", 0.005))
         self.hgvd_update_interval = int(getattr(args, "hgvd_update_interval", 4))
-        self.hgvd_warmup_updates = int(getattr(args, "hgvd_warmup_updates", 0))
+        self.hgvd_warmup_updates = int(getattr(args, "hgvd_warmup_updates", 1000))
+        self.stca_warmup_updates = int(getattr(args, "stca_warmup_updates", 1000))
+        self.stca_update_interval = int(getattr(args, "stca_update_interval", 4))
         self.hgvd_hops = int(getattr(args, "hgvd_hops", 2))
         self._update_step = 0
                 
@@ -210,6 +220,13 @@ class STHV_MAPPO():
 
         self._update_step += 1
 
+        if self.entropy_anneal_updates > 0:
+            p = min(1.0, float(self._update_step) / float(self.entropy_anneal_updates))
+            self.entropy_coef = self.entropy_coef_init + p * (self.entropy_coef_final - self.entropy_coef_init)
+        else:
+            self.entropy_coef = self.entropy_coef_init
+
+
         values, action_log_probs, dist_entropy, z_new, credit_logits_new = self.policy.evaluate_actions(
             share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
             masks_batch, available_actions_batch, active_masks_batch
@@ -225,8 +242,14 @@ class STHV_MAPPO():
             and (self.hgvd_update_interval <= 1 or (self._update_step % self.hgvd_update_interval == 0))
         )
 
+        do_stca = (
+            self.use_stca
+            and (self._update_step >= self.stca_warmup_updates)
+            and (self.stca_update_interval <= 1 or (self._update_step % self.stca_update_interval == 0))
+        )
+
         # STCA: advantage shaping from credit logits, independent of HGVD schedule
-        if self.use_stca and (old_credit_logits_batch is not None) and n_agents > 1:
+        if do_stca and (old_credit_logits_batch is not None) and n_agents > 1:
             c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)
             c_old = c_old / max(self.credit_temperature, 1e-6)
             w = torch.softmax(c_old, dim=-1)
@@ -267,6 +290,7 @@ class STHV_MAPPO():
                 hgvd_loss = (Q_tot - y).pow(2).mean()
 
         # PPO update
+        approx_kl = (old_action_log_probs_batch - action_log_probs).mean().detach()
         imp_weights = torch.exp(action_log_probs - old_action_log_probs_batch)
         surr1 = imp_weights * shaped_adv
         surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * shaped_adv
@@ -304,7 +328,7 @@ class STHV_MAPPO():
 
         self._soft_update(self.target_actor, self.policy.actor, self.hgvd_target_tau)
 
-        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hgvd_loss
+        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hgvd_loss, approx_kl
 
     def train(self, buffer, update_actor=True):
         # compute standard advantages (baseline) to preserve normalization pipeline
@@ -319,7 +343,9 @@ class STHV_MAPPO():
         std_adv = np.nanstd(advantages_copy)
         advantages = (advantages - mean_adv) / (std_adv + 1e-5)
 
-        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hgvd_loss']}
+        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hgvd_loss', 'entropy_coef', 'approx_kl']}
+        kl_stop = False
+        update_cnt = 0
 
         for _ in range(self.ppo_epoch):
             if self._use_recurrent_policy:
@@ -330,7 +356,7 @@ class STHV_MAPPO():
                 data_generator = buffer.feed_forward_generator(advantages, self.num_mini_batch)
 
             for sample in data_generator:
-                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss = self.ppo_update(sample, update_actor)
+                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss, approx_kl = self.ppo_update(sample, update_actor)
                 train_info['value_loss'] += value_loss.item()
                 train_info['policy_loss'] += policy_loss.item()
                 train_info['dist_entropy'] += dist_entropy.item()
@@ -338,8 +364,16 @@ class STHV_MAPPO():
                 train_info['critic_grad_norm'] += float(critic_gn)
                 train_info['ratio'] += imp_w.mean().item()
                 train_info['hgvd_loss'] += hgvd_loss.item()
+                train_info['approx_kl'] += approx_kl.item()
+                train_info['entropy_coef'] += float(self.entropy_coef)
+                update_cnt += 1
+                if self.use_kl_stop and (approx_kl.item() > 1.5 * self.target_kl):
+                    kl_stop = True
+                    break
+            if kl_stop:
+                break
 
-        num_updates = self.ppo_epoch * self.num_mini_batch
+        num_updates = max(1, update_cnt)
         for k in train_info.keys():
             train_info[k] /= num_updates
         return train_info

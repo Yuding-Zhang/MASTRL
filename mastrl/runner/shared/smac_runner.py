@@ -63,30 +63,85 @@ class SMACRunner(Runner):
                                 self.num_env_steps,
                                 int(total_num_steps / (end - start))))
 
-                if self.env_name == "StarCraft2" or self.env_name == "SMACv2" or self.env_name == "SMAC" or self.env_name == "StarCraft2v2":
-                    battles_won = []
-                    battles_game = []
-                    incre_battles_won = []
-                    incre_battles_game = []                    
+                # if self.env_name == "StarCraft2" or self.env_name == "SMACv2" or self.env_name == "SMAC" or self.env_name == "StarCraft2v2":
+                #     battles_won = []
+                #     battles_game = []
+                #     incre_battles_won = []
+                #     incre_battles_game = []                    
+
+                #     for i, info in enumerate(infos):
+                #         if 'battles_won' in info[0].keys():
+                #             battles_won.append(info[0]['battles_won'])
+                #             incre_battles_won.append(info[0]['battles_won']-last_battles_won[i])
+                #         if 'battles_game' in info[0].keys():
+                #             battles_game.append(info[0]['battles_game'])
+                #             incre_battles_game.append(info[0]['battles_game']-last_battles_game[i])
+
+                #     incre_win_rate = np.sum(incre_battles_won)/np.sum(incre_battles_game) if np.sum(incre_battles_game)>0 else 0.0
+                #     print("incre win rate is {}.".format(incre_win_rate))
+                #     if self.use_wandb:
+                #         wandb.log({"incre_win_rate": incre_win_rate}, step=total_num_steps)
+                #     else:
+                #         self.writter.add_scalars("incre_win_rate", {"incre_win_rate": incre_win_rate}, total_num_steps)
+                    
+                #     last_battles_game = battles_game
+                #     last_battles_won = battles_won
+
+                if self.env_name in ["StarCraft2", "SMACv2", "SMAC", "StarCraft2v2"]:
+                    # episode-level win rate statistics
+                    total_battles = 0
+                    total_wins = 0
+
 
                     for i, info in enumerate(infos):
-                        if 'battles_won' in info[0].keys():
-                            battles_won.append(info[0]['battles_won'])
-                            incre_battles_won.append(info[0]['battles_won']-last_battles_won[i])
-                        if 'battles_game' in info[0].keys():
-                            battles_game.append(info[0]['battles_game'])
-                            incre_battles_game.append(info[0]['battles_game']-last_battles_game[i])
 
-                    incre_win_rate = np.sum(incre_battles_won)/np.sum(incre_battles_game) if np.sum(incre_battles_game)>0 else 0.0
-                    print("incre win rate is {}.".format(incre_win_rate))
-                    if self.use_wandb:
-                        wandb.log({"incre_win_rate": incre_win_rate}, step=total_num_steps)
+                        # 兼容 info 结构
+                        if isinstance(info, dict):
+                            info0 = info
+                        elif isinstance(info, (list, tuple)) and len(info) > 0 and isinstance(info[0], dict):
+                            info0 = info[0]
+                        else:
+                            continue
+
+                        battle_won = info0.get("battles_won")
+                        battle_games = info0.get("battles_game")
+
+                        total_battles += battle_games
+                        total_wins += battle_won
+
+                
+                    if total_battles > 0:
+                        win_rate = total_wins / total_battles
                     else:
-                        self.writter.add_scalars("incre_win_rate", {"incre_win_rate": incre_win_rate}, total_num_steps)
+                        win_rate = 0.0
                     
-                    last_battles_game = battles_game
-                    last_battles_won = battles_won
+                     # 滑窗统计
+                    self.win_window.append(win_rate)
+                    if len(self.win_window) > self.win_window_size:
+                        self.win_window.pop(0)
 
+                    # 滑窗 win_rate（推荐作为主指标）
+                    if len(self.win_window) > 0:
+                        window_win_rate = sum(self.win_window) / len(self.win_window)
+                    else:
+                        window_win_rate = 0.0
+
+                    print(f"episode win_rate: {win_rate:.4f}, window win_rate: {window_win_rate:.4f}")
+
+                    if self.use_wandb:
+                        wandb.log({
+                            "episode_win_rate": win_rate,
+                            "window_win_rate": window_win_rate
+                        }, step=total_num_steps)
+                    else:
+                        self.writter.add_scalars(
+                            "win_rate",
+                            {
+                                "episode_win_rate": win_rate,
+                                "window_win_rate": window_win_rate
+                            },
+                            total_num_steps
+                        )
                 train_infos['dead_ratio'] = 1 - self.buffer.active_masks.sum() / reduce(lambda x, y: x*y, list(self.buffer.active_masks.shape)) 
                 
                 self.log_train(train_infos, total_num_steps)

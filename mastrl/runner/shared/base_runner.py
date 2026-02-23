@@ -46,7 +46,11 @@ class Runner(object):
         self.use_eval = self.all_args.use_eval
         self.eval_interval = self.all_args.eval_interval
         self.log_interval = self.all_args.log_interval
-
+        
+        # 滑窗统计（推荐）
+        self.win_window = []
+        self.win_window_size = 200   # 可以调 100~500
+        
         # dir
         self.model_dir = self.all_args.model_dir
 
