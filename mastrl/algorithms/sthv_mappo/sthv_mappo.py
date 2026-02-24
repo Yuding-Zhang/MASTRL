@@ -65,6 +65,7 @@ class STHV_MAPPO():
         self.stca_warmup_updates = int(getattr(args, "stca_warmup_updates", 1000))
         self.stca_update_interval = int(getattr(args, "stca_update_interval", 4))
         self.hgvd_hops = int(getattr(args, "hgvd_hops", 2))
+        self.credit_masked_softmax = True
         self._update_step = 0
                 
         assert (self._use_popart and self._use_valuenorm) == False, ("popart and valuenorm cannot both be True")
@@ -248,22 +249,68 @@ class STHV_MAPPO():
             and (self.stca_update_interval <= 1 or (self._update_step % self.stca_update_interval == 0))
         )
 
-        # STCA: advantage shaping from credit logits, independent of HGVD schedule
+        # STCA: advantage shaping from credit logits (masked softmax + EMA target smoothing)
         if do_stca and (old_credit_logits_batch is not None) and n_agents > 1:
-            c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents, 1).squeeze(-1)
-            c_old = c_old / max(self.credit_temperature, 1e-6)
-            w = torch.softmax(c_old, dim=-1)
+            # old logits from rollout buffer: [B*N, 1] -> [B, N]
+            c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents)
+
+            # alive mask from active_masks_batch: [B*N,1] -> [B,N]
+            alive = active_masks_batch.view(-1, n_agents).float()
+
+            # --- EMA target credit logits (temporal smoothing) ---
+            # Use slowly-updated target_actor to compute target credit logits on the SAME states.
+            # This is much more stable than using fresh credit_logits_new (avoids coupling / double backward).
+            with torch.no_grad():
+                obs_t = check(obs_batch).to(**self.tpdv)
+                rnn_t = check(rnn_states_batch).to(**self.tpdv)
+                masks_t = check(masks_batch).to(**self.tpdv)
+                ava_t = None
+                if available_actions_batch is not None:
+                    ava_t = check(available_actions_batch).to(**self.tpdv)
+
+                # target_actor returns: actions, logp, rnn, z, credit_logits
+                _, _, _, _, c_tgt = self.target_actor(obs_t, rnn_t, masks_t, ava_t, deterministic=True)
+
+                # c_tgt: [B*N, 1] -> [B, N]
+                if c_tgt is not None:
+                    c_tgt = c_tgt.view(-1, n_agents)
+                else:
+                    c_tgt = c_old  # fallback
+
+            beta = 0.5
+            beta = max(0.0, min(1.0, beta))
+            c = (1.0 - beta) * c_old + beta * c_tgt
+
+            # temperature
+            c = c / max(self.credit_temperature, 1e-6)
+
+            # --- masked softmax over alive agents only ---
+            if self.credit_masked_softmax:
+                c = c.masked_fill(alive <= 0.0, -1e9)  # dead agents get -inf logits
+                w = torch.softmax(c, dim=-1) * alive
+                w = w / (w.sum(dim=-1, keepdim=True).clamp_min(1e-6))
+            else:
+                w = torch.softmax(c, dim=-1)
+
             if self.credit_detach:
                 w = w.detach()
 
-            adv_i = adv_targ.view(-1, n_agents)  # [B,N]
+            # advantage per-agent: [B*N,1] -> [B,N]
+            adv_i = adv_targ.view(-1, n_agents)
+
+            # shaped advantage per-agent
             shaped = adv_i * w  # [B,N]
 
-            adv_std = adv_i.std(unbiased=False).clamp_min(1e-6)
-            shaped_std = shaped.std(unbiased=False).clamp_min(1e-6)
-            shaped = shaped * (adv_std / shaped_std)
+            # --- remove std-ratio scaling: use stable masked normalization instead (optional but recommended) ---
+            shaped_flat = shaped.reshape(-1, 1)          # [B*N,1]
+            alive_flat = alive.reshape(-1, 1)            # [B*N,1]
 
-            shaped_adv = shaped.reshape(-1, 1)
+            # masked mean/std normalize to keep scale stable across batches
+            denom = alive_flat.sum().clamp_min(1.0)
+            mean = (shaped_flat * alive_flat).sum() / denom
+            var = ((shaped_flat - mean).pow(2) * alive_flat).sum() / denom
+            shaped_adv = (shaped_flat - mean) / (var.sqrt() + 1e-5)
+
 
         # HGVD TD loss: only when enabled by schedule
         if do_hgvd and (z_batch is not None) and n_agents > 1:

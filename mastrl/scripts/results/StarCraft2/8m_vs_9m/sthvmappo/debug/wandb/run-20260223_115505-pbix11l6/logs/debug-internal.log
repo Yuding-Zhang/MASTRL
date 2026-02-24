@@ -1,0 +1,17 @@
+{"time":"2026-02-23T11:55:05.674777473Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/sthvmappo/debug/wandb/run-20260223_115505-pbix11l6/logs/debug-core.log"}
+{"time":"2026-02-23T11:55:05.777711463Z","level":"INFO","msg":"created new stream","id":"pbix11l6"}
+{"time":"2026-02-23T11:55:05.777745312Z","level":"INFO","msg":"stream: started","id":"pbix11l6"}
+{"time":"2026-02-23T11:55:05.777774461Z","level":"INFO","msg":"writer: Do: started","stream_id":"pbix11l6"}
+{"time":"2026-02-23T11:55:05.777787919Z","level":"INFO","msg":"handler: started","stream_id":"pbix11l6"}
+{"time":"2026-02-23T11:55:05.777830956Z","level":"INFO","msg":"sender: started","stream_id":"pbix11l6"}
+{"time":"2026-02-23T11:55:06.626939874Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-23T17:46:07.851357092Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/yuding-zh-uestc/StarCraft2/pbix11l6/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-23T18:58:24.700252114Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-23T18:58:24.700567167Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-23T18:58:25.704023803Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.271606012},{"desc":"uploading wandb-summary.json","runtime_seconds":0.271587729}],"total_operations":2}}
+{"time":"2026-02-23T18:58:26.995447978Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-23T18:58:27.504649789Z","level":"INFO","msg":"stream: closing","id":"pbix11l6"}
+{"time":"2026-02-23T18:58:27.50467616Z","level":"INFO","msg":"handler: closed","stream_id":"pbix11l6"}
+{"time":"2026-02-23T18:58:27.504687868Z","level":"INFO","msg":"writer: Close: closed","stream_id":"pbix11l6"}
+{"time":"2026-02-23T18:58:27.504697144Z","level":"INFO","msg":"sender: closed","stream_id":"pbix11l6"}
+{"time":"2026-02-23T18:58:27.504780452Z","level":"INFO","msg":"stream: closed","id":"pbix11l6"}

@@ -20,3 +20,10 @@ config: {'algorithm_name': 'sthvmappo', 'experiment_name': 'debug', 'seed': 1, '
 2026-02-23 05:34:17,826 INFO    MainThread:2237732 [wandb_run.py:_redirect():2292] Wrapping output streams.
 2026-02-23 05:34:17,826 INFO    MainThread:2237732 [wandb_run.py:_redirect():2315] Redirects installed.
 2026-02-23 05:34:17,827 INFO    MainThread:2237732 [wandb_init.py:init():1032] run started, returning control to user process
+2026-02-23 11:15:09,338 INFO    MainThread:2237732 [wandb_run.py:_finish():2112] finishing run yuding-zh-uestc/StarCraft2/tzs95dza
+2026-02-23 11:15:09,338 INFO    MainThread:2237732 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2026-02-23 11:15:09,338 INFO    MainThread:2237732 [wandb_run.py:_restore():2322] restore
+2026-02-23 11:15:09,338 INFO    MainThread:2237732 [wandb_run.py:_restore():2328] restore done
+2026-02-23 11:15:11,693 INFO    MainThread:2237732 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2026-02-23 11:15:11,693 INFO    MainThread:2237732 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2026-02-23 11:15:11,694 INFO    MainThread:2237732 [wandb_run.py:_footer_sync_info():3917] logging synced files

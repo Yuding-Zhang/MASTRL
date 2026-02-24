@@ -289,14 +289,13 @@ if __name__ == "__main__":
         "--use_stca",
         "--use_hgvd",
         "--share_policy",
-        "--hgvd_warmup_updates", "8000",
+        "--hgvd_warmup_updates", "4000",
         "--hgvd_update_interval", "10",
-        "--stca_warmup_updates", "4000",
+        "--stca_warmup_updates", "2000",
         "--stca_update_interval", "5",
         "--hgvd_loss_coef", "0.005",
         "--credit_loss_coef", "0.01",
         "--credit_temperature", "0.7",
-        "--credit_target_tau", "0.01",
-        "--st_use_temporal"
+        "--credit_target_tau", "0.01"
     ]
     main(args)

@@ -114,31 +114,19 @@ class SMACRunner(Runner):
                         win_rate = total_wins / total_battles
                     else:
                         win_rate = 0.0
-                    
-                     # 滑窗统计
-                    self.win_window.append(win_rate)
-                    if len(self.win_window) > self.win_window_size:
-                        self.win_window.pop(0)
 
-                    # 滑窗 win_rate（推荐作为主指标）
-                    if len(self.win_window) > 0:
-                        window_win_rate = sum(self.win_window) / len(self.win_window)
-                    else:
-                        window_win_rate = 0.0
 
-                    print(f"episode win_rate: {win_rate:.4f}, window win_rate: {window_win_rate:.4f}")
+                    print(f"episode win_rate: {win_rate:.4f}")
 
                     if self.use_wandb:
                         wandb.log({
-                            "episode_win_rate": win_rate,
-                            "window_win_rate": window_win_rate
+                            "episode_win_rate": win_rate
                         }, step=total_num_steps)
                     else:
                         self.writter.add_scalars(
                             "win_rate",
                             {
-                                "episode_win_rate": win_rate,
-                                "window_win_rate": window_win_rate
+                                "episode_win_rate": win_rate
                             },
                             total_num_steps
                         )
