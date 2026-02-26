@@ -223,13 +223,16 @@ class STHV_MAPPO():
                                                                                     active_masks_batch)
 
         # 监测指标approx_kl
+        old_action_log_probs_batch = old_action_log_probs_batch.reshape(-1, old_action_log_probs_batch.shape[-1]) # 转换为 [T*B*N, D]
         approx_kl = (old_action_log_probs_batch - action_log_probs).mean().detach()
         
         # adv_targ update
-        mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
-        w = torch.softmax(mix_credit_logits, dim=-1)
-        w = w.detach()
-        adv_targ = w * adv_targ
+        old_credit_logits_batch = old_credit_logits_batch.reshape(-1, old_credit_logits_batch.shape[-1]) # 转换为 [T*B*N, D]
+        adv_targ = adv_targ.reshape(-1, adv_targ.shape[-1]) # 转换为 [T*B*N, D]
+        # mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
+        # w = torch.softmax(mix_credit_logits, dim=-1)
+        # w = w.detach()
+        # adv_targ = w * adv_targ
         
 
         # actor update

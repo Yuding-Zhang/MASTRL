@@ -1,0 +1,218 @@
+obs_space:  [[217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]]]
+share_obs_space:  [[267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 0/3125 episodes, total num timesteps 3200/10000000, FPS 752.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 5/3125 episodes, total num timesteps 19200/10000000, FPS 532.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 10/3125 episodes, total num timesteps 35200/10000000, FPS 631.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 15/3125 episodes, total num timesteps 51200/10000000, FPS 675.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 20/3125 episodes, total num timesteps 67200/10000000, FPS 698.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 25/3125 episodes, total num timesteps 83200/10000000, FPS 714.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 30/3125 episodes, total num timesteps 99200/10000000, FPS 706.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 35/3125 episodes, total num timesteps 115200/10000000, FPS 714.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 40/3125 episodes, total num timesteps 131200/10000000, FPS 721.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 45/3125 episodes, total num timesteps 147200/10000000, FPS 726.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 50/3125 episodes, total num timesteps 163200/10000000, FPS 729.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 55/3125 episodes, total num timesteps 179200/10000000, FPS 724.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 60/3125 episodes, total num timesteps 195200/10000000, FPS 727.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 65/3125 episodes, total num timesteps 211200/10000000, FPS 730.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 70/3125 episodes, total num timesteps 227200/10000000, FPS 732.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 75/3125 episodes, total num timesteps 243200/10000000, FPS 734.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 80/3125 episodes, total num timesteps 259200/10000000, FPS 730.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 85/3125 episodes, total num timesteps 275200/10000000, FPS 732.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 90/3125 episodes, total num timesteps 291200/10000000, FPS 733.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 95/3125 episodes, total num timesteps 307200/10000000, FPS 735.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 100/3125 episodes, total num timesteps 323200/10000000, FPS 736.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 105/3125 episodes, total num timesteps 339200/10000000, FPS 732.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 110/3125 episodes, total num timesteps 355200/10000000, FPS 734.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 115/3125 episodes, total num timesteps 371200/10000000, FPS 735.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 120/3125 episodes, total num timesteps 387200/10000000, FPS 736.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 125/3125 episodes, total num timesteps 403200/10000000, FPS 737.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 130/3125 episodes, total num timesteps 419200/10000000, FPS 733.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 135/3125 episodes, total num timesteps 435200/10000000, FPS 734.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 140/3125 episodes, total num timesteps 451200/10000000, FPS 735.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 145/3125 episodes, total num timesteps 467200/10000000, FPS 736.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 150/3125 episodes, total num timesteps 483200/10000000, FPS 737.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 155/3125 episodes, total num timesteps 499200/10000000, FPS 734.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 160/3125 episodes, total num timesteps 515200/10000000, FPS 735.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 165/3125 episodes, total num timesteps 531200/10000000, FPS 711.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 170/3125 episodes, total num timesteps 547200/10000000, FPS 713.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 175/3125 episodes, total num timesteps 563200/10000000, FPS 714.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 180/3125 episodes, total num timesteps 579200/10000000, FPS 703.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 185/3125 episodes, total num timesteps 595200/10000000, FPS 705.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 190/3125 episodes, total num timesteps 611200/10000000, FPS 708.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 195/3125 episodes, total num timesteps 627200/10000000, FPS 710.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 200/3125 episodes, total num timesteps 643200/10000000, FPS 712.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 205/3125 episodes, total num timesteps 659200/10000000, FPS 704.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 210/3125 episodes, total num timesteps 675200/10000000, FPS 706.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 215/3125 episodes, total num timesteps 691200/10000000, FPS 708.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 220/3125 episodes, total num timesteps 707200/10000000, FPS 709.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 225/3125 episodes, total num timesteps 723200/10000000, FPS 710.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 230/3125 episodes, total num timesteps 739200/10000000, FPS 710.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 235/3125 episodes, total num timesteps 755200/10000000, FPS 711.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 240/3125 episodes, total num timesteps 771200/10000000, FPS 712.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 245/3125 episodes, total num timesteps 787200/10000000, FPS 713.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo sthvmappo Exp debug updates 250/3125 episodes, total num timesteps 803200/10000000, FPS 714.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.

@@ -715,15 +715,12 @@ class SharedReplayBuffer(object):
             masks_batch = np.stack(masks_batch, 0)
             active_masks_batch = np.stack(active_masks_batch, 0)
             old_action_log_probs_batch = np.stack(old_action_log_probs_batch, 0)
-            old_action_log_probs_batch = old_action_log_probs_batch.reshape(-1, old_action_log_probs_batch.shape[-1]) # 转换为 [T*B*N, D]
             rewards_batch = np.stack(rewards_batch, 0)
             old_credit_logits_batch = np.stack(old_credit_logits_batch, 0)
-            old_credit_logits_batch = old_credit_logits_batch.reshape(-1, old_credit_logits_batch.shape[-1]) # 转换为 [T*B*N, D]
             z_batch = np.stack(z_batch, 0)
             next_obs_batch = np.stack(next_obs_batch, 0)
             next_masks_batch = np.stack(next_masks_batch, 0)
             adv_targ = np.stack(adv_targ, 0)
-            adv_targ = adv_targ.reshape(-1, adv_targ.shape[-1]) # 转换为 [T*B*N, D]
 
 
             yield share_obs_batch, obs_batch, actions_batch,\
