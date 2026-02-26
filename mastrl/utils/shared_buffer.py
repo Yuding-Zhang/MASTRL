@@ -656,72 +656,37 @@ class SharedReplayBuffer(object):
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         """
         episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
-        batch_size = n_rollout_threads * num_agents
-        assert n_rollout_threads * num_agents >= num_mini_batch, (
-            "PPO requires the number of processes ({})* number of agents ({}) "
+        batch_size = n_rollout_threads
+        assert batch_size >= num_mini_batch, (
+            "PPO requires the number of processes ({}) "
             "to be greater than or equal to the number of "
-            "PPO mini batches ({}).".format(n_rollout_threads, num_agents, num_mini_batch))
-        num_envs_per_batch = batch_size // num_mini_batch
+            "PPO mini batches ({}).".format(n_rollout_threads, num_mini_batch))
+        mini_batch_size = batch_size // num_mini_batch
         perm = torch.randperm(batch_size).numpy()
 
-        next_obs = self.obs[1:]
-        next_masks = self.masks[1:]
-
-        for start_ind in range(0, batch_size, num_envs_per_batch):
-            share_obs_batch = []
-            obs_batch = []
-            actions_batch = []
-            available_actions_batch = []
-            value_preds_batch = []
-            return_batch = []
-            rewards_batch = []
-            masks_batch = []
-            active_masks_batch = []
-            old_action_log_probs_batch = []
-            old_credit_logits_batch = []
-            z_batch = []
-            next_obs_batch = []
-            next_rnn_states_batch = []
-            next_masks_batch = []
-            adv_targ = []
-
-            for offset in range(num_envs_per_batch):
-                ind = perm[start_ind + offset]
-                share_obs_batch.append(self.share_obs[ind])
-                obs_batch.append(self.obs[ind])
-                actions_batch.append(self.actions[ind])
-                if self.available_actions is not None:
-                    available_actions_batch.append(self.available_actions[ind])
-                value_preds_batch.append(self.value_preds[ind])
-                return_batch.append(self.returns[ind])                    
-                masks_batch.append(self.masks[ind])
-                active_masks_batch.append(self.active_masks[ind])
-                old_action_log_probs_batch.append(self.action_log_probs[ind])
-                rewards_batch.append(self.rewards[ind])
-                old_credit_logits_batch.append(self.credit_logits[ind])
-                z_batch.append(self.z[ind])
-                next_obs_batch.append(next_obs[ind])
-                next_masks_batch.append(next_masks[ind])
-                adv_targ.append(advantages[ind])
-
-            # These are all from_numpys of size (T, B, N, D)
-            share_obs_batch = np.stack(share_obs_batch, 0)
-            obs_batch = np.stack(obs_batch, 0)
-            actions_batch = np.stack(actions_batch, 0)
+        for start_ind in range(0, batch_size, mini_batch_size):
+            indices = perm[start_ind:start_ind + mini_batch_size]
+            
+            share_obs_batch = self.share_obs[:-1, indices]
+            obs_batch = self.obs[:-1, indices]
+            actions_batch = self.actions[:, indices]
             if self.available_actions is not None:
-                available_actions_batch = np.stack(available_actions_batch, 0)
-            value_preds_batch = np.stack(value_preds_batch, 0)
-            return_batch = np.stack(return_batch, 0)
-            masks_batch = np.stack(masks_batch, 0)
-            active_masks_batch = np.stack(active_masks_batch, 0)
-            old_action_log_probs_batch = np.stack(old_action_log_probs_batch, 0)
-            rewards_batch = np.stack(rewards_batch, 0)
-            old_credit_logits_batch = np.stack(old_credit_logits_batch, 0)
-            z_batch = np.stack(z_batch, 0)
-            next_obs_batch = np.stack(next_obs_batch, 0)
-            next_masks_batch = np.stack(next_masks_batch, 0)
-            adv_targ = np.stack(adv_targ, 0)
-
+                available_actions_batch = self.available_actions[:-1, indices]
+            else:
+                available_actions_batch = None
+            value_preds_batch = self.value_preds[:-1, indices]
+            return_batch = self.returns[:-1, indices]
+            masks_batch = self.masks[:-1, indices]
+            active_masks_batch = self.active_masks[:-1, indices]
+            old_action_log_probs_batch = self.action_log_probs[:, indices]
+            rewards_batch = self.rewards[:, indices]
+            
+            old_credit_logits_batch = self.credit_logits[:, indices]
+            z_batch = self.z[:, indices]
+            
+            next_obs_batch = self.obs[1:, indices]
+            next_masks_batch = self.masks[1:, indices]
+            adv_targ = advantages[:, indices]
 
             yield share_obs_batch, obs_batch, actions_batch,\
                     value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
