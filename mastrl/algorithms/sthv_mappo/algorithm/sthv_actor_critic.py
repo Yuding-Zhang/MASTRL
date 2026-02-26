@@ -54,7 +54,7 @@ class STHV_Actor(nn.Module):
         # Extract the last time step (T-1) and reshape to [B, N, D]
         z_last = z[-1]  # Shape: [B, N, D]
         credit_logits_last = credit_logits[-1]  # Shape: [B, N, 1]
-
+        
         actions, action_log_probs = self.act(z_last, available_actions, deterministic) # [B,N,D] -> [B,N,1]
         return actions, action_log_probs, z_last, credit_logits_last
 

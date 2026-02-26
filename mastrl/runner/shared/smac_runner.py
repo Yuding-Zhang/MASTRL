@@ -220,12 +220,16 @@ class SMACRunner(Runner):
                                             np.concatenate(eval_masks),
                                             np.concatenate(eval_available_actions),
                                             deterministic=True)
+                eval_actions = np.array(np.split(_t2n(eval_actions), self.n_eval_rollout_threads))
+                eval_rnn_states = np.array(np.split(_t2n(eval_rnn_states), self.n_eval_rollout_threads))
+            
             elif self.algorithm_name == "sthvmappo":
-                eval_actions, eval_rnn_states = \
+                eval_actions = \
                     self.trainer.policy.act(np.stack([eval_obs], axis=0),
                                             np.stack([eval_masks], axis=0),
-                                            np.stack([eval_available_actions], axis=0),
+                                            eval_available_actions,
                                             deterministic=True)
+                eval_actions = _t2n(eval_actions)
             
             else:
                 eval_actions, eval_rnn_states = \
@@ -234,8 +238,8 @@ class SMACRunner(Runner):
                                             np.concatenate(eval_masks),
                                             np.concatenate(eval_available_actions),
                                             deterministic=True)
-            eval_actions = np.array(np.split(_t2n(eval_actions), self.n_eval_rollout_threads))
-            eval_rnn_states = np.array(np.split(_t2n(eval_rnn_states), self.n_eval_rollout_threads))
+                eval_actions = np.array(np.split(_t2n(eval_actions), self.n_eval_rollout_threads))
+                eval_rnn_states = np.array(np.split(_t2n(eval_rnn_states), self.n_eval_rollout_threads))
             
             # Obser reward and next obs
             eval_obs, eval_share_obs, eval_rewards, eval_dones, eval_infos, eval_available_actions = self.eval_envs.step(eval_actions)
