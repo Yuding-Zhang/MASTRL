@@ -362,9 +362,6 @@ def get_config():
 
     # ---- STCA: Spatio-Temporal Credit Assignment ----
 
-    parser.add_argument("--st_use_temporal", action="store_true", default=False,
-                        help="Use temporal credit assignment in STCA.")
-
     parser.add_argument("--st_n_heads_s", type=int, default=4,
                         help="Number of attention heads for spatial credit assignment in STCA.")
     

@@ -147,6 +147,7 @@ def main(args):
         all_args.use_recurrent_policy = False 
         all_args.use_naive_recurrent_policy = False
     elif all_args.algorithm_name == "sthvmappo":
+        all_args.use_recurrent_policy = False
         if not all_args.share_policy:
             raise ValueError("The sthvmappo must use shared policy. Please check the config.py.")
         if all_args.use_stca and all_args.use_hgvd:

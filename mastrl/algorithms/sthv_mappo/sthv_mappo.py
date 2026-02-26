@@ -41,8 +41,6 @@ class STHV_MAPPO():
         self.kl_threshold = float(getattr(args, "kl_threshold", 0.01))
 
 
-        self._use_recurrent_policy = args.use_recurrent_policy
-        self._use_naive_recurrent = args.use_naive_recurrent_policy
         self._use_max_grad_norm = args.use_max_grad_norm
         self._use_clipped_value_loss = args.use_clipped_value_loss
         self._use_huber_loss = args.use_huber_loss
@@ -395,12 +393,7 @@ class STHV_MAPPO():
         update_cnt = 0
 
         for _ in range(self.ppo_epoch):
-            if self._use_recurrent_policy:
-                data_generator = buffer.recurrent_generator(advantages, self.num_mini_batch, self.data_chunk_length)
-            elif self._use_naive_recurrent:
-                data_generator = buffer.naive_recurrent_generator(advantages, self.num_mini_batch)
-            else:
-                data_generator = buffer.feed_forward_generator(advantages, self.num_mini_batch)
+            data_generator = buffer.naive_recurrent_generator(advantages, self.num_mini_batch)
 
             for sample in data_generator:
                 value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss, approx_kl = self.ppo_update(sample, update_actor)
