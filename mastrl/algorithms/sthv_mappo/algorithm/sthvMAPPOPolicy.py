@@ -72,7 +72,7 @@ class STHV_MAPPOPolicy:
     def evaluate_actions(self, cent_obs, obs, action, masks, available_actions=None, active_masks=None):
         # actor evaluate -> logp, entropy, z, credit_logits
         action_log_probs, dist_entropy, z, credit_logits = self.actor.evaluate_actions(obs, action, masks, available_actions, active_masks)
-        values = self.critic(cent_obs, masks)
+        values = self.critic.evaluate_values(cent_obs, masks)
         return values, action_log_probs, dist_entropy, z, credit_logits
 
     def act(self, obs, masks, available_actions=None, deterministic=False):

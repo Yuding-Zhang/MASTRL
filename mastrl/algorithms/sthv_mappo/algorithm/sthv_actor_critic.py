@@ -130,3 +130,12 @@ class STHV_Critic(nn.Module):
         values = self.v_out(z_last)
         return values
     
+    def evaluate_values(self, cent_obs, masks):
+        cent_obs = check(cent_obs).to(**self.tpdv)
+        masks = check(masks).to(**self.tpdv)
+
+        feat = self.base(cent_obs)
+        z, _ = self.st_encoder(feat, masks)
+        values = self.v_out(z)
+        return values
+    

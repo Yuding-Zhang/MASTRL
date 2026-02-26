@@ -261,6 +261,9 @@ class STHV_MAPPO():
 
 
         # critic update
+        values = values.reshape(-1, values.shape[-1])
+        value_preds_batch = value_preds_batch.reshape(-1, value_preds_batch.shape[-1])
+        return_batch = return_batch.reshape(-1, return_batch.shape[-1])
         value_loss = self.cal_value_loss(values, value_preds_batch, return_batch, active_masks_batch)
 
         self.policy.critic_optimizer.zero_grad()
