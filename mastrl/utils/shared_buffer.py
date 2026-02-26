@@ -662,7 +662,7 @@ class SharedReplayBuffer(object):
             "to be greater than or equal to the number of "
             "PPO mini batches ({}).".format(n_rollout_threads, num_mini_batch))
         mini_batch_size = batch_size // num_mini_batch
-        perm = torch.randperm(batch_size).numpy()
+        perm = np.arange(batch_size)
 
         for start_ind in range(0, batch_size, mini_batch_size):
             indices = perm[start_ind:start_ind + mini_batch_size]
