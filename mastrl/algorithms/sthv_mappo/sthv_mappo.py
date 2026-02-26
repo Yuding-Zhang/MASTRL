@@ -205,6 +205,7 @@ class STHV_MAPPO():
         value_preds_batch = check(value_preds_batch).to(**self.tpdv)
         return_batch = check(return_batch).to(**self.tpdv)
         active_masks_batch = check(active_masks_batch).to(**self.tpdv)
+        avilable_actions_batch = check(available_actions_batch).to(**self.tpdv)
 
         self._update_step += 1
 
@@ -225,14 +226,19 @@ class STHV_MAPPO():
         # 监测指标approx_kl
         old_action_log_probs_batch = old_action_log_probs_batch.reshape(-1, old_action_log_probs_batch.shape[-1]) # 转换为 [T*B*N, D]
         approx_kl = (old_action_log_probs_batch - action_log_probs).mean().detach()
-        
+
         # adv_targ update
-        old_credit_logits_batch = old_credit_logits_batch.reshape(-1, old_credit_logits_batch.shape[-1]) # 转换为 [T*B*N, D]
-        adv_targ = adv_targ.reshape(-1, adv_targ.shape[-1]) # 转换为 [T*B*N, D]
-        # mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
-        # w = torch.softmax(mix_credit_logits, dim=-1)
-        # w = w.detach()
-        # adv_targ = w * adv_targ
+        n_agents = self.policy.num_agents
+        # STCA: Reshape to [Total_Batch, N, 1] for correct softmax normalization over agents
+        old_credit_logits_batch = old_credit_logits_batch.reshape(-1, n_agents, 1)
+        credit_logits = credit_logits.reshape(-1, n_agents, 1)
+        
+        mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
+        w = torch.softmax(mix_credit_logits, dim=1) # Softmax over agents
+        w = w.view(-1, 1).detach() # Flatten back to [Total_Batch * N, 1]
+
+        adv_targ = adv_targ.reshape(-1, 1)
+        adv_targ = w * adv_targ
         
 
         # actor update

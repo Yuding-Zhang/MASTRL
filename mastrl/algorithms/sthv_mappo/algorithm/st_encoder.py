@@ -92,7 +92,7 @@ class STEncoder(nn.Module):
         kpm = None
         # 掩码应该提供的维度是[T, B, N]
         if agent_key_padding_mask is not None:
-            kpm = agent_key_padding_mask.view(T*B, N)
+            kpm = agent_key_padding_mask.reshape(T*B, N)
         z = self.spatial(xs, key_padding_mask=kpm)
 
         # Apply fusion layer

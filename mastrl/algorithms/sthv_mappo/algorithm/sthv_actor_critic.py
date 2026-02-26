@@ -54,7 +54,7 @@ class STHV_Actor(nn.Module):
         # Extract the last time step (T-1) and reshape to [B, N, D]
         z_last = z[-1]  # Shape: [B, N, D]
         credit_logits_last = credit_logits[-1]  # Shape: [B, N, 1]
-        
+
         actions, action_log_probs = self.act(z_last, available_actions, deterministic) # [B,N,D] -> [B,N,1]
         return actions, action_log_probs, z_last, credit_logits_last
 
@@ -75,11 +75,11 @@ class STHV_Actor(nn.Module):
         T, B, N, D = z.shape
         z = z.view(T * B * N, D)
         credit_logits = credit_logits.view(T * B * N, -1)
-        action = action.view(T * B * N, -1)
+        action = action.reshape(T * B * N, -1)
         if available_actions is not None:
-            available_actions = available_actions.view(T * B * N, -1)
+            available_actions = available_actions.reshape(T * B * N, -1)
         if active_masks is not None:
-            active_masks = active_masks.view(T * B * N, -1)
+            active_masks = active_masks.reshape(T * B * N, -1)
         
         action_log_probs, dist_entropy = self.act.evaluate_actions(
             z, action, available_actions,
