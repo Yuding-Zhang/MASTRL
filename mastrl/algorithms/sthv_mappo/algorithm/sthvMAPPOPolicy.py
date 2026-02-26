@@ -1,5 +1,5 @@
 import torch
-from mastrl.algorithms.sthv_mappo.algorithm.sthv_actor_critic import STHV_Actor, Baseline_R_Critic
+from mastrl.algorithms.sthv_mappo.algorithm.sthv_actor_critic import STHV_Actor, STHV_Critic
 from mastrl.algorithms.sthv_mappo.algorithm.hgvd_critic import HypergraphCritic
 from mastrl.utils.util import update_linear_schedule
 
@@ -36,7 +36,7 @@ class STHV_MAPPOPolicy:
         self.num_agents = args.num_agents
 
         self.actor = STHV_Actor(args, self.obs_space, self.act_space, self.device)
-        self.critic = Baseline_R_Critic(args, self.share_obs_space, self.device)
+        self.critic = STHV_Critic(args, self.share_obs_space, self.device)
 
         act_dim = _infer_act_dim(act_space)
         self.hgvd_critic = HypergraphCritic(
@@ -57,26 +57,24 @@ class STHV_MAPPOPolicy:
         update_linear_schedule(self.critic_optimizer, episode, episodes, self.critic_lr)
         update_linear_schedule(self.hgvd_critic_optimizer, episode, episodes, self.hgvd_critic_lr)
 
-    def get_actions(self, cent_obs, obs, rnn_states_actor, rnn_states_critic, masks,
-                    available_actions=None, deterministic=False):
+    def get_actions(self, cent_obs, obs, masks, available_actions=None, deterministic=False):
         
-        actions, action_log_probs, rnn_states_actor, z, credit_logits = self.actor(
-            obs, rnn_states_actor, masks, available_actions, deterministic)
+        actions, action_log_probs, z, credit_logits = self.actor(obs, masks, available_actions, deterministic)
         
-        values, rnn_states_critic = self.critic(cent_obs, rnn_states_critic, masks)
-        return values, actions, action_log_probs, rnn_states_actor, rnn_states_critic, z, credit_logits
+        values = self.critic(cent_obs, masks)
+        return values, actions, action_log_probs, z, credit_logits
 
 
-    def get_values(self, cent_obs, rnn_states_critic, masks):
-        values, _ = self.critic(cent_obs, rnn_states_critic, masks)
+    def get_values(self, cent_obs, masks):
+        values = self.critic(cent_obs, masks)
         return values
 
-    def evaluate_actions(self, cent_obs, obs, rnn_states_actor, rnn_states_critic, action, masks, available_actions=None, active_masks=None):
+    def evaluate_actions(self, cent_obs, obs, action, masks, available_actions=None, active_masks=None):
         # actor evaluate -> logp, entropy, z, credit_logits
-        action_log_probs, dist_entropy, z, credit_logits = self.actor.evaluate_actions(obs, rnn_states_actor, action, masks, available_actions, active_masks)
-        values, _ = self.critic(cent_obs, rnn_states_critic, masks)
+        action_log_probs, dist_entropy, z, credit_logits = self.actor.evaluate_actions(obs, action, masks, available_actions, active_masks)
+        values = self.critic(cent_obs, masks)
         return values, action_log_probs, dist_entropy, z, credit_logits
 
-    def act(self, obs, rnn_states_actor, masks, available_actions=None, deterministic=False):
-        actions, _, rnn_states_actor, _, _ = self.actor(obs, rnn_states_actor, masks, available_actions, deterministic)
-        return actions, rnn_states_actor
+    def act(self, obs, masks, available_actions=None, deterministic=False):
+        actions, _, _, _ = self.actor(obs, masks, available_actions, deterministic)
+        return actions

@@ -52,7 +52,6 @@ class STHV_MAPPO():
         # STCA/hgvd hyperparams
         self.use_stca = getattr(args, "use_stca", True)
         self.credit_temperature = float(getattr(args, "credit_temperature", 1.0))
-        self.credit_detach = bool(getattr(args, "credit_detach", True))
         self.use_hgvd = getattr(args, "use_hgvd", True)
         self.hyperedge_k = int(getattr(args, "hyperedge_k", 3))  # reuse as fixed k neighbors
         self.max_group_size = int(getattr(args, "max_group_size", 6))
@@ -63,7 +62,6 @@ class STHV_MAPPO():
         self.stca_warmup_updates = int(getattr(args, "stca_warmup_updates", 1000))
         self.stca_update_interval = int(getattr(args, "stca_update_interval", 4))
         self.hgvd_hops = int(getattr(args, "hgvd_hops", 2))
-        self.credit_masked_softmax = True
         self._update_step = 0
                 
         assert (self._use_popart and self._use_valuenorm) == False, ("popart and valuenorm cannot both be True")
@@ -192,26 +190,17 @@ class STHV_MAPPO():
             share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
             value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,
             adv_targ, available_actions_batch,
-            old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch
+            old_credit_logits_batch, z_batch, next_obs_batch, next_masks_batch
 
         Older tuples are supported for baseline compatibility.
         """
-        if len(sample) >= 18:
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-            value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-            adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_rnn_states_batch, next_masks_batch = sample[:18]
-        else:
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-            value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-            adv_targ, available_actions_batch = sample[:12]
-            rewards_batch = None
-            old_credit_logits_batch = None
-            z_batch = None
-            next_obs_batch = None
-            next_rnn_states_batch = None
-            next_masks_batch = None
+        share_obs_batch, obs_batch, actions_batch, \
+        value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
+        adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_masks_batch = sample[:18]
+
 
         old_action_log_probs_batch = check(old_action_log_probs_batch).to(**self.tpdv)
+        old_credit_logits_batch = check(old_credit_logits_batch).to(**self.tpdv)
         adv_targ = check(adv_targ).to(**self.tpdv)
         value_preds_batch = check(value_preds_batch).to(**self.tpdv)
         return_batch = check(return_batch).to(**self.tpdv)
@@ -226,154 +215,108 @@ class STHV_MAPPO():
             self.entropy_coef = self.entropy_coef_init
 
 
-        values, action_log_probs, dist_entropy, z_new, credit_logits_new = self.policy.evaluate_actions(
-            share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,
-            masks_batch, available_actions_batch, active_masks_batch
-        )
+        values, action_log_probs, dist_entropy, _, credit_logits = self.policy.evaluate_actions(share_obs_batch, 
+                                                                                    obs_batch, 
+                                                                                    actions_batch, 
+                                                                                    masks_batch, 
+                                                                                    available_actions_batch, 
+                                                                                    active_masks_batch)
 
-        n_agents = int(getattr(self.policy, "num_agents", 1))
-        shaped_adv = adv_targ
-        hgvd_loss = torch.zeros([], device=values.device)
-
-        do_hgvd = (
-            self.use_hgvd
-            and (self._update_step >= self.hgvd_warmup_updates)
-            and (self.hgvd_update_interval <= 1 or (self._update_step % self.hgvd_update_interval == 0))
-        )
-
-        do_stca = (
-            self.use_stca
-            and (self._update_step >= self.stca_warmup_updates)
-            and (self.stca_update_interval <= 1 or (self._update_step % self.stca_update_interval == 0))
-        )
-
-        # STCA: advantage shaping from credit logits (masked softmax + EMA target smoothing)
-        if do_stca and (old_credit_logits_batch is not None) and n_agents > 1:
-            # old logits from rollout buffer: [B*N, 1] -> [B, N]
-            c_old = check(old_credit_logits_batch).to(**self.tpdv).view(-1, n_agents)
-
-            # alive mask from active_masks_batch: [B*N,1] -> [B,N]
-            alive = active_masks_batch.view(-1, n_agents).float()
-
-            # --- EMA target credit logits (temporal smoothing) ---
-            # Use slowly-updated target_actor to compute target credit logits on the SAME states.
-            # This is much more stable than using fresh credit_logits_new (avoids coupling / double backward).
-            with torch.no_grad():
-                obs_t = check(obs_batch).to(**self.tpdv)
-                rnn_t = check(rnn_states_batch).to(**self.tpdv)
-                masks_t = check(masks_batch).to(**self.tpdv)
-                ava_t = None
-                if available_actions_batch is not None:
-                    ava_t = check(available_actions_batch).to(**self.tpdv)
-
-                # target_actor returns: actions, logp, rnn, z, credit_logits
-                _, _, _, _, c_tgt = self.target_actor(obs_t, rnn_t, masks_t, ava_t, deterministic=True)
-
-                # c_tgt: [B*N, 1] -> [B, N]
-                if c_tgt is not None:
-                    c_tgt = c_tgt.view(-1, n_agents)
-                else:
-                    c_tgt = c_old  # fallback
-
-            beta = 0.5
-            beta = max(0.0, min(1.0, beta))
-            c = (1.0 - beta) * c_old + beta * c_tgt
-
-            # temperature
-            c = c / max(self.credit_temperature, 1e-6)
-
-            # --- masked softmax over alive agents only ---
-            if self.credit_masked_softmax:
-                c = c.masked_fill(alive <= 0.0, -1e9)  # dead agents get -inf logits
-                w = torch.softmax(c, dim=-1) * alive
-                w = w / (w.sum(dim=-1, keepdim=True).clamp_min(1e-6))
-            else:
-                w = torch.softmax(c, dim=-1)
-
-            if self.credit_detach:
-                w = w.detach()
-
-            # advantage per-agent: [B*N,1] -> [B,N]
-            adv_i = adv_targ.view(-1, n_agents)
-
-            # shaped advantage per-agent
-            shaped = adv_i * w  # [B,N]
-
-            # --- remove std-ratio scaling: use stable masked normalization instead (optional but recommended) ---
-            shaped_flat = shaped.reshape(-1, 1)          # [B*N,1]
-            alive_flat = alive.reshape(-1, 1)            # [B*N,1]
-
-            # masked mean/std normalize to keep scale stable across batches
-            denom = alive_flat.sum().clamp_min(1.0)
-            mean = (shaped_flat * alive_flat).sum() / denom
-            var = ((shaped_flat - mean).pow(2) * alive_flat).sum() / denom
-            shaped_adv = (shaped_flat - mean) / (var.sqrt() + 1e-5)
-
-
-        # HGVD TD loss: only when enabled by schedule
-        if do_hgvd and (z_batch is not None) and n_agents > 1:
-            z_old = check(z_batch).to(**self.tpdv)
-            Q_tot, Q_i = self._compute_hgvd_q(z_old, actions_batch, n_agents)
-
-            if (rewards_batch is not None) and (next_obs_batch is not None) and (next_rnn_states_batch is not None) and (next_masks_batch is not None):
-                rewards_t = check(rewards_batch).to(**self.tpdv)  # [B*N,1]
-                r_tot = rewards_t.view(-1, n_agents, 1).mean(dim=1)  # [B,1]
-
-                next_obs_t = check(next_obs_batch).to(**self.tpdv)
-                next_rnn_t = check(next_rnn_states_batch).to(**self.tpdv)
-                next_masks_t = check(next_masks_batch).to(**self.tpdv)
-
-                with torch.no_grad():
-                    actions_next, _, _, z_next, _ = self.target_actor(next_obs_t, next_rnn_t, next_masks_t, available_actions_batch, deterministic=True)
-                    Q_tot_next, _ = self._compute_hgvd_q(z_next, actions_next, n_agents, critic=self.target_hgvd_critic)
-
-                    # mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
-                    nm = next_masks_t.view(-1, n_agents, 1)
-                    mask_next = nm.min(dim=1).values
-                    y = r_tot + self.gamma * mask_next * Q_tot_next
-
-                hgvd_loss = (Q_tot - y).pow(2).mean()
-
-        # PPO update
+        # 监测指标approx_kl
         approx_kl = (old_action_log_probs_batch - action_log_probs).mean().detach()
+        
+        # adv_targ update
+        mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
+        w = torch.softmax(mix_credit_logits, dim=-1)
+        w = w.detach()
+        adv_targ = w * adv_targ
+        
+
+        # actor update
         imp_weights = torch.exp(action_log_probs - old_action_log_probs_batch)
-        surr1 = imp_weights * shaped_adv
-        surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * shaped_adv
+        surr1 = imp_weights * adv_targ
+        surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * adv_targ
 
         if self._use_policy_active_masks:
-            policy_action_loss = (-torch.sum(torch.min(surr1, surr2), dim=-1, keepdim=True) * active_masks_batch).sum() / active_masks_batch.sum()
+            active_masks_batch = active_masks_batch.reshape(-1, active_masks_batch.shape[-1])
+            policy_action_loss = (-torch.sum(torch.min(surr1, surr2),
+                                             dim=-1,
+                                             keepdim=True) * active_masks_batch).sum() / active_masks_batch.sum()
         else:
             policy_action_loss = -torch.sum(torch.min(surr1, surr2), dim=-1, keepdim=True).mean()
 
-        self.policy.actor_optimizer.zero_grad()
-        if update_actor:
-            (policy_action_loss - dist_entropy * self.entropy_coef).backward()
-            if self._use_max_grad_norm:
-                actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
-            else:
-                actor_grad_norm = get_gard_norm(self.policy.actor.parameters())
-            self.policy.actor_optimizer.step()
+        policy_loss = policy_action_loss
 
+        self.policy.actor_optimizer.zero_grad()
+
+        if update_actor:
+            (policy_loss - dist_entropy * self.entropy_coef).backward()
+
+        if self._use_max_grad_norm:
+            actor_grad_norm = nn.utils.clip_grad_norm_(self.policy.actor.parameters(), self.max_grad_norm)
+        else:
+            actor_grad_norm = get_gard_norm(self.policy.actor.parameters())
+
+        self.policy.actor_optimizer.step()
+
+
+        # critic update
         value_loss = self.cal_value_loss(values, value_preds_batch, return_batch, active_masks_batch)
+
         self.policy.critic_optimizer.zero_grad()
+
         (value_loss * self.value_loss_coef).backward()
+
         if self._use_max_grad_norm:
             critic_grad_norm = nn.utils.clip_grad_norm_(self.policy.critic.parameters(), self.max_grad_norm)
         else:
             critic_grad_norm = get_gard_norm(self.policy.critic.parameters())
+
         self.policy.critic_optimizer.step()
 
-        if do_hgvd and hgvd_loss.requires_grad:
-            self.policy.hgvd_critic_optimizer.zero_grad()
-            (hgvd_loss * self.hgvd_loss_coef).backward()
-            if self._use_max_grad_norm:
-                nn.utils.clip_grad_norm_(self.policy.hgvd_critic.parameters(), self.max_grad_norm)
-            self.policy.hgvd_critic_optimizer.step()
-            self._soft_update(self.target_hgvd_critic, self.policy.hgvd_critic, self.hgvd_target_tau)
 
-        self._soft_update(self.target_actor, self.policy.actor, self.hgvd_target_tau)
 
-        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, hgvd_loss, approx_kl
+        # hgvd_loss = torch.ones([], device=values.device)
+
+
+
+        # # HGVD TD loss: only when enabled by schedule
+        # if (z_batch is not None) and n_agents > 1:
+        #     z_old = check(z_batch).to(**self.tpdv)
+        #     Q_tot, Q_i = self._compute_hgvd_q(z_old, actions_batch, n_agents)
+
+        #     if (rewards_batch is not None) and (next_obs_batch is not None) and (next_rnn_states_batch is not None) and (next_masks_batch is not None):
+        #         rewards_t = check(rewards_batch).to(**self.tpdv)  # [B*N,1]
+        #         r_tot = rewards_t.view(-1, n_agents, 1).mean(dim=1)  # [B,1]
+
+        #         next_obs_t = check(next_obs_batch).to(**self.tpdv)
+        #         next_masks_t = check(next_masks_batch).to(**self.tpdv)
+
+        #         with torch.no_grad():
+        #             actions_next, _, _, z_next, _ = self.target_actor(next_obs_t, next_rnn_t, next_masks_t, available_actions_batch, deterministic=True)
+        #             Q_tot_next, _ = self._compute_hgvd_q(z_next, actions_next, n_agents, critic=self.target_hgvd_critic)
+
+        #             # mask_next = next_masks_t.view(-1, n_agents, 1)[:, 0]  # [B,1]
+        #             nm = next_masks_t.view(-1, n_agents, 1)
+        #             mask_next = nm.min(dim=1).values
+        #             y = r_tot + self.gamma * mask_next * Q_tot_next
+
+        #         hgvd_loss = (Q_tot - y).pow(2).mean()
+
+        
+
+
+        # if do_hgvd and hgvd_loss.requires_grad:
+        #     self.policy.hgvd_critic_optimizer.zero_grad()
+        #     (hgvd_loss * self.hgvd_loss_coef).backward()
+        #     if self._use_max_grad_norm:
+        #         nn.utils.clip_grad_norm_(self.policy.hgvd_critic.parameters(), self.max_grad_norm)
+        #     self.policy.hgvd_critic_optimizer.step()
+        #     self._soft_update(self.target_hgvd_critic, self.policy.hgvd_critic, self.hgvd_target_tau)
+
+        # self._soft_update(self.target_actor, self.policy.actor, self.hgvd_target_tau)
+
+        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, approx_kl
 
     def train(self, buffer, update_actor=True):
         # compute standard advantages (baseline) to preserve normalization pipeline
@@ -393,17 +336,16 @@ class STHV_MAPPO():
         update_cnt = 0
 
         for _ in range(self.ppo_epoch):
-            data_generator = buffer.naive_recurrent_generator(advantages, self.num_mini_batch)
+            data_generator = buffer.sthvmappo_generator(advantages, self.num_mini_batch)
 
             for sample in data_generator:
-                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, hgvd_loss, approx_kl = self.ppo_update(sample, update_actor)
+                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, approx_kl = self.ppo_update(sample, update_actor)
                 train_info['value_loss'] += value_loss.item()
                 train_info['policy_loss'] += policy_loss.item()
                 train_info['dist_entropy'] += dist_entropy.item()
                 train_info['actor_grad_norm'] += float(actor_gn)
                 train_info['critic_grad_norm'] += float(critic_gn)
                 train_info['ratio'] += imp_w.mean().item()
-                train_info['hgvd_loss'] += hgvd_loss.item()
                 train_info['approx_kl'] += approx_kl.item()
                 train_info['entropy_coef'] += float(self.entropy_coef)
                 update_cnt += 1

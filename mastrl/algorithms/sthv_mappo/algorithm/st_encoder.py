@@ -28,7 +28,7 @@ class TemporalSelfAttention(nn.Module):
     """Causal temporal self-attention per agent (T dimension)."""
     def __init__(self, d_model: int, n_heads: int = 4, dropout: float = 0.0):
         super().__init__()
-        self.mha = nn.MultiheadAttention(d_model, n_heads, dropout=dropout, batch_first=True)
+        self.mha = nn.MultiheadAttention(d_model, n_heads, dropout=dropout)
         self.ln1 = nn.LayerNorm(d_model)
         self.ff = nn.Sequential(
             nn.Linear(d_model, 4 * d_model),
@@ -40,7 +40,7 @@ class TemporalSelfAttention(nn.Module):
     def forward(self, x: torch.Tensor, causal: bool = True, key_padding_mask: Optional[torch.Tensor] = None):
         # x: [T, B*N, D]
         attn_mask = None
-        if causal:
+        if causal and x.size(0) > 1:
             T = x.size(0)
             attn_mask = torch.triu(torch.ones(T, T, device=x.device, dtype=torch.bool), diagonal=1)
         h, _ = self.mha(x, x, x, attn_mask=attn_mask, key_padding_mask=key_padding_mask, need_weights=False)
@@ -72,7 +72,7 @@ class STEncoder(nn.Module):
           returns z:[1,B,N,D], credit_logits:[1,B,N,1]
         If True:
           x: [T,B,N,D]
-          returns z:[T,B,N,D], credit_logits:[T,B,N,1]
+          returns z:[B,N,D], credit_logits:[B,N,1]
         """
 
         # temporal + spatial
@@ -80,7 +80,7 @@ class STEncoder(nn.Module):
 
         # --- Temporal Attention per Agent ---
         # Reshape to [T, B*N, D] as per comment
-        xt = x.view(T, B * N, D)
+        xt = x.view(T, B*N, D)
         xt = self.temporal(xt, causal=True)  # Process temporal attention
         # Reshape back to [T, B, N, D]
         xt = xt.view(T, B, N, D)

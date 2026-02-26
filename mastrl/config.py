@@ -315,9 +315,6 @@ def get_config():
     
     parser.add_argument("--credit_temperature", type=float, default=0.7,
                         help="Softmax temperature for credit assignment weights in STCA.")
-    
-    parser.add_argument("--credit_detach", action="store_false", default=True,
-                        help="Detach credit assignment weights from critic loss backpropagation.")
 
     parser.add_argument("--credit_loss_coef", type=float, default=0.05,
                         help="Coefficient for the credit assignment loss term in STCA.")

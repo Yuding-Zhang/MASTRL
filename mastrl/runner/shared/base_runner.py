@@ -134,11 +134,16 @@ class Runner(object):
                                                         np.concatenate(self.buffer.obs[-1]),
                                                         np.concatenate(self.buffer.rnn_states_critic[-1]),
                                                         np.concatenate(self.buffer.masks[-1]))
+            next_values = np.array(np.split(_t2n(next_values), self.n_rollout_threads))
+        elif self.algorithm_name == "sthvmappo":
+            next_values = self.trainer.policy.get_values(np.stack([self.buffer.share_obs[-1]], axis=0), 
+                                                         np.stack([self.buffer.masks[-1]], axis=0))
+            next_values = _t2n(next_values)
         else:
             next_values = self.trainer.policy.get_values(np.concatenate(self.buffer.share_obs[-1]),
                                                         np.concatenate(self.buffer.rnn_states_critic[-1]),
                                                         np.concatenate(self.buffer.masks[-1]))
-        next_values = np.array(np.split(_t2n(next_values), self.n_rollout_threads))
+            next_values = np.array(np.split(_t2n(next_values), self.n_rollout_threads))
         self.buffer.compute_returns(next_values, self.trainer.value_normalizer)
     
     def train(self):

@@ -125,43 +125,41 @@ class SMACRunner(Runner):
     def collect(self, step):
         self.trainer.prep_rollout()
         if self.algorithm_name == "sthvmappo":
-                @torch.no_grad()
-    def collect(self, step):
-        self.trainer.prep_rollout()
-        # 输入数据维度 [T B*N D]
-        out = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
-                                            np.concatenate(self.buffer.obs[step]),
-                                            np.concatenate(self.buffer.rnn_states[step]),
-                                            np.concatenate(self.buffer.rnn_states_critic[step]),
-                                            np.concatenate(self.buffer.masks[step]),
-                                            np.concatenate(self.buffer.available_actions[step]))     
-        
+
+            # 输入数据维度 [T,B,N,D]
+            out = self.trainer.policy.get_actions(self.get_history_data(self.buffer.share_obs, step, 10),
+                                                  self.get_history_data(self.buffer.obs, step, 10),
+                                                  self.get_history_data(self.buffer.masks, step, 10),
+                                                  self.buffer.available_actions[step])
+            # 输出维度[B,N,D]
+            value, action, action_log_prob, z, credit_logit = out
+            rnn_states, rnn_states_critic = None, None
+
+            values = _t2n(value)
+            actions = _t2n(action)
+            action_log_probs = _t2n(action_log_prob)
+            z = _t2n(z)
+            credit_logits = _t2n(credit_logit)         
+
         else:
-            # 输入数据维度 [B*N D]
+
+            # 输入数据维度 [B*N, D]
             out = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
                                                 np.concatenate(self.buffer.obs[step]),
                                                 np.concatenate(self.buffer.rnn_states[step]),
                                                 np.concatenate(self.buffer.rnn_states_critic[step]),
                                                 np.concatenate(self.buffer.masks[step]),
                                                 np.concatenate(self.buffer.available_actions[step]))
-        
-        if isinstance(out, tuple) and len(out) == 7:
-            value, action, action_log_prob, rnn_states, rnn_states_critic, z, credit_logits = out
-        else:
+
             value, action, action_log_prob, rnn_states, rnn_states_critic = out
             z, credit_logits = None, None
     
-        # [self.envs, agents, dim]
-        values = np.array(np.split(_t2n(value), self.n_rollout_threads))
-        actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
-        action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
-        rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
-        rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
-
-        if z is not None:
-            z = np.array(np.split(_t2n(z), self.n_rollout_threads))
-        if credit_logits is not None:
-            credit_logits = np.array(np.split(_t2n(credit_logits), self.n_rollout_threads))
+            # [B*N, D] -> [B, N, D]
+            values = np.array(np.split(_t2n(value), self.n_rollout_threads))
+            actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
+            action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
+            rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
+            rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
 
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits
 
@@ -171,9 +169,10 @@ class SMACRunner(Runner):
         values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits = data
 
         dones_env = np.all(dones, axis=1)
-
-        rnn_states[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
-        rnn_states_critic[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, *self.buffer.rnn_states_critic.shape[3:]), dtype=np.float32)
+        if rnn_states is not None:
+             rnn_states[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
+        if rnn_states_critic is not None:
+            rnn_states_critic[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, *self.buffer.rnn_states_critic.shape[3:]), dtype=np.float32)
 
         masks = np.ones((self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         masks[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
@@ -221,6 +220,13 @@ class SMACRunner(Runner):
                                             np.concatenate(eval_masks),
                                             np.concatenate(eval_available_actions),
                                             deterministic=True)
+            elif self.algorithm_name == "sthvmappo":
+                eval_actions, eval_rnn_states = \
+                    self.trainer.policy.act(np.stack([eval_obs], axis=0),
+                                            np.stack([eval_masks], axis=0),
+                                            np.stack([eval_available_actions], axis=0),
+                                            deterministic=True)
+            
             else:
                 eval_actions, eval_rnn_states = \
                     self.trainer.policy.act(np.concatenate(eval_obs),
@@ -261,3 +267,10 @@ class SMACRunner(Runner):
                 else:
                     self.writter.add_scalars("eval_win_rate", {"eval_win_rate": eval_win_rate}, total_num_steps)
                 break
+
+    # 收集过去 n 个时间步的数据
+    def get_history_data(self, buffer, step, n):
+        history = []
+        for i in range(max(0, step - n + 1), step + 1):
+            history.append(buffer[i])
+        return np.stack(history, axis=0)

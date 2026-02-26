@@ -56,9 +56,9 @@ def make_train_env(all_args):
             elif all_args.env_name == "StarCraft2v2":
                 from mastrl.envs.starcraft2.SMACv2_modified import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
-            elif all_args.env_name == "SMAC":
-                from mastrl.envs.starcraft2.SMAC import SMAC
-                env = SMAC(map_name=all_args.map_name)
+            # elif all_args.env_name == "SMAC":
+            #     from mastrl.envs.starcraft2.SMAC import SMAC
+            #     env = SMAC(map_name=all_args.map_name)
             elif all_args.env_name == "SMACv2":
                 from mastrl.envs.starcraft2.SMACv2 import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
@@ -85,9 +85,9 @@ def make_eval_env(all_args):
             elif all_args.env_name == "StarCraft2v2":
                 from mastrl.envs.starcraft2.SMACv2_modified import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
-            elif all_args.env_name == "SMAC":
-                from mastrl.envs.starcraft2.SMAC import SMAC
-                env = SMAC(map_name=all_args.map_name)
+            # elif all_args.env_name == "SMAC":
+            #     from mastrl.envs.starcraft2.SMAC import SMAC
+            #     env = SMAC(map_name=all_args.map_name)
             elif all_args.env_name == "SMACv2":
                 from mastrl.envs.starcraft2.SMACv2 import SMACv2
                 env = SMACv2(capability_config=parse_smacv2_distribution(all_args), map_name=all_args.map_name)
@@ -225,14 +225,16 @@ def main(args):
     eval_envs = make_eval_env(all_args) if all_args.use_eval else None
 
     if all_args.env_name == "SMAC":
-        from smac.env.starcraft2.maps import get_map_params
-        num_agents = get_map_params(all_args.map_name)["n_agents"]
+        # from smac.env.starcraft2.maps import get_map_params
+        # num_agents = get_map_params(all_args.map_name)["n_agents"]
+        pass
     elif all_args.env_name == 'StarCraft2':
         from mastrl.envs.starcraft2.smac_maps import get_map_params
         num_agents = get_map_params(all_args.map_name)["n_agents"]
     elif all_args.env_name == "SMACv2" or all_args.env_name == 'StarCraft2v2':
-        from smacv2.env.starcraft2.maps import get_map_params
-        num_agents = parse_smacv2_distribution(all_args)['n_units']
+        # from smacv2.env.starcraft2.maps import get_map_params
+        # num_agents = parse_smacv2_distribution(all_args)['n_units']
+        pass
 
     config = {
         "all_args": all_args,
