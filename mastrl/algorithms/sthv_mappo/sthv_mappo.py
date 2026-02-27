@@ -223,25 +223,22 @@ class STHV_MAPPO():
                                                                                     available_actions_batch, 
                                                                                     active_masks_batch)
 
-        # 监测指标approx_kl
-        old_action_log_probs_batch = old_action_log_probs_batch.reshape(-1, old_action_log_probs_batch.shape[-1]) # 转换为 [T*B*N, D]
-        approx_kl = (old_action_log_probs_batch - action_log_probs).mean().detach()
-
         # adv_targ update
         n_agents = self.policy.num_agents
         # STCA: Reshape to [Total_Batch, N, 1] for correct softmax normalization over agents
-        old_credit_logits_batch = old_credit_logits_batch.reshape(-1, n_agents, 1)
-        credit_logits = credit_logits.reshape(-1, n_agents, 1)
+        # old_credit_logits_batch = old_credit_logits_batch.reshape(-1, n_agents, 1)
+        # credit_logits = credit_logits.reshape(-1, n_agents, 1)
         
-        mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
-        w = torch.softmax(mix_credit_logits, dim=1) # Softmax over agents
-        w = w.view(-1, 1).detach() # Flatten back to [Total_Batch * N, 1]
+        # mix_credit_logits = (0.5 * old_credit_logits_batch + 0.5 * credit_logits) / max(self.credit_temperature, 1e-6)
+        # w = torch.softmax(mix_credit_logits, dim=1) # Softmax over agents
+        # w = w.view(-1, 1).detach() # Flatten back to [Total_Batch * N, 1]
 
         adv_targ = adv_targ.reshape(-1, 1)
-        adv_targ = w * adv_targ
+        # adv_targ = w * adv_targ
         
 
         # actor update
+        old_action_log_probs_batch = old_action_log_probs_batch.reshape(-1, 1)
         imp_weights = torch.exp(action_log_probs - old_action_log_probs_batch)
         surr1 = imp_weights * adv_targ
         surr2 = torch.clamp(imp_weights, 1.0 - self.clip_param, 1.0 + self.clip_param) * adv_targ
@@ -328,7 +325,7 @@ class STHV_MAPPO():
 
         # self._soft_update(self.target_actor, self.policy.actor, self.hgvd_target_tau)
 
-        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights, approx_kl
+        return value_loss, critic_grad_norm, policy_action_loss, dist_entropy, actor_grad_norm, imp_weights
 
     def train(self, buffer, update_actor=True):
         # compute standard advantages (baseline) to preserve normalization pipeline
@@ -343,31 +340,22 @@ class STHV_MAPPO():
         std_adv = np.nanstd(advantages_copy)
         advantages = (advantages - mean_adv) / (std_adv + 1e-5)
 
-        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hgvd_loss', 'entropy_coef', 'approx_kl']}
-        kl_stop = False
-        update_cnt = 0
+        train_info = {k: 0 for k in ['value_loss','policy_loss','dist_entropy','actor_grad_norm','critic_grad_norm','ratio','hgvd_loss']}
+
 
         for _ in range(self.ppo_epoch):
             data_generator = buffer.sthvmappo_generator(advantages, self.num_mini_batch)
 
             for sample in data_generator:
-                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w, approx_kl = self.ppo_update(sample, update_actor)
+                value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w = self.ppo_update(sample, update_actor)
                 train_info['value_loss'] += value_loss.item()
                 train_info['policy_loss'] += policy_loss.item()
                 train_info['dist_entropy'] += dist_entropy.item()
                 train_info['actor_grad_norm'] += float(actor_gn)
                 train_info['critic_grad_norm'] += float(critic_gn)
                 train_info['ratio'] += imp_w.mean().item()
-                train_info['approx_kl'] += approx_kl.item()
-                train_info['entropy_coef'] += float(self.entropy_coef)
-                update_cnt += 1
-                if self.use_kl_stop and (approx_kl.item() > 1.5 * self.target_kl):
-                    kl_stop = True
-                    break
-            if kl_stop:
-                break
 
-        num_updates = max(1, update_cnt)
+        num_updates = self.ppo_epoch * self.num_mini_batch
         for k in train_info.keys():
             train_info[k] /= num_updates
         return train_info

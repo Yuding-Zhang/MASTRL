@@ -127,11 +127,11 @@ class SMACRunner(Runner):
         if self.algorithm_name == "sthvmappo":
 
             # 输入数据维度 [T,B,N,D]
-            out = self.trainer.policy.get_actions(self.get_history_data(self.buffer.share_obs, step, 10),
-                                                  self.get_history_data(self.buffer.obs, step, 10),
-                                                  self.get_history_data(self.buffer.masks, step, 10),
-                                                  self.buffer.available_actions[step])
-            # 输出维度[B,N,D]
+            out = self.trainer.policy.get_actions(self.get_history_data(self.buffer.share_obs, step, self.episode_length //  self.num_mini_batch),
+                                                  self.get_history_data(self.buffer.obs, step, self.episode_length //  self.num_mini_batch),
+                                                  self.get_history_data(self.buffer.masks, step, self.episode_length //  self.num_mini_batch),
+                                                  self.get_history_data(self.buffer.available_actions, step, self.episode_length //  self.num_mini_batch))
+            # 输出维度[B,N,D]  action_log_prob -> [TBN,D]
             value, action, action_log_prob, z, credit_logit = out
             rnn_states, rnn_states_critic = None, None
 
@@ -227,7 +227,7 @@ class SMACRunner(Runner):
                 eval_actions = \
                     self.trainer.policy.act(np.stack([eval_obs], axis=0),
                                             np.stack([eval_masks], axis=0),
-                                            eval_available_actions,
+                                            np.stack([eval_available_actions], axis=0),
                                             deterministic=True)
                 eval_actions = _t2n(eval_actions)
             

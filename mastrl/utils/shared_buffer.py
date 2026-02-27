@@ -41,6 +41,8 @@ class SharedReplayBuffer(object):
         self._use_proper_time_limits = args.use_proper_time_limits
         self.algo = args.algorithm_name
         self.num_agents = num_agents
+        self.num_mini_batch = args.num_mini_batch
+        
 
         obs_shape = get_shape_from_obs_space(obs_space)
         share_obs_shape = get_shape_from_obs_space(cent_obs_space)
@@ -76,8 +78,12 @@ class SharedReplayBuffer(object):
 
         self.actions = np.zeros(
             (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
-        self.action_log_probs = np.zeros(
-            (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
+        if self.algo == "sthvmappo":
+            self.action_log_probs = np.zeros(
+                (self.episode_length,self.episode_length //  self.num_mini_batch * self.n_rollout_threads * num_agents , act_shape), dtype=np.float32)
+        else:    
+            self.action_log_probs = np.zeros(
+                (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
 
         # --- STCA/HGVD additions (old-policy aligned) ---
         # credit logits per agent at each timestep (for STCA softmax weights)
@@ -122,7 +128,8 @@ class SharedReplayBuffer(object):
         if rnn_states_critic is not None:
             self.rnn_states_critic[self.step + 1] = rnn_states_critic.copy()
         self.actions[self.step] = actions.copy()
-        self.action_log_probs[self.step] = action_log_probs.copy()
+        if action_log_probs.shape[0] == self.action_log_probs.shape[1]:
+            self.action_log_probs[self.step] = action_log_probs.copy()
 
         if z is not None:
             self.z[self.step] = z.copy()
@@ -656,37 +663,37 @@ class SharedReplayBuffer(object):
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         """
         episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
-        batch_size = n_rollout_threads
+        batch_size = episode_length
         assert batch_size >= num_mini_batch, (
             "PPO requires the number of processes ({}) "
             "to be greater than or equal to the number of "
             "PPO mini batches ({}).".format(n_rollout_threads, num_mini_batch))
         mini_batch_size = batch_size // num_mini_batch
-        perm = np.arange(batch_size)
+        perm = torch.randperm(batch_size).numpy()
 
-        for start_ind in range(0, batch_size, mini_batch_size):
-            indices = perm[start_ind:start_ind + mini_batch_size]
+        for start_ind in range(0, batch_size,  mini_batch_size):
+            indices = perm[start_ind:start_ind +  mini_batch_size]
             
-            share_obs_batch = self.share_obs[:-1, indices]
-            obs_batch = self.obs[:-1, indices]
-            actions_batch = self.actions[:, indices]
+            share_obs_batch = self.share_obs[indices]
+            obs_batch = self.obs[indices]
+            actions_batch = self.actions[indices]
             if self.available_actions is not None:
-                available_actions_batch = self.available_actions[:-1, indices]
+                available_actions_batch = self.available_actions[indices]
             else:
                 available_actions_batch = None
-            value_preds_batch = self.value_preds[:-1, indices]
-            return_batch = self.returns[:-1, indices]
-            masks_batch = self.masks[:-1, indices]
-            active_masks_batch = self.active_masks[:-1, indices]
-            old_action_log_probs_batch = self.action_log_probs[:, indices]
-            rewards_batch = self.rewards[:, indices]
+            value_preds_batch = self.value_preds[indices]
+            return_batch = self.returns[indices]
+            masks_batch = self.masks[indices]
+            active_masks_batch = self.active_masks[indices]
+            old_action_log_probs_batch = self.action_log_probs[perm[start_ind + mini_batch_size - 1]]
+            rewards_batch = self.rewards[indices]
             
-            old_credit_logits_batch = self.credit_logits[:, indices]
-            z_batch = self.z[:, indices]
+            old_credit_logits_batch = self.credit_logits[indices]
+            z_batch = self.z[indices]
             
-            next_obs_batch = self.obs[1:, indices]
-            next_masks_batch = self.masks[1:, indices]
-            adv_targ = advantages[:, indices]
+            next_obs_batch = self.obs[indices]
+            next_masks_batch = self.masks[indices]
+            adv_targ = advantages[indices]
 
             yield share_obs_batch, obs_batch, actions_batch,\
                     value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\

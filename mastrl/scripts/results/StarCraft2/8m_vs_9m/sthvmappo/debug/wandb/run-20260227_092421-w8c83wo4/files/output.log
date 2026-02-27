@@ -1,0 +1,17 @@
+obs_space:  [[217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]]]
+share_obs_space:  [[267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+Traceback (most recent call last):
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_smac.py", line 304, in <module>
+    main(args)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/train/train_smac.py", line 258, in main
+    runner.run()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/smac_runner.py", line 45, in run
+    train_infos = self.train()
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/runner/shared/base_runner.py", line 153, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 350, in train
+    value_loss, critic_gn, policy_loss, dist_entropy, actor_gn, imp_w = self.ppo_update(sample, update_actor)
+  File "/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/algorithms/sthv_mappo/sthv_mappo.py", line 243, in ppo_update
+    surr1 = imp_weights * adv_targ
+RuntimeError: The size of tensor a (1024) must match the size of tensor b (8) at non-singleton dimension 2

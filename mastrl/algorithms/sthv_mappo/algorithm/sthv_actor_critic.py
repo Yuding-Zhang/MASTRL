@@ -55,7 +55,15 @@ class STHV_Actor(nn.Module):
         z_last = z[-1]  # Shape: [B, N, D]
         credit_logits_last = credit_logits[-1]  # Shape: [B, N, 1]
 
-        actions, action_log_probs = self.act(z_last, available_actions, deterministic) # [B,N,D] -> [B,N,1]
+        # 将 z 从 [T, B, N, D] 转换为 [T*B*N, D]
+        T, B, N, D = z.shape
+        z = z.view(T * B * N, D)
+        if available_actions is not None:
+            available_actions = available_actions.reshape(T * B * N, -1)
+
+        actions, action_log_probs = self.act(z, available_actions, deterministic) # [B,N,D] -> [B,N,1]
+        # 取最后一个action
+        actions = actions.view(T, B, N, -1)[-1]
         return actions, action_log_probs, z_last, credit_logits_last
 
     def evaluate_actions(self, obs, action, masks, available_actions=None, active_masks=None):
