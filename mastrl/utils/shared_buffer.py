@@ -78,11 +78,7 @@ class SharedReplayBuffer(object):
 
         self.actions = np.zeros(
             (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
-        if self.algo == "sthvmappo":
-            self.action_log_probs = np.zeros(
-                (self.episode_length,self.episode_length //  self.num_mini_batch * self.n_rollout_threads * num_agents , act_shape), dtype=np.float32)
-        else:    
-            self.action_log_probs = np.zeros(
+        self.action_log_probs = np.zeros(
                 (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
 
         # --- STCA/HGVD additions (old-policy aligned) ---
@@ -653,48 +649,4 @@ class SharedReplayBuffer(object):
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
                       value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
                       adv_targ, available_actions_batch
-
-
-    def sthvmappo_generator(self, advantages, num_mini_batch):
-        """
-        sthvmapoo use this generator.
-        Yield training data for non-chunked RNN training.
-        :param advantages: (np.ndarray) advantage estimates.
-        :param num_mini_batch: (int) number of minibatches to split the batch into.
-        """
-        episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
-        batch_size = episode_length
-        assert batch_size >= num_mini_batch, (
-            "PPO requires the number of processes ({}) "
-            "to be greater than or equal to the number of "
-            "PPO mini batches ({}).".format(n_rollout_threads, num_mini_batch))
-        mini_batch_size = batch_size // num_mini_batch
-        perm = torch.randperm(batch_size).numpy()
-
-        for start_ind in range(0, batch_size,  mini_batch_size):
-            indices = perm[start_ind:start_ind +  mini_batch_size]
-            
-            share_obs_batch = self.share_obs[indices]
-            obs_batch = self.obs[indices]
-            actions_batch = self.actions[indices]
-            if self.available_actions is not None:
-                available_actions_batch = self.available_actions[indices]
-            else:
-                available_actions_batch = None
-            value_preds_batch = self.value_preds[indices]
-            return_batch = self.returns[indices]
-            masks_batch = self.masks[indices]
-            active_masks_batch = self.active_masks[indices]
-            old_action_log_probs_batch = self.action_log_probs[perm[start_ind + mini_batch_size - 1]]
-            rewards_batch = self.rewards[indices]
-            
-            old_credit_logits_batch = self.credit_logits[indices]
-            z_batch = self.z[indices]
-            
-            next_obs_batch = self.obs[indices]
-            next_masks_batch = self.masks[indices]
-            adv_targ = advantages[indices]
-
-            yield share_obs_batch, obs_batch, actions_batch,\
-                    value_preds_batch, return_batch, rewards_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                    adv_targ, available_actions_batch, old_credit_logits_batch, z_batch, next_obs_batch, next_masks_batch
+                      

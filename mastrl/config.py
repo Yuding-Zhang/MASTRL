@@ -158,7 +158,7 @@ def get_config():
 
     # prepare parameters
     parser.add_argument("--algorithm_name", type=str,
-                        default='mappo', choices=["sthvmappo","rmappo", "mappo", "happo", "hatrpo", "mat", "mat_dec","ippo"])
+                        default='mappo', choices=["rmappo", "mappo", "happo", "hatrpo", "mat", "mat_dec","ippo"])
 
     parser.add_argument("--experiment_name", type=str, default="check", help="an identifier to distinguish different experiment.")
     parser.add_argument("--seed", type=int, default=1, help="Random seed for numpy/torch")
@@ -303,74 +303,5 @@ def get_config():
     # add for online multi-task
     parser.add_argument("--train_maps", type=str, nargs='+', default=None)
     parser.add_argument("--eval_maps", type=str, nargs='+', default=None)
-
-    # ===============================
-    # Spatio-Temporal MARL Extensions
-    # ===============================
-    parser.add_argument("--use_hgvd", action="store_true", default=False,
-                        help="Enable Hypergraph-based Group Value Decomposition (HGVD).")
-
-    parser.add_argument("--use_stca", action="store_true", default=False,
-                        help="Enable Spatio-Temporal Credit Assignment (STCA).")
-    
-    parser.add_argument("--credit_temperature", type=float, default=0.7,
-                        help="Softmax temperature for credit assignment weights in STCA.")
-
-    parser.add_argument("--credit_loss_coef", type=float, default=0.05,
-                        help="Coefficient for the credit assignment loss term in STCA.")
-
-    parser.add_argument("--credit_target_tau", type=float, default=0.5,
-                        help="Target network update rate for credit assignment in STCA.")
-    
-    parser.add_argument("--entropy_coef_final",type=float, default=0.0,
-                        help="Final coefficient for the entropy loss.")
-    
-    parser.add_argument("--entropy_anneal_updates", type=int, default=10000,
-                        help="Number of warmup steps for the entropy loss coefficient.")
-    
-    parser.add_argument("--use_kl_stop",action="store_true", default=False,
-                        help="Enable KL-divergence-based stopping criterion.")
-
-    # ---- HGVD: Hypergraph Value Decomposition ----
-
-    parser.add_argument("--hyperedge_k", type=int, default=3,
-                        help="Number of neighbors (k) for kNN hyperedge construction in HGVD.")
-
-    parser.add_argument("--max_group_size", type=int, default=4,
-                        help="Maximum group size for hypergraph grouping.")
-
-    parser.add_argument("--hgvd_loss_coef", type=float, default=0.10,
-                        help="Coefficient for the HGVD loss term.")
-    
-    parser.add_argument("--hgvd_target_tau", type=float, default=0.005,
-                        help="Target network update rate for the HGVD critic network.")
-
-    parser.add_argument("--hgvd_hidden_size", type=int, default=128,
-                        help="Hidden layer size for the HGVD critic network.")
-    
-    parser.add_argument("--hgvd_warmup_updates", type=int, default=5000  ,
-                        help="Number of warmup updates for HGVD before starting to update the hypergraph.")
-    parser.add_argument("--hgvd_update_interval", type=int, default=4,
-                        help="Update interval for the HGVD critic network.")
-
-    parser.add_argument("--hyperedge_tc_coef", type=float, default=0.0)
-    parser.add_argument("--hyperedge_tc_detach_next", action="store_true", default=True)
-    
-
-    # ---- STCA: Spatio-Temporal Credit Assignment ----
-
-    parser.add_argument("--st_n_heads_s", type=int, default=4,
-                        help="Number of attention heads for spatial credit assignment in STCA.")
-    
-    parser.add_argument("--st_n_heads_t", type=int, default=4,
-                        help="Number of attention heads for temporal credit assignment in STCA.")
-
-    parser.add_argument("--st_dropout", type=float, default=0.0,
-                        help="Dropout rate for the attention mechanisms in STCA.")
-    
-    parser.add_argument("--stca_warmup_updates", type=int, default=5000  ,
-                        help="Number of warmup updates for STCA before starting to update the hypergraph.")
-    parser.add_argument("--stca_update_interval", type=int, default=4,
-                        help="Update interval for the STCA critic network.")
 
     return parser

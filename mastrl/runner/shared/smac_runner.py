@@ -124,42 +124,24 @@ class SMACRunner(Runner):
     @torch.no_grad()
     def collect(self, step):
         self.trainer.prep_rollout()
-        if self.algorithm_name == "sthvmappo":
 
-            # 输入数据维度 [T,B,N,D]
-            out = self.trainer.policy.get_actions(self.get_history_data(self.buffer.share_obs, step, self.episode_length //  self.num_mini_batch),
-                                                  self.get_history_data(self.buffer.obs, step, self.episode_length //  self.num_mini_batch),
-                                                  self.get_history_data(self.buffer.masks, step, self.episode_length //  self.num_mini_batch),
-                                                  self.get_history_data(self.buffer.available_actions, step, self.episode_length //  self.num_mini_batch))
-            # 输出维度[B,N,D]  action_log_prob -> [TBN,D]
-            value, action, action_log_prob, z, credit_logit = out
-            rnn_states, rnn_states_critic = None, None
+        # 输入数据维度 [B*N, D]
+        out = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
+                                            np.concatenate(self.buffer.obs[step]),
+                                            np.concatenate(self.buffer.rnn_states[step]),
+                                            np.concatenate(self.buffer.rnn_states_critic[step]),
+                                            np.concatenate(self.buffer.masks[step]),
+                                            np.concatenate(self.buffer.available_actions[step]))
 
-            values = _t2n(value)
-            actions = _t2n(action)
-            action_log_probs = _t2n(action_log_prob)
-            z = _t2n(z)
-            credit_logits = _t2n(credit_logit)         
+        value, action, action_log_prob, rnn_states, rnn_states_critic = out
+        z, credit_logits = None, None
 
-        else:
-
-            # 输入数据维度 [B*N, D]
-            out = self.trainer.policy.get_actions(np.concatenate(self.buffer.share_obs[step]),
-                                                np.concatenate(self.buffer.obs[step]),
-                                                np.concatenate(self.buffer.rnn_states[step]),
-                                                np.concatenate(self.buffer.rnn_states_critic[step]),
-                                                np.concatenate(self.buffer.masks[step]),
-                                                np.concatenate(self.buffer.available_actions[step]))
-
-            value, action, action_log_prob, rnn_states, rnn_states_critic = out
-            z, credit_logits = None, None
-    
-            # [B*N, D] -> [B, N, D]
-            values = np.array(np.split(_t2n(value), self.n_rollout_threads))
-            actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
-            action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
-            rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
-            rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
+        # [B*N, D] -> [B, N, D]
+        values = np.array(np.split(_t2n(value), self.n_rollout_threads))
+        actions = np.array(np.split(_t2n(action), self.n_rollout_threads))
+        action_log_probs = np.array(np.split(_t2n(action_log_prob), self.n_rollout_threads))
+        rnn_states = np.array(np.split(_t2n(rnn_states), self.n_rollout_threads))
+        rnn_states_critic = np.array(np.split(_t2n(rnn_states_critic), self.n_rollout_threads))
 
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, z, credit_logits
 
@@ -222,14 +204,6 @@ class SMACRunner(Runner):
                                             deterministic=True)
                 eval_actions = np.array(np.split(_t2n(eval_actions), self.n_eval_rollout_threads))
                 eval_rnn_states = np.array(np.split(_t2n(eval_rnn_states), self.n_eval_rollout_threads))
-            
-            elif self.algorithm_name == "sthvmappo":
-                eval_actions = \
-                    self.trainer.policy.act(np.stack([eval_obs], axis=0),
-                                            np.stack([eval_masks], axis=0),
-                                            np.stack([eval_available_actions], axis=0),
-                                            deterministic=True)
-                eval_actions = _t2n(eval_actions)
             
             else:
                 eval_actions, eval_rnn_states = \

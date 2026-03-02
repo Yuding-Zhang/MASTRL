@@ -1,7 +1,0 @@
-{"time":"2026-02-27T04:44:20.17377422Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/rmappo/debug/wandb/run-20260227_044420-fv3eaxf9/logs/debug-core.log"}
-{"time":"2026-02-27T04:44:20.275145512Z","level":"INFO","msg":"created new stream","id":"fv3eaxf9"}
-{"time":"2026-02-27T04:44:20.275160293Z","level":"INFO","msg":"stream: started","id":"fv3eaxf9"}
-{"time":"2026-02-27T04:44:20.275167791Z","level":"INFO","msg":"writer: Do: started","stream_id":"fv3eaxf9"}
-{"time":"2026-02-27T04:44:20.275175907Z","level":"INFO","msg":"handler: started","stream_id":"fv3eaxf9"}
-{"time":"2026-02-27T04:44:20.275195611Z","level":"INFO","msg":"sender: started","stream_id":"fv3eaxf9"}
-{"time":"2026-02-27T04:44:20.850573654Z","level":"INFO","msg":"Starting system monitor"}

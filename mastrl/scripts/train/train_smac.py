@@ -146,18 +146,6 @@ def main(args):
         print("using", all_args.algorithm_name, 'without recurrent network')
         all_args.use_recurrent_policy = False 
         all_args.use_naive_recurrent_policy = False
-    elif all_args.algorithm_name == "sthvmappo":
-        all_args.use_recurrent_policy = False
-        if not all_args.share_policy:
-            raise ValueError("The sthvmappo must use shared policy. Please check the config.py.")
-        if all_args.use_stca and all_args.use_hgvd:
-            print("u are choosing to use sthvmappo, we set use_hgvd and use_stca to be True")
-        elif all_args.use_hgvd:
-            print("u are choosing to use sthvmappo, we set use_hgvd to be True")
-        elif all_args.use_stca:
-            print("u are choosing to use sthvmappo, we set use_stca to be True")
-        else:
-            print("The sthvmappo do not use hgvd or stca.")
     else:
         raise NotImplementedError
 
@@ -270,35 +258,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    # main(sys.argv[1:])
-    args = [
-        "--env_name", "StarCraft2",
-        "--map_name", "8m_vs_9m",
-        "--algorithm_name", "sthvmappo",
-        "--experiment_name", "debug",
-        "--seed", "1",
-        "--n_training_threads", "1",
-        "--n_rollout_threads", "8",
-        "--num_mini_batch", "25",
-        "--episode_length", "400",
-        "--num_env_steps", "10000000",
-        "--ppo_epoch", "6",
-        "--clip_param", "0.1",
-        "--use_value_active_masks",
-        "--use_eval", 
-        "--eval_episodes", "32",
-        "--wandb_name", "yuding-zh-uestc",
-        "--user_name", "yuding-zh-uestc",
-        "--use_stca",
-        "--use_hgvd",
-        "--share_policy",
-        "--hgvd_warmup_updates", "4000",
-        "--hgvd_update_interval", "10",
-        "--stca_warmup_updates", "2000",
-        "--stca_update_interval", "5",
-        "--hgvd_loss_coef", "0.005",
-        "--credit_loss_coef", "0.01",
-        "--credit_temperature", "0.7",
-        "--credit_target_tau", "0.01"
-    ]
-    main(args)
+    main(sys.argv[1:])

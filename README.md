@@ -17,23 +17,12 @@ mappo algorithm
     - [x] simple_speaker_listener
     - [x] simple_reference
     - [x] simple_spread
-- [ ] mappo in football
 - [ ] mappo in smac2
-- [ ] mappo in hanabi
 
 rmappo algorithm
 - [x] rmappo in mpe
     - [x] simple_speaker_listener
     - [x] simple_reference
     - [x] simple_spread
-- [ ] rmappo in football
 - [ ] rmappo in smac2
-- [ ] rmappo in hanabi
 
-sthvmappo algorithm
-- [ ] sthvmappo in mpe
-    - [ ] simple_reference
-    - [ ] simple_spread
-- [ ] sthvmappo in football
-- [ ] sthvmappo in smac2
-- [ ] sthvmappo in hanabi
