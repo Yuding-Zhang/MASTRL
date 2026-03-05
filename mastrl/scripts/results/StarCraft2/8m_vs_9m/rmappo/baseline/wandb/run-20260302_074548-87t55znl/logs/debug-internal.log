@@ -1,0 +1,20 @@
+{"time":"2026-03-02T07:45:48.384593056Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/rmappo/baseline/wandb/run-20260302_074548-87t55znl/logs/debug-core.log"}
+{"time":"2026-03-02T07:45:48.486700716Z","level":"INFO","msg":"created new stream","id":"87t55znl"}
+{"time":"2026-03-02T07:45:48.486714611Z","level":"INFO","msg":"stream: started","id":"87t55znl"}
+{"time":"2026-03-02T07:45:48.486728758Z","level":"INFO","msg":"writer: Do: started","stream_id":"87t55znl"}
+{"time":"2026-03-02T07:45:48.486731369Z","level":"INFO","msg":"sender: started","stream_id":"87t55znl"}
+{"time":"2026-03-02T07:45:48.486734122Z","level":"INFO","msg":"handler: started","stream_id":"87t55znl"}
+{"time":"2026-03-02T07:45:49.351804526Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-03-02T12:58:53.391024751Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-03-02T12:58:53.391453512Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-03-02T12:58:54.392603282Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.346261181},{"desc":"uploading wandb-summary.json","runtime_seconds":0.346240984},{"desc":"uploading config.yaml","runtime_seconds":0.00605706}],"total_operations":3}}
+{"time":"2026-03-02T12:59:54.442605512Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":60.396263925},{"desc":"uploading wandb-summary.json","runtime_seconds":60.396243792},{"desc":"uploading config.yaml","runtime_seconds":60.056059987}],"total_operations":3}}
+{"time":"2026-03-02T13:00:54.495112525Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":120.448769424},{"desc":"uploading wandb-summary.json","runtime_seconds":120.448749475},{"desc":"uploading config.yaml","runtime_seconds":120.108565555}],"total_operations":3}}
+{"time":"2026-03-02T13:01:54.547547934Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":180.50120412},{"desc":"uploading wandb-summary.json","runtime_seconds":180.501184305},{"desc":"uploading config.yaml","runtime_seconds":180.16100042}],"total_operations":3}}
+{"time":"2026-03-02T13:02:54.598124616Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":240.551782964},{"desc":"uploading wandb-summary.json","runtime_seconds":240.551762907},{"desc":"uploading config.yaml","runtime_seconds":240.2115791}],"total_operations":3}}
+{"time":"2026-03-02T13:03:23.425821694Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-02T13:03:23.940083161Z","level":"INFO","msg":"stream: closing","id":"87t55znl"}
+{"time":"2026-03-02T13:03:23.940100572Z","level":"INFO","msg":"handler: closed","stream_id":"87t55znl"}
+{"time":"2026-03-02T13:03:23.940105972Z","level":"INFO","msg":"writer: Close: closed","stream_id":"87t55znl"}
+{"time":"2026-03-02T13:03:23.940119996Z","level":"INFO","msg":"sender: closed","stream_id":"87t55znl"}
+{"time":"2026-03-02T13:03:23.940169115Z","level":"INFO","msg":"stream: closed","id":"87t55znl"}

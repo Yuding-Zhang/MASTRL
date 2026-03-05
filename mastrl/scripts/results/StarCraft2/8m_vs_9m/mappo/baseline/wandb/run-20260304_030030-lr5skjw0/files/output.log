@@ -1,0 +1,2628 @@
+obs_space:  [[217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]], [217, [7, 20], [9, 5], [1, 4], [1, 28]]]
+share_obs_space:  [[267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]], [267, [7, 23], [9, 8], [1, 4], [1, 30]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 0/3125 episodes, total num timesteps 3200/10000000, FPS 722.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 5/3125 episodes, total num timesteps 19200/10000000, FPS 578.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 10/3125 episodes, total num timesteps 35200/10000000, FPS 654.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 15/3125 episodes, total num timesteps 51200/10000000, FPS 677.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 20/3125 episodes, total num timesteps 67200/10000000, FPS 684.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 25/3125 episodes, total num timesteps 83200/10000000, FPS 688.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 30/3125 episodes, total num timesteps 99200/10000000, FPS 677.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 35/3125 episodes, total num timesteps 115200/10000000, FPS 678.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 40/3125 episodes, total num timesteps 131200/10000000, FPS 688.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 45/3125 episodes, total num timesteps 147200/10000000, FPS 689.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 50/3125 episodes, total num timesteps 163200/10000000, FPS 689.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 55/3125 episodes, total num timesteps 179200/10000000, FPS 680.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 60/3125 episodes, total num timesteps 195200/10000000, FPS 682.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 65/3125 episodes, total num timesteps 211200/10000000, FPS 684.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 70/3125 episodes, total num timesteps 227200/10000000, FPS 688.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 75/3125 episodes, total num timesteps 243200/10000000, FPS 689.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 80/3125 episodes, total num timesteps 259200/10000000, FPS 684.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 85/3125 episodes, total num timesteps 275200/10000000, FPS 684.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 90/3125 episodes, total num timesteps 291200/10000000, FPS 686.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 95/3125 episodes, total num timesteps 307200/10000000, FPS 686.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 100/3125 episodes, total num timesteps 323200/10000000, FPS 688.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 105/3125 episodes, total num timesteps 339200/10000000, FPS 686.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 110/3125 episodes, total num timesteps 355200/10000000, FPS 687.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 115/3125 episodes, total num timesteps 371200/10000000, FPS 688.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 120/3125 episodes, total num timesteps 387200/10000000, FPS 691.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 125/3125 episodes, total num timesteps 403200/10000000, FPS 691.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 130/3125 episodes, total num timesteps 419200/10000000, FPS 687.
+
+episode win_rate: 0.0002, incre win rate: 0.0050
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 135/3125 episodes, total num timesteps 435200/10000000, FPS 688.
+
+episode win_rate: 0.0002, incre win rate: 0.0016
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 140/3125 episodes, total num timesteps 451200/10000000, FPS 690.
+
+episode win_rate: 0.0003, incre win rate: 0.0016
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 145/3125 episodes, total num timesteps 467200/10000000, FPS 690.
+
+episode win_rate: 0.0004, incre win rate: 0.0033
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 150/3125 episodes, total num timesteps 483200/10000000, FPS 691.
+
+episode win_rate: 0.0004, incre win rate: 0.0032
+eval win rate is 0.09375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 155/3125 episodes, total num timesteps 499200/10000000, FPS 686.
+
+episode win_rate: 0.0008, incre win rate: 0.0112
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 160/3125 episodes, total num timesteps 515200/10000000, FPS 687.
+
+episode win_rate: 0.0010, incre win rate: 0.0085
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 165/3125 episodes, total num timesteps 531200/10000000, FPS 666.
+
+episode win_rate: 0.0011, incre win rate: 0.0049
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 170/3125 episodes, total num timesteps 547200/10000000, FPS 667.
+
+episode win_rate: 0.0013, incre win rate: 0.0102
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 175/3125 episodes, total num timesteps 563200/10000000, FPS 669.
+
+episode win_rate: 0.0016, incre win rate: 0.0132
+eval win rate is 0.0625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 180/3125 episodes, total num timesteps 579200/10000000, FPS 666.
+
+episode win_rate: 0.0020, incre win rate: 0.0156
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 185/3125 episodes, total num timesteps 595200/10000000, FPS 668.
+
+episode win_rate: 0.0025, incre win rate: 0.0251
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 190/3125 episodes, total num timesteps 611200/10000000, FPS 669.
+
+episode win_rate: 0.0029, incre win rate: 0.0189
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 195/3125 episodes, total num timesteps 627200/10000000, FPS 671.
+
+episode win_rate: 0.0034, incre win rate: 0.0259
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 200/3125 episodes, total num timesteps 643200/10000000, FPS 672.
+
+episode win_rate: 0.0041, incre win rate: 0.0330
+eval win rate is 0.15625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 205/3125 episodes, total num timesteps 659200/10000000, FPS 670.
+
+episode win_rate: 0.0046, incre win rate: 0.0282
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 210/3125 episodes, total num timesteps 675200/10000000, FPS 671.
+
+episode win_rate: 0.0051, incre win rate: 0.0296
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 215/3125 episodes, total num timesteps 691200/10000000, FPS 672.
+
+episode win_rate: 0.0058, incre win rate: 0.0416
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 220/3125 episodes, total num timesteps 707200/10000000, FPS 673.
+
+episode win_rate: 0.0066, incre win rate: 0.0449
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 225/3125 episodes, total num timesteps 723200/10000000, FPS 675.
+
+episode win_rate: 0.0077, incre win rate: 0.0610
+eval win rate is 0.09375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 230/3125 episodes, total num timesteps 739200/10000000, FPS 673.
+
+episode win_rate: 0.0087, incre win rate: 0.0636
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 235/3125 episodes, total num timesteps 755200/10000000, FPS 674.
+
+episode win_rate: 0.0102, incre win rate: 0.0852
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 240/3125 episodes, total num timesteps 771200/10000000, FPS 675.
+
+episode win_rate: 0.0112, incre win rate: 0.0657
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 245/3125 episodes, total num timesteps 787200/10000000, FPS 676.
+
+episode win_rate: 0.0120, incre win rate: 0.0547
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 250/3125 episodes, total num timesteps 803200/10000000, FPS 676.
+
+episode win_rate: 0.0132, incre win rate: 0.0813
+eval win rate is 0.0625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 255/3125 episodes, total num timesteps 819200/10000000, FPS 676.
+
+episode win_rate: 0.0143, incre win rate: 0.0752
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 260/3125 episodes, total num timesteps 835200/10000000, FPS 677.
+
+episode win_rate: 0.0158, incre win rate: 0.1048
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 265/3125 episodes, total num timesteps 851200/10000000, FPS 677.
+
+episode win_rate: 0.0171, incre win rate: 0.0895
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 270/3125 episodes, total num timesteps 867200/10000000, FPS 678.
+
+episode win_rate: 0.0179, incre win rate: 0.0695
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 275/3125 episodes, total num timesteps 883200/10000000, FPS 679.
+
+episode win_rate: 0.0191, incre win rate: 0.0898
+eval win rate is 0.21875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 280/3125 episodes, total num timesteps 899200/10000000, FPS 677.
+
+episode win_rate: 0.0202, incre win rate: 0.0857
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 285/3125 episodes, total num timesteps 915200/10000000, FPS 677.
+
+episode win_rate: 0.0217, incre win rate: 0.1203
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 290/3125 episodes, total num timesteps 931200/10000000, FPS 679.
+
+episode win_rate: 0.0233, incre win rate: 0.1304
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 295/3125 episodes, total num timesteps 947200/10000000, FPS 680.
+
+episode win_rate: 0.0251, incre win rate: 0.1455
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 300/3125 episodes, total num timesteps 963200/10000000, FPS 680.
+
+episode win_rate: 0.0268, incre win rate: 0.1342
+eval win rate is 0.28125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 305/3125 episodes, total num timesteps 979200/10000000, FPS 679.
+
+episode win_rate: 0.0283, incre win rate: 0.1343
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 310/3125 episodes, total num timesteps 995200/10000000, FPS 679.
+
+episode win_rate: 0.0299, incre win rate: 0.1380
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 315/3125 episodes, total num timesteps 1011200/10000000, FPS 680.
+
+episode win_rate: 0.0312, incre win rate: 0.1294
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 320/3125 episodes, total num timesteps 1027200/10000000, FPS 681.
+
+episode win_rate: 0.0328, incre win rate: 0.1392
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 325/3125 episodes, total num timesteps 1043200/10000000, FPS 669.
+
+episode win_rate: 0.0339, incre win rate: 0.1148
+eval win rate is 0.28125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 330/3125 episodes, total num timesteps 1059200/10000000, FPS 669.
+
+episode win_rate: 0.0352, incre win rate: 0.1365
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 335/3125 episodes, total num timesteps 1075200/10000000, FPS 669.
+
+episode win_rate: 0.0366, incre win rate: 0.1464
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 340/3125 episodes, total num timesteps 1091200/10000000, FPS 670.
+
+episode win_rate: 0.0383, incre win rate: 0.1667
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 345/3125 episodes, total num timesteps 1107200/10000000, FPS 671.
+
+episode win_rate: 0.0399, incre win rate: 0.1624
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 350/3125 episodes, total num timesteps 1123200/10000000, FPS 672.
+
+episode win_rate: 0.0420, incre win rate: 0.2045
+eval win rate is 0.15625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 355/3125 episodes, total num timesteps 1139200/10000000, FPS 671.
+
+episode win_rate: 0.0435, incre win rate: 0.1612
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 360/3125 episodes, total num timesteps 1155200/10000000, FPS 672.
+
+episode win_rate: 0.0449, incre win rate: 0.1632
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 365/3125 episodes, total num timesteps 1171200/10000000, FPS 673.
+
+episode win_rate: 0.0464, incre win rate: 0.1758
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 370/3125 episodes, total num timesteps 1187200/10000000, FPS 673.
+
+episode win_rate: 0.0483, incre win rate: 0.2022
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 375/3125 episodes, total num timesteps 1203200/10000000, FPS 674.
+
+episode win_rate: 0.0503, incre win rate: 0.2119
+eval win rate is 0.3125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 380/3125 episodes, total num timesteps 1219200/10000000, FPS 673.
+
+episode win_rate: 0.0519, incre win rate: 0.1850
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 385/3125 episodes, total num timesteps 1235200/10000000, FPS 674.
+
+episode win_rate: 0.0537, incre win rate: 0.2105
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 390/3125 episodes, total num timesteps 1251200/10000000, FPS 674.
+
+episode win_rate: 0.0554, incre win rate: 0.2026
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 395/3125 episodes, total num timesteps 1267200/10000000, FPS 674.
+
+episode win_rate: 0.0571, incre win rate: 0.2113
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 400/3125 episodes, total num timesteps 1283200/10000000, FPS 675.
+
+episode win_rate: 0.0590, incre win rate: 0.2296
+eval win rate is 0.28125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 405/3125 episodes, total num timesteps 1299200/10000000, FPS 674.
+
+episode win_rate: 0.0608, incre win rate: 0.2286
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 410/3125 episodes, total num timesteps 1315200/10000000, FPS 674.
+
+episode win_rate: 0.0628, incre win rate: 0.2400
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 415/3125 episodes, total num timesteps 1331200/10000000, FPS 675.
+
+episode win_rate: 0.0643, incre win rate: 0.2111
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 420/3125 episodes, total num timesteps 1347200/10000000, FPS 676.
+
+episode win_rate: 0.0662, incre win rate: 0.2382
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 425/3125 episodes, total num timesteps 1363200/10000000, FPS 676.
+
+episode win_rate: 0.0679, incre win rate: 0.2288
+eval win rate is 0.3125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 430/3125 episodes, total num timesteps 1379200/10000000, FPS 675.
+
+episode win_rate: 0.0699, incre win rate: 0.2600
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 435/3125 episodes, total num timesteps 1395200/10000000, FPS 675.
+
+episode win_rate: 0.0714, incre win rate: 0.2155
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 440/3125 episodes, total num timesteps 1411200/10000000, FPS 676.
+
+episode win_rate: 0.0730, incre win rate: 0.2328
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 445/3125 episodes, total num timesteps 1427200/10000000, FPS 677.
+
+episode win_rate: 0.0748, incre win rate: 0.2500
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 450/3125 episodes, total num timesteps 1443200/10000000, FPS 677.
+
+episode win_rate: 0.0768, incre win rate: 0.2639
+eval win rate is 0.375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 455/3125 episodes, total num timesteps 1459200/10000000, FPS 676.
+
+episode win_rate: 0.0785, incre win rate: 0.2491
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 460/3125 episodes, total num timesteps 1475200/10000000, FPS 676.
+
+episode win_rate: 0.0802, incre win rate: 0.2445
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 465/3125 episodes, total num timesteps 1491200/10000000, FPS 677.
+
+episode win_rate: 0.0819, incre win rate: 0.2621
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 470/3125 episodes, total num timesteps 1507200/10000000, FPS 677.
+
+episode win_rate: 0.0836, incre win rate: 0.2528
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 475/3125 episodes, total num timesteps 1523200/10000000, FPS 678.
+
+episode win_rate: 0.0854, incre win rate: 0.2755
+eval win rate is 0.46875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 480/3125 episodes, total num timesteps 1539200/10000000, FPS 677.
+
+episode win_rate: 0.0872, incre win rate: 0.2700
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 485/3125 episodes, total num timesteps 1555200/10000000, FPS 677.
+
+episode win_rate: 0.0892, incre win rate: 0.3032
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 490/3125 episodes, total num timesteps 1571200/10000000, FPS 668.
+
+episode win_rate: 0.0910, incre win rate: 0.2922
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 495/3125 episodes, total num timesteps 1587200/10000000, FPS 669.
+
+episode win_rate: 0.0927, incre win rate: 0.2751
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 500/3125 episodes, total num timesteps 1603200/10000000, FPS 669.
+
+episode win_rate: 0.0945, incre win rate: 0.2884
+eval win rate is 0.4375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 505/3125 episodes, total num timesteps 1619200/10000000, FPS 669.
+
+episode win_rate: 0.0962, incre win rate: 0.2820
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 510/3125 episodes, total num timesteps 1635200/10000000, FPS 669.
+
+episode win_rate: 0.0981, incre win rate: 0.3013
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 515/3125 episodes, total num timesteps 1651200/10000000, FPS 670.
+
+episode win_rate: 0.0998, incre win rate: 0.2964
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 520/3125 episodes, total num timesteps 1667200/10000000, FPS 670.
+
+episode win_rate: 0.1016, incre win rate: 0.3032
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 525/3125 episodes, total num timesteps 1683200/10000000, FPS 671.
+
+episode win_rate: 0.1034, incre win rate: 0.3053
+eval win rate is 0.53125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 530/3125 episodes, total num timesteps 1699200/10000000, FPS 670.
+
+episode win_rate: 0.1053, incre win rate: 0.3321
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 535/3125 episodes, total num timesteps 1715200/10000000, FPS 671.
+
+episode win_rate: 0.1072, incre win rate: 0.3190
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 540/3125 episodes, total num timesteps 1731200/10000000, FPS 671.
+
+episode win_rate: 0.1090, incre win rate: 0.3258
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 545/3125 episodes, total num timesteps 1747200/10000000, FPS 671.
+
+episode win_rate: 0.1107, incre win rate: 0.3127
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 550/3125 episodes, total num timesteps 1763200/10000000, FPS 672.
+
+episode win_rate: 0.1128, incre win rate: 0.3648
+eval win rate is 0.75.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 555/3125 episodes, total num timesteps 1779200/10000000, FPS 671.
+
+episode win_rate: 0.1145, incre win rate: 0.3159
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 560/3125 episodes, total num timesteps 1795200/10000000, FPS 671.
+
+episode win_rate: 0.1163, incre win rate: 0.3271
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 565/3125 episodes, total num timesteps 1811200/10000000, FPS 672.
+
+episode win_rate: 0.1181, incre win rate: 0.3474
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 570/3125 episodes, total num timesteps 1827200/10000000, FPS 672.
+
+episode win_rate: 0.1199, incre win rate: 0.3358
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 575/3125 episodes, total num timesteps 1843200/10000000, FPS 672.
+
+episode win_rate: 0.1217, incre win rate: 0.3472
+eval win rate is 0.75.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 580/3125 episodes, total num timesteps 1859200/10000000, FPS 672.
+
+episode win_rate: 0.1237, incre win rate: 0.3865
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 585/3125 episodes, total num timesteps 1875200/10000000, FPS 672.
+
+episode win_rate: 0.1255, incre win rate: 0.3553
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 590/3125 episodes, total num timesteps 1891200/10000000, FPS 672.
+
+episode win_rate: 0.1273, incre win rate: 0.3551
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 595/3125 episodes, total num timesteps 1907200/10000000, FPS 672.
+
+episode win_rate: 0.1293, incre win rate: 0.3939
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 600/3125 episodes, total num timesteps 1923200/10000000, FPS 673.
+
+episode win_rate: 0.1315, incre win rate: 0.4094
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 605/3125 episodes, total num timesteps 1939200/10000000, FPS 672.
+
+episode win_rate: 0.1335, incre win rate: 0.4078
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 610/3125 episodes, total num timesteps 1955200/10000000, FPS 673.
+
+episode win_rate: 0.1354, incre win rate: 0.3865
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 615/3125 episodes, total num timesteps 1971200/10000000, FPS 673.
+
+episode win_rate: 0.1373, incre win rate: 0.3985
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 620/3125 episodes, total num timesteps 1987200/10000000, FPS 673.
+
+episode win_rate: 0.1393, incre win rate: 0.4057
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 625/3125 episodes, total num timesteps 2003200/10000000, FPS 673.
+
+episode win_rate: 0.1412, incre win rate: 0.4008
+eval win rate is 0.78125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 630/3125 episodes, total num timesteps 2019200/10000000, FPS 673.
+
+episode win_rate: 0.1434, incre win rate: 0.4365
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 635/3125 episodes, total num timesteps 2035200/10000000, FPS 673.
+
+episode win_rate: 0.1454, incre win rate: 0.4221
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 640/3125 episodes, total num timesteps 2051200/10000000, FPS 673.
+
+episode win_rate: 0.1471, incre win rate: 0.3919
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 645/3125 episodes, total num timesteps 2067200/10000000, FPS 673.
+
+episode win_rate: 0.1492, incre win rate: 0.4381
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 650/3125 episodes, total num timesteps 2083200/10000000, FPS 669.
+
+episode win_rate: 0.1512, incre win rate: 0.4362
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 655/3125 episodes, total num timesteps 2099200/10000000, FPS 669.
+
+episode win_rate: 0.1529, incre win rate: 0.3989
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 660/3125 episodes, total num timesteps 2115200/10000000, FPS 669.
+
+episode win_rate: 0.1547, incre win rate: 0.4042
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 665/3125 episodes, total num timesteps 2131200/10000000, FPS 669.
+
+episode win_rate: 0.1564, incre win rate: 0.4083
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 670/3125 episodes, total num timesteps 2147200/10000000, FPS 669.
+
+episode win_rate: 0.1585, incre win rate: 0.4502
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 675/3125 episodes, total num timesteps 2163200/10000000, FPS 670.
+
+episode win_rate: 0.1600, incre win rate: 0.3829
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 680/3125 episodes, total num timesteps 2179200/10000000, FPS 669.
+
+episode win_rate: 0.1618, incre win rate: 0.4234
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 685/3125 episodes, total num timesteps 2195200/10000000, FPS 669.
+
+episode win_rate: 0.1637, incre win rate: 0.4579
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 690/3125 episodes, total num timesteps 2211200/10000000, FPS 670.
+
+episode win_rate: 0.1655, incre win rate: 0.4338
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 695/3125 episodes, total num timesteps 2227200/10000000, FPS 670.
+
+episode win_rate: 0.1674, incre win rate: 0.4542
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 700/3125 episodes, total num timesteps 2243200/10000000, FPS 670.
+
+episode win_rate: 0.1693, incre win rate: 0.4648
+eval win rate is 0.8125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 705/3125 episodes, total num timesteps 2259200/10000000, FPS 670.
+
+episode win_rate: 0.1709, incre win rate: 0.4199
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 710/3125 episodes, total num timesteps 2275200/10000000, FPS 670.
+
+episode win_rate: 0.1726, incre win rate: 0.4313
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 715/3125 episodes, total num timesteps 2291200/10000000, FPS 670.
+
+episode win_rate: 0.1742, incre win rate: 0.4228
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 720/3125 episodes, total num timesteps 2307200/10000000, FPS 671.
+
+episode win_rate: 0.1759, incre win rate: 0.4360
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 725/3125 episodes, total num timesteps 2323200/10000000, FPS 671.
+
+episode win_rate: 0.1778, incre win rate: 0.4778
+eval win rate is 0.75.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 730/3125 episodes, total num timesteps 2339200/10000000, FPS 671.
+
+episode win_rate: 0.1796, incre win rate: 0.4624
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 735/3125 episodes, total num timesteps 2355200/10000000, FPS 671.
+
+episode win_rate: 0.1812, incre win rate: 0.4421
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 740/3125 episodes, total num timesteps 2371200/10000000, FPS 671.
+
+episode win_rate: 0.1826, incre win rate: 0.4163
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 745/3125 episodes, total num timesteps 2387200/10000000, FPS 671.
+
+episode win_rate: 0.1841, incre win rate: 0.4181
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 750/3125 episodes, total num timesteps 2403200/10000000, FPS 672.
+
+episode win_rate: 0.1856, incre win rate: 0.4357
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 755/3125 episodes, total num timesteps 2419200/10000000, FPS 671.
+
+episode win_rate: 0.1875, incre win rate: 0.4894
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 760/3125 episodes, total num timesteps 2435200/10000000, FPS 672.
+
+episode win_rate: 0.1892, incre win rate: 0.4701
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 765/3125 episodes, total num timesteps 2451200/10000000, FPS 672.
+
+episode win_rate: 0.1907, incre win rate: 0.4464
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 770/3125 episodes, total num timesteps 2467200/10000000, FPS 672.
+
+episode win_rate: 0.1926, incre win rate: 0.5106
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 775/3125 episodes, total num timesteps 2483200/10000000, FPS 672.
+
+episode win_rate: 0.1945, incre win rate: 0.5058
+eval win rate is 0.78125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 780/3125 episodes, total num timesteps 2499200/10000000, FPS 672.
+
+episode win_rate: 0.1960, incre win rate: 0.4642
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 785/3125 episodes, total num timesteps 2515200/10000000, FPS 672.
+
+episode win_rate: 0.1978, incre win rate: 0.4941
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 790/3125 episodes, total num timesteps 2531200/10000000, FPS 672.
+
+episode win_rate: 0.1996, incre win rate: 0.5106
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 795/3125 episodes, total num timesteps 2547200/10000000, FPS 672.
+
+episode win_rate: 0.2014, incre win rate: 0.5175
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 800/3125 episodes, total num timesteps 2563200/10000000, FPS 673.
+
+episode win_rate: 0.2033, incre win rate: 0.5391
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 805/3125 episodes, total num timesteps 2579200/10000000, FPS 672.
+
+episode win_rate: 0.2051, incre win rate: 0.5116
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 810/3125 episodes, total num timesteps 2595200/10000000, FPS 672.
+
+episode win_rate: 0.2070, incre win rate: 0.5478
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 815/3125 episodes, total num timesteps 2611200/10000000, FPS 669.
+
+episode win_rate: 0.2087, incre win rate: 0.4961
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 820/3125 episodes, total num timesteps 2627200/10000000, FPS 669.
+
+episode win_rate: 0.2104, incre win rate: 0.5263
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 825/3125 episodes, total num timesteps 2643200/10000000, FPS 669.
+
+episode win_rate: 0.2120, incre win rate: 0.5000
+eval win rate is 0.71875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 830/3125 episodes, total num timesteps 2659200/10000000, FPS 669.
+
+episode win_rate: 0.2138, incre win rate: 0.5305
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 835/3125 episodes, total num timesteps 2675200/10000000, FPS 669.
+
+episode win_rate: 0.2158, incre win rate: 0.5640
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 840/3125 episodes, total num timesteps 2691200/10000000, FPS 669.
+
+episode win_rate: 0.2175, incre win rate: 0.5380
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 845/3125 episodes, total num timesteps 2707200/10000000, FPS 669.
+
+episode win_rate: 0.2193, incre win rate: 0.5379
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 850/3125 episodes, total num timesteps 2723200/10000000, FPS 669.
+
+episode win_rate: 0.2211, incre win rate: 0.5528
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 855/3125 episodes, total num timesteps 2739200/10000000, FPS 669.
+
+episode win_rate: 0.2231, incre win rate: 0.5914
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 860/3125 episodes, total num timesteps 2755200/10000000, FPS 669.
+
+episode win_rate: 0.2252, incre win rate: 0.6151
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 865/3125 episodes, total num timesteps 2771200/10000000, FPS 669.
+
+episode win_rate: 0.2271, incre win rate: 0.5786
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 870/3125 episodes, total num timesteps 2787200/10000000, FPS 670.
+
+episode win_rate: 0.2290, incre win rate: 0.5808
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 875/3125 episodes, total num timesteps 2803200/10000000, FPS 670.
+
+episode win_rate: 0.2306, incre win rate: 0.5419
+eval win rate is 0.8125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 880/3125 episodes, total num timesteps 2819200/10000000, FPS 670.
+
+episode win_rate: 0.2324, incre win rate: 0.5767
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 885/3125 episodes, total num timesteps 2835200/10000000, FPS 670.
+
+episode win_rate: 0.2340, incre win rate: 0.5359
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 890/3125 episodes, total num timesteps 2851200/10000000, FPS 670.
+
+episode win_rate: 0.2358, incre win rate: 0.5918
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 895/3125 episodes, total num timesteps 2867200/10000000, FPS 670.
+
+episode win_rate: 0.2378, incre win rate: 0.6096
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 900/3125 episodes, total num timesteps 2883200/10000000, FPS 670.
+
+episode win_rate: 0.2396, incre win rate: 0.5837
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 905/3125 episodes, total num timesteps 2899200/10000000, FPS 670.
+
+episode win_rate: 0.2414, incre win rate: 0.6031
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 910/3125 episodes, total num timesteps 2915200/10000000, FPS 670.
+
+episode win_rate: 0.2433, incre win rate: 0.6167
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 915/3125 episodes, total num timesteps 2931200/10000000, FPS 670.
+
+episode win_rate: 0.2451, incre win rate: 0.6063
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 920/3125 episodes, total num timesteps 2947200/10000000, FPS 670.
+
+episode win_rate: 0.2468, incre win rate: 0.5814
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 925/3125 episodes, total num timesteps 2963200/10000000, FPS 670.
+
+episode win_rate: 0.2487, incre win rate: 0.6206
+eval win rate is 0.8125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 930/3125 episodes, total num timesteps 2979200/10000000, FPS 670.
+
+episode win_rate: 0.2507, incre win rate: 0.6471
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 935/3125 episodes, total num timesteps 2995200/10000000, FPS 670.
+
+episode win_rate: 0.2524, incre win rate: 0.5942
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 940/3125 episodes, total num timesteps 3011200/10000000, FPS 670.
+
+episode win_rate: 0.2540, incre win rate: 0.5887
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 945/3125 episodes, total num timesteps 3027200/10000000, FPS 671.
+
+episode win_rate: 0.2557, incre win rate: 0.5992
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 950/3125 episodes, total num timesteps 3043200/10000000, FPS 671.
+
+episode win_rate: 0.2573, incre win rate: 0.5864
+eval win rate is 0.8125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 955/3125 episodes, total num timesteps 3059200/10000000, FPS 670.
+
+episode win_rate: 0.2592, incre win rate: 0.6351
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 960/3125 episodes, total num timesteps 3075200/10000000, FPS 671.
+
+episode win_rate: 0.2610, incre win rate: 0.6291
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 965/3125 episodes, total num timesteps 3091200/10000000, FPS 671.
+
+episode win_rate: 0.2628, incre win rate: 0.6452
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 970/3125 episodes, total num timesteps 3107200/10000000, FPS 671.
+
+episode win_rate: 0.2645, incre win rate: 0.6238
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 975/3125 episodes, total num timesteps 3123200/10000000, FPS 667.
+
+episode win_rate: 0.2660, incre win rate: 0.5798
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 980/3125 episodes, total num timesteps 3139200/10000000, FPS 667.
+
+episode win_rate: 0.2674, incre win rate: 0.5592
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 985/3125 episodes, total num timesteps 3155200/10000000, FPS 667.
+
+episode win_rate: 0.2691, incre win rate: 0.6299
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 990/3125 episodes, total num timesteps 3171200/10000000, FPS 667.
+
+episode win_rate: 0.2704, incre win rate: 0.5434
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 995/3125 episodes, total num timesteps 3187200/10000000, FPS 667.
+
+episode win_rate: 0.2718, incre win rate: 0.5658
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1000/3125 episodes, total num timesteps 3203200/10000000, FPS 668.
+
+episode win_rate: 0.2733, incre win rate: 0.6008
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1005/3125 episodes, total num timesteps 3219200/10000000, FPS 667.
+
+episode win_rate: 0.2748, incre win rate: 0.5977
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1010/3125 episodes, total num timesteps 3235200/10000000, FPS 667.
+
+episode win_rate: 0.2762, incre win rate: 0.5864
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1015/3125 episodes, total num timesteps 3251200/10000000, FPS 667.
+
+episode win_rate: 0.2776, incre win rate: 0.5809
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1020/3125 episodes, total num timesteps 3267200/10000000, FPS 668.
+
+episode win_rate: 0.2791, incre win rate: 0.5942
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1025/3125 episodes, total num timesteps 3283200/10000000, FPS 668.
+
+episode win_rate: 0.2805, incre win rate: 0.6039
+eval win rate is 0.78125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1030/3125 episodes, total num timesteps 3299200/10000000, FPS 668.
+
+episode win_rate: 0.2819, incre win rate: 0.5798
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1035/3125 episodes, total num timesteps 3315200/10000000, FPS 668.
+
+episode win_rate: 0.2834, incre win rate: 0.6097
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1040/3125 episodes, total num timesteps 3331200/10000000, FPS 668.
+
+episode win_rate: 0.2847, incre win rate: 0.5869
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1045/3125 episodes, total num timesteps 3347200/10000000, FPS 668.
+
+episode win_rate: 0.2864, incre win rate: 0.6609
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1050/3125 episodes, total num timesteps 3363200/10000000, FPS 668.
+
+episode win_rate: 0.2877, incre win rate: 0.5817
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1055/3125 episodes, total num timesteps 3379200/10000000, FPS 668.
+
+episode win_rate: 0.2891, incre win rate: 0.5996
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1060/3125 episodes, total num timesteps 3395200/10000000, FPS 668.
+
+episode win_rate: 0.2905, incre win rate: 0.6086
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1065/3125 episodes, total num timesteps 3411200/10000000, FPS 668.
+
+episode win_rate: 0.2918, incre win rate: 0.5900
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1070/3125 episodes, total num timesteps 3427200/10000000, FPS 668.
+
+episode win_rate: 0.2932, incre win rate: 0.6047
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1075/3125 episodes, total num timesteps 3443200/10000000, FPS 668.
+
+episode win_rate: 0.2946, incre win rate: 0.6089
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1080/3125 episodes, total num timesteps 3459200/10000000, FPS 668.
+
+episode win_rate: 0.2959, incre win rate: 0.5961
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1085/3125 episodes, total num timesteps 3475200/10000000, FPS 668.
+
+episode win_rate: 0.2973, incre win rate: 0.6267
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1090/3125 episodes, total num timesteps 3491200/10000000, FPS 668.
+
+episode win_rate: 0.2987, incre win rate: 0.6132
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1095/3125 episodes, total num timesteps 3507200/10000000, FPS 669.
+
+episode win_rate: 0.3000, incre win rate: 0.6027
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1100/3125 episodes, total num timesteps 3523200/10000000, FPS 669.
+
+episode win_rate: 0.3012, incre win rate: 0.5879
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1105/3125 episodes, total num timesteps 3539200/10000000, FPS 668.
+
+episode win_rate: 0.3024, incre win rate: 0.5988
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1110/3125 episodes, total num timesteps 3555200/10000000, FPS 668.
+
+episode win_rate: 0.3037, incre win rate: 0.6000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1115/3125 episodes, total num timesteps 3571200/10000000, FPS 669.
+
+episode win_rate: 0.3048, incre win rate: 0.5608
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1120/3125 episodes, total num timesteps 3587200/10000000, FPS 669.
+
+episode win_rate: 0.3060, incre win rate: 0.5992
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1125/3125 episodes, total num timesteps 3603200/10000000, FPS 669.
+
+episode win_rate: 0.3073, incre win rate: 0.6304
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1130/3125 episodes, total num timesteps 3619200/10000000, FPS 669.
+
+episode win_rate: 0.3083, incre win rate: 0.5401
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1135/3125 episodes, total num timesteps 3635200/10000000, FPS 669.
+
+episode win_rate: 0.3092, incre win rate: 0.5319
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1140/3125 episodes, total num timesteps 3651200/10000000, FPS 666.
+
+episode win_rate: 0.3102, incre win rate: 0.5523
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1145/3125 episodes, total num timesteps 3667200/10000000, FPS 666.
+
+episode win_rate: 0.3114, incre win rate: 0.5898
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1150/3125 episodes, total num timesteps 3683200/10000000, FPS 666.
+
+episode win_rate: 0.3125, incre win rate: 0.5992
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1155/3125 episodes, total num timesteps 3699200/10000000, FPS 666.
+
+episode win_rate: 0.3135, incre win rate: 0.5601
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1160/3125 episodes, total num timesteps 3715200/10000000, FPS 666.
+
+episode win_rate: 0.3147, incre win rate: 0.6058
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1165/3125 episodes, total num timesteps 3731200/10000000, FPS 666.
+
+episode win_rate: 0.3158, incre win rate: 0.5906
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1170/3125 episodes, total num timesteps 3747200/10000000, FPS 666.
+
+episode win_rate: 0.3170, incre win rate: 0.5950
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1175/3125 episodes, total num timesteps 3763200/10000000, FPS 667.
+
+episode win_rate: 0.3180, incre win rate: 0.5745
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1180/3125 episodes, total num timesteps 3779200/10000000, FPS 666.
+
+episode win_rate: 0.3192, incre win rate: 0.6128
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1185/3125 episodes, total num timesteps 3795200/10000000, FPS 666.
+
+episode win_rate: 0.3204, incre win rate: 0.6427
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1190/3125 episodes, total num timesteps 3811200/10000000, FPS 667.
+
+episode win_rate: 0.3216, incre win rate: 0.6019
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1195/3125 episodes, total num timesteps 3827200/10000000, FPS 667.
+
+episode win_rate: 0.3226, incre win rate: 0.5765
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1200/3125 episodes, total num timesteps 3843200/10000000, FPS 667.
+
+episode win_rate: 0.3236, incre win rate: 0.6004
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1205/3125 episodes, total num timesteps 3859200/10000000, FPS 667.
+
+episode win_rate: 0.3248, incre win rate: 0.6213
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1210/3125 episodes, total num timesteps 3875200/10000000, FPS 667.
+
+episode win_rate: 0.3259, incre win rate: 0.6196
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1215/3125 episodes, total num timesteps 3891200/10000000, FPS 667.
+
+episode win_rate: 0.3270, incre win rate: 0.6114
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1220/3125 episodes, total num timesteps 3907200/10000000, FPS 667.
+
+episode win_rate: 0.3280, incre win rate: 0.5832
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1225/3125 episodes, total num timesteps 3923200/10000000, FPS 667.
+
+episode win_rate: 0.3290, incre win rate: 0.5992
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1230/3125 episodes, total num timesteps 3939200/10000000, FPS 667.
+
+episode win_rate: 0.3300, incre win rate: 0.5914
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1235/3125 episodes, total num timesteps 3955200/10000000, FPS 667.
+
+episode win_rate: 0.3313, incre win rate: 0.6537
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1240/3125 episodes, total num timesteps 3971200/10000000, FPS 667.
+
+episode win_rate: 0.3324, incre win rate: 0.6468
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1245/3125 episodes, total num timesteps 3987200/10000000, FPS 667.
+
+episode win_rate: 0.3334, incre win rate: 0.6004
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1250/3125 episodes, total num timesteps 4003200/10000000, FPS 667.
+
+episode win_rate: 0.3344, incre win rate: 0.5930
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1255/3125 episodes, total num timesteps 4019200/10000000, FPS 667.
+
+episode win_rate: 0.3354, incre win rate: 0.5911
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1260/3125 episodes, total num timesteps 4035200/10000000, FPS 667.
+
+episode win_rate: 0.3364, incre win rate: 0.6174
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1265/3125 episodes, total num timesteps 4051200/10000000, FPS 667.
+
+episode win_rate: 0.3376, incre win rate: 0.6406
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1270/3125 episodes, total num timesteps 4067200/10000000, FPS 667.
+
+episode win_rate: 0.3386, incre win rate: 0.6235
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1275/3125 episodes, total num timesteps 4083200/10000000, FPS 667.
+
+episode win_rate: 0.3396, incre win rate: 0.5996
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1280/3125 episodes, total num timesteps 4099200/10000000, FPS 667.
+
+episode win_rate: 0.3405, incre win rate: 0.6039
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1285/3125 episodes, total num timesteps 4115200/10000000, FPS 667.
+
+episode win_rate: 0.3415, incre win rate: 0.6118
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1290/3125 episodes, total num timesteps 4131200/10000000, FPS 667.
+
+episode win_rate: 0.3425, incre win rate: 0.6082
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1295/3125 episodes, total num timesteps 4147200/10000000, FPS 668.
+
+episode win_rate: 0.3436, incre win rate: 0.6358
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1300/3125 episodes, total num timesteps 4163200/10000000, FPS 665.
+
+episode win_rate: 0.3445, incre win rate: 0.6163
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1305/3125 episodes, total num timesteps 4179200/10000000, FPS 665.
+
+episode win_rate: 0.3455, incre win rate: 0.6149
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1310/3125 episodes, total num timesteps 4195200/10000000, FPS 665.
+
+episode win_rate: 0.3465, incre win rate: 0.6062
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1315/3125 episodes, total num timesteps 4211200/10000000, FPS 665.
+
+episode win_rate: 0.3474, incre win rate: 0.6000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1320/3125 episodes, total num timesteps 4227200/10000000, FPS 665.
+
+episode win_rate: 0.3482, incre win rate: 0.5740
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1325/3125 episodes, total num timesteps 4243200/10000000, FPS 665.
+
+episode win_rate: 0.3491, incre win rate: 0.6142
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1330/3125 episodes, total num timesteps 4259200/10000000, FPS 665.
+
+episode win_rate: 0.3500, incre win rate: 0.6039
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1335/3125 episodes, total num timesteps 4275200/10000000, FPS 665.
+
+episode win_rate: 0.3509, incre win rate: 0.6110
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1340/3125 episodes, total num timesteps 4291200/10000000, FPS 666.
+
+episode win_rate: 0.3518, incre win rate: 0.6082
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1345/3125 episodes, total num timesteps 4307200/10000000, FPS 666.
+
+episode win_rate: 0.3527, incre win rate: 0.5977
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1350/3125 episodes, total num timesteps 4323200/10000000, FPS 666.
+
+episode win_rate: 0.3536, incre win rate: 0.6190
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1355/3125 episodes, total num timesteps 4339200/10000000, FPS 666.
+
+episode win_rate: 0.3545, incre win rate: 0.6172
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1360/3125 episodes, total num timesteps 4355200/10000000, FPS 666.
+
+episode win_rate: 0.3555, incre win rate: 0.6417
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1365/3125 episodes, total num timesteps 4371200/10000000, FPS 666.
+
+episode win_rate: 0.3564, incre win rate: 0.6083
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1370/3125 episodes, total num timesteps 4387200/10000000, FPS 666.
+
+episode win_rate: 0.3572, incre win rate: 0.5945
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1375/3125 episodes, total num timesteps 4403200/10000000, FPS 666.
+
+episode win_rate: 0.3580, incre win rate: 0.5960
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1380/3125 episodes, total num timesteps 4419200/10000000, FPS 666.
+
+episode win_rate: 0.3589, incre win rate: 0.6166
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1385/3125 episodes, total num timesteps 4435200/10000000, FPS 666.
+
+episode win_rate: 0.3598, incre win rate: 0.6346
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1390/3125 episodes, total num timesteps 4451200/10000000, FPS 666.
+
+episode win_rate: 0.3607, incre win rate: 0.6398
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1395/3125 episodes, total num timesteps 4467200/10000000, FPS 666.
+
+episode win_rate: 0.3616, incre win rate: 0.6213
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1400/3125 episodes, total num timesteps 4483200/10000000, FPS 666.
+
+episode win_rate: 0.3624, incre win rate: 0.6075
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1405/3125 episodes, total num timesteps 4499200/10000000, FPS 666.
+
+episode win_rate: 0.3634, incre win rate: 0.6469
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1410/3125 episodes, total num timesteps 4515200/10000000, FPS 666.
+
+episode win_rate: 0.3641, incre win rate: 0.5859
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1415/3125 episodes, total num timesteps 4531200/10000000, FPS 666.
+
+episode win_rate: 0.3650, incre win rate: 0.6191
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1420/3125 episodes, total num timesteps 4547200/10000000, FPS 666.
+
+episode win_rate: 0.3657, incre win rate: 0.5845
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1425/3125 episodes, total num timesteps 4563200/10000000, FPS 667.
+
+episode win_rate: 0.3665, incre win rate: 0.5969
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1430/3125 episodes, total num timesteps 4579200/10000000, FPS 666.
+
+episode win_rate: 0.3673, incre win rate: 0.6019
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1435/3125 episodes, total num timesteps 4595200/10000000, FPS 666.
+
+episode win_rate: 0.3680, incre win rate: 0.5751
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1440/3125 episodes, total num timesteps 4611200/10000000, FPS 667.
+
+episode win_rate: 0.3687, incre win rate: 0.5996
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1445/3125 episodes, total num timesteps 4627200/10000000, FPS 667.
+
+episode win_rate: 0.3693, incre win rate: 0.5630
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1450/3125 episodes, total num timesteps 4643200/10000000, FPS 667.
+
+episode win_rate: 0.3700, incre win rate: 0.5737
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1455/3125 episodes, total num timesteps 4659200/10000000, FPS 666.
+
+episode win_rate: 0.3706, incre win rate: 0.5694
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1460/3125 episodes, total num timesteps 4675200/10000000, FPS 666.
+
+episode win_rate: 0.3713, incre win rate: 0.5853
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1465/3125 episodes, total num timesteps 4691200/10000000, FPS 664.
+
+episode win_rate: 0.3719, incre win rate: 0.5573
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1470/3125 episodes, total num timesteps 4707200/10000000, FPS 664.
+
+episode win_rate: 0.3725, incre win rate: 0.5527
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1475/3125 episodes, total num timesteps 4723200/10000000, FPS 664.
+
+episode win_rate: 0.3731, incre win rate: 0.5610
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1480/3125 episodes, total num timesteps 4739200/10000000, FPS 664.
+
+episode win_rate: 0.3738, incre win rate: 0.5863
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1485/3125 episodes, total num timesteps 4755200/10000000, FPS 664.
+
+episode win_rate: 0.3744, incre win rate: 0.5786
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1490/3125 episodes, total num timesteps 4771200/10000000, FPS 664.
+
+episode win_rate: 0.3750, incre win rate: 0.5494
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1495/3125 episodes, total num timesteps 4787200/10000000, FPS 664.
+
+episode win_rate: 0.3757, incre win rate: 0.6059
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1500/3125 episodes, total num timesteps 4803200/10000000, FPS 664.
+
+episode win_rate: 0.3762, incre win rate: 0.5360
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1505/3125 episodes, total num timesteps 4819200/10000000, FPS 664.
+
+episode win_rate: 0.3768, incre win rate: 0.5549
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1510/3125 episodes, total num timesteps 4835200/10000000, FPS 664.
+
+episode win_rate: 0.3773, incre win rate: 0.5284
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1515/3125 episodes, total num timesteps 4851200/10000000, FPS 664.
+
+episode win_rate: 0.3776, incre win rate: 0.4941
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1520/3125 episodes, total num timesteps 4867200/10000000, FPS 664.
+
+episode win_rate: 0.3781, incre win rate: 0.5205
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1525/3125 episodes, total num timesteps 4883200/10000000, FPS 665.
+
+episode win_rate: 0.3786, incre win rate: 0.5458
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1530/3125 episodes, total num timesteps 4899200/10000000, FPS 665.
+
+episode win_rate: 0.3790, incre win rate: 0.5010
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1535/3125 episodes, total num timesteps 4915200/10000000, FPS 665.
+
+episode win_rate: 0.3794, incre win rate: 0.5315
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1540/3125 episodes, total num timesteps 4931200/10000000, FPS 665.
+
+episode win_rate: 0.3801, incre win rate: 0.5873
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1545/3125 episodes, total num timesteps 4947200/10000000, FPS 665.
+
+episode win_rate: 0.3806, incre win rate: 0.5564
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1550/3125 episodes, total num timesteps 4963200/10000000, FPS 665.
+
+episode win_rate: 0.3812, incre win rate: 0.5776
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1555/3125 episodes, total num timesteps 4979200/10000000, FPS 665.
+
+episode win_rate: 0.3819, incre win rate: 0.5897
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1560/3125 episodes, total num timesteps 4995200/10000000, FPS 665.
+
+episode win_rate: 0.3824, incre win rate: 0.5490
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1565/3125 episodes, total num timesteps 5011200/10000000, FPS 665.
+
+episode win_rate: 0.3830, incre win rate: 0.5910
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1570/3125 episodes, total num timesteps 5027200/10000000, FPS 665.
+
+episode win_rate: 0.3834, incre win rate: 0.5257
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1575/3125 episodes, total num timesteps 5043200/10000000, FPS 665.
+
+episode win_rate: 0.3839, incre win rate: 0.5564
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1580/3125 episodes, total num timesteps 5059200/10000000, FPS 665.
+
+episode win_rate: 0.3846, incre win rate: 0.5910
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1585/3125 episodes, total num timesteps 5075200/10000000, FPS 665.
+
+episode win_rate: 0.3851, incre win rate: 0.5737
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1590/3125 episodes, total num timesteps 5091200/10000000, FPS 665.
+
+episode win_rate: 0.3857, incre win rate: 0.5804
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1595/3125 episodes, total num timesteps 5107200/10000000, FPS 665.
+
+episode win_rate: 0.3862, incre win rate: 0.5464
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1600/3125 episodes, total num timesteps 5123200/10000000, FPS 665.
+
+episode win_rate: 0.3867, incre win rate: 0.5647
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1605/3125 episodes, total num timesteps 5139200/10000000, FPS 665.
+
+episode win_rate: 0.3872, incre win rate: 0.5545
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1610/3125 episodes, total num timesteps 5155200/10000000, FPS 665.
+
+episode win_rate: 0.3876, incre win rate: 0.5362
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1615/3125 episodes, total num timesteps 5171200/10000000, FPS 665.
+
+episode win_rate: 0.3881, incre win rate: 0.5609
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1620/3125 episodes, total num timesteps 5187200/10000000, FPS 665.
+
+episode win_rate: 0.3886, incre win rate: 0.5553
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1625/3125 episodes, total num timesteps 5203200/10000000, FPS 663.
+
+episode win_rate: 0.3891, incre win rate: 0.5440
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1630/3125 episodes, total num timesteps 5219200/10000000, FPS 663.
+
+episode win_rate: 0.3895, incre win rate: 0.5567
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1635/3125 episodes, total num timesteps 5235200/10000000, FPS 663.
+
+episode win_rate: 0.3900, incre win rate: 0.5348
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1640/3125 episodes, total num timesteps 5251200/10000000, FPS 663.
+
+episode win_rate: 0.3905, incre win rate: 0.5677
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1645/3125 episodes, total num timesteps 5267200/10000000, FPS 663.
+
+episode win_rate: 0.3910, incre win rate: 0.5830
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1650/3125 episodes, total num timesteps 5283200/10000000, FPS 663.
+
+episode win_rate: 0.3915, incre win rate: 0.5723
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1655/3125 episodes, total num timesteps 5299200/10000000, FPS 663.
+
+episode win_rate: 0.3921, incre win rate: 0.5734
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1660/3125 episodes, total num timesteps 5315200/10000000, FPS 663.
+
+episode win_rate: 0.3926, incre win rate: 0.5672
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1665/3125 episodes, total num timesteps 5331200/10000000, FPS 663.
+
+episode win_rate: 0.3930, incre win rate: 0.5545
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1670/3125 episodes, total num timesteps 5347200/10000000, FPS 663.
+
+episode win_rate: 0.3936, incre win rate: 0.5873
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1675/3125 episodes, total num timesteps 5363200/10000000, FPS 663.
+
+episode win_rate: 0.3942, incre win rate: 0.6282
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1680/3125 episodes, total num timesteps 5379200/10000000, FPS 663.
+
+episode win_rate: 0.3949, incre win rate: 0.6277
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1685/3125 episodes, total num timesteps 5395200/10000000, FPS 663.
+
+episode win_rate: 0.3953, incre win rate: 0.5476
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1690/3125 episodes, total num timesteps 5411200/10000000, FPS 663.
+
+episode win_rate: 0.3958, incre win rate: 0.5646
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1695/3125 episodes, total num timesteps 5427200/10000000, FPS 663.
+
+episode win_rate: 0.3963, incre win rate: 0.5737
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1700/3125 episodes, total num timesteps 5443200/10000000, FPS 663.
+
+episode win_rate: 0.3968, incre win rate: 0.5720
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1705/3125 episodes, total num timesteps 5459200/10000000, FPS 663.
+
+episode win_rate: 0.3973, incre win rate: 0.5805
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1710/3125 episodes, total num timesteps 5475200/10000000, FPS 664.
+
+episode win_rate: 0.3977, incre win rate: 0.5680
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1715/3125 episodes, total num timesteps 5491200/10000000, FPS 664.
+
+episode win_rate: 0.3981, incre win rate: 0.5250
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1720/3125 episodes, total num timesteps 5507200/10000000, FPS 664.
+
+episode win_rate: 0.3985, incre win rate: 0.5538
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1725/3125 episodes, total num timesteps 5523200/10000000, FPS 664.
+
+episode win_rate: 0.3989, incre win rate: 0.5465
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1730/3125 episodes, total num timesteps 5539200/10000000, FPS 664.
+
+episode win_rate: 0.3994, incre win rate: 0.5855
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1735/3125 episodes, total num timesteps 5555200/10000000, FPS 664.
+
+episode win_rate: 0.3997, incre win rate: 0.5179
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1740/3125 episodes, total num timesteps 5571200/10000000, FPS 664.
+
+episode win_rate: 0.4001, incre win rate: 0.5307
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1745/3125 episodes, total num timesteps 5587200/10000000, FPS 664.
+
+episode win_rate: 0.4004, incre win rate: 0.5219
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1750/3125 episodes, total num timesteps 5603200/10000000, FPS 664.
+
+episode win_rate: 0.4008, incre win rate: 0.5373
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1755/3125 episodes, total num timesteps 5619200/10000000, FPS 664.
+
+episode win_rate: 0.4012, incre win rate: 0.5449
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1760/3125 episodes, total num timesteps 5635200/10000000, FPS 664.
+
+episode win_rate: 0.4017, incre win rate: 0.5870
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1765/3125 episodes, total num timesteps 5651200/10000000, FPS 664.
+
+episode win_rate: 0.4022, incre win rate: 0.5838
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1770/3125 episodes, total num timesteps 5667200/10000000, FPS 664.
+
+episode win_rate: 0.4026, incre win rate: 0.5582
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1775/3125 episodes, total num timesteps 5683200/10000000, FPS 665.
+
+episode win_rate: 0.4029, incre win rate: 0.5329
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1780/3125 episodes, total num timesteps 5699200/10000000, FPS 664.
+
+episode win_rate: 0.4033, incre win rate: 0.5598
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1785/3125 episodes, total num timesteps 5715200/10000000, FPS 664.
+
+episode win_rate: 0.4038, incre win rate: 0.5666
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1790/3125 episodes, total num timesteps 5731200/10000000, FPS 662.
+
+episode win_rate: 0.4042, incre win rate: 0.5672
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1795/3125 episodes, total num timesteps 5747200/10000000, FPS 662.
+
+episode win_rate: 0.4047, incre win rate: 0.5838
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1800/3125 episodes, total num timesteps 5763200/10000000, FPS 663.
+
+episode win_rate: 0.4051, incre win rate: 0.5627
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1805/3125 episodes, total num timesteps 5779200/10000000, FPS 662.
+
+episode win_rate: 0.4054, incre win rate: 0.5373
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1810/3125 episodes, total num timesteps 5795200/10000000, FPS 662.
+
+episode win_rate: 0.4058, incre win rate: 0.5593
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1815/3125 episodes, total num timesteps 5811200/10000000, FPS 663.
+
+episode win_rate: 0.4063, incre win rate: 0.5630
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1820/3125 episodes, total num timesteps 5827200/10000000, FPS 663.
+
+episode win_rate: 0.4067, incre win rate: 0.5656
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1825/3125 episodes, total num timesteps 5843200/10000000, FPS 663.
+
+episode win_rate: 0.4070, incre win rate: 0.5386
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1830/3125 episodes, total num timesteps 5859200/10000000, FPS 663.
+
+episode win_rate: 0.4074, incre win rate: 0.5571
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1835/3125 episodes, total num timesteps 5875200/10000000, FPS 663.
+
+episode win_rate: 0.4078, incre win rate: 0.5424
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1840/3125 episodes, total num timesteps 5891200/10000000, FPS 663.
+
+episode win_rate: 0.4081, incre win rate: 0.5305
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1845/3125 episodes, total num timesteps 5907200/10000000, FPS 663.
+
+episode win_rate: 0.4084, incre win rate: 0.5266
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1850/3125 episodes, total num timesteps 5923200/10000000, FPS 663.
+
+episode win_rate: 0.4087, incre win rate: 0.5254
+eval win rate is 0.8125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1855/3125 episodes, total num timesteps 5939200/10000000, FPS 663.
+
+episode win_rate: 0.4090, incre win rate: 0.5293
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1860/3125 episodes, total num timesteps 5955200/10000000, FPS 663.
+
+episode win_rate: 0.4092, incre win rate: 0.5039
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1865/3125 episodes, total num timesteps 5971200/10000000, FPS 663.
+
+episode win_rate: 0.4097, incre win rate: 0.5706
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1870/3125 episodes, total num timesteps 5987200/10000000, FPS 663.
+
+episode win_rate: 0.4100, incre win rate: 0.5265
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1875/3125 episodes, total num timesteps 6003200/10000000, FPS 663.
+
+episode win_rate: 0.4103, incre win rate: 0.5433
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1880/3125 episodes, total num timesteps 6019200/10000000, FPS 663.
+
+episode win_rate: 0.4106, incre win rate: 0.5424
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1885/3125 episodes, total num timesteps 6035200/10000000, FPS 663.
+
+episode win_rate: 0.4111, incre win rate: 0.5802
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1890/3125 episodes, total num timesteps 6051200/10000000, FPS 663.
+
+episode win_rate: 0.4114, incre win rate: 0.5531
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1895/3125 episodes, total num timesteps 6067200/10000000, FPS 663.
+
+episode win_rate: 0.4118, incre win rate: 0.5731
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1900/3125 episodes, total num timesteps 6083200/10000000, FPS 663.
+
+episode win_rate: 0.4122, incre win rate: 0.5672
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1905/3125 episodes, total num timesteps 6099200/10000000, FPS 663.
+
+episode win_rate: 0.4126, incre win rate: 0.5678
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1910/3125 episodes, total num timesteps 6115200/10000000, FPS 663.
+
+episode win_rate: 0.4130, incre win rate: 0.5936
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1915/3125 episodes, total num timesteps 6131200/10000000, FPS 663.
+
+episode win_rate: 0.4134, incre win rate: 0.5689
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1920/3125 episodes, total num timesteps 6147200/10000000, FPS 664.
+
+episode win_rate: 0.4138, incre win rate: 0.5455
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1925/3125 episodes, total num timesteps 6163200/10000000, FPS 664.
+
+episode win_rate: 0.4142, incre win rate: 0.5941
+eval win rate is 0.78125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1930/3125 episodes, total num timesteps 6179200/10000000, FPS 663.
+
+episode win_rate: 0.4146, incre win rate: 0.5600
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1935/3125 episodes, total num timesteps 6195200/10000000, FPS 664.
+
+episode win_rate: 0.4149, incre win rate: 0.5538
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1940/3125 episodes, total num timesteps 6211200/10000000, FPS 664.
+
+episode win_rate: 0.4152, incre win rate: 0.5437
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1945/3125 episodes, total num timesteps 6227200/10000000, FPS 664.
+
+episode win_rate: 0.4156, incre win rate: 0.5819
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1950/3125 episodes, total num timesteps 6243200/10000000, FPS 662.
+
+episode win_rate: 0.4160, incre win rate: 0.5609
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1955/3125 episodes, total num timesteps 6259200/10000000, FPS 662.
+
+episode win_rate: 0.4162, incre win rate: 0.4931
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1960/3125 episodes, total num timesteps 6275200/10000000, FPS 662.
+
+episode win_rate: 0.4165, incre win rate: 0.5595
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1965/3125 episodes, total num timesteps 6291200/10000000, FPS 662.
+
+episode win_rate: 0.4169, incre win rate: 0.5609
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1970/3125 episodes, total num timesteps 6307200/10000000, FPS 662.
+
+episode win_rate: 0.4172, incre win rate: 0.5415
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1975/3125 episodes, total num timesteps 6323200/10000000, FPS 662.
+
+episode win_rate: 0.4176, incre win rate: 0.5881
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1980/3125 episodes, total num timesteps 6339200/10000000, FPS 662.
+
+episode win_rate: 0.4179, incre win rate: 0.5529
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1985/3125 episodes, total num timesteps 6355200/10000000, FPS 662.
+
+episode win_rate: 0.4181, incre win rate: 0.5229
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1990/3125 episodes, total num timesteps 6371200/10000000, FPS 662.
+
+episode win_rate: 0.4184, incre win rate: 0.5352
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 1995/3125 episodes, total num timesteps 6387200/10000000, FPS 662.
+
+episode win_rate: 0.4188, incre win rate: 0.5723
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2000/3125 episodes, total num timesteps 6403200/10000000, FPS 662.
+
+episode win_rate: 0.4191, incre win rate: 0.5647
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2005/3125 episodes, total num timesteps 6419200/10000000, FPS 662.
+
+episode win_rate: 0.4195, incre win rate: 0.5848
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2010/3125 episodes, total num timesteps 6435200/10000000, FPS 662.
+
+episode win_rate: 0.4198, incre win rate: 0.5456
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2015/3125 episodes, total num timesteps 6451200/10000000, FPS 662.
+
+episode win_rate: 0.4201, incre win rate: 0.5545
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2020/3125 episodes, total num timesteps 6467200/10000000, FPS 662.
+
+episode win_rate: 0.4204, incre win rate: 0.5474
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2025/3125 episodes, total num timesteps 6483200/10000000, FPS 663.
+
+episode win_rate: 0.4208, incre win rate: 0.5810
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2030/3125 episodes, total num timesteps 6499200/10000000, FPS 662.
+
+episode win_rate: 0.4211, incre win rate: 0.5397
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2035/3125 episodes, total num timesteps 6515200/10000000, FPS 662.
+
+episode win_rate: 0.4213, incre win rate: 0.5149
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2040/3125 episodes, total num timesteps 6531200/10000000, FPS 662.
+
+episode win_rate: 0.4216, incre win rate: 0.5538
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2045/3125 episodes, total num timesteps 6547200/10000000, FPS 663.
+
+episode win_rate: 0.4219, incre win rate: 0.5217
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2050/3125 episodes, total num timesteps 6563200/10000000, FPS 663.
+
+episode win_rate: 0.4221, incre win rate: 0.5158
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2055/3125 episodes, total num timesteps 6579200/10000000, FPS 663.
+
+episode win_rate: 0.4222, incre win rate: 0.4960
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2060/3125 episodes, total num timesteps 6595200/10000000, FPS 663.
+
+episode win_rate: 0.4225, incre win rate: 0.5217
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2065/3125 episodes, total num timesteps 6611200/10000000, FPS 663.
+
+episode win_rate: 0.4227, incre win rate: 0.5368
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2070/3125 episodes, total num timesteps 6627200/10000000, FPS 663.
+
+episode win_rate: 0.4230, incre win rate: 0.5288
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2075/3125 episodes, total num timesteps 6643200/10000000, FPS 663.
+
+episode win_rate: 0.4233, incre win rate: 0.5797
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2080/3125 episodes, total num timesteps 6659200/10000000, FPS 663.
+
+episode win_rate: 0.4238, incre win rate: 0.6099
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2085/3125 episodes, total num timesteps 6675200/10000000, FPS 663.
+
+episode win_rate: 0.4241, incre win rate: 0.5514
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2090/3125 episodes, total num timesteps 6691200/10000000, FPS 663.
+
+episode win_rate: 0.4244, incre win rate: 0.5748
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2095/3125 episodes, total num timesteps 6707200/10000000, FPS 663.
+
+episode win_rate: 0.4247, incre win rate: 0.5618
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2100/3125 episodes, total num timesteps 6723200/10000000, FPS 663.
+
+episode win_rate: 0.4250, incre win rate: 0.5600
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2105/3125 episodes, total num timesteps 6739200/10000000, FPS 663.
+
+episode win_rate: 0.4252, incre win rate: 0.5250
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2110/3125 episodes, total num timesteps 6755200/10000000, FPS 663.
+
+episode win_rate: 0.4255, incre win rate: 0.5258
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2115/3125 episodes, total num timesteps 6771200/10000000, FPS 661.
+
+episode win_rate: 0.4256, incre win rate: 0.5040
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2120/3125 episodes, total num timesteps 6787200/10000000, FPS 661.
+
+episode win_rate: 0.4260, incre win rate: 0.5655
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2125/3125 episodes, total num timesteps 6803200/10000000, FPS 662.
+
+episode win_rate: 0.4263, incre win rate: 0.5615
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2130/3125 episodes, total num timesteps 6819200/10000000, FPS 662.
+
+episode win_rate: 0.4266, incre win rate: 0.5595
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2135/3125 episodes, total num timesteps 6835200/10000000, FPS 662.
+
+episode win_rate: 0.4269, incre win rate: 0.5560
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2140/3125 episodes, total num timesteps 6851200/10000000, FPS 662.
+
+episode win_rate: 0.4271, incre win rate: 0.5347
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2145/3125 episodes, total num timesteps 6867200/10000000, FPS 662.
+
+episode win_rate: 0.4273, incre win rate: 0.5299
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2150/3125 episodes, total num timesteps 6883200/10000000, FPS 662.
+
+episode win_rate: 0.4276, incre win rate: 0.5449
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2155/3125 episodes, total num timesteps 6899200/10000000, FPS 662.
+
+episode win_rate: 0.4278, incre win rate: 0.5333
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2160/3125 episodes, total num timesteps 6915200/10000000, FPS 662.
+
+episode win_rate: 0.4281, incre win rate: 0.5424
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2165/3125 episodes, total num timesteps 6931200/10000000, FPS 662.
+
+episode win_rate: 0.4282, incre win rate: 0.4980
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2170/3125 episodes, total num timesteps 6947200/10000000, FPS 662.
+
+episode win_rate: 0.4285, incre win rate: 0.5345
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2175/3125 episodes, total num timesteps 6963200/10000000, FPS 662.
+
+episode win_rate: 0.4287, incre win rate: 0.5584
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2180/3125 episodes, total num timesteps 6979200/10000000, FPS 662.
+
+episode win_rate: 0.4290, incre win rate: 0.5392
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2185/3125 episodes, total num timesteps 6995200/10000000, FPS 662.
+
+episode win_rate: 0.4293, incre win rate: 0.5602
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2190/3125 episodes, total num timesteps 7011200/10000000, FPS 662.
+
+episode win_rate: 0.4295, incre win rate: 0.5217
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2195/3125 episodes, total num timesteps 7027200/10000000, FPS 662.
+
+episode win_rate: 0.4297, incre win rate: 0.5308
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2200/3125 episodes, total num timesteps 7043200/10000000, FPS 662.
+
+episode win_rate: 0.4299, incre win rate: 0.5168
+eval win rate is 0.8125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2205/3125 episodes, total num timesteps 7059200/10000000, FPS 662.
+
+episode win_rate: 0.4301, incre win rate: 0.5306
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2210/3125 episodes, total num timesteps 7075200/10000000, FPS 662.
+
+episode win_rate: 0.4304, incre win rate: 0.5604
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2215/3125 episodes, total num timesteps 7091200/10000000, FPS 663.
+
+episode win_rate: 0.4306, incre win rate: 0.5366
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2220/3125 episodes, total num timesteps 7107200/10000000, FPS 663.
+
+episode win_rate: 0.4308, incre win rate: 0.5335
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2225/3125 episodes, total num timesteps 7123200/10000000, FPS 663.
+
+episode win_rate: 0.4312, incre win rate: 0.5805
+eval win rate is 1.0.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2230/3125 episodes, total num timesteps 7139200/10000000, FPS 663.
+
+episode win_rate: 0.4312, incre win rate: 0.4570
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2235/3125 episodes, total num timesteps 7155200/10000000, FPS 663.
+
+episode win_rate: 0.4313, incre win rate: 0.4912
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2240/3125 episodes, total num timesteps 7171200/10000000, FPS 663.
+
+episode win_rate: 0.4316, incre win rate: 0.5277
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2245/3125 episodes, total num timesteps 7187200/10000000, FPS 663.
+
+episode win_rate: 0.4318, incre win rate: 0.5514
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2250/3125 episodes, total num timesteps 7203200/10000000, FPS 663.
+
+episode win_rate: 0.4320, incre win rate: 0.5219
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2255/3125 episodes, total num timesteps 7219200/10000000, FPS 663.
+
+episode win_rate: 0.4324, incre win rate: 0.6036
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2260/3125 episodes, total num timesteps 7235200/10000000, FPS 663.
+
+episode win_rate: 0.4325, incre win rate: 0.4794
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2265/3125 episodes, total num timesteps 7251200/10000000, FPS 663.
+
+episode win_rate: 0.4327, incre win rate: 0.5295
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2270/3125 episodes, total num timesteps 7267200/10000000, FPS 663.
+
+episode win_rate: 0.4328, incre win rate: 0.5091
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2275/3125 episodes, total num timesteps 7283200/10000000, FPS 661.
+
+episode win_rate: 0.4329, incre win rate: 0.4780
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2280/3125 episodes, total num timesteps 7299200/10000000, FPS 661.
+
+episode win_rate: 0.4332, incre win rate: 0.5650
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2285/3125 episodes, total num timesteps 7315200/10000000, FPS 661.
+
+episode win_rate: 0.4333, incre win rate: 0.4970
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2290/3125 episodes, total num timesteps 7331200/10000000, FPS 661.
+
+episode win_rate: 0.4335, incre win rate: 0.5149
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2295/3125 episodes, total num timesteps 7347200/10000000, FPS 661.
+
+episode win_rate: 0.4337, incre win rate: 0.5319
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2300/3125 episodes, total num timesteps 7363200/10000000, FPS 661.
+
+episode win_rate: 0.4339, incre win rate: 0.5444
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2305/3125 episodes, total num timesteps 7379200/10000000, FPS 661.
+
+episode win_rate: 0.4341, incre win rate: 0.5069
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2310/3125 episodes, total num timesteps 7395200/10000000, FPS 661.
+
+episode win_rate: 0.4342, incre win rate: 0.5090
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2315/3125 episodes, total num timesteps 7411200/10000000, FPS 661.
+
+episode win_rate: 0.4344, incre win rate: 0.5089
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2320/3125 episodes, total num timesteps 7427200/10000000, FPS 661.
+
+episode win_rate: 0.4346, incre win rate: 0.5560
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2325/3125 episodes, total num timesteps 7443200/10000000, FPS 662.
+
+episode win_rate: 0.4348, incre win rate: 0.5108
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2330/3125 episodes, total num timesteps 7459200/10000000, FPS 661.
+
+episode win_rate: 0.4350, incre win rate: 0.5492
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2335/3125 episodes, total num timesteps 7475200/10000000, FPS 662.
+
+episode win_rate: 0.4352, incre win rate: 0.5246
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2340/3125 episodes, total num timesteps 7491200/10000000, FPS 662.
+
+episode win_rate: 0.4355, incre win rate: 0.5706
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2345/3125 episodes, total num timesteps 7507200/10000000, FPS 662.
+
+episode win_rate: 0.4358, incre win rate: 0.5996
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2350/3125 episodes, total num timesteps 7523200/10000000, FPS 662.
+
+episode win_rate: 0.4361, incre win rate: 0.5788
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2355/3125 episodes, total num timesteps 7539200/10000000, FPS 662.
+
+episode win_rate: 0.4363, incre win rate: 0.5327
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2360/3125 episodes, total num timesteps 7555200/10000000, FPS 662.
+
+episode win_rate: 0.4365, incre win rate: 0.5248
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2365/3125 episodes, total num timesteps 7571200/10000000, FPS 662.
+
+episode win_rate: 0.4366, incre win rate: 0.4841
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2370/3125 episodes, total num timesteps 7587200/10000000, FPS 662.
+
+episode win_rate: 0.4367, incre win rate: 0.5020
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2375/3125 episodes, total num timesteps 7603200/10000000, FPS 662.
+
+episode win_rate: 0.4369, incre win rate: 0.5089
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2380/3125 episodes, total num timesteps 7619200/10000000, FPS 662.
+
+episode win_rate: 0.4371, incre win rate: 0.5669
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2385/3125 episodes, total num timesteps 7635200/10000000, FPS 662.
+
+episode win_rate: 0.4373, incre win rate: 0.5354
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2390/3125 episodes, total num timesteps 7651200/10000000, FPS 662.
+
+episode win_rate: 0.4377, incre win rate: 0.5976
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2395/3125 episodes, total num timesteps 7667200/10000000, FPS 662.
+
+episode win_rate: 0.4378, incre win rate: 0.5050
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2400/3125 episodes, total num timesteps 7683200/10000000, FPS 662.
+
+episode win_rate: 0.4380, incre win rate: 0.5383
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2405/3125 episodes, total num timesteps 7699200/10000000, FPS 662.
+
+episode win_rate: 0.4381, incre win rate: 0.5000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2410/3125 episodes, total num timesteps 7715200/10000000, FPS 662.
+
+episode win_rate: 0.4383, incre win rate: 0.5267
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2415/3125 episodes, total num timesteps 7731200/10000000, FPS 662.
+
+episode win_rate: 0.4385, incre win rate: 0.5464
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2420/3125 episodes, total num timesteps 7747200/10000000, FPS 662.
+
+episode win_rate: 0.4387, incre win rate: 0.5336
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2425/3125 episodes, total num timesteps 7763200/10000000, FPS 662.
+
+episode win_rate: 0.4390, incre win rate: 0.5805
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2430/3125 episodes, total num timesteps 7779200/10000000, FPS 662.
+
+episode win_rate: 0.4392, incre win rate: 0.5723
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2435/3125 episodes, total num timesteps 7795200/10000000, FPS 662.
+
+episode win_rate: 0.4394, incre win rate: 0.5408
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2440/3125 episodes, total num timesteps 7811200/10000000, FPS 661.
+
+episode win_rate: 0.4396, incre win rate: 0.5369
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2445/3125 episodes, total num timesteps 7827200/10000000, FPS 661.
+
+episode win_rate: 0.4399, incre win rate: 0.5635
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2450/3125 episodes, total num timesteps 7843200/10000000, FPS 661.
+
+episode win_rate: 0.4401, incre win rate: 0.5828
+eval win rate is 0.75.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2455/3125 episodes, total num timesteps 7859200/10000000, FPS 661.
+
+episode win_rate: 0.4404, incre win rate: 0.5833
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2460/3125 episodes, total num timesteps 7875200/10000000, FPS 661.
+
+episode win_rate: 0.4405, incre win rate: 0.5000
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2465/3125 episodes, total num timesteps 7891200/10000000, FPS 661.
+
+episode win_rate: 0.4407, incre win rate: 0.5176
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2470/3125 episodes, total num timesteps 7907200/10000000, FPS 661.
+
+episode win_rate: 0.4409, incre win rate: 0.5287
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2475/3125 episodes, total num timesteps 7923200/10000000, FPS 661.
+
+episode win_rate: 0.4410, incre win rate: 0.5295
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2480/3125 episodes, total num timesteps 7939200/10000000, FPS 661.
+
+episode win_rate: 0.4412, incre win rate: 0.5394
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2485/3125 episodes, total num timesteps 7955200/10000000, FPS 661.
+
+episode win_rate: 0.4414, incre win rate: 0.5476
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2490/3125 episodes, total num timesteps 7971200/10000000, FPS 661.
+
+episode win_rate: 0.4416, incre win rate: 0.5492
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2495/3125 episodes, total num timesteps 7987200/10000000, FPS 661.
+
+episode win_rate: 0.4419, incre win rate: 0.5669
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2500/3125 episodes, total num timesteps 8003200/10000000, FPS 661.
+
+episode win_rate: 0.4421, incre win rate: 0.5429
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2505/3125 episodes, total num timesteps 8019200/10000000, FPS 661.
+
+episode win_rate: 0.4423, incre win rate: 0.5582
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2510/3125 episodes, total num timesteps 8035200/10000000, FPS 661.
+
+episode win_rate: 0.4426, incre win rate: 0.5768
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2515/3125 episodes, total num timesteps 8051200/10000000, FPS 661.
+
+episode win_rate: 0.4426, incre win rate: 0.4777
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2520/3125 episodes, total num timesteps 8067200/10000000, FPS 661.
+
+episode win_rate: 0.4428, incre win rate: 0.5307
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2525/3125 episodes, total num timesteps 8083200/10000000, FPS 661.
+
+episode win_rate: 0.4429, incre win rate: 0.5010
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2530/3125 episodes, total num timesteps 8099200/10000000, FPS 661.
+
+episode win_rate: 0.4432, incre win rate: 0.5740
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2535/3125 episodes, total num timesteps 8115200/10000000, FPS 661.
+
+episode win_rate: 0.4433, incre win rate: 0.5198
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2540/3125 episodes, total num timesteps 8131200/10000000, FPS 662.
+
+episode win_rate: 0.4435, incre win rate: 0.5357
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2545/3125 episodes, total num timesteps 8147200/10000000, FPS 662.
+
+episode win_rate: 0.4436, incre win rate: 0.5226
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2550/3125 episodes, total num timesteps 8163200/10000000, FPS 662.
+
+episode win_rate: 0.4438, incre win rate: 0.5369
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2555/3125 episodes, total num timesteps 8179200/10000000, FPS 661.
+
+episode win_rate: 0.4440, incre win rate: 0.5246
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2560/3125 episodes, total num timesteps 8195200/10000000, FPS 662.
+
+episode win_rate: 0.4441, incre win rate: 0.5394
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2565/3125 episodes, total num timesteps 8211200/10000000, FPS 662.
+
+episode win_rate: 0.4442, incre win rate: 0.4921
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2570/3125 episodes, total num timesteps 8227200/10000000, FPS 662.
+
+episode win_rate: 0.4444, incre win rate: 0.5307
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2575/3125 episodes, total num timesteps 8243200/10000000, FPS 662.
+
+episode win_rate: 0.4446, incre win rate: 0.5366
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2580/3125 episodes, total num timesteps 8259200/10000000, FPS 662.
+
+episode win_rate: 0.4448, incre win rate: 0.5635
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2585/3125 episodes, total num timesteps 8275200/10000000, FPS 662.
+
+episode win_rate: 0.4449, incre win rate: 0.5258
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2590/3125 episodes, total num timesteps 8291200/10000000, FPS 662.
+
+episode win_rate: 0.4451, incre win rate: 0.5547
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2595/3125 episodes, total num timesteps 8307200/10000000, FPS 662.
+
+episode win_rate: 0.4453, incre win rate: 0.5209
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2600/3125 episodes, total num timesteps 8323200/10000000, FPS 661.
+
+episode win_rate: 0.4454, incre win rate: 0.5385
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2605/3125 episodes, total num timesteps 8339200/10000000, FPS 660.
+
+episode win_rate: 0.4455, incre win rate: 0.4891
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2610/3125 episodes, total num timesteps 8355200/10000000, FPS 661.
+
+episode win_rate: 0.4456, incre win rate: 0.4648
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2615/3125 episodes, total num timesteps 8371200/10000000, FPS 661.
+
+episode win_rate: 0.4456, incre win rate: 0.4734
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2620/3125 episodes, total num timesteps 8387200/10000000, FPS 661.
+
+episode win_rate: 0.4457, incre win rate: 0.5128
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2625/3125 episodes, total num timesteps 8403200/10000000, FPS 661.
+
+episode win_rate: 0.4459, incre win rate: 0.5385
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2630/3125 episodes, total num timesteps 8419200/10000000, FPS 661.
+
+episode win_rate: 0.4460, incre win rate: 0.5100
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2635/3125 episodes, total num timesteps 8435200/10000000, FPS 661.
+
+episode win_rate: 0.4462, incre win rate: 0.5415
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2640/3125 episodes, total num timesteps 8451200/10000000, FPS 661.
+
+episode win_rate: 0.4463, incre win rate: 0.5190
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2645/3125 episodes, total num timesteps 8467200/10000000, FPS 661.
+
+episode win_rate: 0.4465, incre win rate: 0.5287
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2650/3125 episodes, total num timesteps 8483200/10000000, FPS 661.
+
+episode win_rate: 0.4467, incre win rate: 0.5523
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2655/3125 episodes, total num timesteps 8499200/10000000, FPS 661.
+
+episode win_rate: 0.4468, incre win rate: 0.5438
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2660/3125 episodes, total num timesteps 8515200/10000000, FPS 661.
+
+episode win_rate: 0.4470, incre win rate: 0.5030
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2665/3125 episodes, total num timesteps 8531200/10000000, FPS 661.
+
+episode win_rate: 0.4471, incre win rate: 0.5229
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2670/3125 episodes, total num timesteps 8547200/10000000, FPS 661.
+
+episode win_rate: 0.4472, incre win rate: 0.5305
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2675/3125 episodes, total num timesteps 8563200/10000000, FPS 661.
+
+episode win_rate: 0.4473, incre win rate: 0.4980
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2680/3125 episodes, total num timesteps 8579200/10000000, FPS 661.
+
+episode win_rate: 0.4474, incre win rate: 0.5128
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2685/3125 episodes, total num timesteps 8595200/10000000, FPS 661.
+
+episode win_rate: 0.4477, incre win rate: 0.5606
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2690/3125 episodes, total num timesteps 8611200/10000000, FPS 661.
+
+episode win_rate: 0.4477, incre win rate: 0.4773
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2695/3125 episodes, total num timesteps 8627200/10000000, FPS 661.
+
+episode win_rate: 0.4479, incre win rate: 0.5412
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2700/3125 episodes, total num timesteps 8643200/10000000, FPS 661.
+
+episode win_rate: 0.4480, incre win rate: 0.5149
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2705/3125 episodes, total num timesteps 8659200/10000000, FPS 661.
+
+episode win_rate: 0.4481, incre win rate: 0.4813
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2710/3125 episodes, total num timesteps 8675200/10000000, FPS 661.
+
+episode win_rate: 0.4482, incre win rate: 0.5476
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2715/3125 episodes, total num timesteps 8691200/10000000, FPS 661.
+
+episode win_rate: 0.4484, incre win rate: 0.5458
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2720/3125 episodes, total num timesteps 8707200/10000000, FPS 662.
+
+episode win_rate: 0.4485, incre win rate: 0.5295
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2725/3125 episodes, total num timesteps 8723200/10000000, FPS 662.
+
+episode win_rate: 0.4488, incre win rate: 0.5794
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2730/3125 episodes, total num timesteps 8739200/10000000, FPS 661.
+
+episode win_rate: 0.4489, incre win rate: 0.5478
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2735/3125 episodes, total num timesteps 8755200/10000000, FPS 662.
+
+episode win_rate: 0.4491, incre win rate: 0.5147
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2740/3125 episodes, total num timesteps 8771200/10000000, FPS 662.
+
+episode win_rate: 0.4493, incre win rate: 0.5615
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2745/3125 episodes, total num timesteps 8787200/10000000, FPS 662.
+
+episode win_rate: 0.4494, incre win rate: 0.5168
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2750/3125 episodes, total num timesteps 8803200/10000000, FPS 662.
+
+episode win_rate: 0.4495, incre win rate: 0.4970
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2755/3125 episodes, total num timesteps 8819200/10000000, FPS 662.
+
+episode win_rate: 0.4495, incre win rate: 0.4931
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2760/3125 episodes, total num timesteps 8835200/10000000, FPS 662.
+
+episode win_rate: 0.4497, incre win rate: 0.5216
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2765/3125 episodes, total num timesteps 8851200/10000000, FPS 660.
+
+episode win_rate: 0.4498, incre win rate: 0.5228
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2770/3125 episodes, total num timesteps 8867200/10000000, FPS 660.
+
+episode win_rate: 0.4499, incre win rate: 0.5109
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2775/3125 episodes, total num timesteps 8883200/10000000, FPS 661.
+
+episode win_rate: 0.4500, incre win rate: 0.5226
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2780/3125 episodes, total num timesteps 8899200/10000000, FPS 660.
+
+episode win_rate: 0.4502, incre win rate: 0.5392
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2785/3125 episodes, total num timesteps 8915200/10000000, FPS 661.
+
+episode win_rate: 0.4503, incre win rate: 0.5108
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2790/3125 episodes, total num timesteps 8931200/10000000, FPS 661.
+
+episode win_rate: 0.4504, incre win rate: 0.5220
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2795/3125 episodes, total num timesteps 8947200/10000000, FPS 661.
+
+episode win_rate: 0.4505, incre win rate: 0.5108
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2800/3125 episodes, total num timesteps 8963200/10000000, FPS 661.
+
+episode win_rate: 0.4506, incre win rate: 0.4792
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2805/3125 episodes, total num timesteps 8979200/10000000, FPS 661.
+
+episode win_rate: 0.4506, incre win rate: 0.4921
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2810/3125 episodes, total num timesteps 8995200/10000000, FPS 661.
+
+episode win_rate: 0.4507, incre win rate: 0.4851
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2815/3125 episodes, total num timesteps 9011200/10000000, FPS 661.
+
+episode win_rate: 0.4508, incre win rate: 0.5099
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2820/3125 episodes, total num timesteps 9027200/10000000, FPS 661.
+
+episode win_rate: 0.4509, incre win rate: 0.5120
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2825/3125 episodes, total num timesteps 9043200/10000000, FPS 661.
+
+episode win_rate: 0.4510, incre win rate: 0.4872
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2830/3125 episodes, total num timesteps 9059200/10000000, FPS 661.
+
+episode win_rate: 0.4510, incre win rate: 0.4843
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2835/3125 episodes, total num timesteps 9075200/10000000, FPS 661.
+
+episode win_rate: 0.4511, incre win rate: 0.5180
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2840/3125 episodes, total num timesteps 9091200/10000000, FPS 661.
+
+episode win_rate: 0.4513, incre win rate: 0.5258
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2845/3125 episodes, total num timesteps 9107200/10000000, FPS 661.
+
+episode win_rate: 0.4514, incre win rate: 0.5209
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2850/3125 episodes, total num timesteps 9123200/10000000, FPS 661.
+
+episode win_rate: 0.4515, incre win rate: 0.5375
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2855/3125 episodes, total num timesteps 9139200/10000000, FPS 661.
+
+episode win_rate: 0.4516, incre win rate: 0.4970
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2860/3125 episodes, total num timesteps 9155200/10000000, FPS 661.
+
+episode win_rate: 0.4517, incre win rate: 0.5188
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2865/3125 episodes, total num timesteps 9171200/10000000, FPS 661.
+
+episode win_rate: 0.4517, incre win rate: 0.4508
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2870/3125 episodes, total num timesteps 9187200/10000000, FPS 661.
+
+episode win_rate: 0.4518, incre win rate: 0.4970
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2875/3125 episodes, total num timesteps 9203200/10000000, FPS 661.
+
+episode win_rate: 0.4518, incre win rate: 0.4717
+eval win rate is 0.875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2880/3125 episodes, total num timesteps 9219200/10000000, FPS 661.
+
+episode win_rate: 0.4519, incre win rate: 0.5118
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2885/3125 episodes, total num timesteps 9235200/10000000, FPS 661.
+
+episode win_rate: 0.4521, incre win rate: 0.5465
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2890/3125 episodes, total num timesteps 9251200/10000000, FPS 661.
+
+episode win_rate: 0.4522, incre win rate: 0.5276
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2895/3125 episodes, total num timesteps 9267200/10000000, FPS 661.
+
+episode win_rate: 0.4523, incre win rate: 0.5059
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2900/3125 episodes, total num timesteps 9283200/10000000, FPS 661.
+
+episode win_rate: 0.4524, incre win rate: 0.4882
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2905/3125 episodes, total num timesteps 9299200/10000000, FPS 661.
+
+episode win_rate: 0.4525, incre win rate: 0.5197
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2910/3125 episodes, total num timesteps 9315200/10000000, FPS 661.
+
+episode win_rate: 0.4526, incre win rate: 0.5237
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2915/3125 episodes, total num timesteps 9331200/10000000, FPS 661.
+
+episode win_rate: 0.4527, incre win rate: 0.5392
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2920/3125 episodes, total num timesteps 9347200/10000000, FPS 661.
+
+episode win_rate: 0.4528, incre win rate: 0.4824
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2925/3125 episodes, total num timesteps 9363200/10000000, FPS 660.
+
+episode win_rate: 0.4529, incre win rate: 0.4990
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2930/3125 episodes, total num timesteps 9379200/10000000, FPS 660.
+
+episode win_rate: 0.4529, incre win rate: 0.4538
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2935/3125 episodes, total num timesteps 9395200/10000000, FPS 660.
+
+episode win_rate: 0.4530, incre win rate: 0.5256
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2940/3125 episodes, total num timesteps 9411200/10000000, FPS 660.
+
+episode win_rate: 0.4531, incre win rate: 0.5435
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2945/3125 episodes, total num timesteps 9427200/10000000, FPS 660.
+
+episode win_rate: 0.4533, incre win rate: 0.5349
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2950/3125 episodes, total num timesteps 9443200/10000000, FPS 660.
+
+episode win_rate: 0.4534, incre win rate: 0.5236
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2955/3125 episodes, total num timesteps 9459200/10000000, FPS 660.
+
+episode win_rate: 0.4535, incre win rate: 0.5487
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2960/3125 episodes, total num timesteps 9475200/10000000, FPS 660.
+
+episode win_rate: 0.4536, incre win rate: 0.4852
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2965/3125 episodes, total num timesteps 9491200/10000000, FPS 660.
+
+episode win_rate: 0.4537, incre win rate: 0.5353
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2970/3125 episodes, total num timesteps 9507200/10000000, FPS 660.
+
+episode win_rate: 0.4538, incre win rate: 0.5089
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2975/3125 episodes, total num timesteps 9523200/10000000, FPS 660.
+
+episode win_rate: 0.4539, incre win rate: 0.4990
+eval win rate is 0.84375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2980/3125 episodes, total num timesteps 9539200/10000000, FPS 660.
+
+episode win_rate: 0.4540, incre win rate: 0.5465
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2985/3125 episodes, total num timesteps 9555200/10000000, FPS 660.
+
+episode win_rate: 0.4542, incre win rate: 0.5412
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2990/3125 episodes, total num timesteps 9571200/10000000, FPS 660.
+
+episode win_rate: 0.4543, incre win rate: 0.5178
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 2995/3125 episodes, total num timesteps 9587200/10000000, FPS 660.
+
+episode win_rate: 0.4543, incre win rate: 0.4755
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3000/3125 episodes, total num timesteps 9603200/10000000, FPS 660.
+
+episode win_rate: 0.4543, incre win rate: 0.4689
+eval win rate is 0.9375.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3005/3125 episodes, total num timesteps 9619200/10000000, FPS 660.
+
+episode win_rate: 0.4545, incre win rate: 0.5324
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3010/3125 episodes, total num timesteps 9635200/10000000, FPS 660.
+
+episode win_rate: 0.4545, incre win rate: 0.4609
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3015/3125 episodes, total num timesteps 9651200/10000000, FPS 660.
+
+episode win_rate: 0.4546, incre win rate: 0.5345
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3020/3125 episodes, total num timesteps 9667200/10000000, FPS 660.
+
+episode win_rate: 0.4547, incre win rate: 0.4931
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3025/3125 episodes, total num timesteps 9683200/10000000, FPS 661.
+
+episode win_rate: 0.4547, incre win rate: 0.4533
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3030/3125 episodes, total num timesteps 9699200/10000000, FPS 660.
+
+episode win_rate: 0.4548, incre win rate: 0.5285
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3035/3125 episodes, total num timesteps 9715200/10000000, FPS 660.
+
+episode win_rate: 0.4548, incre win rate: 0.4852
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3040/3125 episodes, total num timesteps 9731200/10000000, FPS 661.
+
+episode win_rate: 0.4550, incre win rate: 0.5363
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3045/3125 episodes, total num timesteps 9747200/10000000, FPS 661.
+
+episode win_rate: 0.4551, incre win rate: 0.5365
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3050/3125 episodes, total num timesteps 9763200/10000000, FPS 661.
+
+episode win_rate: 0.4552, incre win rate: 0.5395
+eval win rate is 0.90625.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3055/3125 episodes, total num timesteps 9779200/10000000, FPS 660.
+
+episode win_rate: 0.4553, incre win rate: 0.4824
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3060/3125 episodes, total num timesteps 9795200/10000000, FPS 661.
+
+episode win_rate: 0.4554, incre win rate: 0.5336
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3065/3125 episodes, total num timesteps 9811200/10000000, FPS 661.
+
+episode win_rate: 0.4556, incre win rate: 0.5843
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3070/3125 episodes, total num timesteps 9827200/10000000, FPS 661.
+
+episode win_rate: 0.4557, incre win rate: 0.5119
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3075/3125 episodes, total num timesteps 9843200/10000000, FPS 661.
+
+episode win_rate: 0.4558, incre win rate: 0.5315
+eval win rate is 0.78125.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3080/3125 episodes, total num timesteps 9859200/10000000, FPS 661.
+
+episode win_rate: 0.4559, incre win rate: 0.5088
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3085/3125 episodes, total num timesteps 9875200/10000000, FPS 661.
+
+episode win_rate: 0.4560, incre win rate: 0.5217
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3090/3125 episodes, total num timesteps 9891200/10000000, FPS 659.
+
+episode win_rate: 0.4560, incre win rate: 0.4429
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3095/3125 episodes, total num timesteps 9907200/10000000, FPS 659.
+
+episode win_rate: 0.4560, incre win rate: 0.4883
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3100/3125 episodes, total num timesteps 9923200/10000000, FPS 659.
+
+episode win_rate: 0.4562, incre win rate: 0.5383
+eval win rate is 0.96875.
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3105/3125 episodes, total num timesteps 9939200/10000000, FPS 659.
+
+episode win_rate: 0.4562, incre win rate: 0.4990
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3110/3125 episodes, total num timesteps 9955200/10000000, FPS 659.
+
+episode win_rate: 0.4563, incre win rate: 0.4990
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3115/3125 episodes, total num timesteps 9971200/10000000, FPS 659.
+
+episode win_rate: 0.4563, incre win rate: 0.4804
+
+ Map 8m_vs_9m Algo mappo Exp baseline updates 3120/3125 episodes, total num timesteps 9987200/10000000, FPS 659.
+
+episode win_rate: 0.4564, incre win rate: 0.5118

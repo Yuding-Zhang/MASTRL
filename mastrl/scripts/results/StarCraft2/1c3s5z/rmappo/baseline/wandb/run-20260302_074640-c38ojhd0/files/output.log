@@ -1,0 +1,2628 @@
+obs_space:  [[310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]], [310, [8, 24], [9, 9], [1, 4], [1, 33]]]
+share_obs_space:  [[363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]], [363, [8, 27], [9, 12], [1, 4], [1, 35]]]
+act_space:  [Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15), Discrete(15)]
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 0/3125 episodes, total num timesteps 3200/10000000, FPS 489.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 5/3125 episodes, total num timesteps 19200/10000000, FPS 293.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 10/3125 episodes, total num timesteps 35200/10000000, FPS 358.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 15/3125 episodes, total num timesteps 51200/10000000, FPS 390.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 20/3125 episodes, total num timesteps 67200/10000000, FPS 408.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 25/3125 episodes, total num timesteps 83200/10000000, FPS 420.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 30/3125 episodes, total num timesteps 99200/10000000, FPS 409.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 35/3125 episodes, total num timesteps 115200/10000000, FPS 420.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 40/3125 episodes, total num timesteps 131200/10000000, FPS 426.
+
+episode win_rate: 0.0000, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 45/3125 episodes, total num timesteps 147200/10000000, FPS 432.
+
+episode win_rate: 0.0003, incre win rate: 0.0033
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 50/3125 episodes, total num timesteps 163200/10000000, FPS 437.
+
+episode win_rate: 0.0009, incre win rate: 0.0066
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 55/3125 episodes, total num timesteps 179200/10000000, FPS 427.
+
+episode win_rate: 0.0014, incre win rate: 0.0066
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 60/3125 episodes, total num timesteps 195200/10000000, FPS 432.
+
+episode win_rate: 0.0019, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 65/3125 episodes, total num timesteps 211200/10000000, FPS 435.
+
+episode win_rate: 0.0017, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 70/3125 episodes, total num timesteps 227200/10000000, FPS 439.
+
+episode win_rate: 0.0021, incre win rate: 0.0071
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 75/3125 episodes, total num timesteps 243200/10000000, FPS 442.
+
+episode win_rate: 0.0022, incre win rate: 0.0034
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 80/3125 episodes, total num timesteps 259200/10000000, FPS 436.
+
+episode win_rate: 0.0031, incre win rate: 0.0178
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 85/3125 episodes, total num timesteps 275200/10000000, FPS 438.
+
+episode win_rate: 0.0035, incre win rate: 0.0107
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 90/3125 episodes, total num timesteps 291200/10000000, FPS 441.
+
+episode win_rate: 0.0044, incre win rate: 0.0214
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 95/3125 episodes, total num timesteps 307200/10000000, FPS 443.
+
+episode win_rate: 0.0044, incre win rate: 0.0036
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 100/3125 episodes, total num timesteps 323200/10000000, FPS 445.
+
+episode win_rate: 0.0048, incre win rate: 0.0149
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 105/3125 episodes, total num timesteps 339200/10000000, FPS 439.
+
+episode win_rate: 0.0053, incre win rate: 0.0157
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 110/3125 episodes, total num timesteps 355200/10000000, FPS 441.
+
+episode win_rate: 0.0052, incre win rate: 0.0041
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 115/3125 episodes, total num timesteps 371200/10000000, FPS 444.
+
+episode win_rate: 0.0052, incre win rate: 0.0041
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 120/3125 episodes, total num timesteps 387200/10000000, FPS 446.
+
+episode win_rate: 0.0056, incre win rate: 0.0175
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 125/3125 episodes, total num timesteps 403200/10000000, FPS 448.
+
+episode win_rate: 0.0061, incre win rate: 0.0211
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 130/3125 episodes, total num timesteps 419200/10000000, FPS 443.
+
+episode win_rate: 0.0062, incre win rate: 0.0088
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 135/3125 episodes, total num timesteps 435200/10000000, FPS 445.
+
+episode win_rate: 0.0061, incre win rate: 0.0044
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 140/3125 episodes, total num timesteps 451200/10000000, FPS 446.
+
+episode win_rate: 0.0067, incre win rate: 0.0271
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 145/3125 episodes, total num timesteps 467200/10000000, FPS 448.
+
+episode win_rate: 0.0072, incre win rate: 0.0249
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 150/3125 episodes, total num timesteps 483200/10000000, FPS 450.
+
+episode win_rate: 0.0075, incre win rate: 0.0182
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 155/3125 episodes, total num timesteps 499200/10000000, FPS 445.
+
+episode win_rate: 0.0081, incre win rate: 0.0311
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 160/3125 episodes, total num timesteps 515200/10000000, FPS 446.
+
+episode win_rate: 0.0085, incre win rate: 0.0229
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 165/3125 episodes, total num timesteps 531200/10000000, FPS 438.
+
+episode win_rate: 0.0091, incre win rate: 0.0357
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 170/3125 episodes, total num timesteps 547200/10000000, FPS 439.
+
+episode win_rate: 0.0092, incre win rate: 0.0140
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 175/3125 episodes, total num timesteps 563200/10000000, FPS 441.
+
+episode win_rate: 0.0095, incre win rate: 0.0281
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 180/3125 episodes, total num timesteps 579200/10000000, FPS 437.
+
+episode win_rate: 0.0101, incre win rate: 0.0372
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 185/3125 episodes, total num timesteps 595200/10000000, FPS 438.
+
+episode win_rate: 0.0109, incre win rate: 0.0518
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 190/3125 episodes, total num timesteps 611200/10000000, FPS 440.
+
+episode win_rate: 0.0113, incre win rate: 0.0364
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 195/3125 episodes, total num timesteps 627200/10000000, FPS 441.
+
+episode win_rate: 0.0116, incre win rate: 0.0301
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 200/3125 episodes, total num timesteps 643200/10000000, FPS 443.
+
+episode win_rate: 0.0115, incre win rate: 0.0056
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 205/3125 episodes, total num timesteps 659200/10000000, FPS 440.
+
+episode win_rate: 0.0118, incre win rate: 0.0272
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 210/3125 episodes, total num timesteps 675200/10000000, FPS 442.
+
+episode win_rate: 0.0123, incre win rate: 0.0437
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 215/3125 episodes, total num timesteps 691200/10000000, FPS 443.
+
+episode win_rate: 0.0123, incre win rate: 0.0109
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 220/3125 episodes, total num timesteps 707200/10000000, FPS 444.
+
+episode win_rate: 0.0126, incre win rate: 0.0357
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 225/3125 episodes, total num timesteps 723200/10000000, FPS 445.
+
+episode win_rate: 0.0128, incre win rate: 0.0225
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 230/3125 episodes, total num timesteps 739200/10000000, FPS 442.
+
+episode win_rate: 0.0130, incre win rate: 0.0273
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 235/3125 episodes, total num timesteps 755200/10000000, FPS 443.
+
+episode win_rate: 0.0132, incre win rate: 0.0241
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 240/3125 episodes, total num timesteps 771200/10000000, FPS 444.
+
+episode win_rate: 0.0138, incre win rate: 0.0503
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 245/3125 episodes, total num timesteps 787200/10000000, FPS 445.
+
+episode win_rate: 0.0143, incre win rate: 0.0479
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 250/3125 episodes, total num timesteps 803200/10000000, FPS 447.
+
+episode win_rate: 0.0148, incre win rate: 0.0484
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 255/3125 episodes, total num timesteps 819200/10000000, FPS 444.
+
+episode win_rate: 0.0153, incre win rate: 0.0495
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 260/3125 episodes, total num timesteps 835200/10000000, FPS 444.
+
+episode win_rate: 0.0154, incre win rate: 0.0213
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 265/3125 episodes, total num timesteps 851200/10000000, FPS 444.
+
+episode win_rate: 0.0159, incre win rate: 0.0503
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 270/3125 episodes, total num timesteps 867200/10000000, FPS 435.
+
+episode win_rate: 0.0161, incre win rate: 0.0337
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 275/3125 episodes, total num timesteps 883200/10000000, FPS 435.
+
+episode win_rate: 0.0164, incre win rate: 0.0317
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 280/3125 episodes, total num timesteps 899200/10000000, FPS 433.
+
+episode win_rate: 0.0169, incre win rate: 0.0515
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 285/3125 episodes, total num timesteps 915200/10000000, FPS 433.
+
+episode win_rate: 0.0174, incre win rate: 0.0463
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 290/3125 episodes, total num timesteps 931200/10000000, FPS 434.
+
+episode win_rate: 0.0175, incre win rate: 0.0243
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 295/3125 episodes, total num timesteps 947200/10000000, FPS 435.
+
+episode win_rate: 0.0177, incre win rate: 0.0316
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 300/3125 episodes, total num timesteps 963200/10000000, FPS 435.
+
+episode win_rate: 0.0183, incre win rate: 0.0600
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 305/3125 episodes, total num timesteps 979200/10000000, FPS 433.
+
+episode win_rate: 0.0189, incre win rate: 0.0650
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 310/3125 episodes, total num timesteps 995200/10000000, FPS 433.
+
+episode win_rate: 0.0193, incre win rate: 0.0450
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 315/3125 episodes, total num timesteps 1011200/10000000, FPS 434.
+
+episode win_rate: 0.0200, incre win rate: 0.0726
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 320/3125 episodes, total num timesteps 1027200/10000000, FPS 435.
+
+episode win_rate: 0.0199, incre win rate: 0.0170
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 325/3125 episodes, total num timesteps 1043200/10000000, FPS 435.
+
+episode win_rate: 0.0200, incre win rate: 0.0305
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 330/3125 episodes, total num timesteps 1059200/10000000, FPS 427.
+
+episode win_rate: 0.0204, incre win rate: 0.0545
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 335/3125 episodes, total num timesteps 1075200/10000000, FPS 428.
+
+episode win_rate: 0.0207, incre win rate: 0.0510
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 340/3125 episodes, total num timesteps 1091200/10000000, FPS 429.
+
+episode win_rate: 0.0210, incre win rate: 0.0427
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 345/3125 episodes, total num timesteps 1107200/10000000, FPS 429.
+
+episode win_rate: 0.0212, incre win rate: 0.0395
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 350/3125 episodes, total num timesteps 1123200/10000000, FPS 430.
+
+episode win_rate: 0.0212, incre win rate: 0.0235
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 355/3125 episodes, total num timesteps 1139200/10000000, FPS 428.
+
+episode win_rate: 0.0216, incre win rate: 0.0542
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 360/3125 episodes, total num timesteps 1155200/10000000, FPS 429.
+
+episode win_rate: 0.0217, incre win rate: 0.0364
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 365/3125 episodes, total num timesteps 1171200/10000000, FPS 429.
+
+episode win_rate: 0.0222, incre win rate: 0.0632
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 370/3125 episodes, total num timesteps 1187200/10000000, FPS 430.
+
+episode win_rate: 0.0223, incre win rate: 0.0377
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 375/3125 episodes, total num timesteps 1203200/10000000, FPS 431.
+
+episode win_rate: 0.0224, incre win rate: 0.0337
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 380/3125 episodes, total num timesteps 1219200/10000000, FPS 430.
+
+episode win_rate: 0.0230, incre win rate: 0.0833
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 385/3125 episodes, total num timesteps 1235200/10000000, FPS 431.
+
+episode win_rate: 0.0235, incre win rate: 0.0723
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 390/3125 episodes, total num timesteps 1251200/10000000, FPS 431.
+
+episode win_rate: 0.0238, incre win rate: 0.0588
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 395/3125 episodes, total num timesteps 1267200/10000000, FPS 432.
+
+episode win_rate: 0.0240, incre win rate: 0.0473
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 400/3125 episodes, total num timesteps 1283200/10000000, FPS 433.
+
+episode win_rate: 0.0244, incre win rate: 0.0655
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 405/3125 episodes, total num timesteps 1299200/10000000, FPS 431.
+
+episode win_rate: 0.0246, incre win rate: 0.0395
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 410/3125 episodes, total num timesteps 1315200/10000000, FPS 431.
+
+episode win_rate: 0.0247, incre win rate: 0.0417
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 415/3125 episodes, total num timesteps 1331200/10000000, FPS 432.
+
+episode win_rate: 0.0249, incre win rate: 0.0447
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 420/3125 episodes, total num timesteps 1347200/10000000, FPS 432.
+
+episode win_rate: 0.0254, incre win rate: 0.0788
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 425/3125 episodes, total num timesteps 1363200/10000000, FPS 433.
+
+episode win_rate: 0.0255, incre win rate: 0.0316
+eval win rate is 0.15625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 430/3125 episodes, total num timesteps 1379200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0595
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 435/3125 episodes, total num timesteps 1395200/10000000, FPS 432.
+
+episode win_rate: 0.0262, incre win rate: 0.0570
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 440/3125 episodes, total num timesteps 1411200/10000000, FPS 432.
+
+episode win_rate: 0.0266, incre win rate: 0.0753
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 445/3125 episodes, total num timesteps 1427200/10000000, FPS 432.
+
+episode win_rate: 0.0274, incre win rate: 0.1005
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 450/3125 episodes, total num timesteps 1443200/10000000, FPS 433.
+
+episode win_rate: 0.0277, incre win rate: 0.0604
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 455/3125 episodes, total num timesteps 1459200/10000000, FPS 431.
+
+episode win_rate: 0.0280, incre win rate: 0.0546
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 460/3125 episodes, total num timesteps 1475200/10000000, FPS 432.
+
+episode win_rate: 0.0281, incre win rate: 0.0460
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 465/3125 episodes, total num timesteps 1491200/10000000, FPS 432.
+
+episode win_rate: 0.0284, incre win rate: 0.0629
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 470/3125 episodes, total num timesteps 1507200/10000000, FPS 433.
+
+episode win_rate: 0.0288, incre win rate: 0.0663
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 475/3125 episodes, total num timesteps 1523200/10000000, FPS 433.
+
+episode win_rate: 0.0289, incre win rate: 0.0385
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 480/3125 episodes, total num timesteps 1539200/10000000, FPS 432.
+
+episode win_rate: 0.0289, incre win rate: 0.0378
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 485/3125 episodes, total num timesteps 1555200/10000000, FPS 432.
+
+episode win_rate: 0.0289, incre win rate: 0.0229
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 490/3125 episodes, total num timesteps 1571200/10000000, FPS 429.
+
+episode win_rate: 0.0291, incre win rate: 0.0516
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 495/3125 episodes, total num timesteps 1587200/10000000, FPS 429.
+
+episode win_rate: 0.0290, incre win rate: 0.0250
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 500/3125 episodes, total num timesteps 1603200/10000000, FPS 430.
+
+episode win_rate: 0.0292, incre win rate: 0.0506
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 505/3125 episodes, total num timesteps 1619200/10000000, FPS 428.
+
+episode win_rate: 0.0292, incre win rate: 0.0303
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 510/3125 episodes, total num timesteps 1635200/10000000, FPS 429.
+
+episode win_rate: 0.0291, incre win rate: 0.0186
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 515/3125 episodes, total num timesteps 1651200/10000000, FPS 430.
+
+episode win_rate: 0.0290, incre win rate: 0.0185
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 520/3125 episodes, total num timesteps 1667200/10000000, FPS 430.
+
+episode win_rate: 0.0291, incre win rate: 0.0408
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 525/3125 episodes, total num timesteps 1683200/10000000, FPS 431.
+
+episode win_rate: 0.0291, incre win rate: 0.0207
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 530/3125 episodes, total num timesteps 1699200/10000000, FPS 429.
+
+episode win_rate: 0.0290, incre win rate: 0.0258
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 535/3125 episodes, total num timesteps 1715200/10000000, FPS 429.
+
+episode win_rate: 0.0290, incre win rate: 0.0204
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 540/3125 episodes, total num timesteps 1731200/10000000, FPS 430.
+
+episode win_rate: 0.0288, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 545/3125 episodes, total num timesteps 1747200/10000000, FPS 430.
+
+episode win_rate: 0.0289, incre win rate: 0.0446
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 550/3125 episodes, total num timesteps 1763200/10000000, FPS 431.
+
+episode win_rate: 0.0288, incre win rate: 0.0062
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 555/3125 episodes, total num timesteps 1779200/10000000, FPS 429.
+
+episode win_rate: 0.0288, incre win rate: 0.0370
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 560/3125 episodes, total num timesteps 1795200/10000000, FPS 430.
+
+episode win_rate: 0.0289, incre win rate: 0.0323
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 565/3125 episodes, total num timesteps 1811200/10000000, FPS 430.
+
+episode win_rate: 0.0288, incre win rate: 0.0267
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 570/3125 episodes, total num timesteps 1827200/10000000, FPS 431.
+
+episode win_rate: 0.0287, incre win rate: 0.0132
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 575/3125 episodes, total num timesteps 1843200/10000000, FPS 431.
+
+episode win_rate: 0.0288, incre win rate: 0.0327
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 580/3125 episodes, total num timesteps 1859200/10000000, FPS 430.
+
+episode win_rate: 0.0286, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 585/3125 episodes, total num timesteps 1875200/10000000, FPS 430.
+
+episode win_rate: 0.0286, incre win rate: 0.0276
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 590/3125 episodes, total num timesteps 1891200/10000000, FPS 431.
+
+episode win_rate: 0.0286, incre win rate: 0.0294
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 595/3125 episodes, total num timesteps 1907200/10000000, FPS 431.
+
+episode win_rate: 0.0285, incre win rate: 0.0147
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 600/3125 episodes, total num timesteps 1923200/10000000, FPS 432.
+
+episode win_rate: 0.0286, incre win rate: 0.0414
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 605/3125 episodes, total num timesteps 1939200/10000000, FPS 430.
+
+episode win_rate: 0.0286, incre win rate: 0.0286
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 610/3125 episodes, total num timesteps 1955200/10000000, FPS 430.
+
+episode win_rate: 0.0286, incre win rate: 0.0280
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 615/3125 episodes, total num timesteps 1971200/10000000, FPS 431.
+
+episode win_rate: 0.0286, incre win rate: 0.0213
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 620/3125 episodes, total num timesteps 1987200/10000000, FPS 431.
+
+episode win_rate: 0.0285, incre win rate: 0.0137
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 625/3125 episodes, total num timesteps 2003200/10000000, FPS 432.
+
+episode win_rate: 0.0284, incre win rate: 0.0070
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 630/3125 episodes, total num timesteps 2019200/10000000, FPS 430.
+
+episode win_rate: 0.0283, incre win rate: 0.0214
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 635/3125 episodes, total num timesteps 2035200/10000000, FPS 431.
+
+episode win_rate: 0.0284, incre win rate: 0.0342
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 640/3125 episodes, total num timesteps 2051200/10000000, FPS 431.
+
+episode win_rate: 0.0284, incre win rate: 0.0370
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 645/3125 episodes, total num timesteps 2067200/10000000, FPS 432.
+
+episode win_rate: 0.0284, incre win rate: 0.0299
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 650/3125 episodes, total num timesteps 2083200/10000000, FPS 432.
+
+episode win_rate: 0.0283, incre win rate: 0.0071
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 655/3125 episodes, total num timesteps 2099200/10000000, FPS 429.
+
+episode win_rate: 0.0283, incre win rate: 0.0252
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 660/3125 episodes, total num timesteps 2115200/10000000, FPS 429.
+
+episode win_rate: 0.0282, incre win rate: 0.0078
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 665/3125 episodes, total num timesteps 2131200/10000000, FPS 430.
+
+episode win_rate: 0.0282, incre win rate: 0.0227
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 670/3125 episodes, total num timesteps 2147200/10000000, FPS 430.
+
+episode win_rate: 0.0280, incre win rate: 0.0075
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 675/3125 episodes, total num timesteps 2163200/10000000, FPS 430.
+
+episode win_rate: 0.0279, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 680/3125 episodes, total num timesteps 2179200/10000000, FPS 429.
+
+episode win_rate: 0.0278, incre win rate: 0.0071
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 685/3125 episodes, total num timesteps 2195200/10000000, FPS 430.
+
+episode win_rate: 0.0277, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 690/3125 episodes, total num timesteps 2211200/10000000, FPS 430.
+
+episode win_rate: 0.0275, incre win rate: 0.0071
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 695/3125 episodes, total num timesteps 2227200/10000000, FPS 430.
+
+episode win_rate: 0.0275, incre win rate: 0.0141
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 700/3125 episodes, total num timesteps 2243200/10000000, FPS 431.
+
+episode win_rate: 0.0274, incre win rate: 0.0066
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 705/3125 episodes, total num timesteps 2259200/10000000, FPS 430.
+
+episode win_rate: 0.0272, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 710/3125 episodes, total num timesteps 2275200/10000000, FPS 430.
+
+episode win_rate: 0.0271, incre win rate: 0.0137
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 715/3125 episodes, total num timesteps 2291200/10000000, FPS 430.
+
+episode win_rate: 0.0270, incre win rate: 0.0080
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 720/3125 episodes, total num timesteps 2307200/10000000, FPS 431.
+
+episode win_rate: 0.0270, incre win rate: 0.0142
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 725/3125 episodes, total num timesteps 2323200/10000000, FPS 431.
+
+episode win_rate: 0.0268, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 730/3125 episodes, total num timesteps 2339200/10000000, FPS 430.
+
+episode win_rate: 0.0267, incre win rate: 0.0076
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 735/3125 episodes, total num timesteps 2355200/10000000, FPS 431.
+
+episode win_rate: 0.0266, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 740/3125 episodes, total num timesteps 2371200/10000000, FPS 431.
+
+episode win_rate: 0.0266, incre win rate: 0.0284
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 745/3125 episodes, total num timesteps 2387200/10000000, FPS 432.
+
+episode win_rate: 0.0265, incre win rate: 0.0123
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 750/3125 episodes, total num timesteps 2403200/10000000, FPS 432.
+
+episode win_rate: 0.0264, incre win rate: 0.0073
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 755/3125 episodes, total num timesteps 2419200/10000000, FPS 431.
+
+episode win_rate: 0.0263, incre win rate: 0.0061
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 760/3125 episodes, total num timesteps 2435200/10000000, FPS 431.
+
+episode win_rate: 0.0263, incre win rate: 0.0141
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 765/3125 episodes, total num timesteps 2451200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0070
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 770/3125 episodes, total num timesteps 2467200/10000000, FPS 432.
+
+episode win_rate: 0.0260, incre win rate: 0.0065
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 775/3125 episodes, total num timesteps 2483200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0066
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 780/3125 episodes, total num timesteps 2499200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 785/3125 episodes, total num timesteps 2515200/10000000, FPS 432.
+
+episode win_rate: 0.0258, incre win rate: 0.0137
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 790/3125 episodes, total num timesteps 2531200/10000000, FPS 432.
+
+episode win_rate: 0.0257, incre win rate: 0.0075
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 795/3125 episodes, total num timesteps 2547200/10000000, FPS 432.
+
+episode win_rate: 0.0257, incre win rate: 0.0219
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 800/3125 episodes, total num timesteps 2563200/10000000, FPS 433.
+
+episode win_rate: 0.0257, incre win rate: 0.0276
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 805/3125 episodes, total num timesteps 2579200/10000000, FPS 432.
+
+episode win_rate: 0.0257, incre win rate: 0.0210
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 810/3125 episodes, total num timesteps 2595200/10000000, FPS 432.
+
+episode win_rate: 0.0256, incre win rate: 0.0082
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 815/3125 episodes, total num timesteps 2611200/10000000, FPS 432.
+
+episode win_rate: 0.0256, incre win rate: 0.0227
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 820/3125 episodes, total num timesteps 2627200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0083
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 825/3125 episodes, total num timesteps 2643200/10000000, FPS 431.
+
+episode win_rate: 0.0254, incre win rate: 0.0074
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 830/3125 episodes, total num timesteps 2659200/10000000, FPS 430.
+
+episode win_rate: 0.0254, incre win rate: 0.0154
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 835/3125 episodes, total num timesteps 2675200/10000000, FPS 430.
+
+episode win_rate: 0.0253, incre win rate: 0.0076
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 840/3125 episodes, total num timesteps 2691200/10000000, FPS 431.
+
+episode win_rate: 0.0253, incre win rate: 0.0217
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 845/3125 episodes, total num timesteps 2707200/10000000, FPS 431.
+
+episode win_rate: 0.0252, incre win rate: 0.0071
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 850/3125 episodes, total num timesteps 2723200/10000000, FPS 431.
+
+episode win_rate: 0.0251, incre win rate: 0.0076
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 855/3125 episodes, total num timesteps 2739200/10000000, FPS 430.
+
+episode win_rate: 0.0251, incre win rate: 0.0082
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 860/3125 episodes, total num timesteps 2755200/10000000, FPS 431.
+
+episode win_rate: 0.0250, incre win rate: 0.0210
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 865/3125 episodes, total num timesteps 2771200/10000000, FPS 431.
+
+episode win_rate: 0.0250, incre win rate: 0.0159
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 870/3125 episodes, total num timesteps 2787200/10000000, FPS 431.
+
+episode win_rate: 0.0249, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 875/3125 episodes, total num timesteps 2803200/10000000, FPS 432.
+
+episode win_rate: 0.0249, incre win rate: 0.0217
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 880/3125 episodes, total num timesteps 2819200/10000000, FPS 431.
+
+episode win_rate: 0.0249, incre win rate: 0.0210
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 885/3125 episodes, total num timesteps 2835200/10000000, FPS 431.
+
+episode win_rate: 0.0249, incre win rate: 0.0222
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 890/3125 episodes, total num timesteps 2851200/10000000, FPS 431.
+
+episode win_rate: 0.0248, incre win rate: 0.0078
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 895/3125 episodes, total num timesteps 2867200/10000000, FPS 432.
+
+episode win_rate: 0.0247, incre win rate: 0.0141
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 900/3125 episodes, total num timesteps 2883200/10000000, FPS 432.
+
+episode win_rate: 0.0247, incre win rate: 0.0211
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 905/3125 episodes, total num timesteps 2899200/10000000, FPS 431.
+
+episode win_rate: 0.0246, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 910/3125 episodes, total num timesteps 2915200/10000000, FPS 431.
+
+episode win_rate: 0.0246, incre win rate: 0.0214
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 915/3125 episodes, total num timesteps 2931200/10000000, FPS 432.
+
+episode win_rate: 0.0245, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 920/3125 episodes, total num timesteps 2947200/10000000, FPS 432.
+
+episode win_rate: 0.0244, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 925/3125 episodes, total num timesteps 2963200/10000000, FPS 432.
+
+episode win_rate: 0.0244, incre win rate: 0.0238
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 930/3125 episodes, total num timesteps 2979200/10000000, FPS 431.
+
+episode win_rate: 0.0244, incre win rate: 0.0233
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 935/3125 episodes, total num timesteps 2995200/10000000, FPS 431.
+
+episode win_rate: 0.0243, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 940/3125 episodes, total num timesteps 3011200/10000000, FPS 432.
+
+episode win_rate: 0.0243, incre win rate: 0.0079
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 945/3125 episodes, total num timesteps 3027200/10000000, FPS 432.
+
+episode win_rate: 0.0242, incre win rate: 0.0079
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 950/3125 episodes, total num timesteps 3043200/10000000, FPS 432.
+
+episode win_rate: 0.0241, incre win rate: 0.0076
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 955/3125 episodes, total num timesteps 3059200/10000000, FPS 431.
+
+episode win_rate: 0.0241, incre win rate: 0.0076
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 960/3125 episodes, total num timesteps 3075200/10000000, FPS 432.
+
+episode win_rate: 0.0241, incre win rate: 0.0217
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 965/3125 episodes, total num timesteps 3091200/10000000, FPS 432.
+
+episode win_rate: 0.0241, incre win rate: 0.0255
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 970/3125 episodes, total num timesteps 3107200/10000000, FPS 432.
+
+episode win_rate: 0.0240, incre win rate: 0.0148
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 975/3125 episodes, total num timesteps 3123200/10000000, FPS 433.
+
+episode win_rate: 0.0239, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 980/3125 episodes, total num timesteps 3139200/10000000, FPS 430.
+
+episode win_rate: 0.0239, incre win rate: 0.0067
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 985/3125 episodes, total num timesteps 3155200/10000000, FPS 430.
+
+episode win_rate: 0.0239, incre win rate: 0.0316
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 990/3125 episodes, total num timesteps 3171200/10000000, FPS 430.
+
+episode win_rate: 0.0238, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 995/3125 episodes, total num timesteps 3187200/10000000, FPS 431.
+
+episode win_rate: 0.0238, incre win rate: 0.0272
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1000/3125 episodes, total num timesteps 3203200/10000000, FPS 431.
+
+episode win_rate: 0.0237, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1005/3125 episodes, total num timesteps 3219200/10000000, FPS 430.
+
+episode win_rate: 0.0237, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1010/3125 episodes, total num timesteps 3235200/10000000, FPS 430.
+
+episode win_rate: 0.0236, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1015/3125 episodes, total num timesteps 3251200/10000000, FPS 431.
+
+episode win_rate: 0.0235, incre win rate: 0.0128
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1020/3125 episodes, total num timesteps 3267200/10000000, FPS 431.
+
+episode win_rate: 0.0234, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1025/3125 episodes, total num timesteps 3283200/10000000, FPS 431.
+
+episode win_rate: 0.0234, incre win rate: 0.0146
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1030/3125 episodes, total num timesteps 3299200/10000000, FPS 430.
+
+episode win_rate: 0.0233, incre win rate: 0.0073
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1035/3125 episodes, total num timesteps 3315200/10000000, FPS 431.
+
+episode win_rate: 0.0233, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1040/3125 episodes, total num timesteps 3331200/10000000, FPS 431.
+
+episode win_rate: 0.0232, incre win rate: 0.0072
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1045/3125 episodes, total num timesteps 3347200/10000000, FPS 431.
+
+episode win_rate: 0.0231, incre win rate: 0.0072
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1050/3125 episodes, total num timesteps 3363200/10000000, FPS 432.
+
+episode win_rate: 0.0231, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1055/3125 episodes, total num timesteps 3379200/10000000, FPS 431.
+
+episode win_rate: 0.0230, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1060/3125 episodes, total num timesteps 3395200/10000000, FPS 431.
+
+episode win_rate: 0.0229, incre win rate: 0.0072
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1065/3125 episodes, total num timesteps 3411200/10000000, FPS 431.
+
+episode win_rate: 0.0229, incre win rate: 0.0214
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1070/3125 episodes, total num timesteps 3427200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0079
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1075/3125 episodes, total num timesteps 3443200/10000000, FPS 432.
+
+episode win_rate: 0.0229, incre win rate: 0.0325
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1080/3125 episodes, total num timesteps 3459200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0076
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1085/3125 episodes, total num timesteps 3475200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1090/3125 episodes, total num timesteps 3491200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0132
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1095/3125 episodes, total num timesteps 3507200/10000000, FPS 432.
+
+episode win_rate: 0.0226, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1100/3125 episodes, total num timesteps 3523200/10000000, FPS 432.
+
+episode win_rate: 0.0226, incre win rate: 0.0137
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1105/3125 episodes, total num timesteps 3539200/10000000, FPS 431.
+
+episode win_rate: 0.0225, incre win rate: 0.0071
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1110/3125 episodes, total num timesteps 3555200/10000000, FPS 431.
+
+episode win_rate: 0.0225, incre win rate: 0.0240
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1115/3125 episodes, total num timesteps 3571200/10000000, FPS 432.
+
+episode win_rate: 0.0225, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1120/3125 episodes, total num timesteps 3587200/10000000, FPS 432.
+
+episode win_rate: 0.0225, incre win rate: 0.0290
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1125/3125 episodes, total num timesteps 3603200/10000000, FPS 432.
+
+episode win_rate: 0.0225, incre win rate: 0.0214
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1130/3125 episodes, total num timesteps 3619200/10000000, FPS 431.
+
+episode win_rate: 0.0224, incre win rate: 0.0076
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1135/3125 episodes, total num timesteps 3635200/10000000, FPS 432.
+
+episode win_rate: 0.0224, incre win rate: 0.0224
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1140/3125 episodes, total num timesteps 3651200/10000000, FPS 432.
+
+episode win_rate: 0.0225, incre win rate: 0.0303
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1145/3125 episodes, total num timesteps 3667200/10000000, FPS 430.
+
+episode win_rate: 0.0224, incre win rate: 0.0221
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1150/3125 episodes, total num timesteps 3683200/10000000, FPS 431.
+
+episode win_rate: 0.0225, incre win rate: 0.0282
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1155/3125 episodes, total num timesteps 3699200/10000000, FPS 430.
+
+episode win_rate: 0.0225, incre win rate: 0.0226
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1160/3125 episodes, total num timesteps 3715200/10000000, FPS 430.
+
+episode win_rate: 0.0225, incre win rate: 0.0226
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1165/3125 episodes, total num timesteps 3731200/10000000, FPS 430.
+
+episode win_rate: 0.0225, incre win rate: 0.0426
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1170/3125 episodes, total num timesteps 3747200/10000000, FPS 430.
+
+episode win_rate: 0.0225, incre win rate: 0.0233
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1175/3125 episodes, total num timesteps 3763200/10000000, FPS 431.
+
+episode win_rate: 0.0226, incre win rate: 0.0370
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1180/3125 episodes, total num timesteps 3779200/10000000, FPS 430.
+
+episode win_rate: 0.0227, incre win rate: 0.0441
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1185/3125 episodes, total num timesteps 3795200/10000000, FPS 430.
+
+episode win_rate: 0.0227, incre win rate: 0.0323
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1190/3125 episodes, total num timesteps 3811200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0227
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1195/3125 episodes, total num timesteps 3827200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0252
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1200/3125 episodes, total num timesteps 3843200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0274
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1205/3125 episodes, total num timesteps 3859200/10000000, FPS 430.
+
+episode win_rate: 0.0228, incre win rate: 0.0507
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1210/3125 episodes, total num timesteps 3875200/10000000, FPS 430.
+
+episode win_rate: 0.0228, incre win rate: 0.0284
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1215/3125 episodes, total num timesteps 3891200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0075
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1220/3125 episodes, total num timesteps 3907200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0282
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1225/3125 episodes, total num timesteps 3923200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0234
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1230/3125 episodes, total num timesteps 3939200/10000000, FPS 430.
+
+episode win_rate: 0.0228, incre win rate: 0.0138
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1235/3125 episodes, total num timesteps 3955200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0154
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1240/3125 episodes, total num timesteps 3971200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0160
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1245/3125 episodes, total num timesteps 3987200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0205
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1250/3125 episodes, total num timesteps 4003200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0216
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1255/3125 episodes, total num timesteps 4019200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1260/3125 episodes, total num timesteps 4035200/10000000, FPS 431.
+
+episode win_rate: 0.0226, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1265/3125 episodes, total num timesteps 4051200/10000000, FPS 431.
+
+episode win_rate: 0.0226, incre win rate: 0.0150
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1270/3125 episodes, total num timesteps 4067200/10000000, FPS 432.
+
+episode win_rate: 0.0225, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1275/3125 episodes, total num timesteps 4083200/10000000, FPS 432.
+
+episode win_rate: 0.0225, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1280/3125 episodes, total num timesteps 4099200/10000000, FPS 431.
+
+episode win_rate: 0.0224, incre win rate: 0.0072
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1285/3125 episodes, total num timesteps 4115200/10000000, FPS 431.
+
+episode win_rate: 0.0223, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1290/3125 episodes, total num timesteps 4131200/10000000, FPS 431.
+
+episode win_rate: 0.0223, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1295/3125 episodes, total num timesteps 4147200/10000000, FPS 432.
+
+episode win_rate: 0.0223, incre win rate: 0.0388
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1300/3125 episodes, total num timesteps 4163200/10000000, FPS 432.
+
+episode win_rate: 0.0223, incre win rate: 0.0000
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1305/3125 episodes, total num timesteps 4179200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0081
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1310/3125 episodes, total num timesteps 4195200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0150
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1315/3125 episodes, total num timesteps 4211200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0227
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1320/3125 episodes, total num timesteps 4227200/10000000, FPS 430.
+
+episode win_rate: 0.0221, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1325/3125 episodes, total num timesteps 4243200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0284
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1330/3125 episodes, total num timesteps 4259200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0325
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1335/3125 episodes, total num timesteps 4275200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0214
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1340/3125 episodes, total num timesteps 4291200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0238
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1345/3125 episodes, total num timesteps 4307200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0284
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1350/3125 episodes, total num timesteps 4323200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0236
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1355/3125 episodes, total num timesteps 4339200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0196
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1360/3125 episodes, total num timesteps 4355200/10000000, FPS 430.
+
+episode win_rate: 0.0221, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1365/3125 episodes, total num timesteps 4371200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0303
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1370/3125 episodes, total num timesteps 4387200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0350
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1375/3125 episodes, total num timesteps 4403200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0278
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1380/3125 episodes, total num timesteps 4419200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0149
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1385/3125 episodes, total num timesteps 4435200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0299
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1390/3125 episodes, total num timesteps 4451200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0221
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1395/3125 episodes, total num timesteps 4467200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1400/3125 episodes, total num timesteps 4483200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0219
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1405/3125 episodes, total num timesteps 4499200/10000000, FPS 430.
+
+episode win_rate: 0.0222, incre win rate: 0.0224
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1410/3125 episodes, total num timesteps 4515200/10000000, FPS 431.
+
+episode win_rate: 0.0222, incre win rate: 0.0500
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1415/3125 episodes, total num timesteps 4531200/10000000, FPS 431.
+
+episode win_rate: 0.0224, incre win rate: 0.0698
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1420/3125 episodes, total num timesteps 4547200/10000000, FPS 431.
+
+episode win_rate: 0.0223, incre win rate: 0.0133
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1425/3125 episodes, total num timesteps 4563200/10000000, FPS 431.
+
+episode win_rate: 0.0225, incre win rate: 0.0803
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1430/3125 episodes, total num timesteps 4579200/10000000, FPS 431.
+
+episode win_rate: 0.0225, incre win rate: 0.0284
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1435/3125 episodes, total num timesteps 4595200/10000000, FPS 431.
+
+episode win_rate: 0.0225, incre win rate: 0.0226
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1440/3125 episodes, total num timesteps 4611200/10000000, FPS 431.
+
+episode win_rate: 0.0226, incre win rate: 0.0461
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1445/3125 episodes, total num timesteps 4627200/10000000, FPS 431.
+
+episode win_rate: 0.0227, incre win rate: 0.0500
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1450/3125 episodes, total num timesteps 4643200/10000000, FPS 432.
+
+episode win_rate: 0.0228, incre win rate: 0.0544
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1455/3125 episodes, total num timesteps 4659200/10000000, FPS 431.
+
+episode win_rate: 0.0228, incre win rate: 0.0161
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1460/3125 episodes, total num timesteps 4675200/10000000, FPS 431.
+
+episode win_rate: 0.0229, incre win rate: 0.0643
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1465/3125 episodes, total num timesteps 4691200/10000000, FPS 431.
+
+episode win_rate: 0.0229, incre win rate: 0.0342
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1470/3125 episodes, total num timesteps 4707200/10000000, FPS 430.
+
+episode win_rate: 0.0230, incre win rate: 0.0438
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1475/3125 episodes, total num timesteps 4723200/10000000, FPS 430.
+
+episode win_rate: 0.0230, incre win rate: 0.0376
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1480/3125 episodes, total num timesteps 4739200/10000000, FPS 430.
+
+episode win_rate: 0.0230, incre win rate: 0.0145
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1485/3125 episodes, total num timesteps 4755200/10000000, FPS 430.
+
+episode win_rate: 0.0231, incre win rate: 0.0403
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1490/3125 episodes, total num timesteps 4771200/10000000, FPS 430.
+
+episode win_rate: 0.0230, incre win rate: 0.0139
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1495/3125 episodes, total num timesteps 4787200/10000000, FPS 430.
+
+episode win_rate: 0.0230, incre win rate: 0.0236
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1500/3125 episodes, total num timesteps 4803200/10000000, FPS 431.
+
+episode win_rate: 0.0230, incre win rate: 0.0072
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1505/3125 episodes, total num timesteps 4819200/10000000, FPS 430.
+
+episode win_rate: 0.0231, incre win rate: 0.0486
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1510/3125 episodes, total num timesteps 4835200/10000000, FPS 430.
+
+episode win_rate: 0.0231, incre win rate: 0.0467
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1515/3125 episodes, total num timesteps 4851200/10000000, FPS 430.
+
+episode win_rate: 0.0232, incre win rate: 0.0522
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1520/3125 episodes, total num timesteps 4867200/10000000, FPS 430.
+
+episode win_rate: 0.0232, incre win rate: 0.0362
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1525/3125 episodes, total num timesteps 4883200/10000000, FPS 431.
+
+episode win_rate: 0.0234, incre win rate: 0.0634
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1530/3125 episodes, total num timesteps 4899200/10000000, FPS 430.
+
+episode win_rate: 0.0234, incre win rate: 0.0403
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1535/3125 episodes, total num timesteps 4915200/10000000, FPS 430.
+
+episode win_rate: 0.0234, incre win rate: 0.0234
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1540/3125 episodes, total num timesteps 4931200/10000000, FPS 430.
+
+episode win_rate: 0.0234, incre win rate: 0.0315
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1545/3125 episodes, total num timesteps 4947200/10000000, FPS 431.
+
+episode win_rate: 0.0235, incre win rate: 0.0565
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1550/3125 episodes, total num timesteps 4963200/10000000, FPS 431.
+
+episode win_rate: 0.0235, incre win rate: 0.0169
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1555/3125 episodes, total num timesteps 4979200/10000000, FPS 430.
+
+episode win_rate: 0.0235, incre win rate: 0.0233
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1560/3125 episodes, total num timesteps 4995200/10000000, FPS 431.
+
+episode win_rate: 0.0236, incre win rate: 0.0538
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1565/3125 episodes, total num timesteps 5011200/10000000, FPS 431.
+
+episode win_rate: 0.0236, incre win rate: 0.0360
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1570/3125 episodes, total num timesteps 5027200/10000000, FPS 431.
+
+episode win_rate: 0.0237, incre win rate: 0.0484
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1575/3125 episodes, total num timesteps 5043200/10000000, FPS 431.
+
+episode win_rate: 0.0238, incre win rate: 0.0687
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1580/3125 episodes, total num timesteps 5059200/10000000, FPS 431.
+
+episode win_rate: 0.0239, incre win rate: 0.0635
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1585/3125 episodes, total num timesteps 5075200/10000000, FPS 431.
+
+episode win_rate: 0.0239, incre win rate: 0.0462
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1590/3125 episodes, total num timesteps 5091200/10000000, FPS 431.
+
+episode win_rate: 0.0240, incre win rate: 0.0455
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1595/3125 episodes, total num timesteps 5107200/10000000, FPS 431.
+
+episode win_rate: 0.0240, incre win rate: 0.0420
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1600/3125 episodes, total num timesteps 5123200/10000000, FPS 431.
+
+episode win_rate: 0.0240, incre win rate: 0.0074
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1605/3125 episodes, total num timesteps 5139200/10000000, FPS 431.
+
+episode win_rate: 0.0242, incre win rate: 0.0915
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1610/3125 episodes, total num timesteps 5155200/10000000, FPS 431.
+
+episode win_rate: 0.0242, incre win rate: 0.0342
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1615/3125 episodes, total num timesteps 5171200/10000000, FPS 431.
+
+episode win_rate: 0.0243, incre win rate: 0.0438
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1620/3125 episodes, total num timesteps 5187200/10000000, FPS 431.
+
+episode win_rate: 0.0243, incre win rate: 0.0362
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1625/3125 episodes, total num timesteps 5203200/10000000, FPS 432.
+
+episode win_rate: 0.0243, incre win rate: 0.0312
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1630/3125 episodes, total num timesteps 5219200/10000000, FPS 431.
+
+episode win_rate: 0.0243, incre win rate: 0.0236
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1635/3125 episodes, total num timesteps 5235200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0530
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1640/3125 episodes, total num timesteps 5251200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0211
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1645/3125 episodes, total num timesteps 5267200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0448
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1650/3125 episodes, total num timesteps 5283200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0149
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1655/3125 episodes, total num timesteps 5299200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0226
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1660/3125 episodes, total num timesteps 5315200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0469
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1665/3125 episodes, total num timesteps 5331200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0146
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1670/3125 episodes, total num timesteps 5347200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0342
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1675/3125 episodes, total num timesteps 5363200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0205
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1680/3125 episodes, total num timesteps 5379200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0284
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1685/3125 episodes, total num timesteps 5395200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0217
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1690/3125 episodes, total num timesteps 5411200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0142
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1695/3125 episodes, total num timesteps 5427200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0068
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1700/3125 episodes, total num timesteps 5443200/10000000, FPS 431.
+
+episode win_rate: 0.0244, incre win rate: 0.0357
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1705/3125 episodes, total num timesteps 5459200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0544
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1710/3125 episodes, total num timesteps 5475200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0214
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1715/3125 episodes, total num timesteps 5491200/10000000, FPS 431.
+
+episode win_rate: 0.0244, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1720/3125 episodes, total num timesteps 5507200/10000000, FPS 431.
+
+episode win_rate: 0.0244, incre win rate: 0.0199
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1725/3125 episodes, total num timesteps 5523200/10000000, FPS 431.
+
+episode win_rate: 0.0244, incre win rate: 0.0338
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1730/3125 episodes, total num timesteps 5539200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0400
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1735/3125 episodes, total num timesteps 5555200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0292
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1740/3125 episodes, total num timesteps 5571200/10000000, FPS 431.
+
+episode win_rate: 0.0245, incre win rate: 0.0190
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1745/3125 episodes, total num timesteps 5587200/10000000, FPS 431.
+
+episode win_rate: 0.0244, incre win rate: 0.0133
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1750/3125 episodes, total num timesteps 5603200/10000000, FPS 431.
+
+episode win_rate: 0.0245, incre win rate: 0.0290
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1755/3125 episodes, total num timesteps 5619200/10000000, FPS 430.
+
+episode win_rate: 0.0244, incre win rate: 0.0217
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1760/3125 episodes, total num timesteps 5635200/10000000, FPS 431.
+
+episode win_rate: 0.0245, incre win rate: 0.0417
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1765/3125 episodes, total num timesteps 5651200/10000000, FPS 431.
+
+episode win_rate: 0.0245, incre win rate: 0.0217
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1770/3125 episodes, total num timesteps 5667200/10000000, FPS 431.
+
+episode win_rate: 0.0245, incre win rate: 0.0181
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1775/3125 episodes, total num timesteps 5683200/10000000, FPS 431.
+
+episode win_rate: 0.0245, incre win rate: 0.0340
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1780/3125 episodes, total num timesteps 5699200/10000000, FPS 430.
+
+episode win_rate: 0.0245, incre win rate: 0.0360
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1785/3125 episodes, total num timesteps 5715200/10000000, FPS 430.
+
+episode win_rate: 0.0246, incre win rate: 0.0538
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1790/3125 episodes, total num timesteps 5731200/10000000, FPS 431.
+
+episode win_rate: 0.0247, incre win rate: 0.0667
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1795/3125 episodes, total num timesteps 5747200/10000000, FPS 431.
+
+episode win_rate: 0.0247, incre win rate: 0.0504
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1800/3125 episodes, total num timesteps 5763200/10000000, FPS 430.
+
+episode win_rate: 0.0248, incre win rate: 0.0493
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1805/3125 episodes, total num timesteps 5779200/10000000, FPS 429.
+
+episode win_rate: 0.0249, incre win rate: 0.0657
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1810/3125 episodes, total num timesteps 5795200/10000000, FPS 430.
+
+episode win_rate: 0.0250, incre win rate: 0.0780
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1815/3125 episodes, total num timesteps 5811200/10000000, FPS 430.
+
+episode win_rate: 0.0251, incre win rate: 0.0362
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1820/3125 episodes, total num timesteps 5827200/10000000, FPS 430.
+
+episode win_rate: 0.0252, incre win rate: 0.0662
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1825/3125 episodes, total num timesteps 5843200/10000000, FPS 430.
+
+episode win_rate: 0.0252, incre win rate: 0.0467
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1830/3125 episodes, total num timesteps 5859200/10000000, FPS 430.
+
+episode win_rate: 0.0253, incre win rate: 0.0342
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1835/3125 episodes, total num timesteps 5875200/10000000, FPS 430.
+
+episode win_rate: 0.0253, incre win rate: 0.0634
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1840/3125 episodes, total num timesteps 5891200/10000000, FPS 430.
+
+episode win_rate: 0.0254, incre win rate: 0.0400
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1845/3125 episodes, total num timesteps 5907200/10000000, FPS 430.
+
+episode win_rate: 0.0254, incre win rate: 0.0464
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1850/3125 episodes, total num timesteps 5923200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0479
+eval win rate is 0.15625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1855/3125 episodes, total num timesteps 5939200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0347
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1860/3125 episodes, total num timesteps 5955200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0274
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1865/3125 episodes, total num timesteps 5971200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0541
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1870/3125 episodes, total num timesteps 5987200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0503
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1875/3125 episodes, total num timesteps 6003200/10000000, FPS 431.
+
+episode win_rate: 0.0257, incre win rate: 0.0537
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1880/3125 episodes, total num timesteps 6019200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0333
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1885/3125 episodes, total num timesteps 6035200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0286
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1890/3125 episodes, total num timesteps 6051200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0325
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1895/3125 episodes, total num timesteps 6067200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0217
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1900/3125 episodes, total num timesteps 6083200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0288
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1905/3125 episodes, total num timesteps 6099200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0161
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1910/3125 episodes, total num timesteps 6115200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0328
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1915/3125 episodes, total num timesteps 6131200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0382
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1920/3125 episodes, total num timesteps 6147200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0462
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1925/3125 episodes, total num timesteps 6163200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0167
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1930/3125 episodes, total num timesteps 6179200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1935/3125 episodes, total num timesteps 6195200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0484
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1940/3125 episodes, total num timesteps 6211200/10000000, FPS 431.
+
+episode win_rate: 0.0258, incre win rate: 0.0317
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1945/3125 episodes, total num timesteps 6227200/10000000, FPS 431.
+
+episode win_rate: 0.0259, incre win rate: 0.0484
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1950/3125 episodes, total num timesteps 6243200/10000000, FPS 431.
+
+episode win_rate: 0.0259, incre win rate: 0.0534
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1955/3125 episodes, total num timesteps 6259200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0167
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1960/3125 episodes, total num timesteps 6275200/10000000, FPS 431.
+
+episode win_rate: 0.0259, incre win rate: 0.0153
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1965/3125 episodes, total num timesteps 6291200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0403
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1970/3125 episodes, total num timesteps 6307200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0338
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1975/3125 episodes, total num timesteps 6323200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0280
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1980/3125 episodes, total num timesteps 6339200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0274
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1985/3125 episodes, total num timesteps 6355200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0280
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1990/3125 episodes, total num timesteps 6371200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0064
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 1995/3125 episodes, total num timesteps 6387200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0186
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2000/3125 episodes, total num timesteps 6403200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0194
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2005/3125 episodes, total num timesteps 6419200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0145
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2010/3125 episodes, total num timesteps 6435200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0069
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2015/3125 episodes, total num timesteps 6451200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0081
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2020/3125 episodes, total num timesteps 6467200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0146
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2025/3125 episodes, total num timesteps 6483200/10000000, FPS 431.
+
+episode win_rate: 0.0257, incre win rate: 0.0063
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2030/3125 episodes, total num timesteps 6499200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0213
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2035/3125 episodes, total num timesteps 6515200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0195
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2040/3125 episodes, total num timesteps 6531200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0342
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2045/3125 episodes, total num timesteps 6547200/10000000, FPS 431.
+
+episode win_rate: 0.0257, incre win rate: 0.0149
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2050/3125 episodes, total num timesteps 6563200/10000000, FPS 431.
+
+episode win_rate: 0.0256, incre win rate: 0.0154
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2055/3125 episodes, total num timesteps 6579200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0216
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2060/3125 episodes, total num timesteps 6595200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0154
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2065/3125 episodes, total num timesteps 6611200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2070/3125 episodes, total num timesteps 6627200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0072
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2075/3125 episodes, total num timesteps 6643200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0161
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2080/3125 episodes, total num timesteps 6659200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0219
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2085/3125 episodes, total num timesteps 6675200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0286
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2090/3125 episodes, total num timesteps 6691200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0376
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2095/3125 episodes, total num timesteps 6707200/10000000, FPS 431.
+
+episode win_rate: 0.0256, incre win rate: 0.0537
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2100/3125 episodes, total num timesteps 6723200/10000000, FPS 431.
+
+episode win_rate: 0.0256, incre win rate: 0.0242
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2105/3125 episodes, total num timesteps 6739200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0290
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2110/3125 episodes, total num timesteps 6755200/10000000, FPS 431.
+
+episode win_rate: 0.0256, incre win rate: 0.0278
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2115/3125 episodes, total num timesteps 6771200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0066
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2120/3125 episodes, total num timesteps 6787200/10000000, FPS 431.
+
+episode win_rate: 0.0255, incre win rate: 0.0210
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2125/3125 episodes, total num timesteps 6803200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0292
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2130/3125 episodes, total num timesteps 6819200/10000000, FPS 430.
+
+episode win_rate: 0.0255, incre win rate: 0.0199
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2135/3125 episodes, total num timesteps 6835200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0429
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2140/3125 episodes, total num timesteps 6851200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0429
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2145/3125 episodes, total num timesteps 6867200/10000000, FPS 430.
+
+episode win_rate: 0.0256, incre win rate: 0.0340
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2150/3125 episodes, total num timesteps 6883200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0500
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2155/3125 episodes, total num timesteps 6899200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0280
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2160/3125 episodes, total num timesteps 6915200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0365
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2165/3125 episodes, total num timesteps 6931200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0274
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2170/3125 episodes, total num timesteps 6947200/10000000, FPS 430.
+
+episode win_rate: 0.0257, incre win rate: 0.0362
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2175/3125 episodes, total num timesteps 6963200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0511
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2180/3125 episodes, total num timesteps 6979200/10000000, FPS 430.
+
+episode win_rate: 0.0258, incre win rate: 0.0345
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2185/3125 episodes, total num timesteps 6995200/10000000, FPS 430.
+
+episode win_rate: 0.0259, incre win rate: 0.0818
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2190/3125 episodes, total num timesteps 7011200/10000000, FPS 430.
+
+episode win_rate: 0.0260, incre win rate: 0.0580
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2195/3125 episodes, total num timesteps 7027200/10000000, FPS 430.
+
+episode win_rate: 0.0260, incre win rate: 0.0438
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2200/3125 episodes, total num timesteps 7043200/10000000, FPS 430.
+
+episode win_rate: 0.0261, incre win rate: 0.0476
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2205/3125 episodes, total num timesteps 7059200/10000000, FPS 430.
+
+episode win_rate: 0.0261, incre win rate: 0.0373
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2210/3125 episodes, total num timesteps 7075200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.1000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2215/3125 episodes, total num timesteps 7091200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0312
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2220/3125 episodes, total num timesteps 7107200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0305
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2225/3125 episodes, total num timesteps 7123200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0169
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2230/3125 episodes, total num timesteps 7139200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0234
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2235/3125 episodes, total num timesteps 7155200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0169
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2240/3125 episodes, total num timesteps 7171200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0252
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2245/3125 episodes, total num timesteps 7187200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0403
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2250/3125 episodes, total num timesteps 7203200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0000
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2255/3125 episodes, total num timesteps 7219200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0362
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2260/3125 episodes, total num timesteps 7235200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0438
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2265/3125 episodes, total num timesteps 7251200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0294
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2270/3125 episodes, total num timesteps 7267200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0461
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2275/3125 episodes, total num timesteps 7283200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0201
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2280/3125 episodes, total num timesteps 7299200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0139
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2285/3125 episodes, total num timesteps 7315200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0213
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2290/3125 episodes, total num timesteps 7331200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0267
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2295/3125 episodes, total num timesteps 7347200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0423
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2300/3125 episodes, total num timesteps 7363200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0199
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2305/3125 episodes, total num timesteps 7379200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0205
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2310/3125 episodes, total num timesteps 7395200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0231
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2315/3125 episodes, total num timesteps 7411200/10000000, FPS 430.
+
+episode win_rate: 0.0263, incre win rate: 0.0303
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2320/3125 episodes, total num timesteps 7427200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0072
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2325/3125 episodes, total num timesteps 7443200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0076
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2330/3125 episodes, total num timesteps 7459200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0153
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2335/3125 episodes, total num timesteps 7475200/10000000, FPS 430.
+
+episode win_rate: 0.0261, incre win rate: 0.0155
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2340/3125 episodes, total num timesteps 7491200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0323
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2345/3125 episodes, total num timesteps 7507200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0365
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2350/3125 episodes, total num timesteps 7523200/10000000, FPS 430.
+
+episode win_rate: 0.0261, incre win rate: 0.0081
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2355/3125 episodes, total num timesteps 7539200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0301
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2360/3125 episodes, total num timesteps 7555200/10000000, FPS 430.
+
+episode win_rate: 0.0261, incre win rate: 0.0164
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2365/3125 episodes, total num timesteps 7571200/10000000, FPS 430.
+
+episode win_rate: 0.0262, incre win rate: 0.0488
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2370/3125 episodes, total num timesteps 7587200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0656
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2375/3125 episodes, total num timesteps 7603200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0229
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2380/3125 episodes, total num timesteps 7619200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0169
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2385/3125 episodes, total num timesteps 7635200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0152
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2390/3125 episodes, total num timesteps 7651200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0431
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2395/3125 episodes, total num timesteps 7667200/10000000, FPS 431.
+
+episode win_rate: 0.0262, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2400/3125 episodes, total num timesteps 7683200/10000000, FPS 431.
+
+episode win_rate: 0.0261, incre win rate: 0.0075
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2405/3125 episodes, total num timesteps 7699200/10000000, FPS 431.
+
+episode win_rate: 0.0261, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2410/3125 episodes, total num timesteps 7715200/10000000, FPS 431.
+
+episode win_rate: 0.0261, incre win rate: 0.0227
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2415/3125 episodes, total num timesteps 7731200/10000000, FPS 431.
+
+episode win_rate: 0.0261, incre win rate: 0.0385
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2420/3125 episodes, total num timesteps 7747200/10000000, FPS 431.
+
+episode win_rate: 0.0261, incre win rate: 0.0278
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2425/3125 episodes, total num timesteps 7763200/10000000, FPS 432.
+
+episode win_rate: 0.0261, incre win rate: 0.0075
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2430/3125 episodes, total num timesteps 7779200/10000000, FPS 431.
+
+episode win_rate: 0.0261, incre win rate: 0.0382
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2435/3125 episodes, total num timesteps 7795200/10000000, FPS 432.
+
+episode win_rate: 0.0261, incre win rate: 0.0077
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2440/3125 episodes, total num timesteps 7811200/10000000, FPS 432.
+
+episode win_rate: 0.0260, incre win rate: 0.0081
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2445/3125 episodes, total num timesteps 7827200/10000000, FPS 432.
+
+episode win_rate: 0.0261, incre win rate: 0.0301
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2450/3125 episodes, total num timesteps 7843200/10000000, FPS 432.
+
+episode win_rate: 0.0260, incre win rate: 0.0155
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2455/3125 episodes, total num timesteps 7859200/10000000, FPS 431.
+
+episode win_rate: 0.0260, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2460/3125 episodes, total num timesteps 7875200/10000000, FPS 431.
+
+episode win_rate: 0.0260, incre win rate: 0.0211
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2465/3125 episodes, total num timesteps 7891200/10000000, FPS 431.
+
+episode win_rate: 0.0259, incre win rate: 0.0070
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2470/3125 episodes, total num timesteps 7907200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0224
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2475/3125 episodes, total num timesteps 7923200/10000000, FPS 432.
+
+episode win_rate: 0.0260, incre win rate: 0.0320
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2480/3125 episodes, total num timesteps 7939200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0149
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2485/3125 episodes, total num timesteps 7955200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0231
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2490/3125 episodes, total num timesteps 7971200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0244
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2495/3125 episodes, total num timesteps 7987200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0299
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2500/3125 episodes, total num timesteps 8003200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0325
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2505/3125 episodes, total num timesteps 8019200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0161
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2510/3125 episodes, total num timesteps 8035200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2515/3125 episodes, total num timesteps 8051200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0522
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2520/3125 episodes, total num timesteps 8067200/10000000, FPS 433.
+
+episode win_rate: 0.0259, incre win rate: 0.0078
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2525/3125 episodes, total num timesteps 8083200/10000000, FPS 433.
+
+episode win_rate: 0.0259, incre win rate: 0.0234
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2530/3125 episodes, total num timesteps 8099200/10000000, FPS 432.
+
+episode win_rate: 0.0259, incre win rate: 0.0526
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2535/3125 episodes, total num timesteps 8115200/10000000, FPS 433.
+
+episode win_rate: 0.0260, incre win rate: 0.0391
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2540/3125 episodes, total num timesteps 8131200/10000000, FPS 433.
+
+episode win_rate: 0.0259, incre win rate: 0.0163
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2545/3125 episodes, total num timesteps 8147200/10000000, FPS 433.
+
+episode win_rate: 0.0260, incre win rate: 0.0320
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2550/3125 episodes, total num timesteps 8163200/10000000, FPS 433.
+
+episode win_rate: 0.0259, incre win rate: 0.0164
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2555/3125 episodes, total num timesteps 8179200/10000000, FPS 433.
+
+episode win_rate: 0.0260, incre win rate: 0.0333
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2560/3125 episodes, total num timesteps 8195200/10000000, FPS 433.
+
+episode win_rate: 0.0259, incre win rate: 0.0169
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2565/3125 episodes, total num timesteps 8211200/10000000, FPS 434.
+
+episode win_rate: 0.0259, incre win rate: 0.0079
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2570/3125 episodes, total num timesteps 8227200/10000000, FPS 434.
+
+episode win_rate: 0.0259, incre win rate: 0.0159
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2575/3125 episodes, total num timesteps 8243200/10000000, FPS 434.
+
+episode win_rate: 0.0259, incre win rate: 0.0159
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2580/3125 episodes, total num timesteps 8259200/10000000, FPS 434.
+
+episode win_rate: 0.0259, incre win rate: 0.0167
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2585/3125 episodes, total num timesteps 8275200/10000000, FPS 434.
+
+episode win_rate: 0.0258, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2590/3125 episodes, total num timesteps 8291200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0250
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2595/3125 episodes, total num timesteps 8307200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0148
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2600/3125 episodes, total num timesteps 8323200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0294
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2605/3125 episodes, total num timesteps 8339200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0000
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2610/3125 episodes, total num timesteps 8355200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0325
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2615/3125 episodes, total num timesteps 8371200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0210
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2620/3125 episodes, total num timesteps 8387200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0480
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2625/3125 episodes, total num timesteps 8403200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0079
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2630/3125 episodes, total num timesteps 8419200/10000000, FPS 435.
+
+episode win_rate: 0.0257, incre win rate: 0.0078
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2635/3125 episodes, total num timesteps 8435200/10000000, FPS 435.
+
+episode win_rate: 0.0258, incre win rate: 0.0294
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2640/3125 episodes, total num timesteps 8451200/10000000, FPS 436.
+
+episode win_rate: 0.0258, incre win rate: 0.0569
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2645/3125 episodes, total num timesteps 8467200/10000000, FPS 436.
+
+episode win_rate: 0.0258, incre win rate: 0.0222
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2650/3125 episodes, total num timesteps 8483200/10000000, FPS 436.
+
+episode win_rate: 0.0258, incre win rate: 0.0079
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2655/3125 episodes, total num timesteps 8499200/10000000, FPS 436.
+
+episode win_rate: 0.0258, incre win rate: 0.0400
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2660/3125 episodes, total num timesteps 8515200/10000000, FPS 436.
+
+episode win_rate: 0.0258, incre win rate: 0.0167
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2665/3125 episodes, total num timesteps 8531200/10000000, FPS 436.
+
+episode win_rate: 0.0258, incre win rate: 0.0236
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2670/3125 episodes, total num timesteps 8547200/10000000, FPS 437.
+
+episode win_rate: 0.0258, incre win rate: 0.0242
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2675/3125 episodes, total num timesteps 8563200/10000000, FPS 437.
+
+episode win_rate: 0.0257, incre win rate: 0.0088
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2680/3125 episodes, total num timesteps 8579200/10000000, FPS 437.
+
+episode win_rate: 0.0257, incre win rate: 0.0080
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2685/3125 episodes, total num timesteps 8595200/10000000, FPS 437.
+
+episode win_rate: 0.0257, incre win rate: 0.0160
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2690/3125 episodes, total num timesteps 8611200/10000000, FPS 437.
+
+episode win_rate: 0.0257, incre win rate: 0.0087
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2695/3125 episodes, total num timesteps 8627200/10000000, FPS 437.
+
+episode win_rate: 0.0257, incre win rate: 0.0320
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2700/3125 episodes, total num timesteps 8643200/10000000, FPS 438.
+
+episode win_rate: 0.0257, incre win rate: 0.0248
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2705/3125 episodes, total num timesteps 8659200/10000000, FPS 437.
+
+episode win_rate: 0.0257, incre win rate: 0.0254
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2710/3125 episodes, total num timesteps 8675200/10000000, FPS 438.
+
+episode win_rate: 0.0257, incre win rate: 0.0086
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2715/3125 episodes, total num timesteps 8691200/10000000, FPS 438.
+
+episode win_rate: 0.0257, incre win rate: 0.0385
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2720/3125 episodes, total num timesteps 8707200/10000000, FPS 438.
+
+episode win_rate: 0.0257, incre win rate: 0.0172
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2725/3125 episodes, total num timesteps 8723200/10000000, FPS 438.
+
+episode win_rate: 0.0256, incre win rate: 0.0079
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2730/3125 episodes, total num timesteps 8739200/10000000, FPS 438.
+
+episode win_rate: 0.0256, incre win rate: 0.0236
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2735/3125 episodes, total num timesteps 8755200/10000000, FPS 438.
+
+episode win_rate: 0.0257, incre win rate: 0.0635
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2740/3125 episodes, total num timesteps 8771200/10000000, FPS 439.
+
+episode win_rate: 0.0257, incre win rate: 0.0315
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2745/3125 episodes, total num timesteps 8787200/10000000, FPS 439.
+
+episode win_rate: 0.0257, incre win rate: 0.0500
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2750/3125 episodes, total num timesteps 8803200/10000000, FPS 439.
+
+episode win_rate: 0.0258, incre win rate: 0.0397
+eval win rate is 0.0625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2755/3125 episodes, total num timesteps 8819200/10000000, FPS 439.
+
+episode win_rate: 0.0258, incre win rate: 0.0556
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2760/3125 episodes, total num timesteps 8835200/10000000, FPS 439.
+
+episode win_rate: 0.0259, incre win rate: 0.0556
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2765/3125 episodes, total num timesteps 8851200/10000000, FPS 439.
+
+episode win_rate: 0.0259, incre win rate: 0.0244
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2770/3125 episodes, total num timesteps 8867200/10000000, FPS 440.
+
+episode win_rate: 0.0259, incre win rate: 0.0576
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2775/3125 episodes, total num timesteps 8883200/10000000, FPS 440.
+
+episode win_rate: 0.0260, incre win rate: 0.0720
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2780/3125 episodes, total num timesteps 8899200/10000000, FPS 439.
+
+episode win_rate: 0.0260, incre win rate: 0.0534
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2785/3125 episodes, total num timesteps 8915200/10000000, FPS 439.
+
+episode win_rate: 0.0261, incre win rate: 0.0526
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2790/3125 episodes, total num timesteps 8931200/10000000, FPS 440.
+
+episode win_rate: 0.0261, incre win rate: 0.0305
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2795/3125 episodes, total num timesteps 8947200/10000000, FPS 440.
+
+episode win_rate: 0.0262, incre win rate: 0.0733
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2800/3125 episodes, total num timesteps 8963200/10000000, FPS 440.
+
+episode win_rate: 0.0261, incre win rate: 0.0211
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2805/3125 episodes, total num timesteps 8979200/10000000, FPS 440.
+
+episode win_rate: 0.0261, incre win rate: 0.0256
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2810/3125 episodes, total num timesteps 8995200/10000000, FPS 440.
+
+episode win_rate: 0.0261, incre win rate: 0.0207
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2815/3125 episodes, total num timesteps 9011200/10000000, FPS 440.
+
+episode win_rate: 0.0263, incre win rate: 0.0943
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2820/3125 episodes, total num timesteps 9027200/10000000, FPS 440.
+
+episode win_rate: 0.0263, incre win rate: 0.0403
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2825/3125 episodes, total num timesteps 9043200/10000000, FPS 441.
+
+episode win_rate: 0.0264, incre win rate: 0.0828
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2830/3125 episodes, total num timesteps 9059200/10000000, FPS 440.
+
+episode win_rate: 0.0265, incre win rate: 0.1156
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2835/3125 episodes, total num timesteps 9075200/10000000, FPS 441.
+
+episode win_rate: 0.0266, incre win rate: 0.0464
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2840/3125 episodes, total num timesteps 9091200/10000000, FPS 441.
+
+episode win_rate: 0.0266, incre win rate: 0.0256
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2845/3125 episodes, total num timesteps 9107200/10000000, FPS 441.
+
+episode win_rate: 0.0266, incre win rate: 0.0327
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2850/3125 episodes, total num timesteps 9123200/10000000, FPS 441.
+
+episode win_rate: 0.0266, incre win rate: 0.0274
+eval win rate is 0.09375.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2855/3125 episodes, total num timesteps 9139200/10000000, FPS 441.
+
+episode win_rate: 0.0266, incre win rate: 0.0559
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2860/3125 episodes, total num timesteps 9155200/10000000, FPS 441.
+
+episode win_rate: 0.0267, incre win rate: 0.0464
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2865/3125 episodes, total num timesteps 9171200/10000000, FPS 441.
+
+episode win_rate: 0.0267, incre win rate: 0.0222
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2870/3125 episodes, total num timesteps 9187200/10000000, FPS 441.
+
+episode win_rate: 0.0267, incre win rate: 0.0357
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2875/3125 episodes, total num timesteps 9203200/10000000, FPS 441.
+
+episode win_rate: 0.0268, incre win rate: 0.0710
+eval win rate is 0.0.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2880/3125 episodes, total num timesteps 9219200/10000000, FPS 441.
+
+episode win_rate: 0.0268, incre win rate: 0.0516
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2885/3125 episodes, total num timesteps 9235200/10000000, FPS 441.
+
+episode win_rate: 0.0268, incre win rate: 0.0461
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2890/3125 episodes, total num timesteps 9251200/10000000, FPS 442.
+
+episode win_rate: 0.0269, incre win rate: 0.0523
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2895/3125 episodes, total num timesteps 9267200/10000000, FPS 442.
+
+episode win_rate: 0.0269, incre win rate: 0.0321
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2900/3125 episodes, total num timesteps 9283200/10000000, FPS 442.
+
+episode win_rate: 0.0270, incre win rate: 0.0844
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2905/3125 episodes, total num timesteps 9299200/10000000, FPS 442.
+
+episode win_rate: 0.0270, incre win rate: 0.0556
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2910/3125 episodes, total num timesteps 9315200/10000000, FPS 442.
+
+episode win_rate: 0.0271, incre win rate: 0.0667
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2915/3125 episodes, total num timesteps 9331200/10000000, FPS 442.
+
+episode win_rate: 0.0272, incre win rate: 0.0909
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2920/3125 episodes, total num timesteps 9347200/10000000, FPS 442.
+
+episode win_rate: 0.0274, incre win rate: 0.0877
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2925/3125 episodes, total num timesteps 9363200/10000000, FPS 442.
+
+episode win_rate: 0.0275, incre win rate: 0.1043
+eval win rate is 0.03125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2930/3125 episodes, total num timesteps 9379200/10000000, FPS 442.
+
+episode win_rate: 0.0276, incre win rate: 0.0655
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2935/3125 episodes, total num timesteps 9395200/10000000, FPS 442.
+
+episode win_rate: 0.0278, incre win rate: 0.1180
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2940/3125 episodes, total num timesteps 9411200/10000000, FPS 442.
+
+episode win_rate: 0.0279, incre win rate: 0.0904
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2945/3125 episodes, total num timesteps 9427200/10000000, FPS 442.
+
+episode win_rate: 0.0280, incre win rate: 0.0994
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2950/3125 episodes, total num timesteps 9443200/10000000, FPS 442.
+
+episode win_rate: 0.0281, incre win rate: 0.0968
+eval win rate is 0.15625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2955/3125 episodes, total num timesteps 9459200/10000000, FPS 442.
+
+episode win_rate: 0.0283, incre win rate: 0.1131
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2960/3125 episodes, total num timesteps 9475200/10000000, FPS 442.
+
+episode win_rate: 0.0285, incre win rate: 0.1566
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2965/3125 episodes, total num timesteps 9491200/10000000, FPS 442.
+
+episode win_rate: 0.0287, incre win rate: 0.1032
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2970/3125 episodes, total num timesteps 9507200/10000000, FPS 442.
+
+episode win_rate: 0.0288, incre win rate: 0.1146
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2975/3125 episodes, total num timesteps 9523200/10000000, FPS 443.
+
+episode win_rate: 0.0291, incre win rate: 0.1667
+eval win rate is 0.125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2980/3125 episodes, total num timesteps 9539200/10000000, FPS 442.
+
+episode win_rate: 0.0293, incre win rate: 0.1445
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2985/3125 episodes, total num timesteps 9555200/10000000, FPS 442.
+
+episode win_rate: 0.0295, incre win rate: 0.1314
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2990/3125 episodes, total num timesteps 9571200/10000000, FPS 443.
+
+episode win_rate: 0.0297, incre win rate: 0.1265
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 2995/3125 episodes, total num timesteps 9587200/10000000, FPS 443.
+
+episode win_rate: 0.0301, incre win rate: 0.2454
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3000/3125 episodes, total num timesteps 9603200/10000000, FPS 443.
+
+episode win_rate: 0.0303, incre win rate: 0.1796
+eval win rate is 0.15625.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3005/3125 episodes, total num timesteps 9619200/10000000, FPS 443.
+
+episode win_rate: 0.0307, incre win rate: 0.2182
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3010/3125 episodes, total num timesteps 9635200/10000000, FPS 443.
+
+episode win_rate: 0.0311, incre win rate: 0.2670
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3015/3125 episodes, total num timesteps 9651200/10000000, FPS 443.
+
+episode win_rate: 0.0315, incre win rate: 0.2215
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3020/3125 episodes, total num timesteps 9667200/10000000, FPS 443.
+
+episode win_rate: 0.0319, incre win rate: 0.2530
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3025/3125 episodes, total num timesteps 9683200/10000000, FPS 443.
+
+episode win_rate: 0.0323, incre win rate: 0.2414
+eval win rate is 0.28125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3030/3125 episodes, total num timesteps 9699200/10000000, FPS 443.
+
+episode win_rate: 0.0327, incre win rate: 0.2514
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3035/3125 episodes, total num timesteps 9715200/10000000, FPS 443.
+
+episode win_rate: 0.0332, incre win rate: 0.2788
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3040/3125 episodes, total num timesteps 9731200/10000000, FPS 443.
+
+episode win_rate: 0.0335, incre win rate: 0.2114
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3045/3125 episodes, total num timesteps 9747200/10000000, FPS 443.
+
+episode win_rate: 0.0339, incre win rate: 0.2402
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3050/3125 episodes, total num timesteps 9763200/10000000, FPS 444.
+
+episode win_rate: 0.0343, incre win rate: 0.2573
+eval win rate is 0.25.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3055/3125 episodes, total num timesteps 9779200/10000000, FPS 443.
+
+episode win_rate: 0.0348, incre win rate: 0.2577
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3060/3125 episodes, total num timesteps 9795200/10000000, FPS 444.
+
+episode win_rate: 0.0352, incre win rate: 0.2626
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3065/3125 episodes, total num timesteps 9811200/10000000, FPS 444.
+
+episode win_rate: 0.0357, incre win rate: 0.2772
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3070/3125 episodes, total num timesteps 9827200/10000000, FPS 444.
+
+episode win_rate: 0.0360, incre win rate: 0.2099
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3075/3125 episodes, total num timesteps 9843200/10000000, FPS 444.
+
+episode win_rate: 0.0364, incre win rate: 0.2011
+eval win rate is 0.3125.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3080/3125 episodes, total num timesteps 9859200/10000000, FPS 444.
+
+episode win_rate: 0.0367, incre win rate: 0.1943
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3085/3125 episodes, total num timesteps 9875200/10000000, FPS 444.
+
+episode win_rate: 0.0370, incre win rate: 0.2011
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3090/3125 episodes, total num timesteps 9891200/10000000, FPS 444.
+
+episode win_rate: 0.0375, incre win rate: 0.2600
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3095/3125 episodes, total num timesteps 9907200/10000000, FPS 444.
+
+episode win_rate: 0.0378, incre win rate: 0.2022
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3100/3125 episodes, total num timesteps 9923200/10000000, FPS 444.
+
+episode win_rate: 0.0381, incre win rate: 0.2167
+eval win rate is 0.25.
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3105/3125 episodes, total num timesteps 9939200/10000000, FPS 444.
+
+episode win_rate: 0.0385, incre win rate: 0.2088
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3110/3125 episodes, total num timesteps 9955200/10000000, FPS 444.
+
+episode win_rate: 0.0388, incre win rate: 0.2128
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3115/3125 episodes, total num timesteps 9971200/10000000, FPS 444.
+
+episode win_rate: 0.0391, incre win rate: 0.1871
+
+ Map 1c3s5z Algo rmappo Exp baseline updates 3120/3125 episodes, total num timesteps 9987200/10000000, FPS 444.
+
+episode win_rate: 0.0394, incre win rate: 0.2128

@@ -1,0 +1,16 @@
+{"time":"2026-03-02T07:46:40.950747545Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/1c3s5z/rmappo/baseline/wandb/run-20260302_074640-c38ojhd0/logs/debug-core.log"}
+{"time":"2026-03-02T07:46:41.053634321Z","level":"INFO","msg":"created new stream","id":"c38ojhd0"}
+{"time":"2026-03-02T07:46:41.053657845Z","level":"INFO","msg":"stream: started","id":"c38ojhd0"}
+{"time":"2026-03-02T07:46:41.053670201Z","level":"INFO","msg":"writer: Do: started","stream_id":"c38ojhd0"}
+{"time":"2026-03-02T07:46:41.053671365Z","level":"INFO","msg":"handler: started","stream_id":"c38ojhd0"}
+{"time":"2026-03-02T07:46:41.05370288Z","level":"INFO","msg":"sender: started","stream_id":"c38ojhd0"}
+{"time":"2026-03-02T07:46:41.76979036Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-03-02T14:01:43.001270679Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-03-02T14:01:43.004109942Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-03-02T14:01:43.964831293Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.233870153},{"desc":"uploading wandb-summary.json","runtime_seconds":0.23381627}],"total_operations":2}}
+{"time":"2026-03-02T14:01:44.683749187Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-02T14:01:45.255315348Z","level":"INFO","msg":"stream: closing","id":"c38ojhd0"}
+{"time":"2026-03-02T14:01:45.255326037Z","level":"INFO","msg":"handler: closed","stream_id":"c38ojhd0"}
+{"time":"2026-03-02T14:01:45.255330671Z","level":"INFO","msg":"writer: Close: closed","stream_id":"c38ojhd0"}
+{"time":"2026-03-02T14:01:45.255343906Z","level":"INFO","msg":"sender: closed","stream_id":"c38ojhd0"}
+{"time":"2026-03-02T14:01:45.255362621Z","level":"INFO","msg":"stream: closed","id":"c38ojhd0"}

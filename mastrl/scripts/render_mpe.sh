@@ -4,7 +4,7 @@ scenario="simple_speaker_listener"
 num_landmarks=3
 num_agents=2
 algo="rmappo"
-exp="check"
+exp="baseline"
 seed_max=1
 
 echo "env is ${env}"

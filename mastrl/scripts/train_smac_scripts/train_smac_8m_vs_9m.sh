@@ -1,8 +1,8 @@
 #!/bin/sh
 env="StarCraft2"
 map="8m_vs_9m"
-algo="rmappo"
-exp="check"
+algo="ippo"
+exp="baseline"
 seed_max=1
 
 echo "env is ${env}, map is ${map}, algo is ${algo}, exp is ${exp}, max seed is ${seed_max}"

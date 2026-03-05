@@ -1,0 +1,18 @@
+{"time":"2026-03-04T08:38:56.189879572Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/workspace/zyd/code/ExpCode/MASTRL/mastrl/scripts/results/StarCraft2/8m_vs_9m/ippo/baseline/wandb/run-20260304_083856-8z6y0yfu/logs/debug-core.log"}
+{"time":"2026-03-04T08:38:56.294398908Z","level":"INFO","msg":"created new stream","id":"8z6y0yfu"}
+{"time":"2026-03-04T08:38:56.294476463Z","level":"INFO","msg":"stream: started","id":"8z6y0yfu"}
+{"time":"2026-03-04T08:38:56.294610562Z","level":"INFO","msg":"writer: Do: started","stream_id":"8z6y0yfu"}
+{"time":"2026-03-04T08:38:56.294652426Z","level":"INFO","msg":"sender: started","stream_id":"8z6y0yfu"}
+{"time":"2026-03-04T08:38:56.294641295Z","level":"INFO","msg":"handler: started","stream_id":"8z6y0yfu"}
+{"time":"2026-03-04T08:38:56.904089773Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-03-04T13:26:56.29047872Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-03-04T13:26:56.298738946Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-03-04T13:26:57.289996048Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run config","runtime_seconds":0.128946372}],"total_operations":1}}
+{"time":"2026-03-04T13:27:57.351600156Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":59.692138808},{"desc":"uploading wandb-summary.json","runtime_seconds":59.690746711},{"desc":"uploading config.yaml","runtime_seconds":59.200753479}],"total_operations":3}}
+{"time":"2026-03-04T13:28:57.4162547Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":119.75679285},{"desc":"uploading wandb-summary.json","runtime_seconds":119.755400952},{"desc":"uploading config.yaml","runtime_seconds":119.265407693}],"total_operations":3}}
+{"time":"2026-03-04T13:29:13.753662631Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-04T13:29:15.834483693Z","level":"INFO","msg":"stream: closing","id":"8z6y0yfu"}
+{"time":"2026-03-04T13:29:15.834504204Z","level":"INFO","msg":"handler: closed","stream_id":"8z6y0yfu"}
+{"time":"2026-03-04T13:29:15.834511286Z","level":"INFO","msg":"writer: Close: closed","stream_id":"8z6y0yfu"}
+{"time":"2026-03-04T13:29:15.834889419Z","level":"INFO","msg":"sender: closed","stream_id":"8z6y0yfu"}
+{"time":"2026-03-04T13:29:15.834945419Z","level":"INFO","msg":"stream: closed","id":"8z6y0yfu"}
