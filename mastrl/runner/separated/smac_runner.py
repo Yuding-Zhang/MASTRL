@@ -63,25 +63,38 @@ class SMACRunner(Runner):
                                 int(total_num_steps / (end - start))))
 
                 if self.env_name == "StarCraft2":
+                    # episode-level win rate statistics
+                    total_battles = 0
+                    total_wins = 0
+
                     battles_won = []
                     battles_game = []
+
                     incre_battles_won = []
                     incre_battles_game = []                    
 
                     for i, info in enumerate(infos):
                         if 'battles_won' in info[0].keys():
+                            total_wins += info[0]['battles_won']
                             battles_won.append(info[0]['battles_won'])
                             incre_battles_won.append(info[0]['battles_won']-last_battles_won[i])
                         if 'battles_game' in info[0].keys():
+                            total_battles += info[0]['battles_game']
                             battles_game.append(info[0]['battles_game'])
                             incre_battles_game.append(info[0]['battles_game']-last_battles_game[i])
 
-                    incre_win_rate = np.sum(incre_battles_won)/np.sum(incre_battles_game) if np.sum(incre_battles_game)>0 else 0.0
-                    print("incre win rate is {}.".format(incre_win_rate))
-                    if self.use_wandb:
-                        wandb.log({"incre_win_rate": incre_win_rate}, step=total_num_steps)
+                    if total_battles > 0:
+                        win_rate = total_wins / total_battles
                     else:
-                        self.writter.add_scalars("incre_win_rate", {"incre_win_rate": incre_win_rate}, total_num_steps)
+                        win_rate = 0.0
+
+                    incre_win_rate = np.sum(incre_battles_won)/np.sum(incre_battles_game) if np.sum(incre_battles_game)>0 else 0.0
+                   
+                    print(f"episode win_rate: {win_rate:.4f}, incre win rate: {incre_win_rate:.4f}")
+                    if self.use_wandb:
+                        wandb.log({"incre_win_rate": incre_win_rate, "episode_win_rate": win_rate}, step=total_num_steps)
+                    else:
+                        self.writter.add_scalars("incre_win_rate", {"incre_win_rate": incre_win_rate, "episode_win_rate": win_rate}, total_num_steps)
                     
                     last_battles_game = battles_game
                     last_battles_won = battles_won
@@ -89,7 +102,9 @@ class SMACRunner(Runner):
 
                 for agent_id in range(self.num_agents):
                     train_infos[agent_id]['dead_ratio'] = 1 - self.buffer[agent_id].active_masks.sum() /(self.num_agents* reduce(lambda x, y: x*y, list(self.buffer[agent_id].active_masks.shape)))
-                
+                for agent_id in range(self.num_agents):
+                    train_infos[agent_id]['average_step_rewards'] = np.mean(self.buffer[agent_id].rewards)
+                    
                 self.log_train(train_infos, total_num_steps)
 
             # eval

@@ -1,7 +1,7 @@
 #!/bin/sh
 env="StarCraft2"
 map="8m_vs_9m"
-algo="ippo"
+algo="mat"
 exp="baseline"
 seed_max=1
 
